@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Windows Terminal + Oh my posh 打造精致的 Windows 终端">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>打造精致的 Windows 终端 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/4206502039.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="打造精致的 Windows 终端">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-06 16:20" pubdate>
+        2021年5月6日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">打造精致的 Windows 终端</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：8 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="打造精致的-windows-终端"><a class="markdownIt-Anchor" href="#打造精致的-windows-终端"></a> 打造精致的 Windows 终端</h1>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>如果你每天能够忍受这样的终端，那么就可以右上角关闭了。本文致力于 Windows Terminal + Oh my posh 打造精致的 Windows 终端。😐</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620285317600-1620285317588-terminal.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="windows-terminal"><a class="markdownIt-Anchor" href="#windows-terminal"></a> Windows Terminal</h2>
+<blockquote>
+<p>Windows Terminal is a new, modern, feature-rich, productive terminal application for command-line users. It includes many of the features most frequently requested by the Windows command-line community including support for tabs, rich text, globalization, configurability, theming &amp; styling, and more.</p>
+<p>Windows Terminal 是一个新的，现代的，功能丰富的，高效的终端应用程序，适用于命令行用户。 它包含 Windows 命令行社区最常请求的许多功能，包括对选项卡，富文本，全球化，可配置性，主题和样式等的支持。</p>
+</blockquote>
+<p>其实最开始我想用的是 <a target="_blank" rel="noopener" href="https://github.com/felixse/FluentTerminal">Fluent Terminal</a> ，当我完成一切却发现了 bug，当我在设置页面点击终端时就会卡死，没有找到相应解决方法。因此我也就从 Fluent Terminal 转到了 <a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal">Windows Terminal</a></p>
+<h3 id="安装-windows-terminal"><a class="markdownIt-Anchor" href="#安装-windows-terminal"></a> 安装 Windows Terminal</h3>
+<ul>
+<li>你可以在 Microsoft Store 上搜索 Windows Terminal 进行安装。</li>
+<li>或者在 <a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal">GitHub</a> 上下载最新版本</li>
+</ul>
+<p>安装完成之后，鼠标右键出现 <code>open in Windows Terminal</code> 即安装成功。</p>
+<h3 id="配置-windows-terminal"><a class="markdownIt-Anchor" href="#配置-windows-terminal"></a> 配置 Windows Terminal</h3>
+<p>点击向下箭头进入设置页面，你可以按照如下方式增加配置文件，以 Git Bash 为例</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620288671016-1620288671009-windowsterminal.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h3 id="优化配色"><a class="markdownIt-Anchor" href="#优化配色"></a> 优化配色</h3>
+<p>打开 Windows Terminal 的 <code>设置</code> 页面 -&gt; <code>打开 JSON 文件</code>，在代码编辑器中打开并编辑（比如 VS Code），这个文件记录了 Windows Terminal 的配置，你可以按照你的喜好对其进行修改。</p>
+<p>下面简单介绍一下，你可以在 <a target="_blank" rel="noopener" href="https://windowsterminalthemes.dev/">Windows Terminal Themes</a> 找到不同的 Windows Terminal 主题配置，选择你喜欢的主题样式，点击 <code>Get Theme</code> 进行复制。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620289428937-1620289428933-windowstermianltheme.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p>在 JSON 文件中找到 <code>schemes</code> 将复制的代码粘贴进去即可，以 <code>OneDark</code> 为例（记得加逗号）。</p>
+<figure class="highlight livescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs livescript"><span class="hljs-string">&quot;schemes&quot;</span>:<br>    [<br>        &#123;<br>          <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;OneDark&quot;</span>,<br>          <span class="hljs-string">&quot;black&quot;</span>: <span class="hljs-string">&quot;#1e2127&quot;</span>,<br>          <span class="hljs-string">&quot;red&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#e06c75</span>&quot;</span>,<br>          <span class="hljs-string">&quot;green&quot;</span>: <span class="hljs-string">&quot;#98c379&quot;</span>,<br>          <span class="hljs-string">&quot;yellow&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#d19a66</span>&quot;</span>,<br>          <span class="hljs-string">&quot;blue&quot;</span>: <span class="hljs-string">&quot;#61afef&quot;</span>,<br>          <span class="hljs-string">&quot;purple&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#c678dd</span>&quot;</span>,<br>          <span class="hljs-string">&quot;cyan&quot;</span>: <span class="hljs-string">&quot;#56b6c2&quot;</span>,<br>          <span class="hljs-string">&quot;white&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#abb2bf</span>&quot;</span>,<br>          <span class="hljs-string">&quot;brightBlack&quot;</span>: <span class="hljs-string">&quot;#5c6370&quot;</span>,<br>          <span class="hljs-string">&quot;brightRed&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#e06c75</span>&quot;</span>,<br>          <span class="hljs-string">&quot;brightGreen&quot;</span>: <span class="hljs-string">&quot;#98c379&quot;</span>,<br>          <span class="hljs-string">&quot;brightYellow&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#d19a66</span>&quot;</span>,<br>          <span class="hljs-string">&quot;brightBlue&quot;</span>: <span class="hljs-string">&quot;#61afef&quot;</span>,<br>          <span class="hljs-string">&quot;brightPurple&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#c678dd</span>&quot;</span>,<br>          <span class="hljs-string">&quot;brightCyan&quot;</span>: <span class="hljs-string">&quot;#56b6c2&quot;</span>,<br>          <span class="hljs-string">&quot;brightWhite&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#ffffff</span>&quot;</span>,<br>          <span class="hljs-string">&quot;background&quot;</span>: <span class="hljs-string">&quot;#1e2127&quot;</span>,<br>          <span class="hljs-string">&quot;foreground&quot;</span>: <span class="hljs-string">&quot;<span class="hljs-subst">#abb2bf</span>&quot;</span><br>        &#125;,<br>        ...<br>    ]<br></code></pre></div></td></tr></table></figure>
+<p>保存并配置完成之后，你就可以在主题文件中找到它</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620289717545-1620289717541-widowsterminalonedark.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h3 id="fontfix">修改字体</h3>
+<p>在安装完 Oh my posh 之后，换用某些主题会出现文字乱码的情况，因此需要修改字体。</p>
+<p>你可以在 <a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">nerdfonts</a> 中下载喜欢的字体文件。</p>
+<p>如果你不想麻烦寻找字体，这里简单提供一个 <a target="_blank" rel="noopener" href="https://github.com/EmoryHuang/BlogBeautify/blob/master/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.otf">字体文件</a>，下载之后，<code>为所有用户安装</code> 即可。</p>
+<p>安装完字体文件之后，再次打开上面的 JSON 文件，你可以在 <code>profiles</code> -&gt; <code>list</code> 中找到你之前添加的主题，添加字体信息即可。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs applescript"><span class="hljs-string">&quot;colorScheme&quot;</span>: <span class="hljs-string">&quot;OneDark&quot;</span>,<br><span class="hljs-string">&quot;commandline&quot;</span>: <span class="hljs-string">&quot;powershell.exe&quot;</span>,<br><span class="hljs-string">&quot;fontFace&quot;</span>: <span class="hljs-string">&quot;CaskaydiaCove NF&quot;</span>,       <span class="hljs-comment"># 新增部分，修改为你自定义的字体名</span><br><span class="hljs-string">&quot;guid&quot;</span>: <span class="hljs-string">&quot;&#123;61c54bbd-c2c6-5271-96e7-009a87ff44bf&#125;&quot;</span>,<br><span class="hljs-string">&quot;hidden&quot;</span>: <span class="hljs-literal">false</span>,<br><span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;Windows PowerShell&quot;</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="oh-my-posh"><a class="markdownIt-Anchor" href="#oh-my-posh"></a> Oh my posh</h2>
+<p>类似于 oh-my-zsh，oh-my-posh 为 PowerShell 提供了很多自定义主题和配色，你可以按照以下步骤安装 oh my posh。</p>
+<h3 id="管理员权限-powershell-运行"><a class="markdownIt-Anchor" href="#管理员权限-powershell-运行"></a> 管理员权限 powershell 运行</h3>
+<p>右键 win 徽标 Windows Powershell(管理员)，并输入以下命令</p>
+<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-keyword">Set</span>-ExecutionPolicy <span class="hljs-comment">Bypass</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="安装-oh-my-posh"><a class="markdownIt-Anchor" href="#安装-oh-my-posh"></a> 安装 oh my posh</h3>
+<p>打开 <code>Windows Terminal</code>，依次运行</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs mipsasm"><span class="hljs-keyword">Install-Module </span><span class="hljs-keyword">DirColors </span>-<span class="hljs-keyword">Scope </span>CurrentUser<br><span class="hljs-keyword">Install-Module </span>posh-git -<span class="hljs-keyword">Scope </span>CurrentUser<br><span class="hljs-keyword">Install-Module </span>oh-my-posh -<span class="hljs-keyword">Scope </span>CurrentUser<br></code></pre></div></td></tr></table></figure>
+<h3 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h3>
+<p>安装完成之后输入<code>$profile</code>，你可以看见配置文件的路径</p>
+<figure class="highlight gams"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gams"><span class="hljs-meta"><span class="hljs-meta-keyword">$profile</span></span><br></code></pre></div></td></tr></table></figure>
+<p>在上述路径下修改配置文件 <code>Microsoft.PowerShell_profile.ps1</code>，如果没有这个文件就新建一个。</p>
+<p>比如我的 <code>C:\Users\YI\Documents\WindowsPowerShell\</code>，在这个文件夹下新建<code>Microsoft.PowerShell_profile.ps1</code>，并写入如下代码：</p>
+<figure class="highlight coq"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs coq"><span class="hljs-keyword">Import</span>-<span class="hljs-keyword">Module</span> posh-git<br><span class="hljs-keyword">Import</span>-<span class="hljs-keyword">Module</span> oh-my-posh<br><span class="hljs-keyword">Import</span>-<span class="hljs-keyword">Module</span> DirColors<br><span class="hljs-keyword">Set</span>-PoshPrompt -Theme &lt;主题名&gt;<br></code></pre></div></td></tr></table></figure>
+<p>你可以在 <a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes/">官方仓库</a> 查看所有主题。</p>
+<p><code>&lt;主题名&gt;</code>替换为你喜欢的主题名，你也可以在 <code>Windows Terminal</code> 输入 <code>Set-PoshPrompt</code> 来查看主题样式。</p>
+<h3 id="解决字体乱码"><a class="markdownIt-Anchor" href="#解决字体乱码"></a> 解决字体乱码</h3>
+<p>在配置某些主题之后，会出现文字乱码的情况，因此需要修改字体，详情见<a href="#fontfix">修改字体</a></p>
+<p>最后提一句，如果你使用 VSCode，会发现终端变成了这个样子</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620305099656-1620305099654-vscodeterminal.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p>主要还是字体的问题，在设置字体的地方加上我们刚才自定义的字体即可正常显示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620305246260-1620305246258-vscodeterminalset.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43455581/article/details/105565970">使用 Oh-My-Posh 美化 FluentTerminal</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.walterlv.com/post/beautify-powershell-like-zsh.html">将美化进行到底，把 PowerShell 做成 oh-my-zsh 的样子</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3 及 oh-my-zsh 提示 prompt 出现乱码的原因及使用 Nerd 字体的解决方法</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/">学习教程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Windows-Terminal/">Windows Terminal</a>
+                    
+                      <a class="hover-with-bg" href="/tags/oh-my-posh/">oh my posh</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/258701262.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode 1720. 解码异或后的数组</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/3101066174.html">
+                        <span class="hidden-mobile">Git 基本使用</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz",
+          app_key: "yTSKpRCVBDa8gyFQLEuSp0B2",
+          placeholder: "说点什么吧",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://bcndultw.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+	
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="本文记录了一些数据库面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>数据库面试常见问题总结 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/2650639933.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数据库面试常见问题总结">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-05 12:48" pubdate>
+        2021年3月5日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据库面试常见问题总结</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="数据库面试常见问题总结"><a class="markdownIt-Anchor" href="#数据库面试常见问题总结"></a> 数据库面试常见问题总结</h1>
+<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
+<p>本文记录了一些数据库面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
+<hr />
+<h3 id="q事务四大特性acid"><a class="markdownIt-Anchor" href="#q事务四大特性acid"></a> Q：事务四大特性（ACID）</h3>
+<p>A：</p>
+<ol>
+<li>原子性：事务是一个不可再分割的工作单位，要么执行，要么不执行</li>
+<li>一致性：数据库的完整性约束没有被破坏，在事务执行前后都保持一致性状态</li>
+<li>隔离性：多个事务并发时，每个事务应该是隔离的，一个事务不应影响其他事务的运行效果</li>
+<li>持久性：一旦事务提交，对数据的改变就是永久的</li>
+</ol>
+<h3 id="q什么是存储过程"><a class="markdownIt-Anchor" href="#q什么是存储过程"></a> Q：什么是存储过程？</h3>
+<p>A：存储过程是一些预编译的 SQL 语句</p>
+<h3 id="q什么是事务"><a class="markdownIt-Anchor" href="#q什么是事务"></a> Q：什么是事务？</h3>
+<p>A：事务是一个操作序列，这些操作要么都执行，要么都不执行，它是一个不可分割的工作单位</p>
+<h3 id="qdbms-是什么"><a class="markdownIt-Anchor" href="#qdbms-是什么"></a> Q：DBMS 是什么</h3>
+<p>A：数据库管理系统(DBMS)是数据库系统的核心，是管理数据库的软件</p>
+<h3 id="q数据库的三级模式"><a class="markdownIt-Anchor" href="#q数据库的三级模式"></a> Q：数据库的三级模式</h3>
+<p>A：</p>
+<ul>
+<li>模式：一个，逻辑结构</li>
+<li>外模式：多个，用户模式</li>
+<li>内模式：一个，物理结构</li>
+</ul>
+<h3 id="q什么是主键"><a class="markdownIt-Anchor" href="#q什么是主键"></a> Q：什么是主键</h3>
+<p>A：唯一标识表中每行的这个列</p>
+<h3 id="q视图和表的区别是什么"><a class="markdownIt-Anchor" href="#q视图和表的区别是什么"></a> Q：视图和表的区别是什么？</h3>
+<p>A：</p>
+<ul>
+<li>视图：从一个或几个基本表导出的表，是虚表，我们对视图只能进行查询但不能进行修改</li>
+<li>表：数据库中的实体，可以对其进行增删改查操作</li>
+</ul>
+<h3 id="q索引是什么它的优点缺点"><a class="markdownIt-Anchor" href="#q索引是什么它的优点缺点"></a> Q：索引是什么？它的优点缺点？</h3>
+<p>A：索引是对数据库表中一或多个列的值进行排序的结构，可以加快检索表中数据</p>
+<ul>
+<li>优点：大大加快数据的检索速度、唯一索引可以确保每一行数据的唯一性</li>
+<li>缺点：索引需要占物理空间、创建索引和维护索引需要时间</li>
+</ul>
+<h3 id="q索引类型"><a class="markdownIt-Anchor" href="#q索引类型"></a> Q：索引类型</h3>
+<p>A：</p>
+<ul>
+<li>普通索引：最基本的索引，它没有任何限制</li>
+<li>唯一索引：索引列的值必须唯一</li>
+<li>主键索引：特殊的唯一性索引</li>
+<li>全文索引：对于大规模数据集更快</li>
+</ul>
+<h3 id="q数据库三范式"><a class="markdownIt-Anchor" href="#q数据库三范式"></a> Q：数据库三范式</h3>
+<p>A：</p>
+<ul>
+<li>第一范式 (1NF)：属性不可分，即数据库表的每一列都是不可分割的基本数据项</li>
+<li>第二范式 (2NF)：要求所有非主键属性完全依赖主键</li>
+<li>第三范式 (3NF)：非主键属性无传递依赖</li>
+</ul>
+<h3 id="q数据库中几种删除都有什么有什么区别"><a class="markdownIt-Anchor" href="#q数据库中几种删除都有什么有什么区别"></a> Q：数据库中几种删除都有什么，有什么区别？</h3>
+<p>A：</p>
+<ul>
+<li>delete：删除部分数据行</li>
+<li>truncate：保留表而删除所有数据</li>
+<li>drop：删除表</li>
+</ul>
+<h3 id="qe-r-图"><a class="markdownIt-Anchor" href="#qe-r-图"></a> Q：E-R 图？</h3>
+<p>A：实体关系图 (Entity-Relationship，E-R)，有三个组成部分：实体、属性、联系。用来进行关系型数据库系统的概念设计</p>
+<ol>
+<li>实体：矩形</li>
+<li>属性：椭圆</li>
+<li>联系：菱形</li>
+</ol>
+<h3 id="qe-r-模型转换为关系模式的原则"><a class="markdownIt-Anchor" href="#qe-r-模型转换为关系模式的原则"></a> Q：E-R 模型转换为关系模式的原则？</h3>
+<p>A：一个实体型转换为一个关系模式</p>
+<ul>
+<li>一对一：遇到一对一关系的话，在两个实体任选一个添加另一个实体的主键即可</li>
+<li>一对多：遇到一对多关系的话，在多端添加另一端的主键</li>
+<li>多对多：遇到多对多关系的话，需要将联系转换为实体，然后在该实体上加上另外两个实体的主键，作为联系实体的主键，然后再加上该联系自身带的属性即可</li>
+</ul>
+<h3 id="q数据库完整性"><a class="markdownIt-Anchor" href="#q数据库完整性"></a> Q：数据库完整性</h3>
+<p>A：</p>
+<ul>
+<li>实体完整性：保证表的每一个特定实体的记录都是唯一的</li>
+<li>参照完整性：保证相关联表之间数据的一致性</li>
+<li>用户定义完整性：针对某一具体应用必须满足的语义要求</li>
+</ul>
+<h3 id="q什么是触发器"><a class="markdownIt-Anchor" href="#q什么是触发器"></a> Q：什么是触发器？</h3>
+<p>A：触发器是用户定义在关系表上的一类由事件驱动的特殊过程</p>
+<h3 id="q-数据库有哪些锁各自的作用"><a class="markdownIt-Anchor" href="#q-数据库有哪些锁各自的作用"></a> Q： 数据库有哪些锁，各自的作用？</h3>
+<p>A：</p>
+<ul>
+<li>排他锁(X 锁,写锁)：当数据对象被加上排它锁(X 锁)时，其他的事务不能对它读取和修改</li>
+<li>共享锁(S 锁,读锁)：当数据对象被加上共享锁(S 锁)时，可以被其他事务读取，但不能修改</li>
+</ul>
+<h3 id="q死锁"><a class="markdownIt-Anchor" href="#q死锁"></a> Q：死锁？</h3>
+<p>A：指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去</p>
+<h3 id="q预防死锁"><a class="markdownIt-Anchor" href="#q预防死锁"></a> Q：预防死锁？</h3>
+<p>A：一次封锁法、顺序封锁法</p>
+<h3 id="q二段锁协议"><a class="markdownIt-Anchor" href="#q二段锁协议"></a> Q：二段锁协议</h3>
+<p>A：</p>
+<ul>
+<li>在对任何数据进行读、写操作之前，事务首先要申请并获得对该数据的封锁</li>
+<li>在释放一个封锁之后，事务不再申请和获得任何其他封锁</li>
+</ul>
+<h3 id="q冷备份和热备份"><a class="markdownIt-Anchor" href="#q冷备份和热备份"></a> Q：冷备份和热备份</h3>
+<p>A：</p>
+<ul>
+<li>冷备份：在数据库停机的情况下，备份数据库</li>
+<li>热备份：在数据库运行的情况下，备份数据库</li>
+</ul>
+<h3 id="q数据库建立流程"><a class="markdownIt-Anchor" href="#q数据库建立流程"></a> Q：数据库建立流程</h3>
+<p>A：</p>
+<ol>
+<li>需求分析</li>
+<li>概念结构设计</li>
+<li>逻辑结构设计</li>
+<li>物理结构设计</li>
+<li>实施</li>
+<li>运行维护</li>
+</ol>
+<hr />
+<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E5%A4%8D%E8%AF%95/">面试复试</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/">面试问题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/1593055632.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">杭电OJ2000-2009</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/1031371177.html">
+                        <span class="hidden-mobile">操作系统面试常见问题总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz",
+          app_key: "yTSKpRCVBDa8gyFQLEuSp0B2",
+          placeholder: "说点什么吧",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://bcndultw.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+	
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

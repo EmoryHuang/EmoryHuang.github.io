@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Fluid是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>Hexo + Fluid 美化 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1729600336.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Hexo + Fluid 美化">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-05-02 10:20" pubdate>
+        2021年5月2日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      33
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo + Fluid 美化</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="hexo-fluid-美化"><a class="markdownIt-Anchor" href="#hexo-fluid-美化"></a> Hexo + Fluid 美化</h1>
+<h2 id="fluid-简介"><a class="markdownIt-Anchor" href="#fluid-简介"></a> Fluid 简介</h2>
+<p>Fluid 是基于 Hexo 的一款 Material Design 风格的主题，由 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev">Fluid-dev</a> 负责开发与维护。</p>
+<p>主题 GitHub: <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
+<p>预览网站：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid’s Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://zkqiang.cn/">zkqiang’s blog</a></li>
+</ul>
+<h2 id="fluid-主题安装"><a class="markdownIt-Anchor" href="#fluid-主题安装"></a> Fluid 主题安装</h2>
+<h3 id="方式一"><a class="markdownIt-Anchor" href="#方式一"></a> 方式一</h3>
+<p>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs sh">npm install --save hexo-theme-fluid<br></code></pre></div></td></tr></table></figure>
+<div class="note note-primary">
+            <p>提示：如果 npm 速度慢或者安装失败，可以通过淘宝镜像安装，即使用如下命令</p><figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">cnpm install <span class="hljs-comment">--save hexo-theme-fluid</span><br></code></pre></div></td></tr></table></figure>
+          </div>
+<p>然后在博客目录下创建 <code>_config.fluid.yml</code>，将主题的 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">config.yml</a> 内容复制进去。</p>
+<h3 id="方式二"><a class="markdownIt-Anchor" href="#方式二"></a> 方式二</h3>
+<p>下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">最新 release 版本</a> 解压到 Hexo 博客目录中的 <code>themes</code> 目录，并将解压出的文件夹重命名为 <code>fluid</code>。</p>
+<h2 id="指定-fluid-主题"><a class="markdownIt-Anchor" href="#指定-fluid-主题"></a> 指定 Fluid 主题</h2>
+<p>如下修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs avrasm"><span class="hljs-symbol">theme:</span> fluid  <span class="hljs-meta"># 指定主题</span><br><span class="hljs-symbol">language:</span> <span class="hljs-built_in">zh</span>-CN  <span class="hljs-meta"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="fluid-美化"><a class="markdownIt-Anchor" href="#fluid-美化"></a> Fluid 美化</h2>
+<h3 id="基础配置修改"><a class="markdownIt-Anchor" href="#基础配置修改"></a> 基础配置修改</h3>
+<p>对于 Fluid 主题的基础配置修改，在 <a target="_blank" rel="noopener" href="https://fluid-dev.github.io/hexo-fluid-docs/guide/">官方配置指南</a> 以及 <code>theme/fluid/_config.yml</code> 或者 <code>_config.fluid.yml</code> 中有详细的提示说明，这里不再赘述。</p>
+<div class="note note-primary">
+            <p>注意</p><p>本文中的 <strong>&quot; 博客配置 &quot;</strong> 指的 Hexo 博客目录下的 <code>_config.yml</code>，<strong>&quot; 主题配置 &quot;</strong> 指的是 <code>theme/fluid/_config.yml</code> 或者 <code>_config.fluid.yml</code> ，注意区分</p>
+          </div>
+<h3 id="添加网站运行时间"><a class="markdownIt-Anchor" href="#添加网站运行时间"></a> 添加网站运行时间</h3>
+<p>页脚添加网站运行时间，只需要在主题配置中的 <code>footer: content</code> 添加：</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml">footer:<br>  content: &#x27;<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;timeDate&quot;</span>&gt;</span>载入天数...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;times&quot;</span>&gt;</span>载入时分秒...<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/js/duration.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  &#x27;<br></code></pre></div></td></tr></table></figure>
+<p>之后在主题目录下创建 <code>source/js/duration.js</code>，内容如下：</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs reasonml">var now = <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date()</span>;<br><span class="hljs-keyword">function</span> createtime<span class="hljs-literal">()</span> &#123;<br>    var grt= <span class="hljs-keyword">new</span> <span class="hljs-constructor">Date(<span class="hljs-string">&quot;03/03/2021 12:00:00&quot;</span>)</span>;<span class="hljs-comment">//在此处修改你的建站时间，格式：月/日/年 时:分:秒</span><br>    now.set<span class="hljs-constructor">Time(<span class="hljs-params">now</span>.<span class="hljs-params">getTime</span>()</span>+<span class="hljs-number">250</span>);<br>    days = (now - grt )<span class="hljs-operator"> / </span><span class="hljs-number">1000</span><span class="hljs-operator"> / </span><span class="hljs-number">60</span><span class="hljs-operator"> / </span><span class="hljs-number">60</span><span class="hljs-operator"> / </span><span class="hljs-number">24</span>; dnum = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Math</span>.</span></span>floor(days);<br>    hours = (now - grt )<span class="hljs-operator"> / </span><span class="hljs-number">1000</span><span class="hljs-operator"> / </span><span class="hljs-number">60</span><span class="hljs-operator"> / </span><span class="hljs-number">60</span> - (<span class="hljs-number">24</span><span class="hljs-operator"> * </span>dnum); hnum = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Math</span>.</span></span>floor(hours);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-constructor">String(<span class="hljs-params">hnum</span>)</span>.length ==<span class="hljs-number">1</span> )&#123;hnum = <span class="hljs-string">&quot;0&quot;</span> + hnum;&#125; minutes = (now - grt )<span class="hljs-operator"> / </span><span class="hljs-number">1000</span> /<span class="hljs-number">60</span> - (<span class="hljs-number">24</span><span class="hljs-operator"> * </span><span class="hljs-number">60</span><span class="hljs-operator"> * </span>dnum) - (<span class="hljs-number">60</span><span class="hljs-operator"> * </span>hnum);<br>    mnum = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Math</span>.</span></span>floor(minutes); <span class="hljs-keyword">if</span>(<span class="hljs-constructor">String(<span class="hljs-params">mnum</span>)</span>.length ==<span class="hljs-number">1</span> )&#123;mnum = <span class="hljs-string">&quot;0&quot;</span> + mnum;&#125;<br>    seconds = (now - grt )<span class="hljs-operator"> / </span><span class="hljs-number">1000</span> - (<span class="hljs-number">24</span><span class="hljs-operator"> * </span><span class="hljs-number">60</span><span class="hljs-operator"> * </span><span class="hljs-number">60</span><span class="hljs-operator"> * </span>dnum) - (<span class="hljs-number">60</span><span class="hljs-operator"> * </span><span class="hljs-number">60</span><span class="hljs-operator"> * </span>hnum) - (<span class="hljs-number">60</span><span class="hljs-operator"> * </span>mnum);<br>    snum = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Math</span>.</span></span>round(seconds); <span class="hljs-keyword">if</span>(<span class="hljs-constructor">String(<span class="hljs-params">snum</span>)</span>.length ==<span class="hljs-number">1</span> )&#123;snum = <span class="hljs-string">&quot;0&quot;</span> + snum;&#125;<br>    document.get<span class="hljs-constructor">ElementById(<span class="hljs-string">&quot;timeDate&quot;</span>)</span>.innerHTML = <span class="hljs-string">&quot;本站已安全运行 &quot;</span>+dnum+<span class="hljs-string">&quot; 天 &quot;</span>;<br>    document.get<span class="hljs-constructor">ElementById(<span class="hljs-string">&quot;times&quot;</span>)</span>.innerHTML = hnum + <span class="hljs-string">&quot; 小时 &quot;</span> + mnum + <span class="hljs-string">&quot; 分 &quot;</span> + snum + <span class="hljs-string">&quot; 秒&quot;</span>;<br>&#125;<br>set<span class="hljs-constructor">Interval(<span class="hljs-string">&quot;createtime()&quot;</span>,250)</span>;<br></code></pre></div></td></tr></table></figure>
+<p>将建站时间修改为你自己的建站时间，即可在页脚加入网站运行时间。</p>
+<h3 id="添加一言"><a class="markdownIt-Anchor" href="#添加一言"></a> 添加一言</h3>
+<p>在主题配置 <code>_config.yml</code> 中找到 <code>custom_head</code> ，修改如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml">custom_head: &#x27;<br>    <span class="hljs-comment">&lt;!-- 一言 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://v1.hitokoto.cn/?encode=js&amp;select=%23hitokoto&quot;</span> <span class="hljs-attr">defer</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>    &#x27;<br></code></pre></div></td></tr></table></figure>
+<p>修改完成之后，在任意地方添加如下代码即可获取一言</p>
+<figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;hitokoto&quot;</span>&gt;</span>:D 获取中...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="添加-github-日历热力图"><a class="markdownIt-Anchor" href="#添加-github-日历热力图"></a> 添加 GitHub 日历热力图</h3>
+<p>这里提供一个简单的 API <a target="_blank" rel="noopener" href="https://ghchart.rshah.org/">Github Chart API</a></p>
+<p>直接在需要的位置添加如下 HTML 语句即可，注意将 GitHub 用户名修改为你自己的。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;https://ghchart.rshah.org/emoryhuang&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;emoryhuang&#x27;s Github chart&quot;</span> /&gt;<br></code></pre></div></td></tr></table></figure>
+<p>效果如下所示：</p>
+<img src="https://ghchart.rshah.org/emoryhuang" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="emoryhuang's Github chart" />
+<p>也可以改变颜色，只需要修改为 hex 颜色代码即可</p>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">&lt;img <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;https://ghchart.rshah.org/409ba5/emoryhuang&quot;</span> <span class="hljs-attribute">alt</span>=<span class="hljs-string">&quot;emoryhuang&#x27;s Github chart&quot;</span> /&gt;<br></code></pre></div></td></tr></table></figure>
+<img src="https://ghchart.rshah.org/409ba5/emoryhuang" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="emoryhuang's Github chart" />
+<h3 id="添加看板娘"><a class="markdownIt-Anchor" href="#添加看板娘"></a> 添加看板娘</h3>
+<p>向你的 Hexo 里放上一只二次元看板娘，<a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md">项目地址</a></p>
+<p>演示：<a target="_blank" rel="noopener" href="https://l2dwidget.js.org/dev.html">https://l2dwidget.js.org/dev.html</a></p>
+<p>模型预览：<a target="_blank" rel="noopener" href="https://huaji8.top/post/live2d-plugin-2.0/">https://huaji8.top/post/live2d-plugin-2.0/</a></p>
+<h4 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h4>
+<p>在 Git Bash 中安装模块：</p>
+<figure class="highlight ada"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ada">npm install <span class="hljs-comment">--save hexo-helper-live2d</span><br></code></pre></div></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">yarn <span class="hljs-builtin-name">add</span> hexo-helper-live2d<br></code></pre></div></td></tr></table></figure>
+<h4 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h4>
+<p>向 Hexo 的 <code>_config.yml</code> 文件添加配置，例子如下</p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">live2d:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">scriptFrom:</span> <span class="hljs-string">local</span><br>  <span class="hljs-attr">pluginRootPath:</span> <span class="hljs-string">live2dw/</span><br>  <span class="hljs-attr">pluginJsPath:</span> <span class="hljs-string">lib/</span><br>  <span class="hljs-attr">pluginModelPath:</span> <span class="hljs-string">assets/</span><br>  <span class="hljs-attr">tagMode:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">debug:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">model:</span><br>    <span class="hljs-attr">use:</span> <span class="hljs-string">live2d-widget-model-wanko</span>  <span class="hljs-comment">## 更换为你的模型</span><br>  <span class="hljs-attr">display:</span><br>    <span class="hljs-attr">position:</span> <span class="hljs-string">right</span><br>    <span class="hljs-attr">width:</span> <span class="hljs-number">150</span><br>    <span class="hljs-attr">height:</span> <span class="hljs-number">300</span><br>  <span class="hljs-attr">mobile:</span><br>    <span class="hljs-attr">show:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">react:</span><br>    <span class="hljs-attr">opacity:</span> <span class="hljs-number">0.7</span><br></code></pre></div></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">点这里</a> 可以查看现有的模型</p>
+<p>在 Git Bash 中安装喜欢的模型</p>
+<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> 模型的包名<br></code></pre></div></td></tr></table></figure>
+<p>将包名输入位于<code>_config.yml</code> 的 <code>model.use</code> 中。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span><br><span class="hljs-attribute">hexo d -g</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="添加背景黑色线条"><a class="markdownIt-Anchor" href="#添加背景黑色线条"></a> 添加背景黑色线条</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/DynamicLine.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<details open>
+  <summary>背景黑色线条js代码</summary>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">!<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">o</span>(<span class="hljs-params">w,v,i</span>)</span>&#123;<span class="hljs-keyword">return</span> w.getAttribute(v)||i&#125;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">j</span>(<span class="hljs-params">i</span>)</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">document</span>.getElementsByTagName(i)&#125;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">l</span>(<span class="hljs-params"></span>)</span>&#123;<span class="hljs-keyword">var</span> i=j(<span class="hljs-string">&quot;script&quot;</span>),w=i.length,v=i[w-<span class="hljs-number">1</span>];<span class="hljs-keyword">return</span>&#123;<span class="hljs-attr">l</span>:w,<span class="hljs-attr">z</span>:o(v,<span class="hljs-string">&quot;zIndex&quot;</span>,-<span class="hljs-number">1</span>),<span class="hljs-attr">o</span>:o(v,<span class="hljs-string">&quot;opacity&quot;</span>,<span class="hljs-number">0.5</span>),<span class="hljs-attr">c</span>:o(v,<span class="hljs-string">&quot;color&quot;</span>,<span class="hljs-string">&quot;0,0,0&quot;</span>),<span class="hljs-attr">n</span>:o(v,<span class="hljs-string">&quot;count&quot;</span>,<span class="hljs-number">99</span>)&#125;&#125;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">k</span>(<span class="hljs-params"></span>)</span>&#123;r=u.width=<span class="hljs-built_in">window</span>.innerWidth||<span class="hljs-built_in">document</span>.documentElement.clientWidth||<span class="hljs-built_in">document</span>.body.clientWidth,n=u.height=<span class="hljs-built_in">window</span>.innerHeight||<span class="hljs-built_in">document</span>.documentElement.clientHeight||<span class="hljs-built_in">document</span>.body.clientHeight&#125;<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>&#123;e.clearRect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,r,n);<span class="hljs-keyword">var</span> w=[f].concat(t);<span class="hljs-keyword">var</span> x,v,A,B,z,y;t.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">i</span>)</span>&#123;i.x+=i.xa,i.y+=i.ya,i.xa*=i.x&gt;r||i.x&lt;<span class="hljs-number">0</span>?-<span class="hljs-number">1</span>:<span class="hljs-number">1</span>,i.ya*=i.y&gt;n||i.y&lt;<span class="hljs-number">0</span>?-<span class="hljs-number">1</span>:<span class="hljs-number">1</span>,e.fillRect(i.x-<span class="hljs-number">0.5</span>,i.y-<span class="hljs-number">0.5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);<span class="hljs-keyword">for</span>(v=<span class="hljs-number">0</span>;v&lt;w.length;v++)&#123;x=w[v];<span class="hljs-keyword">if</span>(i!==x&amp;&amp;<span class="hljs-literal">null</span>!==x.x&amp;&amp;<span class="hljs-literal">null</span>!==x.y)&#123;B=i.x-x.x,z=i.y-x.y,y=B*B+z*z;y&lt;x.max&amp;&amp;(x===f&amp;&amp;y&gt;=x.max/<span class="hljs-number">2</span>&amp;&amp;(i.x-=<span class="hljs-number">0.03</span>*B,i.y-=<span class="hljs-number">0.03</span>*z),A=(x.max-y)/x.max,e.beginPath(),e.lineWidth=A/<span class="hljs-number">2</span>,e.strokeStyle=<span class="hljs-string">&quot;rgba(&quot;</span>+s.c+<span class="hljs-string">&quot;,&quot;</span>+(A+<span class="hljs-number">0.2</span>)+<span class="hljs-string">&quot;)&quot;</span>,e.moveTo(i.x,i.y),e.lineTo(x.x,x.y),e.stroke())&#125;&#125;w.splice(w.indexOf(i),<span class="hljs-number">1</span>)&#125;),m(b)&#125;<span class="hljs-keyword">var</span> u=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;canvas&quot;</span>),s=l(),c=<span class="hljs-string">&quot;c_n&quot;</span>+s.l,e=u.getContext(<span class="hljs-string">&quot;2d&quot;</span>),r,n,m=<span class="hljs-built_in">window</span>.requestAnimationFrame||<span class="hljs-built_in">window</span>.webkitRequestAnimationFrame||<span class="hljs-built_in">window</span>.mozRequestAnimationFrame||<span class="hljs-built_in">window</span>.oRequestAnimationFrame||<span class="hljs-built_in">window</span>.msRequestAnimationFrame||<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">i</span>)</span>&#123;<span class="hljs-built_in">window</span>.setTimeout(i,<span class="hljs-number">1000</span>/<span class="hljs-number">45</span>)&#125;,a=<span class="hljs-built_in">Math</span>.random,f=&#123;<span class="hljs-attr">x</span>:<span class="hljs-literal">null</span>,<span class="hljs-attr">y</span>:<span class="hljs-literal">null</span>,<span class="hljs-attr">max</span>:<span class="hljs-number">20000</span>&#125;;u.id=c;u.style.cssText=<span class="hljs-string">&quot;position:fixed;top:0;left:0;z-index:&quot;</span>+s.z+<span class="hljs-string">&quot;;opacity:&quot;</span>+s.o;j(<span class="hljs-string">&quot;body&quot;</span>)[<span class="hljs-number">0</span>].appendChild(u);k(),<span class="hljs-built_in">window</span>.onresize=k;<span class="hljs-built_in">window</span>.onmousemove=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">i</span>)</span>&#123;i=i||<span class="hljs-built_in">window</span>.event,f.x=i.clientX,f.y=i.clientY&#125;,<span class="hljs-built_in">window</span>.onmouseout=<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;f.x=<span class="hljs-literal">null</span>,f.y=<span class="hljs-literal">null</span>&#125;;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> t=[],p=<span class="hljs-number">0</span>;s.n&gt;p;p++)&#123;<span class="hljs-keyword">var</span> h=a()*r,g=a()*n,q=<span class="hljs-number">2</span>*a()-<span class="hljs-number">1</span>,d=<span class="hljs-number">2</span>*a()-<span class="hljs-number">1</span>;t.push(&#123;<span class="hljs-attr">x</span>:h,<span class="hljs-attr">y</span>:g,<span class="hljs-attr">xa</span>:q,<span class="hljs-attr">ya</span>:d,<span class="hljs-attr">max</span>:<span class="hljs-number">6000</span>&#125;)&#125;<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;b()&#125;,<span class="hljs-number">100</span>)&#125;();<br></code></pre></div></td></tr></table></figure>
+</details>
+<p>将上面的代码复制，并在此目录下 <code>themes/fluid/source/js/DynamicLine.js</code> 创建文件，将代码全部粘贴进去。</p>
+<p>然后在主题配置 <code>_config.yml</code> 中找到 <code>custom_js</code> 或者 <code>custom_css</code>，修改如下：</p>
+<figure class="highlight arcade"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arcade">custom_js:<br>  - <span class="hljs-regexp">/js/</span>DynamicLine.js<br></code></pre></div></td></tr></table></figure>
+<p>如果不想这么麻烦或者不需要自行修改的话，可以使用我的提供的 CDN</p>
+<p>在主题配置 <code>_config.yml</code> 中找到 <code>custom_js</code> 或者 <code>custom_css</code>，修改如下：</p>
+<p>（效果添加或去除注释 <code>#</code> 即可使用）</p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">custom_js:<br>  - <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>DynamicRibbon.min.js <span class="hljs-comment"># 动态彩带</span><br>  - <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>runtime.min.js <span class="hljs-comment"># 运行时间</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Ribbon.min.js # 静态彩带</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.min.js # 动态黑色线条</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/snowflake.min.js # 小雪花飘落</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/Cherry.min.js #樱花飘落</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/star.min.js # 鼠标跟随小星星</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/containsWord.min.js # 鼠标点击出字</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js #鼠标点击出爱心</span><br><br>custom_css:<br>  - <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>shubiao.css <span class="hljs-comment">#鼠标指针</span><br>  - <span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>scroll.css <span class="hljs-comment"># 滚动条颜色</span><br>  <span class="hljs-comment"># - //cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/gradient.css # 头部打字机颜色效果渐变</span><br></code></pre></div></td></tr></table></figure>
+<div class="note note-primary">
+            <p>获取源码：</p><p>将 <code>//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicLine.js</code> 输入地址框即可</p><p>注意去除 <code>.min</code> 这是经过压缩之后的</p><p>后面类似的效果本文就不再放源码了，按上面的方法搜一下就好</p>
+          </div>
+<h3 id="添加动态彩带"><a class="markdownIt-Anchor" href="#添加动态彩带"></a> 添加动态彩带</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/DynamicRibbon.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>DynamicRibbon.min.js <span class="hljs-comment"># 动态彩带</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="添加静态彩带"><a class="markdownIt-Anchor" href="#添加静态彩带"></a> 添加静态彩带</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/Ribbon.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>Ribbon.min.js <span class="hljs-comment"># 静态彩带</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="添加小雪花飘落效果"><a class="markdownIt-Anchor" href="#添加小雪花飘落效果"></a> 添加小雪花飘落效果</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/snowflake.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>snowflake.min.js <span class="hljs-comment"># 小雪花飘落</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="添加樱花飘落效果"><a class="markdownIt-Anchor" href="#添加樱花飘落效果"></a> 添加樱花飘落效果</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/Cherry.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>Cherry.min.js <span class="hljs-comment">#樱花飘落</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="鼠标跟随小星星"><a class="markdownIt-Anchor" href="#鼠标跟随小星星"></a> 鼠标跟随小星星</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/star.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>star.min.js <span class="hljs-comment"># 鼠标跟随小星星</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="鼠标点击出字"><a class="markdownIt-Anchor" href="#鼠标点击出字"></a> 鼠标点击出字</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/containsWord.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>containsWord.min.js <span class="hljs-comment"># 鼠标点击出字</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="鼠标点击出爱心"><a class="markdownIt-Anchor" href="#鼠标点击出爱心"></a> 鼠标点击出爱心</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/love.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>love.min.js <span class="hljs-comment"># 鼠标点击出爱心</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="滚动条颜色"><a class="markdownIt-Anchor" href="#滚动条颜色"></a> 滚动条颜色</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/scroll.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>scroll.css <span class="hljs-comment"># 滚动条颜色</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="头部打字机颜色效果渐变"><a class="markdownIt-Anchor" href="#头部打字机颜色效果渐变"></a> 头部打字机颜色效果渐变</h3>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/gradient.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/g</span>radient.css <span class="hljs-comment"># 头部打字机颜色效果渐变</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="更换鼠标指针样式"><a class="markdownIt-Anchor" href="#更换鼠标指针样式"></a> 更换鼠标指针样式</h3>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/Arrow.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/Cross.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/Hand.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div></div><div class="group-image-row"><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/Help.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/IBeam.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify/launa/NO.cur" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></div></div></div>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>cdn.jsdelivr.net<span class="hljs-regexp">/gh/</span>EmoryHuang<span class="hljs-regexp">/BlogBeautify@1.1/</span>shubiao.css <span class="hljs-comment">#鼠标指针</span><br></code></pre></div></td></tr></table></figure>
+<hr />
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">Fluid</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md">hexo-helper-live2d</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43471926/article/details/109798811">Hexo-Fluid 主题美化</a></li>
+</ul>
+<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/">学习教程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/4193369116.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode 554. 砖墙</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/1074995190.html">
+                        <span class="hidden-mobile">LeetCode 700. 二叉搜索树中的搜索</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz",
+          app_key: "yTSKpRCVBDa8gyFQLEuSp0B2",
+          placeholder: "说点什么吧",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://bcndultw.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+	
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

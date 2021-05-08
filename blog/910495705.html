@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="本文记录了一些计算机组成原理面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>计算机组成原理面试常见问题总结 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/910495705.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计算机组成原理面试常见问题总结">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-05 12:45" pubdate>
+        2021年3月5日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      26
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机组成原理面试常见问题总结</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="计算机组成原理面试常见问题总结"><a class="markdownIt-Anchor" href="#计算机组成原理面试常见问题总结"></a> 计算机组成原理面试常见问题总结</h1>
+<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
+<p>本文记录了一些计算机组成原理面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
+<hr />
+<h3 id="q冯诺依曼机"><a class="markdownIt-Anchor" href="#q冯诺依曼机"></a> Q：冯诺依曼机</h3>
+<p>A:冯诺依曼机特点</p>
+<ol>
+<li>计算机硬件系统由<strong>运算器、存储器、控制器、输入设备和输出设备</strong> 5 大部件组成</li>
+<li>指令和数据以同等地位存储在存储器中，并可按地址寻访</li>
+<li>指令和数据均用二进制代码表示</li>
+<li>指令由操作码和地址码组成</li>
+<li>指令在存储器内按顺序存放</li>
+<li>早期的冯诺依曼机以<strong>运算器</strong>为中心，输入／输出设备通过运算器与存储器传送数据。现代计算机以<strong>存储器</strong>为中心</li>
+</ol>
+<h3 id="q存储程序"><a class="markdownIt-Anchor" href="#q存储程序"></a> Q：存储程序？</h3>
+<p>A：存储程序的概念是指将指令以代码的形式事先输入计算机的主存储器，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束</p>
+<h3 id="q在计算机系统结构中什么是编译什么是解释"><a class="markdownIt-Anchor" href="#q在计算机系统结构中什么是编译什么是解释"></a> Q：在计算机系统结构中，什么是编译？什么是解释？</h3>
+<p>A：</p>
+<ul>
+<li>解释：在运行程序的时候才翻译，翻译一句执行一句，边翻译边执行</li>
+<li>编译：将高级语言转化为汇编语言</li>
+</ul>
+<h3 id="q计算机系统-5-层层次结构虚拟机是哪几层"><a class="markdownIt-Anchor" href="#q计算机系统-5-层层次结构虚拟机是哪几层"></a> Q：计算机系统 5 层层次结构？虚拟机是哪几层？</h3>
+<p>A：微程序机器层、传统机器语言层、操作系统层、汇编语言层、高级语言层</p>
+<p>虚拟机：操作系统层、汇编语言层、高级语言层</p>
+<h3 id="q字长"><a class="markdownIt-Anchor" href="#q字长"></a> Q：字长？</h3>
+<p>A：</p>
+<ul>
+<li>机器字长：计算机能直接处理的二进制位数</li>
+<li>指令字长：一个指令字中包含的二进制代码位数</li>
+<li>存储字长：一个存储单元存储二进制代码长度</li>
+</ul>
+<h3 id="q为什么采用补码加减"><a class="markdownIt-Anchor" href="#q为什么采用补码加减"></a> Q：为什么采用补码加减？</h3>
+<p>A：省去计算机判断符号位或者说判断 +/- 运算的麻烦。采用补码表示后，不管是加法还是减法都是加法运算</p>
+<h3 id="qieee-754-标准"><a class="markdownIt-Anchor" href="#qieee-754-标准"></a> Q：IEEE 754 标准</h3>
+<p>A：<img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/IEEE754.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="IEEE754" /></p>
+<h3 id="q在计算机中为什么要采用二进制来表示数据"><a class="markdownIt-Anchor" href="#q在计算机中为什么要采用二进制来表示数据"></a> Q：在计算机中，为什么要采用二进制来表示数据？</h3>
+<p>A：</p>
+<ul>
+<li>从可行性来说，采用二进制，只有 0 和 1 两个状态，能够表示 0 、1 两种状态的电子器件很多</li>
+<li>从运算的简易性来说，二进制数的运算法则少，运算简单</li>
+<li>从逻辑上来说，由于二进制 0 和 1 正好和逻辑代数的假 (false) 和真 (true) 相对应</li>
+</ul>
+<h3 id="q什么是存储单元存储字存储字长存储体"><a class="markdownIt-Anchor" href="#q什么是存储单元存储字存储字长存储体"></a> Q：什么是存储单元，存储字，存储字长，存储体？</h3>
+<p>A：</p>
+<ul>
+<li>存储单元：存储一个存储字并具有特定存储地址的存储单位。</li>
+<li>存储字：一个存储单元中存放的所有二进制数据。</li>
+<li>存储字长：存储字中存储的所有二进制数据的位数。</li>
+<li>存储体：有多个存储单元构成的存储器件。</li>
+</ul>
+<h3 id="q主存储器中什么是-mar-什么是-mdr存储器的最大容量由什么决定"><a class="markdownIt-Anchor" href="#q主存储器中什么是-mar-什么是-mdr存储器的最大容量由什么决定"></a> Q：主存储器中，什么是 MAR, 什么是 MDR，存储器的最大容量由什么决定？</h3>
+<p>A：</p>
+<ul>
+<li>MAR：指存储地址寄存器，保存需要访问的存储单元地址，反应存储单元的个数</li>
+<li>MDR：指存储数据寄存器，缓存读出或写入存储单元的数据，反应存储字长</li>
+</ul>
+<p>存储器的最大容量由 MAR 寄存器的位数和 MDR 寄存器的位数决定</p>
+<h3 id="q多级存储系统"><a class="markdownIt-Anchor" href="#q多级存储系统"></a> Q：多级存储系统？</h3>
+<p>A：为了解决存储系统大容量、高速度和低成本 3 个相互制约的矛盾</p>
+<ul>
+<li>“Cache - 主存”层次：解决 CPU 和主存速度不匹配的问题</li>
+<li>“主存 - 辅存”层次：解决存储系统的容量问题</li>
+</ul>
+<h3 id="q大端方式和小端方式"><a class="markdownIt-Anchor" href="#q大端方式和小端方式"></a> Q：大端方式和小端方式？</h3>
+<p>A：</p>
+<ul>
+<li>大端方式：字的低位存在内存的高地址中，而字的高位存在内存的低地址中</li>
+<li>小端方式：字的低位存在内存的低地址中，而字的高位存在内存的高地址中</li>
+</ul>
+<h3 id="q随机存储器"><a class="markdownIt-Anchor" href="#q随机存储器"></a> Q：随机存储器</h3>
+<p>A：</p>
+<ul>
+<li>静态随机存储器（SRAM）：速度快，集成度低，价格高，不需要刷新，用于高速缓存</li>
+<li>动态随机存储器（DRAM）：速度慢，集成度高，价格低，需要刷新，用于内存</li>
+</ul>
+<h3 id="q程序访问的局部性"><a class="markdownIt-Anchor" href="#q程序访问的局部性"></a> Q：程序访问的局部性</h3>
+<p>A：</p>
+<ul>
+<li>时间局部性：如果一个存储项被访问，则可能该项会很快被再次访问</li>
+<li>空间局部性：如果一个存储项被访问，则该项及其邻近的项也可能很快被访问</li>
+</ul>
+<h3 id="qcache"><a class="markdownIt-Anchor" href="#qcache"></a> Q：Cache</h3>
+<p>A：利用程序访问的局部性原理，把程序中正在使用的部分存放在一个高速的、容量较小的临时存储器中</p>
+<p>引入目的：解决 CPU 和主存之间运算速度的差异</p>
+<h3 id="qcache-与主存的映射方式"><a class="markdownIt-Anchor" href="#qcache-与主存的映射方式"></a> Q：Cache 与主存的映射方式</h3>
+<p>A：直接映射、全相联映射、组相联映射</p>
+<ul>
+<li>直接映射：地址变换速度快，cache 利用率不高，块冲突率高</li>
+<li>全相联映射：cache 利用率高，块冲突率低，地址变换复杂</li>
+</ul>
+<h3 id="qcache-替换算法"><a class="markdownIt-Anchor" href="#qcache-替换算法"></a> Q：Cache 替换算法</h3>
+<p>A：随机算法、先进先出算法（FIFO）、近期最少使用算法（LRU）（最优）</p>
+<h3 id="qcache-写操作方式"><a class="markdownIt-Anchor" href="#qcache-写操作方式"></a> Q：Cache 写操作方式</h3>
+<p>A：</p>
+<ul>
+<li>全写法：写操作既写入 Cache 又写入主存</li>
+<li>写回法：只把数据写入 Cache ，当 Cache 中数据被替换出去之后才写入主存</li>
+</ul>
+<h3 id="q虚拟存储器"><a class="markdownIt-Anchor" href="#q虚拟存储器"></a> Q：虚拟存储器</h3>
+<p>A：虚拟存储器是指具有请求调入和置换功能，能从逻辑上对内存容量加以扩存的一种存储器系统</p>
+<ul>
+<li>页式虚拟存储器：把虚拟存储空间和实际空间等分成固定大小的页</li>
+<li>段式虚拟存储器：把程序按段划分</li>
+<li>段页式虚拟存储器：将程序按逻辑结构分成段，每段又分成若干个页</li>
+</ul>
+<h3 id="q快表"><a class="markdownIt-Anchor" href="#q快表"></a> Q：快表</h3>
+<p>A：加快地址变换，虚页号变换成主存中实页号</p>
+<h3 id="q一条指令包含哪些部分"><a class="markdownIt-Anchor" href="#q一条指令包含哪些部分"></a> Q：一条指令包含哪些部分？</h3>
+<p>A：操作码字段、地址码字段</p>
+<p>指令中的地址可以为四地址（访存 4 次），三地址（访存 4 次），二地址（访存 3 次），一地址（访存 2 次）和零地址</p>
+<h3 id="q寻址方式包括哪两类"><a class="markdownIt-Anchor" href="#q寻址方式包括哪两类"></a> Q：寻址方式包括哪两类？</h3>
+<p>A：指令寻址、数据寻址</p>
+<h3 id="q各种数据寻址方式概念"><a class="markdownIt-Anchor" href="#q各种数据寻址方式概念"></a> Q：各种数据寻址方式概念</h3>
+<p>A：</p>
+<ul>
+<li>隐含寻址：不显式的给出第二操作数的地址，规定累加器作为第二操作数地址</li>
+<li>立即（数）寻址：地址字段存放操作数本身，数据以补码形式存放</li>
+<li>直接寻址：形式地址 A 即为操作数的有效地址 EA</li>
+<li>间接寻址：形式地址是操作数有效地址所在的存储单元的地址</li>
+<li>寄存器寻址：在指令字中直接给出操作数所在的寄存器编号，操作数在寄存器中</li>
+<li>寄存器间接寻址：在指令字中给出操作数所在的寄存器编号，寄存器中给出的是操作数所在主存单元的地址</li>
+<li>相对寻址：程序计数器 PC 的内容加上指令格式中的形式地址而形成操作数的有效地址，广泛应用于转移指令</li>
+<li>基址寻址：基址寄存器 BR 的内容加上指令格式中的形式地址而形成操作数的有效地址，利于多道程序设计，可用于编制浮动程序</li>
+<li>变址寻址：变址寄存器 IX 的内容加上指令格式中的形式地址而形成操作数的有效地址，适用于编制循环程序，处理数组问题</li>
+</ul>
+<h3 id="qcisc-和-risc"><a class="markdownIt-Anchor" href="#qcisc-和-risc"></a> Q：CISC 和 RISC</h3>
+<p>A：</p>
+<ul>
+<li>CISC：复杂指令系统计算机，指令数目多，字长不固定，寻址方式多，寄存器数量少，一般为微程序控制</li>
+<li>RISC：精简指令系统计算机，指令数目少，字长固定，寻址方式少，寄存器数量多，一般为组合逻辑控制</li>
+</ul>
+<h3 id="q指令周期"><a class="markdownIt-Anchor" href="#q指令周期"></a> Q：指令周期</h3>
+<p>A：取指周期、间址周期、执行周期、中断周期</p>
+<h3 id="q影响流水线性能的因素"><a class="markdownIt-Anchor" href="#q影响流水线性能的因素"></a> Q：影响流水线性能的因素</h3>
+<p>A：数据冲突（数据旁路）、控制冲突（动态预测）</p>
+<h3 id="q总线的两大基本特征"><a class="markdownIt-Anchor" href="#q总线的两大基本特征"></a> Q：总线的两大基本特征</h3>
+<p>A：分时、共享</p>
+<h3 id="q系统总线按照传输信息的不同分成哪几类"><a class="markdownIt-Anchor" href="#q系统总线按照传输信息的不同分成哪几类"></a> Q：系统总线按照传输信息的不同，分成哪几类？</h3>
+<p>A：数据总线（双向）、地址总线（单向）、控制总线（单向）</p>
+<h3 id="q集中式总线判优控制有哪三种方式"><a class="markdownIt-Anchor" href="#q集中式总线判优控制有哪三种方式"></a> Q：集中式总线判优控制有哪三种方式？</h3>
+<p>A：链式查询、计数器定时查询、独立请求方式</p>
+<h3 id="q总线通信控制"><a class="markdownIt-Anchor" href="#q总线通信控制"></a> Q：总线通信控制</h3>
+<p>A：</p>
+<ul>
+<li>同步通信：总线上各个部件由统一的时钟信号控制</li>
+<li>异步通信：总线上各部件没有统一的时钟标准，采用应答式通信
+<ul>
+<li>不互锁、半互锁、全互锁</li>
+</ul>
+</li>
+</ul>
+<h3 id="qio-控制方式"><a class="markdownIt-Anchor" href="#qio-控制方式"></a> Q：I/O 控制方式</h3>
+<p>A：</p>
+<ul>
+<li>程序查询方式：由程序不断的查询外设的状态，直到外设准备就绪</li>
+<li>程序中断方式：在计算机执行现行程序的过程中，出现某些急需处理的异常情况或特殊请求，CPU 暂时中止现行程序，而转去对这些异常情况或特殊请求进行处理，在处理完毕后 CPU 又自动返回到现行程序的断点处，继续执行原程序</li>
+<li>DMA 方式：在外设和主存之间开辟一条直接数据通道</li>
+<li>通道方式：专门管理 I/O 的处理机</li>
+</ul>
+<h3 id="qio-设备编址方式"><a class="markdownIt-Anchor" href="#qio-设备编址方式"></a> Q：I/O 设备编址方式</h3>
+<p>A：统一编址方式、独立编址方式</p>
+<h3 id="q中断服务程序的基本流程"><a class="markdownIt-Anchor" href="#q中断服务程序的基本流程"></a> Q：中断服务程序的基本流程</h3>
+<p>A：</p>
+<ol>
+<li>保护现场</li>
+<li>执行中断服务程序</li>
+<li>恢复现场</li>
+<li>开中断</li>
+<li>中断返回</li>
+</ol>
+<h3 id="qdma-工作过程包括哪三部分"><a class="markdownIt-Anchor" href="#qdma-工作过程包括哪三部分"></a> Q：DMA 工作过程包括哪三部分</h3>
+<p>A：</p>
+<ol>
+<li>预处理</li>
+<li>数据传输</li>
+<li>后处理</li>
+</ol>
+<hr />
+<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
+<ul>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
+</li>
+<li>
+<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%9D%A2%E8%AF%95%E5%A4%8D%E8%AF%95/">面试复试</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/">面试问题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/1031371177.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">操作系统面试常见问题总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2420274935.html">
+                        <span class="hidden-mobile">数据结构面试常见问题总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz",
+          app_key: "yTSKpRCVBDa8gyFQLEuSp0B2",
+          placeholder: "说点什么吧",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://bcndultw.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+	
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

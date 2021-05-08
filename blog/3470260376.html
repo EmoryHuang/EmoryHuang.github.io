@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="本文记录了刷杭电OJ2000-2099的过程和一些想法，代码仅供参考！">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>杭电OJ2040-2049 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/3470260376.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="杭电OJ2040-2049">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-06 14:46" pubdate>
+        2021年3月6日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      61
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">杭电OJ2040-2049</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：4 天前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="杭电-oj2040-2049"><a class="markdownIt-Anchor" href="#杭电-oj2040-2049"></a> 杭电 OJ2040-2049</h1>
+<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
+<p>本文记录了刷杭电 OJ2040-2049 的过程和一些想法，代码仅供参考！</p>
+<hr />
+<h3 id="2040-亲和数"><a class="markdownIt-Anchor" href="#2040-亲和数"></a> 2040 亲和数</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>古希腊数学家毕达哥拉斯在自然数研究中发现，220 的所有真约数 (即不是自身的约数) 之和为：<br />1+2+4+5+10+11+20+22+44+55+110 ＝ 284。<br />而 284 的所有真约数为 1、2、4、71、 142，加起来恰好为 220。人们对这样的数感到很惊奇，并称之为亲和数。<br />一般地讲，如果两个数中任何一个数都是另一个数的真约数之和，则这两个数就是亲和数。<br />你的任务就编写一个程序，判断给定的两个数是否是亲和数</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据第一行包含一个数 M，接下有 M 行，每行一个实例，包含两个整数 A,B； 其中 0 &lt;= A,B &lt;= 600000 ;</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，如果 A 和 B 是亲和数的话输出 YES，否则输出 NO。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>2<br />220 284<br />100 200</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>YES<br />NO</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>求所有公约数之和并相加，判断是否为亲和数</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= a / <span class="hljs-number">2</span>; i++)  <span class="hljs-comment">//遍历一半</span><br>        <span class="hljs-keyword">if</span> (a % i == <span class="hljs-number">0</span>) ans += i;     <span class="hljs-comment">//所有真约数之和</span><br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, a, b;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; a &gt;&gt; b;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">sum</span>(a) == b &amp;&amp; <span class="hljs-built_in">sum</span>(b) == a)<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2041-超级楼梯"><a class="markdownIt-Anchor" href="#2041-超级楼梯"></a> 2041 超级楼梯</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>有一楼梯共 M 级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第 M 级，共有多少种走法？</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据首先包含一个整数<br />N，表示测试实例的个数，然后是 N 行数据，每行包含一个整数 M（1&lt;=M&lt;=40）,<br />表示楼梯的级数。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出不同走法的数量</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>2<br />2<br />3</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>1<br />2</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>递推题，简单写几项之后发现时斐波那契数列，之后就好办了<br />走上第 n 级，可以从第 n-1 级走一步上来，也可以从第 n-2 级走两步上来<br />f(1) = 1,f(2) = 1,f(3) = 2<br />f(n) = f(n - 1) + f(n - 2)</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    __int64 n, m, f[<span class="hljs-number">41</span>] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;;  <span class="hljs-comment">//用int可能溢出，可以用long long 或者 __int64</span><br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; m;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">41</span>; i++) &#123;<br>            f[i] = f[i - <span class="hljs-number">1</span>] + f[i - <span class="hljs-number">2</span>];<br>        &#125;<br>        cout &lt;&lt; f[m - <span class="hljs-number">1</span>] &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2042-不容易系列之二"><a class="markdownIt-Anchor" href="#2042-不容易系列之二"></a> 2042 不容易系列之二</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>你活的不容易，我活的不容易，他活的也不容易。不过，如果你看了下面的故事，就会知道，有位老汉比你还不容易。重庆市郊黄泥板村的徐老汉（大号徐东海，简称 XDH）这两年辛辛苦苦养了不少羊，到了今年夏天，由于众所周知的高温干旱，实在没办法解决牲畜的饮水问题，就决定把这些羊都赶到集市去卖。从黄泥板村到交易地点要经过 N 个收费站，按说这收费站和徐老汉没什么关系，但是事实却令徐老汉欲哭无泪：<br />（镜头回放） 近景：老汉，一群羊 远景：公路，收费站<br />…<br />收费员（彬彬有礼 + 职业微笑）：“老同志，请交过路费！”<br />徐老汉（愕然，反应迟钝状）：“锅，锅，锅，锅 - 炉 - 费？我家不烧锅炉呀？”<br />收费员（职业微笑依然）：“老同志，我说的是过 - 路 -费，就是你的羊要过这个路口必须交费，understand?”<br />徐老汉（近镜头 10 秒，嘴巴张开）：“我 - 我 - 我知道汽车过路要收费，这羊也要收费呀？”<br />收费员（居高临下 +不解状）：“老同志，你怎么就不明白呢，那么我问你，汽车几个轮子？”<br />徐老汉（稍放松）：“这个我知道，今天在家里我孙子还问我这个问题，4 个！”<br />收费员（生气，站起）：“嘿！老头，你还骂人不带脏字，既然知道汽车四个轮子，难道就不知道这羊有几条腿吗？！”<br />徐老汉（尴尬，依然不解状）：“也，也，也是 4 个呀，这有关系吗？”<br />收费员（生气，站起）：“怎么没关系！我们头说了，只要是 4 条腿的都要收费！”<br />…<br />(画外音)<br />由于徐老汉没钱，收费员就将他的羊拿走一半，看到老汉泪水涟涟，犹豫了一下，又还给老汉一只。<br />巧合的是，后面每过一个收费站，都是拿走当时羊的一半，然后退还一只，等到老汉到达市场，就只剩下 3 只羊了。<br />你，当代有良知的青年，能帮忙算一下老汉最初有多少只羊吗？</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据第一行是一个整数 N，下面由 N<br />行组成，每行包含一个整数 a(0&lt;a&lt;=30),表示收费站的数量。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出最初的羊的数量，每个测试实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>2<br />1<br />2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>4<br />6</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>简单题，可以直接 for 循环 sum = (sum - 1) * 2<br />同样可以用递推式： f(0) = 3，f(1) = 4 ，f(n) = [f(n-1) - 1] × 2<br />另外通过递推式也可以得到公式 f(n) = 2^n + 2</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, a;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">3</span>;<br>        cin &gt;&gt; a;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; a; i++) &#123;<br>            sum = (sum - <span class="hljs-number">1</span>) * <span class="hljs-number">2</span>;<br>        &#125;<br>        cout &lt;&lt; sum &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2043-密码"><a class="markdownIt-Anchor" href="#2043-密码"></a> 2043 密码</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>网上流传一句话:“常在网上飘啊，哪能不挨刀啊～”。其实要想能安安心心地上网其实也不难，学点安全知识就可以。<br />首先，我们就要设置一个安全的密码。那什么样的密码才叫安全的呢？一般来说一个比较安全的密码至少应该满足下面两个条件：<br />(1). 密码长度大于等于 8，且不要超过 16。<br />(2). 密码中的字符应该来自下面 “字符类别” 中四组中的至少三组。<br />这四个字符类别分别为：</p><ol><li>大写字母：A,B,C…Z;</li><li>小写字母：a,b,c…z;</li><li>数字：0,1,2…9;</li><li>特殊符号：~,!,@,#,$,%,^;</li></ol><p>给你一个密码，你的任务就是判断它是不是一个安全的密码。</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据第一行包含一个数 M，接下有 M 行，每行一个密码（长度最大可能为 50），密码仅包括上面的四类字符。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，判断这个密码是不是一个安全的密码，是的话输出 YES，否则输出 NO。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>3<br />a1b2c3d4<br />Linle@ACM<br /><sup>~</sup>@^@!%</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>NO<br />YES<br />NO</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>根据要求判断即可，若满足条件，则设置 flag=1</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, f1, f2, f3, f4;<br>    string s;<br>    cin &gt;&gt; n;<br>    <span class="hljs-built_in">getchar</span>();  <span class="hljs-comment">//吃掉回车</span><br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; s;<br>        <span class="hljs-keyword">int</span> len = s.<span class="hljs-built_in">length</span>();<br>        <span class="hljs-keyword">if</span> (len &lt; <span class="hljs-number">8</span> || len &gt; <span class="hljs-number">16</span>) &#123;  <span class="hljs-comment">//密码长度大于等于 8，且不要超过 16</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        f1 = f2 = f3 = f4 = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isupper</span>(s[i]))  <span class="hljs-comment">//如果是大写字母</span><br>                f1 = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">islower</span>(s[i]))  <span class="hljs-comment">//如果是小写字母</span><br>                f2 = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(s[i]))  <span class="hljs-comment">//如果是数字</span><br>                f3 = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span>  <span class="hljs-comment">//特殊符号</span><br>                f4 = <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> ((f1 + f2 + f3 + f4) &gt;= <span class="hljs-number">3</span>)  <span class="hljs-comment">//至少三种</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2044-一只小蜜蜂"><a class="markdownIt-Anchor" href="#2044-一只小蜜蜂"></a> 2044 一只小蜜蜂…</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>有一只经过训练的蜜蜂只能爬向右侧相邻的蜂房，不能反向爬行。请编程计算蜜蜂从蜂房 a 爬到蜂房 b 的可能路线数。 其中，蜂房的结构如下所示。<br /><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/hduoj2044.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据的第一行是一个整数 N, 表示测试实例的个数，然后是 N 行数据，每行包含两个整数 a 和 b (0&lt;a&lt;b&lt;50)。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出蜜蜂从蜂房 a 爬到蜂房 b 的可能路线数，每个实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>2<br />1 2<br />3 6</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>1<br />3</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>通过观察图片，蜜蜂只能爬向右侧相邻的蜂房，比如:蜜蜂在 1 格里，它可以往 2、3 两格里爬<br />所以第 n 格的蜜蜂，可以往第 n+1 格或者第 n+2 格移动<br />之后就可以写出递推式 f(n) = f(n - 1) + f(n - 2)</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    __int64 n, a, b, s[<span class="hljs-number">51</span>] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;;  <span class="hljs-comment">//用int可能溢出，可以用long long 或者 __int64</span><br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">51</span>; i++) &#123;<br>        s[i] = s[i - <span class="hljs-number">1</span>] + s[i - <span class="hljs-number">2</span>];<br>    &#125;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; a;<br>        cin &gt;&gt; b;<br>        <span class="hljs-keyword">if</span> (a &gt; b)<br>            cout &lt;&lt; <span class="hljs-string">&quot;0&quot;</span> &lt;&lt; endl;  <span class="hljs-comment">//不能向左爬</span><br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; s[b - a] &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2045-不容易系列之3lele-的-rpg-难题"><a class="markdownIt-Anchor" href="#2045-不容易系列之3lele-的-rpg-难题"></a> 2045 不容易系列之(3)——LELE 的 RPG 难题</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>人称 “AC 女之杀手” 的超级偶像 LELE 最近忽然玩起了深沉，这可急坏了众多“Cole”（LELE 的粉丝，即 “可乐”）, 经过多方打探，某资深 Cole<br />终于知道了原因，原来，LELE 最近研究起了著名的 RPG 难题:<br />有排成一行的ｎ个方格，用红 (Red)、粉 (Pink)、绿 (Green)三色涂每个格子，每格涂一色，要求任何相邻的方格不能同色，且首尾两格也不同色．求全部的满足要求的涂法.以上就是著名的 RPG 难题.<br />如果你是 Cole, 我想你一定会想尽办法帮助 LELE 解决这个问题的；如果不是，看在众多漂亮的痛不欲生的 Cole 女的面子上，你也不会袖手旁观吧？</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据包含多个测试实例，每个测试实例占一行，由一个整数 N 组成，(0&lt;n&lt;=50)。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出全部的满足要求的涂法，每个实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>1<br />2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>3<br />6</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>同样的也是递推问题，试着写几项<br />f(1) = 3, f(2) = 6, f(3) = 6<br />f(n) = f(n - 1) + 2 * f(n - 2)</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    __int64 n, f[<span class="hljs-number">51</span>] = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">6</span>&#125;;  <span class="hljs-comment">//用int可能溢出，可以用long long 或者 __int64</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">51</span>; i++) &#123;<br>        f[i] = f[i - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span> * f[i - <span class="hljs-number">2</span>];<br>    &#125;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        cout &lt;&lt; f[n - <span class="hljs-number">1</span>] &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2046-骨牌铺方格"><a class="markdownIt-Anchor" href="#2046-骨牌铺方格"></a> 2046 骨牌铺方格</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>在 2×n 的一个长方形方格中，用一个 1× 2 的骨牌铺满方格，输入 n , 输出铺放方案的总数.<br />例如 n=3 时，为 2× 3 方格，骨牌的铺放方案有三种，如下图：<br /><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/hduoj2046.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据由多行组成，每行包含一个整数 n, 表示该测试实例的长方形方格的规格是 2×n (0&lt;n&lt;=50)。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出铺放方案的总数，每个实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>1<br />3<br />2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>1<br />3<br />2</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>第 N 张牌的排列可以在 N-1 张牌的排列再在末尾加上一张竖的牌<br />也可以在 N-2 张合法排列的牌后面加上两张横着放的牌<br />f(1) = 1, f(2) = 2, f(3) = 3<br />f(n) = f(n - 1) + f(n - 2)</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    __int64 n, f[<span class="hljs-number">51</span>] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;  <span class="hljs-comment">//用int可能溢出，可以用long long 或者 __int64</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">3</span>; i &lt; <span class="hljs-number">51</span>; i++) &#123;<br>        f[i] = f[i - <span class="hljs-number">1</span>] + f[i - <span class="hljs-number">2</span>];<br>    &#125;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) cout &lt;&lt; f[n - <span class="hljs-number">1</span>] &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2047-阿牛的-eof-牛肉串"><a class="markdownIt-Anchor" href="#2047-阿牛的-eof-牛肉串"></a> 2047 阿牛的 EOF 牛肉串</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>今年的 ACM 暑期集训队一共有 18 人，分为 6 支队伍。其中有一个叫做 EOF 的队伍，由 04 级的阿牛、XC 以及 05 级的 COY 组成。在共同的集训生活中，大家建立了深厚的友谊，阿牛准备做点什么来纪念这段激情燃烧的岁月，想了一想，阿牛从家里拿来了一块上等的牛肉干，准备在上面刻下一个长度为 n 的只由 “E” “O” “F”<br />三种字符组成 的字符串（可以只有其中一种或两种字符，但绝对不能有其他字符）, 阿牛同时禁止在串中出现 O 相邻的情况，他认为，“OO” 看起来就像发怒的眼睛，效果不好。 你，NEW ACMer,EOF 的崇拜者，能帮阿牛算一下一共有多少种满足要求的不同的字符串吗？<br />PS:阿牛还有一个小秘密，就是准备把这个刻有 EOF 的牛肉干，作为神秘礼物献给杭电五十周年校庆，可以想象，当校长接过这块牛肉干的时候该有多高兴！这里，请允许我代表杭电的 ACMer 向阿牛表示感谢！再次感谢！</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据包含多个测试实例，每个测试实例占一行，由一个整数 n 组成，(0&lt;n&lt;40)。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出全部的满足要求的涂法，每个实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>1<br />2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>3<br />8</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>f[n][0]表示以 O 结尾的合法字符串，f[n][1]表示不以 O 结尾的合法字符串<br />以 O 结尾的合法字符串之后可以跟 E 或者 F<br />不以 O 结尾的合法字符串之后可以跟 E、O、F<br />f[n][0] = f[n - 1][1];<br />f[n][1] = 2 * (f[n - 1][0] + f[n - 1][1])</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight inform7"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs inform7">#include &lt;iostream&gt;<br>using namespace std;<br>int main() &#123;<br>    __int64 n, f<span class="hljs-comment">[40]</span><span class="hljs-comment">[2]</span> = &#123;&#123;0, 0&#125;, &#123;1, 2&#125;&#125;;<br>    for (int i = 2; i &lt; 40; i++) &#123;<br>        f<span class="hljs-comment">[i]</span><span class="hljs-comment">[0]</span> = f<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[1]</span>;<br>        f<span class="hljs-comment">[i]</span><span class="hljs-comment">[1]</span> = 2 * (f<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[0]</span> + f<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[1]</span>);<br>    &#125;<br>    while (cin &gt;&gt; n) cout &lt;&lt; f<span class="hljs-comment">[n]</span><span class="hljs-comment">[0]</span> + f<span class="hljs-comment">[n]</span><span class="hljs-comment">[1]</span> &lt;&lt; endl;<br>    return 0;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2048-神-上帝以及老天爷"><a class="markdownIt-Anchor" href="#2048-神-上帝以及老天爷"></a> 2048 神、上帝以及老天爷</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>HDU 2006’10 ACM contest 的颁奖晚会隆重开始了！<br />为了活跃气氛，组织者举行了一个别开生面、奖品丰厚的抽奖活动，这个活动的具体要求是这样的：<br />首先，所有参加晚会的人员都将一张写有自己名字的字条放入抽奖箱中；<br />然后，待所有字条加入完毕，每人从箱中取一个字条；<br />最后，如果取得的字条上写的就是自己的名字，那么 “恭喜你，中奖了！”<br />大家可以想象一下当时的气氛之热烈，毕竟中奖者的奖品是大家梦寐以求的 Twins 签名照呀！不过，正如所有试图设计的喜剧往往以悲剧结尾，这次抽奖活动最后竟然没有一个人中奖！我的神、上帝以及老天爷呀，怎么会这样呢？不过，先不要激动，现在问题来了，你能计算一下发生这种情况的概率吗？不会算？难道你也想以悲剧结尾？！</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据的第一行是一个整数 C, 表示测试实例的个数，然后是 C 行数据，每行包含一个整数 n (1&lt;n&lt;=20),表示参加抽奖的人数。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出发生这种情况的百分比，每个实例的输出占一行，结果保留两位小数(四舍五入)，具体格式请参照 sample output。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>1<br />2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>50.00%</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>全错排问题<br />若前 n-1 个人拿到的都不是自己的名字，第 n 个人拿到的是自己的名字，只需要与前 n-1 个人中的任意一个交换即可满足，有 n-1 种可能<br />若前 N-1 个人不满足错排，第 n 个人只要与第 i 个人交换即可满足，这时 n-2 个人完全错排，有 f(n-2)种可能，若第 i 个人不与第 n 个人交换，则 n-1 个元素错排，有 f(n-1)种可能<br />递推公式：f[n]=(n-1)*(f[n-1]+f[n-2])</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">jc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> </span>&#123;  <span class="hljs-comment">//阶乘</span><br>    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">jc</span>(a - <span class="hljs-number">1</span>) * a;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> c, n;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> f[<span class="hljs-number">21</span>] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">4</span>; i &lt; <span class="hljs-number">21</span>; i++) &#123;<br>        f[i] = (i - <span class="hljs-number">1</span>) * (f[i - <span class="hljs-number">1</span>] + f[i - <span class="hljs-number">2</span>]);<br>    &#125;<br>    cin &gt;&gt; c;<br>    <span class="hljs-keyword">while</span> (c--) &#123;<br>        cin &gt;&gt; n;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.2f%%\n&quot;</span>, <span class="hljs-number">100.0</span> * f[n] / <span class="hljs-built_in">jc</span>(n));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h3 id="2049-不容易系列之4考新郎"><a class="markdownIt-Anchor" href="#2049-不容易系列之4考新郎"></a> 2049 不容易系列之(4)——考新郎</h3>
+<p>Problem Description</p>
+<div class="note note-info">
+            <p>国庆期间，省城 HZ<br />刚刚举行了一场盛大的集体婚礼，为了使婚礼进行的丰富一些，司仪临时想出了有一个有意思的节目，叫做&quot;考新郎&quot;, 具体的操作是这样的: 首先，给每位新娘打扮得几乎一模一样，并盖上大大的红盖头随机坐成一排；然后，让各位新郎寻找自己的新娘。每人只准找一个，并且不允许多人找一个.最后，揭开盖头，如果找错了对象就要当众跪搓衣板…看来做新郎也不是容易的事情…<br />假设一共有 N 对新婚夫妇，其中有 M 个新郎找错了新娘，求发生这种情况一共有多少种可能.</p>
+          </div>  
+<p>Input</p>
+<div class="note note-info">
+            <p>输入数据的第一行是一个整数 C, 表示测试实例的个数，然后是 C 行数据，每行包含两个整数 N 和 M(1&lt;M&lt;=N&lt;=20)。</p>
+          </div>  
+<p>Output</p>
+<div class="note note-info">
+            <p>对于每个测试实例，请输出一共有多少种发生这种情况的可能，每个实例的输出占一行。</p>
+          </div>  
+<p>Sample Input</p>
+<div class="note note-info">
+            <p>2<br />2 2<br />3 2</p>
+          </div>  
+<p>Sample Output</p>
+<div class="note note-info">
+            <p>1<br />3</p>
+          </div>
+<p>解题思路</p>
+<div class="note note-success">
+            <p>先是排列组合，从 N 个新郎中选出 M 个，之后是 M 的全错排<br />计算 C(n,m)，可以通过定义计算，即：</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext>C</mtext><mtext>n</mtext><mtext>m</mtext></msubsup><mo>=</mo><mfrac><mtext>n!</mtext><mrow><mtext>m!</mtext><mrow><mo fence="true">(</mo><mtext>n</mtext><mo>−</mo><mtext>m</mtext><mo fence="true">)</mo></mrow><mo stretchy="false">!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{C}_{\text{n}}^{\text{m}}=\frac{\text{n!}}{\text{m!}\left( \text{n}-\text{m} \right) !}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.984622em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord text"><span class="mord">C</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.737622em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">n</span></span></span></span></span><span style="top:-3.1362300000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">m</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.30744em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">m!</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord text"><span class="mord">n</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord text"><span class="mord">m</span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mclose">!</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">n!</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p><p>我这里用了递推公式计算：</p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mtext>C</mtext><mtext>n</mtext><mtext>m</mtext></msubsup><mo>=</mo><msubsup><mtext>C</mtext><mrow><mtext>n</mtext><mo>−</mo><mn>1</mn></mrow><mtext>m</mtext></msubsup><mo>+</mo><msubsup><mtext>C</mtext><mrow><mtext>n</mtext><mo>−</mo><mn>1</mn></mrow><mrow><mtext>m</mtext><mo>−</mo><mn>1</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\text{C}_{\text{n}}^{\text{m}}=\text{C}_{\text{n}-1}^{\text{m}}+\text{C}_{\text{n}-1}^{\text{m}-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.984622em;vertical-align:-0.247em;"></span><span class="mord"><span class="mord text"><span class="mord">C</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.737622em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">n</span></span></span></span></span><span style="top:-3.1362300000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">m</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.042953em;vertical-align:-0.305331em;"></span><span class="mord"><span class="mord text"><span class="mord">C</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.737622em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">n</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.1362300000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">m</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.192669em;vertical-align:-0.305331em;"></span><span class="mord"><span class="mord text"><span class="mord">C</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.887338em;"><span style="top:-2.4530000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">n</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.1362300000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">m</span></span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305331em;"><span></span></span></span></span></span></span></span></span></span></span></p><p>计算 m 的全错排，参见 oj2048<br />递推公式：f[n] = (n - 1) * (f[n - 1] + f[n - 2])</p>
+          </div>
+<p>参考源码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> res[<span class="hljs-number">21</span>][<span class="hljs-number">21</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> <span class="hljs-title">C</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (n == m || m == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (res[n][m] != <span class="hljs-number">0</span>)  <span class="hljs-comment">//避免重复计算</span><br>        <span class="hljs-keyword">return</span> res[n][m];<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">C</span>(n - <span class="hljs-number">1</span>, m) + <span class="hljs-built_in">C</span>(n - <span class="hljs-number">1</span>, m - <span class="hljs-number">1</span>);  <span class="hljs-comment">//按递推公式计算</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> c, n, m;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> f[<span class="hljs-number">21</span>] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">4</span>; i &lt; <span class="hljs-number">21</span>; i++) &#123;<br>        f[i] = (i - <span class="hljs-number">1</span>) * (f[i - <span class="hljs-number">1</span>] + f[i - <span class="hljs-number">2</span>]);  <span class="hljs-comment">//全错排</span><br>    &#125;<br>    cin &gt;&gt; c;<br>    <span class="hljs-keyword">while</span> (c--) &#123;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        cout &lt;&lt; <span class="hljs-built_in">C</span>(n, m) * f[m] &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<hr />
+<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4217203237.html">杭电 OJ2020-2029</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1144082642.html">杭电 OJ2030-2039</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1908130413.html">杭电 OJ2050-2059</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1803455283.html">杭电 OJ2060-2069</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3557994950.html">杭电 OJ2070-2079</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9D%AD%E7%94%B5OJ/">杭电OJ</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/1908130413.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">杭电OJ2050-2059</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/1144082642.html">
+                        <span class="hidden-mobile">杭电OJ2030-2039</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#valine",
+          app_id: "bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz",
+          app_key: "yTSKpRCVBDa8gyFQLEuSp0B2",
+          placeholder: "说点什么吧",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "https://bcndultw.lc-cn-n1-shared.com",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+	
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" />
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
