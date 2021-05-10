@@ -209,7 +209,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      436 字
+      458 字
     </span>
   
 
@@ -261,7 +261,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 天前
+                  本文最后更新于：1 小时前
                 
               </p>
             
@@ -288,7 +288,7 @@
 </ul>
 <p>解题思路</p>
 <div class="note note-success">
-            <p>在递增的二维矩阵中寻找元素，应该很容易可以想到，相比于从左上或者右下开始寻找，左下或右上开始的效果明显更好，一次可以排除一行</p><p>方法二就是二分了，将矩阵拉直，直接用二分寻找</p>
+            <p>在递增的二维矩阵中寻找元素，应该很容易可以想到，相比于从左上或者右下开始寻找，左下或右上开始的效果明显更好，一次可以排除一行</p><p>方法二就是二分了，将矩阵拉直，直接用二分寻找</p><p>更多有关二分查找的探究可以看：<a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/158595231.html">二分查找学习笔记</a></p>
           </div>
 <p>参考源码</p>
 <figure class="highlight stan"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stan"><span class="hljs-comment">// 方法一：左下或右上开始</span><br>class Solution &#123;<br>   public:<br>    bool searchMatrix(<span class="hljs-keyword">vector</span>&lt;<span class="hljs-keyword">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; <span class="hljs-keyword">matrix</span>, <span class="hljs-keyword">int</span> <span class="hljs-built_in">target</span>) &#123;<br>        <span class="hljs-keyword">int</span> m = <span class="hljs-keyword">matrix</span>.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> n = <span class="hljs-keyword">matrix</span>[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> i = m - <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; j &lt; n) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">matrix</span>[i][j] == <span class="hljs-built_in">target</span>)<br>                <span class="hljs-keyword">return</span> true;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">matrix</span>[i][j] &gt; <span class="hljs-built_in">target</span>)<br>                i--;<br>            <span class="hljs-keyword">else</span><br>                j++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> false;<br>    &#125;<br>&#125;;<br><br><span class="hljs-comment">// 方法二：二分</span><br>class Solution &#123;<br>   public:<br>    bool searchMatrix(<span class="hljs-keyword">vector</span>&lt;<span class="hljs-keyword">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt;&amp; <span class="hljs-keyword">matrix</span>, <span class="hljs-keyword">int</span> <span class="hljs-built_in">target</span>) &#123;<br>        <span class="hljs-keyword">int</span> m = <span class="hljs-keyword">matrix</span>.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> n = <span class="hljs-keyword">matrix</span>[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>, r = m * n - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>            <span class="hljs-keyword">int</span> mid = (l + r) &gt;&gt; <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">target</span> == <span class="hljs-keyword">matrix</span>[mid / n][mid % n])<br>                <span class="hljs-keyword">return</span> true;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">target</span> &gt; <span class="hljs-keyword">matrix</span>[mid / n][mid % n])<br>                l = mid + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span><br>                r = mid - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> false;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
@@ -310,9 +310,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E5%88%B7%E9%A2%98/">刷题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
                     
                   </div>
                 
@@ -582,6 +582,8 @@
   
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
 
 
 
