@@ -261,7 +261,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 天前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -287,7 +287,7 @@
 </ul>
 <p>解题思路</p>
 <div class="note note-success">
-            <p>异或运算具有如下性质：</p><ul><li>异或运算满足交换律和结合律；</li><li>任意整数和自身做异或运算的结果都等于 0，即 <code>x^x=0</code>；</li><li>任意整数和 0 做异或运算的结果都等于其自身，即 <code>x^0 = 0^x = x</code>。</li></ul><p>a^b = c ， a<sup>b</sup>b = a， 即 c^b=a 同理 c^a =b</p><p>因此有</p><p>encode[i] = decode[i] ^ decode[i+1]</p><p>decode[i+1] = decode[i] ^ encode[i]</p>
+            <p>异或运算具有如下性质：</p><ul><li>异或运算满足交换律和结合律；</li><li>任意整数和自身做异或运算的结果都等于 0，即 <code>x^x=0</code>；</li><li>任意整数和 0 做异或运算的结果都等于其自身，即 <code>x^0 = 0^x = x</code>。</li></ul><p>a^b = c ， a<sup>b</sup>b = a， 即 c^b=a 同理 c^a =b</p><p>因此有</p><p><code>encode[i] = decode[i] ^ decode[i+1]</code></p><p><code>decode[i+1] = decode[i] ^ encode[i]</code></p>
           </div>
 <p>参考源码</p>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">decode</span><span class="hljs-params">(vector&lt;<span class="hljs-keyword">int</span>&gt;&amp; encoded, <span class="hljs-keyword">int</span> first)</span> </span>&#123;<br>        vector&lt;<span class="hljs-keyword">int</span>&gt; ans;<br>        ans.<span class="hljs-built_in">push_back</span>(first);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; encoded.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            ans.<span class="hljs-built_in">push_back</span>(ans.<span class="hljs-built_in">back</span>() ^ encoded[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>

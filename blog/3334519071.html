@@ -209,7 +209,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      222 字
+      226 字
     </span>
   
 
@@ -261,7 +261,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：6 天前
+                  本文最后更新于：3 小时前
                 
               </p>
             
@@ -280,15 +280,15 @@
 <p>提示：</p>
 <ul>
 <li><code>-100.0 &lt; x &lt; 100.0</code></li>
-<li><code>-231 &lt;= n &lt;= 231-1</code></li>
-<li><code>-104 &lt;= xn &lt;= 104</code></li>
+<li><code>-2^31 &lt;= n &lt;= 2^31-1</code></li>
+<li><code>-10^4 &lt;= xn &lt;= 10^4</code></li>
 </ul>
 <p>解题思路</p>
 <div class="note note-success">
-            <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a>，具体算法可以自己了解，这里就不写了</p>
+            <p>快速幂算法，详细算法可以看 <a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1504958816.html">快速幂算法详解</a></p>
           </div>
 <p>参考源码</p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">myPow</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">long</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">double</span> ans = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> || x == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> / myPow(x, -n); <span class="hljs-comment">// 若 n &lt; 0</span><br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> (n &amp; <span class="hljs-number">1</span>) ans = ans * x;<br>            x = x * x;<br>            n &gt;&gt;= <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span><br>   <span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">myPow</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">long</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">double</span> ans = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> || x == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> / <span class="hljs-built_in">myPow</span>(x, -n); <span class="hljs-comment">// 若 n &lt; 0</span><br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> (n &amp; <span class="hljs-number">1</span>) ans = ans * x;<br>            x = x * x;<br>            n &gt;&gt;= <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></div></td></tr></table></figure>
 <hr />
 
             </div>

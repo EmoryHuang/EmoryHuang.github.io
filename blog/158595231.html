@@ -209,7 +209,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.3k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15
+      16
        分钟
     </span>
   
@@ -261,7 +261,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 分钟前
+                  本文最后更新于：7 小时前
                 
               </p>
             
@@ -324,6 +324,11 @@
 </div><div class="collapse" data-parent="#模板2" id="模板2-2"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636462882-1620636462876-binarysearchm2_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
 </div></div></div>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bsearch_2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (l &lt; r) &#123;<br>        <span class="hljs-keyword">int</span> mid = l + r + <span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            l = mid;<br>        <span class="hljs-keyword">else</span><br>            r = mid - <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="note note-info">
+            <p>关于 <code>mid = l + r + 1 &gt;&gt; 1</code> 为什么要加 1 的问题，</p><p>当 <code>l == r - 1</code> 时，<code>mid</code> 会等于 <code>l</code>，那么此时如果执行 <code>l = mid</code> 就死循环了。</p>
+          </div>
+<h2 id="浮点数二分"><a class="markdownIt-Anchor" href="#浮点数二分"></a> 浮点数二分</h2>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">bsearch_3</span><span class="hljs-params">(<span class="hljs-keyword">double</span> l, <span class="hljs-keyword">double</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-6</span>;  <span class="hljs-comment">// eps 表示精度，取决于题目对精度的要求</span><br>    <span class="hljs-keyword">while</span> (r - l &gt; eps) &#123;<br>        <span class="hljs-keyword">double</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            r = mid;<br>        <span class="hljs-keyword">else</span><br>            l = mid;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1203199502.html">LeetCode 69. x 的平方根</a></li>
@@ -358,9 +363,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a>
-                    
                       <a class="hover-with-bg" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">二分查找</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a>
                     
                   </div>
                 
@@ -376,6 +381,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/blog/2653263923.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">由数据范围反推算法复杂度以及算法内容</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
