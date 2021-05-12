@@ -16,7 +16,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="常用算法模板——常见算法">
+  <meta name="description" content="常用算法模板——数据结构">
   <meta name="author" content="EmoryHuang">
   <meta name="keywords" content="">
   
@@ -182,7 +182,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124376948-1620124376942-banner.png') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620809665678-1620809665671-2146740120.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -197,8 +197,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-05-12 09:25" pubdate>
-        2021年5月12日 上午
+      <time datetime="2021-05-12 14:14" pubdate>
+        2021年5月12日 下午
       </time>
     </span>
   
@@ -209,7 +209,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.7k 字
     </span>
   
 
@@ -219,7 +219,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17
+      25
        分钟
     </span>
   
@@ -261,7 +261,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 分钟前
+                  本文最后更新于：9 分钟前
                 
               </p>
             
@@ -296,6 +296,11 @@
 <h3 id="维护到祖宗节点距离的并查集"><a class="markdownIt-Anchor" href="#维护到祖宗节点距离的并查集"></a> 维护到祖宗节点距离的并查集</h3>
 <figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">int</span> p[N], d[N];<br><span class="hljs-comment">// p[]存储每个点的祖宗节点, d[x]存储x到p[x]的距离</span><br><br><span class="hljs-comment">// 返回x的祖宗节点</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (p[x] != x) &#123;<br>        <span class="hljs-keyword">int</span> u = <span class="hljs-built_in">find</span>(p[x]);<br>        d[x] += d[p[x]];<br>        p[x] = u;<br>    &#125;<br>    <span class="hljs-keyword">return</span> p[x];<br>&#125;<br><br><span class="hljs-comment">// 初始化，假定节点编号是1~n</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>    p[i] = i;<br>    d[i] = <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">// 合并a和b所在的两个集合：</span><br>p[<span class="hljs-built_in">find</span>(a)] = <span class="hljs-built_in">find</span>(b);<br>d[<span class="hljs-built_in">find</span>(a)] = distance;  <span class="hljs-comment">// 根据具体问题，初始化find(a)的偏移量</span><br></code></pre></div></td></tr></table></figure>
 <h2 id="堆"><a class="markdownIt-Anchor" href="#堆"></a> 堆</h2>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1</span><br><span class="hljs-comment">// ph[k]存储第k个插入的点在堆中的位置</span><br><span class="hljs-comment">// hp[k]存储堆中下标是k的点是第几个插入的</span><br><span class="hljs-keyword">int</span> h[N], ph[N], hp[N], size;<br><br><span class="hljs-comment">// 交换两个点，及其映射关系</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heap_swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>    <span class="hljs-built_in">swap</span>(ph[hp[a]], ph[hp[b]]);<br>    <span class="hljs-built_in">swap</span>(hp[a], hp[b]);<br>    <span class="hljs-built_in">swap</span>(h[a], h[b]);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> t = u;<br>    <span class="hljs-keyword">if</span> (u * <span class="hljs-number">2</span> &lt;= size &amp;&amp; h[u * <span class="hljs-number">2</span>] &lt; h[t]) t = u * <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">if</span> (u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span> &lt;= size &amp;&amp; h[u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>] &lt; h[t]) t = u * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span> (u != t) &#123;<br>        <span class="hljs-built_in">heap_swap</span>(u, t);<br>        <span class="hljs-built_in">down</span>(t);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">up</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (u / <span class="hljs-number">2</span> &amp;&amp; h[u] &lt; h[u / <span class="hljs-number">2</span>]) &#123;<br>        <span class="hljs-built_in">heap_swap</span>(u, u / <span class="hljs-number">2</span>);<br>        u &gt;&gt;= <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// O(n)建堆</span><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n / <span class="hljs-number">2</span>; i; i--) <span class="hljs-built_in">down</span>(i);<br></code></pre></div></td></tr></table></figure>
+<h2 id="一般哈希"><a class="markdownIt-Anchor" href="#一般哈希"></a> 一般哈希</h2>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// (1) 拉链法</span><br><span class="hljs-keyword">int</span> h[N], e[N], ne[N], idx;<br><span class="hljs-comment">// 向哈希表中插入一个数</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> k = (x % N + N) % N;<br>    e[idx] = x;<br>    ne[idx] = h[k];<br>    h[k] = idx++;<br>&#125;<br><br><span class="hljs-comment">// 在哈希表中查询某个数是否存在</span><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> k = (x % N + N) % N;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = h[k]; i != <span class="hljs-number">-1</span>; i = ne[i])<br>        <span class="hljs-keyword">if</span> (e[i] == x) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><br><span class="hljs-comment">// (2) 开放寻址法</span><br><span class="hljs-keyword">int</span> h[N];<br><span class="hljs-comment">// 如果x在哈希表中，返回x的下标；如果x不在哈希表中，返回x应该插入的位置</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> t = (x % N + N) % N;<br>    <span class="hljs-keyword">while</span> (h[t] != null &amp;&amp; h[t] != x) &#123;<br>        t++;<br>        <span class="hljs-keyword">if</span> (t == N) t = <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> t;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="字符串哈希"><a class="markdownIt-Anchor" href="#字符串哈希"></a> 字符串哈希</h2>
+<figure class="highlight c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// 核心思想：将字符串看成P进制数，P的经验值是131或13331，取这两个值的冲突概率低</span><br><span class="hljs-comment">// 小技巧：取模的数用2 ^ 64，这样直接用unsigned long long存储，溢出的结果就是取模的结果</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ULL;<br>ULL h[N], p[N];  <span class="hljs-comment">// h[k]存储字符串前k个字母的哈希值, p[k]存储 P^k mod 2^64</span><br><br><span class="hljs-comment">// 初始化</span><br>p[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>    h[i] = h[i - <span class="hljs-number">1</span>] * P + str[i];<br>    p[i] = p[i - <span class="hljs-number">1</span>] * P;<br>&#125;<br><br><span class="hljs-comment">// 计算子串 str[l ~ r] 的哈希值</span><br><span class="hljs-function">ULL <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> h[r] - h[l - <span class="hljs-number">1</span>] * p[r - l + <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -328,6 +333,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/blog/1876408705.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++ STL简介</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
