@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-05-11T09:59:13.097Z</updated>
+  <updated>2021-05-12T01:48:45.201Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常用算法模板——数据结构</title>
+    <link href="https://emoryhuang.cn/blog/2146740120.html"/>
+    <id>https://emoryhuang.cn/blog/2146740120.html</id>
+    <published>2021-05-12T01:25:36.000Z</published>
+    <updated>2021-05-12T01:48:45.201Z</updated>
+    
+    
+    <summary type="html">常用算法模板——常见算法</summary>
+    
+    
+    
+    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 51. N 皇后</title>
@@ -408,27 +427,6 @@
     <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
     
     <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 473. 火柴拼正方形</title>
-    <link href="https://emoryhuang.cn/blog/3341001164.html"/>
-    <id>https://emoryhuang.cn/blog/3341001164.html</id>
-    <published>2021-05-08T13:18:36.000Z</published>
-    <updated>2021-05-08T13:22:07.108Z</updated>
-    
-    
-    <summary type="html">本文记录了刷LeetCode的过程和一些想法，代码仅供参考！</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://emoryhuang.cn/categories/LeetCode/"/>
-    
-    
-    <category term="刷题" scheme="https://emoryhuang.cn/tags/%E5%88%B7%E9%A2%98/"/>
-    
-    <category term="LeetCode" scheme="https://emoryhuang.cn/tags/LeetCode/"/>
     
   </entry>
   
