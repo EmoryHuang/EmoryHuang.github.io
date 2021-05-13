@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-05-13T07:35:47.182Z</updated>
+  <updated>2021-05-13T11:59:50.349Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -17,28 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://emoryhuang.cn/blog/0.html"/>
-    <id>https://emoryhuang.cn/blog/0.html</id>
-    <published>2021-05-13T07:35:46.866Z</published>
-    <updated>2021-05-13T07:35:47.182Z</updated>
+    <title>LeetCode 997. 找到小镇的法官</title>
+    <link href="https://emoryhuang.cn/blog/3081695887.html"/>
+    <id>https://emoryhuang.cn/blog/3081695887.html</id>
+    <published>2021-05-13T11:56:36.000Z</published>
+    <updated>2021-05-13T11:59:50.349Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;题号&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;题目&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;&lt;div</summary>
-        
-      
+    <summary type="html">本文记录了刷LeetCode的过程和一些想法，代码仅供参考！</summary>
     
     
     
+    <category term="LeetCode" scheme="https://emoryhuang.cn/categories/LeetCode/"/>
+    
+    
+    <category term="刷题" scheme="https://emoryhuang.cn/tags/%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="LeetCode" scheme="https://emoryhuang.cn/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 207. 课程表</title>
+    <link href="https://emoryhuang.cn/blog/2827534512.html"/>
+    <id>https://emoryhuang.cn/blog/2827534512.html</id>
+    <published>2021-05-13T11:40:36.000Z</published>
+    <updated>2021-05-13T11:59:50.341Z</updated>
+    
+    
+    <summary type="html">本文记录了刷LeetCode的过程和一些想法，代码仅供参考！</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://emoryhuang.cn/categories/LeetCode/"/>
+    
+    
+    <category term="刷题" scheme="https://emoryhuang.cn/tags/%E5%88%B7%E9%A2%98/"/>
+    
+    <category term="LeetCode" scheme="https://emoryhuang.cn/tags/LeetCode/"/>
     
   </entry>
   
@@ -407,27 +423,6 @@
     
     <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二分查找学习笔记</title>
-    <link href="https://emoryhuang.cn/blog/158595231.html"/>
-    <id>https://emoryhuang.cn/blog/158595231.html</id>
-    <published>2021-05-10T11:05:36.000Z</published>
-    <updated>2021-05-11T03:10:42.526Z</updated>
-    
-    
-    <summary type="html">二分查找也称折半查找，它是一种效率较高的查找方法，思路很简单，细节是魔鬼。本文主要探究几个最常用的二分查找场景：寻找一个数、寻找左侧、右侧边界，并给出二分模板。</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="二分查找" scheme="https://emoryhuang.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
     
     <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
