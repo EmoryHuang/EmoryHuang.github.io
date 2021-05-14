@@ -424,13 +424,6 @@
   </url>
   
   <url>
-    <loc>https://emoryhuang.cn/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2021-05-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://emoryhuang.cn/tags/Windows-Terminal/</loc>
     <lastmod>2021-05-14</lastmod>
     <changefreq>daily</changefreq>
@@ -445,14 +438,7 @@
   </url>
   
   <url>
-    <loc>https://emoryhuang.cn/tags/C/</loc>
-    <lastmod>2021-05-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://emoryhuang.cn/tags/STL/</loc>
+    <loc>https://emoryhuang.cn/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2021-05-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -467,6 +453,20 @@
   
   <url>
     <loc>https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-05-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://emoryhuang.cn/tags/C/</loc>
+    <lastmod>2021-05-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://emoryhuang.cn/tags/STL/</loc>
     <lastmod>2021-05-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
