@@ -292,292 +292,179 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-oj2070-2079"><a class="markdownIt-Anchor" href="#杭电-oj2070-2079"></a> 杭电 OJ2070-2079</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>本文记录了刷杭电 OJ2070-2079 的过程和一些想法，代码仅供参考！</p>
-<hr />
-<h3 id="2070-fibbonacci-number"><a class="markdownIt-Anchor" href="#2070-fibbonacci-number"></a> 2070 Fibbonacci Number</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+              <h1 id="杭电-OJ2070-2079"><a href="#杭电-OJ2070-2079" class="headerlink" title="杭电 OJ2070-2079"></a>杭电 OJ2070-2079</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本文记录了刷杭电 OJ2070-2079 的过程和一些想法，代码仅供参考！</p>
+<hr>
+<h3 id="2070-Fibbonacci-Number"><a href="#2070-Fibbonacci-Number" class="headerlink" title="2070 Fibbonacci Number"></a>2070 Fibbonacci Number</h3><p>Problem Description<br><div class="note note-info">
             <p>Your objective for this question is to develop a program which will generate a fibbonacci number.The fibbonacci function is defined as such: f(0) = 0 f(1) = 1 f(n) = f(n-1) + f(n-2) Your program should be able to handle values of n in the range 0 to 50.</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>Each test case consists of oneinteger n in a single line where 0≤n≤50.The input is terminated by -1.</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>Print out the answer in a single line for each test case.</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>3<br />4<br />5<br />-1</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>2<br />3<br />5</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>3<br>4<br>5<br>-1</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>2<br>3<br>5</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>题目大意：计算 fibbonacci 数列</p><p>直接按公式计算</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    __int64 f[<span class="hljs-number">51</span>] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">51</span>; i++) &#123;<br>        f[i] = f[i - <span class="hljs-number">1</span>] + f[i - <span class="hljs-number">2</span>];<br>    &#125;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n &amp;&amp; n != <span class="hljs-number">-1</span>) &#123;<br>        cout &lt;&lt; f[n] &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2071-max-num"><a class="markdownIt-Anchor" href="#2071-max-num"></a> 2071 Max Num</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2071-Max-Num"><a href="#2071-Max-Num" class="headerlink" title="2071 Max Num"></a>2071 Max Num</h3><p>Problem Description<br><div class="note note-info">
             <p>There are some students in a class, Can you help teacher find the highest student .</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>There are some cases. The first line contains an integer t, indicate the cases;Each case have an integer n ( 1 ≤ n ≤ 100 ) , followed n students’ height.</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>For each case output the highest height, the height to two decimal plases;</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />3 170.00 165.00 180.00<br />4 165.00 182.00 172.00 160.00</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>180.00<br />182.00</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>3 170.00 165.00 180.00<br>4 165.00 182.00 172.00 160.00</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>180.00<br>182.00</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>题目大意：找最大值</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> t, n;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        cin &gt;&gt; n;<br>        <span class="hljs-keyword">double</span> height, max = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; height;<br>            <span class="hljs-keyword">if</span> (height &gt; max) max = height;<br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.2f\n&quot;</span>, max);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2072-单词数"><a class="markdownIt-Anchor" href="#2072-单词数"></a> 2072 单词数</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2072-单词数"><a href="#2072-单词数" class="headerlink" title="2072 单词数"></a>2072 单词数</h3><p>Problem Description<br><div class="note note-info">
             <p>lily 的好朋友 xiaoou333 最近很空，他想了一件没有什么意义的事情，就是统计一篇文章里不同单词的总数。下面你的任务是帮助 xiaoou333 解决这个问题。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>有多组数据，每组一行，每组就是一篇小文章。每篇小文章都是由小写字母和空格组成，没有标点符号，遇到 #时表示输入结束。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>每组只输出一个整数，其单独成行，该整数代表一篇文章里不同单词的总数。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>you are my friend<br />#</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>you are my friend<br>#</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>4</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>stringstream 分割字符串，再使用 set 容器计数</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;set&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s;<br>    set&lt;string&gt; st;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">getline</span>(cin, s)) &#123;<br>        <span class="hljs-keyword">if</span> (s == <span class="hljs-string">&quot;#&quot;</span>) <span class="hljs-keyword">break</span>;<br>        <span class="hljs-function">stringstream <span class="hljs-title">ss</span><span class="hljs-params">(s)</span></span>;<br>        string c;<br>        <span class="hljs-keyword">while</span> (ss &gt;&gt; c) st.<span class="hljs-built_in">insert</span>(c);<br>        cout &lt;&lt; st.<span class="hljs-built_in">size</span>() &lt;&lt; endl;<br>        st.<span class="hljs-built_in">clear</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2073-无限的路"><a class="markdownIt-Anchor" href="#2073-无限的路"></a> 2073 无限的路</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>甜甜从小就喜欢画图画，最近他买了一支智能画笔，由于刚刚接触，所以甜甜只会用它来画直线，于是他就在平面直角坐标系中画出如右的图形：<br />甜甜的好朋友蜜蜜发现上面的图还是有点规则的，于是他问甜甜：在你画的图中，我给你两个点，请你算一算连接两点的折线长度（即沿折线走的路线长度）吧。<br /><img src="https://i.loli.net/2021/03/07/snLQA82XgymDxUi.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+<hr>
+<h3 id="2073-无限的路"><a href="#2073-无限的路" class="headerlink" title="2073 无限的路"></a>2073 无限的路</h3><p>Problem Description<br><div class="note note-info">
+            <p>甜甜从小就喜欢画图画，最近他买了一支智能画笔，由于刚刚接触，所以甜甜只会用它来画直线，于是他就在平面直角坐标系中画出如右的图形：<br>甜甜的好朋友蜜蜜发现上面的图还是有点规则的，于是他问甜甜：在你画的图中，我给你两个点，请你算一算连接两点的折线长度（即沿折线走的路线长度）吧。<br><img src="https://i.loli.net/2021/03/07/snLQA82XgymDxUi.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+          </div><br>Input<br><div class="note note-info">
             <p>第一个数是正整数 N（≤100）。代表数据的组数。每组数据由四个非负整数组成 x1，y1，x2，y2；所有的数都不会大于 100。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每组数据，输出两点(x1,y1),(x2,y2)之间的折线距离。注意输出结果精确到小数点后 3 位。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />0 0 0 1<br />0 0 1 0<br />2 3 3 1<br />99 99 9 9<br />5 5 5 5</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>1.000<br />2.414<br />10.646<br />54985.047<br />0.000</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
-            <p>点（0，i）到原点距离 f（i）= f（i - 1）+ m + n ，f(1) = 1<br />点（x，y）到原点的距离公式为 d = f（x + y）+ x × sqrt（2.0）</p>
-          </div>
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>0 0 0 1<br>0 0 1 0<br>2 3 3 1<br>99 99 9 9<br>5 5 5 5</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>1.000<br>2.414<br>10.646<br>54985.047<br>0.000</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
+            <p>点（0，i）到原点距离 f（i）= f（i - 1）+ m + n ，f(1) = 1<br>点（x，y）到原点的距离公式为 d = f（x + y）+ x × sqrt（2.0）</p>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">double</span> f[<span class="hljs-number">210</span>] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dis</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">201</span>; i++) &#123;<br>        <span class="hljs-keyword">double</span> m = (<span class="hljs-keyword">double</span>)<span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2</span> * (i - <span class="hljs-number">1</span>) * (i - <span class="hljs-number">1</span>));<br>        <span class="hljs-keyword">double</span> n = (<span class="hljs-keyword">double</span>)<span class="hljs-built_in">sqrt</span>(i * i + (i - <span class="hljs-number">1</span>) * (i - <span class="hljs-number">1</span>));<br>        f[i] = f[i - <span class="hljs-number">1</span>] + m + n;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> x1, y1, x2, y2, n;<br>    <span class="hljs-keyword">double</span> sum1, sum2;<br>    <span class="hljs-built_in">dis</span>();<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; x1 &gt;&gt; y1 &gt;&gt; x2 &gt;&gt; y2;<br>        sum1 = f[x1 + y1] + x1 * <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2.0</span>);<br>        sum2 = f[x2 + y2] + x2 * <span class="hljs-built_in">sqrt</span>(<span class="hljs-number">2.0</span>);<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.3f\n&quot;</span>, <span class="hljs-built_in">fabs</span>(sum1 - sum2));<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2074-叠筐"><a class="markdownIt-Anchor" href="#2074-叠筐"></a> 2074 叠筐</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2074-叠筐"><a href="#2074-叠筐" class="headerlink" title="2074 叠筐"></a>2074 叠筐</h3><p>Problem Description<br><div class="note note-info">
             <p>需要的时候，就把一个个大小差一圈的筐叠上去，使得从上往下看时，边筐花色交错。这个工作现在要让计算机来完成，得看你的了。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入是一个个的三元组，分别是，外筐尺寸 n（n 为满足 0&lt;n&lt;80 的奇整数），中心花色字符，外筐花色字符，后二者都为 ASCII 可见字符；</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出叠在一起的筐图案，中心花色与外筐花色字符从内层起交错相叠，多筐相叠时，最外筐的角总是被打磨掉。叠筐与叠筐之间应有一行间隔。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>11 B A<br />5 @ W</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p> AAAAAAAAA<br />ABBBBBBBBBA<br />ABAAAAAAABA<br />ABABBBBBABA<br />ABABAAABABA<br />ABABABABABA<br />ABABAAABABA<br />ABABBBBBABA<br />ABAAAAAAABA<br />ABBBBBBBBBA<br /> AAAAAAAAA</p><p> @@@<br />@WWW@<br />@W@W@<br />@WWW@<br /> @@@</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>11 B A<br>5 @ W</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>&ensp;AAAAAAAAA<br>ABBBBBBBBBA<br>ABAAAAAAABA<br>ABABBBBBABA<br>ABABAAABABA<br>ABABABABABA<br>ABABAAABABA<br>ABABBBBBABA<br>ABAAAAAAABA<br>ABBBBBBBBBA<br>&ensp;AAAAAAAAA</p><p>&emsp;@@@<br>@WWW@<br>@W@W@<br>@WWW@<br>&emsp;@@@</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             
-          </div>
+          </div></p>
 <p>参考源码</p>
 <figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs"><br></code></pre></div></td></tr></table></figure>
-<hr />
-<h3 id="2075-ab"><a class="markdownIt-Anchor" href="#2075-ab"></a> 2075 A|B?</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2075-A-B"><a href="#2075-A-B" class="headerlink" title="2075 A|B?"></a>2075 A|B?</h3><p>Problem Description<br><div class="note note-info">
             <p>正整数 A 是否能被正整数 B 整除，不知道为什么 xhd 会研究这个问题，来帮帮他吧。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据的第一行是一个数据 T，表示有 T 组数据。每组数据有两个正整数 A 和 B(A,B&lt;10^9)。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
-            <p>对于每组输入数据，输出&quot;YES&quot;表示可以被整除，&quot;NO&quot;表示不能被整除。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />4 2<br />5 3</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>YES<br />NO</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Output<br><div class="note note-info">
+            <p>对于每组输入数据，输出”YES”表示可以被整除，”NO”表示不能被整除。</p>
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>4 2<br>5 3</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>YES<br>NO</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>简单题，整除</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, a, b;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; a &gt;&gt; b;<br>        <span class="hljs-keyword">if</span> (a % b == <span class="hljs-number">0</span>)<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2076-夹角有多大题目已修改注意读题"><a class="markdownIt-Anchor" href="#2076-夹角有多大题目已修改注意读题"></a> 2076 夹角有多大(题目已修改,注意读题)</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2076-夹角有多大-题目已修改-注意读题"><a href="#2076-夹角有多大-题目已修改-注意读题" class="headerlink" title="2076 夹角有多大(题目已修改,注意读题)"></a>2076 夹角有多大(题目已修改,注意读题)</h3><p>Problem Description<br><div class="note note-info">
             <p>时间过的好快，一个学期就这么的过去了，xhd 在傻傻的看着表，出于对数据的渴望，突然他想知道这个表的时针和分针的夹角是多少。现在 xhd 知道的只有时间，请你帮他算出这个夹角。注：夹角的范围[0，180]，时针和分针的转动是连续而不是离散的。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据的第一行是一个数据 T，表示有 T 组数据。每组数据有三个整数 h(0 &lt;= h &lt; 24)，m(0 &lt;= m &lt; 60)，s(0 &lt;= s &lt; 60)分别表示时、分、秒。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每组输入数据，输出夹角的大小的整数部分。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />8 3 17<br />5 13 30</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>138<br />75</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>8 3 17<br>5 13 30</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>138<br>75</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>时针走 30°/小时，分针走 6°/分钟，然后分别计算时针和分针的角度即可</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">double</span> h, m, s, harg, marg, arg;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; h &gt;&gt; m &gt;&gt; s;<br>        <span class="hljs-keyword">if</span> (h &gt; <span class="hljs-number">12</span>) h = h - <span class="hljs-number">12</span>;<br>        harg = <span class="hljs-number">30</span> * h + m / <span class="hljs-number">2</span> + s / <span class="hljs-number">120</span>;  <span class="hljs-comment">//时针角度</span><br>        marg = <span class="hljs-number">6</span> * m + s / <span class="hljs-number">10</span>;            <span class="hljs-comment">//分针角度</span><br>        arg = <span class="hljs-built_in">fabs</span>(harg - marg);<br>        <span class="hljs-keyword">if</span> (arg &gt; <span class="hljs-number">180</span>) arg = <span class="hljs-number">360</span> - arg;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>, (<span class="hljs-keyword">int</span>)arg);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2077-汉诺塔-iv"><a class="markdownIt-Anchor" href="#2077-汉诺塔-iv"></a> 2077 汉诺塔 IV</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2077-汉诺塔-IV"><a href="#2077-汉诺塔-IV" class="headerlink" title="2077 汉诺塔 IV"></a>2077 汉诺塔 IV</h3><p>Problem Description<br><div class="note note-info">
             <p>还记得汉诺塔 III 吗？他的规则是这样的：不允许直接从最左(右)边移到最右(左)边(每次移动一定是移到中间杆或从中间移出)，也不允许大盘放到小盘的上面。xhd 在想如果我们允许最大的盘子放到最上面会怎么样呢？（只允许最大的放在最上面）当然最后需要的结果是盘子从小到大排在最右边。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据的第一行是一个数据 T，表示有 T 组数据。每组数据有一个正整数 n(1 &lt;= n &lt;= 20)，表示有 n 个盘子。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每组输入数据，最少需要的摆放次数。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />1<br />10</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>2<br />19684</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
-            <p>对于前 n-1 个的移动，2064 和一样，但是将 n-1 个移动只到中间，最大从最左到中间到最右，n-1 移动到最右即可<br />相邻杆移动递推 f [i] = f [i-1] × 3 + 1，f(1) = 1（前 n-2 个与 2064 一样，第 n-1 个移动到中间）</p><p>对于这个规则来说，搬 n 个盘就需要 f(n) = 2 × f(n-1) + 2</p>
-          </div>
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>1<br>10</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>2<br>19684</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
+            <p>对于前 n-1 个的移动，2064 和一样，但是将 n-1 个移动只到中间，最大从最左到中间到最右，n-1 移动到最右即可<br>相邻杆移动递推 f [i] = f [i-1] × 3 + 1，f(1) = 1（前 n-2 个与 2064 一样，第 n-1 个移动到中间）</p><p>对于这个规则来说，搬 n 个盘就需要 f(n) = 2 × f(n-1) + 2</p>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, num, s, f[<span class="hljs-number">21</span>] = &#123;<span class="hljs-number">0</span>&#125;;<br>    f[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; <span class="hljs-number">21</span>; i++) &#123;<br>        f[i] = <span class="hljs-number">3</span> * f[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>    &#125;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; num;<br>        s = <span class="hljs-number">2</span> * f[num - <span class="hljs-number">1</span>] + <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (num == <span class="hljs-number">1</span>)<br>            cout &lt;&lt; <span class="hljs-string">&quot;2&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; s &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2078-复习时间"><a class="markdownIt-Anchor" href="#2078-复习时间"></a> 2078 复习时间</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2078-复习时间"><a href="#2078-复习时间" class="headerlink" title="2078 复习时间"></a>2078 复习时间</h3><p>Problem Description<br><div class="note note-info">
             <p>为了能过个好年，xhd 开始复习了，于是每天晚上背着书往教室跑。xhd 复习有个习惯，在复习完一门课后，他总是挑一门更简单的课进行复习，而他复习这门课的效率为两门课的难度差的平方,而复习第一门课的效率为 100 和这门课的难度差的平方。xhd 这学期选了 n 门课，但是一晚上他最多只能复习 m 门课，请问他一晚上复习的最高效率值是多少？</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据的第一行是一个数据 T，表示有 T 组数据。每组数据的第一行是两个整数 n(1 &lt;= n &lt;= 40)，m(1 &lt;= m &lt;= n)。接着有 n 行，每行有一个正整数 a(1 &lt;= a &lt;= 100)，表示这门课的难度值。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每组输入数据，输出一个整数，表示最高效率值。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />2 2<br />52<br />25<br />12 5<br />89<br />64<br />6<br />43<br />56<br />72<br />92<br />23<br />20<br />22<br />37<br />31</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>5625<br />8836</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>2 2<br>52<br>25<br>12 5<br>89<br>64<br>6<br>43<br>56<br>72<br>92<br>23<br>20<br>22<br>37<br>31</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>5625<br>8836</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>如果前一门复习的课程的难度为 m，后一门为 n。那他复习后一门的效率就为(m-n)×(m-n)，m 最大值为初始状态 100，那么选最简单的一门课效率最高</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> t, n, m, a;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        cin &gt;&gt; n &gt;&gt; m;<br>        m = <span class="hljs-number">100</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; a;<br>            <span class="hljs-keyword">if</span> (m &gt; a) m = a;<br>        &#125;<br>        cout &lt;&lt; (<span class="hljs-number">100</span> - m) * (<span class="hljs-number">100</span> - m) &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="2079-选课时间题目已修改注意读题"><a class="markdownIt-Anchor" href="#2079-选课时间题目已修改注意读题"></a> 2079 选课时间(题目已修改,注意读题)</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="2079-选课时间-题目已修改-注意读题"><a href="#2079-选课时间-题目已修改-注意读题" class="headerlink" title="2079 选课时间(题目已修改,注意读题)"></a>2079 选课时间(题目已修改,注意读题)</h3><p>Problem Description<br><div class="note note-info">
             <p>又到了选课的时间了，xhd 看着选课表发呆，为了想让下一学期好过点，他想知道学 n 个学分共有多少组合。你来帮帮他吧。（xhd 认为一样学分的课没区别）</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据的第一行是一个数据 T，表示有 T 组数据。每组数据的第一行是两个整数 n(1 &lt;= n &lt;= 40)，k(1 &lt;= k &lt;= 8)。接着有 k 行，每行有两个整数 a(1 &lt;= a &lt;= 8),b(1 &lt;= b &lt;= 10)，表示学分为 a 的课有 b 门。</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每组输入数据，输出一个整数，表示学 n 个学分的组合数。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />2 2<br />1 2<br />2 1<br />40 8<br />1 1<br />2 2<br />3 2<br />4 2<br />5 8<br />6 9<br />7 6<br />8 8</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>2<br />445</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>2 2<br>1 2<br>2 1<br>40 8<br>1 1<br>2 2<br>3 2<br>4 2<br>5 8<br>6 9<br>7 6<br>8 8</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>2<br>445</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>暴力破解法，母函数法</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <figure class="highlight inform7"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs inform7">//方法一：暴力破解<br>#include &lt;cstring&gt;<br>#include &lt;iostream&gt;<br>using namespace std;<br>int main() &#123;<br>    int k, n, c<span class="hljs-comment">[9]</span>, t<span class="hljs-comment">[9]</span>; //c<span class="hljs-comment">[i]</span>表示选择学分为i的课程数量<br>    int a, b;<br>    int count,total;<br>    cin &gt;&gt; k;<br>    while (k--) &#123;<br>        cin &gt;&gt; total &gt;&gt; n;<br>        count = 0;<br>        memset(t, 0, sizeof(t));<br>        for (int i = 0; i &lt; n; i++) &#123;<br>            cin &gt;&gt; a &gt;&gt; b;<br>            t<span class="hljs-comment">[a]</span> = b;<br>        &#125;<br>        for (c<span class="hljs-comment">[8]</span> = 0; c<span class="hljs-comment">[8]</span> &lt;= t<span class="hljs-comment">[8]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 &lt;= total; c<span class="hljs-comment">[8]</span>++)<br>            for (c<span class="hljs-comment">[7]</span> = 0; c<span class="hljs-comment">[7]</span> &lt;= t<span class="hljs-comment">[7]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 &lt;= total; c<span class="hljs-comment">[7]</span>++)<br>                for (c<span class="hljs-comment">[6]</span> = 0; c<span class="hljs-comment">[6]</span> &lt;= t<span class="hljs-comment">[6]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 &lt;= total; c<span class="hljs-comment">[6]</span>++)<br>                    for (c<span class="hljs-comment">[5]</span> = 0; c<span class="hljs-comment">[5]</span> &lt;= t<span class="hljs-comment">[5]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 + c<span class="hljs-comment">[5]</span> * 5 &lt;= total; c<span class="hljs-comment">[5]</span>++)<br>                        for (c<span class="hljs-comment">[4]</span> = 0; c<span class="hljs-comment">[4]</span> &lt;= t<span class="hljs-comment">[4]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 + c<span class="hljs-comment">[5]</span> * 5 + c<span class="hljs-comment">[4]</span> * 4 &lt;= total; c<span class="hljs-comment">[4]</span>++)<br>                            for (c<span class="hljs-comment">[3]</span> = 0; c<span class="hljs-comment">[3]</span> &lt;= t<span class="hljs-comment">[3]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 + c<span class="hljs-comment">[5]</span> * 5 + c<span class="hljs-comment">[4]</span> * 4 + c<span class="hljs-comment">[3]</span> * 3 &lt;= total; c<span class="hljs-comment">[3]</span>++)<br>                                for (c<span class="hljs-comment">[2]</span> = 0; c<span class="hljs-comment">[2]</span> &lt;= t<span class="hljs-comment">[2]</span> &amp;&amp; c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 + c<span class="hljs-comment">[5]</span> * 5 + c<span class="hljs-comment">[4]</span> * 4 + c<span class="hljs-comment">[3]</span> * 3 + c<span class="hljs-comment">[2]</span> * 2 &lt;= total; c<span class="hljs-comment">[2]</span>++) &#123;<br>                                    c<span class="hljs-comment">[1]</span> = total - (c<span class="hljs-comment">[8]</span> * 8 + c<span class="hljs-comment">[7]</span> * 7 + c<span class="hljs-comment">[6]</span> * 6 + c<span class="hljs-comment">[5]</span> * 5 + c<span class="hljs-comment">[4]</span> * 4 + c<span class="hljs-comment">[3]</span> * 3 + c<span class="hljs-comment">[2]</span> * 2);<br>                                    if (c<span class="hljs-comment">[1]</span> &gt;= 0 &amp;&amp; c<span class="hljs-comment">[1]</span> &lt;= t<span class="hljs-comment">[1]</span>) count++;<br>                                &#125;<br>        cout &lt;&lt; count &lt;&lt; endl;<br>    &#125;<br>    return 0;<br>&#125;<br><br>// 方法二：母函数<br>#include &lt;algorithm&gt;<br>#include &lt;cstring&gt;<br>#include &lt;iostream&gt;<br>using namespace std;<br>int ans<span class="hljs-comment">[1000]</span>, temp<span class="hljs-comment">[1000]</span>;<br>struct course &#123;<br>    int s, num;<br>&#125; cou<span class="hljs-comment">[10]</span>;<br>bool cmp(course a, course b) &#123; return a.s &lt; b.s; &#125;<br>int main() &#123;<br>    int t, n, k;<br>    cin &gt;&gt; t;<br>    while (t--) &#123;<br>        memset(cou, 0, sizeof(cou));<br>        cin &gt;&gt; n &gt;&gt; k;<br>        for (int i = 0; i &lt; k; i++) &#123;<br>            cin &gt;&gt; cou<span class="hljs-comment">[i]</span>.s &gt;&gt; cou<span class="hljs-comment">[i]</span>.num;<br>        &#125;<br>        sort(cou, cou + k, cmp);<br>        memset(ans, 0, sizeof(ans));<br>        memset(temp, 0, sizeof(temp));<br>        for (int i = 0; i &lt;= n &amp;&amp; i &lt;= cou<span class="hljs-comment">[0]</span>.s * cou<span class="hljs-comment">[0]</span>.num; i += cou<span class="hljs-comment">[0]</span>.s) &#123;<br>            ans<span class="hljs-comment">[i]</span> = 1;  //初始化第一个多项式<br>        &#125;<br>        for (int i = 1; i &lt; k; i++) &#123;<br>            for (int j = 0; j &lt;= n; j++)<br>                for (int p = 0; j + p &lt;= n &amp;&amp; p &lt;= cou<span class="hljs-comment">[i]</span>.s * cou<span class="hljs-comment">[i]</span>.num; p += cou<span class="hljs-comment">[i]</span>.s)<br>                    temp<span class="hljs-comment">[j + p]</span> += ans<span class="hljs-comment">[j]</span>;<br>            for (int j = 0; j &lt;= n; j++) &#123;  // 将临时的结果覆盖当前结果，同时把临时结果置零<br>                ans<span class="hljs-comment">[j]</span> = temp<span class="hljs-comment">[j]</span>;<br>                temp<span class="hljs-comment">[j]</span> = 0;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; ans<span class="hljs-comment">[n]</span> &lt;&lt; endl;<br>    &#125;<br>    return 0;<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3470260376.html">杭电 OJ2040-2049</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1908130413.html">杭电 OJ2050-2059</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1803455283.html">杭电 OJ2060-2069</a></li>

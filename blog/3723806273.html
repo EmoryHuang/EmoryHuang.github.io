@@ -292,96 +292,60 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2010-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2010-年计算机复试真题"></a> 杭电 2010 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+              <h1 id="杭电-2010-年计算机复试真题"><a href="#杭电-2010-年计算机复试真题" class="headerlink" title="杭电 2010 年计算机复试真题"></a>杭电 2010 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
             <p>计算机随机产生一个 3 位的正整数，进行猜数字</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>每个输入数字占一行，输入你认为正确的数字</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>如果猜小了，输出：“猜小了，请继续”。如果猜大了，输出：“猜大了，请继续”。如果猜对了。输出：“恭喜你，猜对了”。最多只能猜 10 次，如果猜了 10 次还没有猜对，就退出程序，输出：“Bye Bye”。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>50<br />90<br />80<br />81</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>猜小了，请继续<br />猜大了，请继续<br />猜小了，请继续<br />恭喜你，猜对了</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>50<br>90<br>80<br>81</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>猜小了，请继续<br>猜大了，请继续<br>猜小了，请继续<br>恭喜你，猜对了</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>题目很简单，关键在于生成三位数字</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ctime&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> num, r, count = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">srand</span>(<span class="hljs-built_in">time</span>(<span class="hljs-literal">NULL</span>));                     <span class="hljs-comment">//根据时间来确定随机种子</span><br>    r = (<span class="hljs-built_in">rand</span>() % (<span class="hljs-number">999</span> - <span class="hljs-number">100</span> + <span class="hljs-number">1</span>)) + <span class="hljs-number">100</span>;  <span class="hljs-comment">// 100-999</span><br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; num) &#123;<br>        <span class="hljs-keyword">if</span> (count &gt; <span class="hljs-number">10</span>) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;Bye Bye&quot;</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        count++;<br>        <span class="hljs-keyword">if</span> (num == r) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;恭喜你，猜对了&quot;</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">break</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (num &gt; r)<br>            cout &lt;&lt; <span class="hljs-string">&quot;猜大了，请继续&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;猜小了，请继续&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
             <p>字符串求和，输入一个字符串，把字符串中的数字作为整数进行求和，并输出结果</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据有多组，每组占一行</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出字符串中的数字之和，每组输出占一行</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>There are some apple<br />123 and 456</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>0<br />579</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>There are some apple<br>123 and 456</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>0<br>579</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>简单题，遍历字符串，若是数字相加即可</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> sum;<br>    string s;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">getline</span>(cin, s)) &#123;<br>        sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(s[i])) sum += (s[i] - <span class="hljs-string">&#x27;0&#x27;</span>);<br>        &#125;<br>        cout &lt;&lt; sum &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>处理一个文件 student.txt，文件当中包括一组学生的信息，<br />包括名字、学号、英语成绩、语文成绩、数学成绩、科学成绩，如下：<br />姓名 学号 英语 语文 数学 科学<br />张三 20100601 78 89 62 75<br />李四 20100602 78 54 98 86<br />王五 20100603 78 69 85 75<br />从这个文件当中读入学生的信息，然后按照总成绩从高到低进行排序并输出学生信息</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+<hr>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>Problem Description<br><div class="note note-info">
+            <p>处理一个文件 student.txt，文件当中包括一组学生的信息，<br>包括名字、学号、英语成绩、语文成绩、数学成绩、科学成绩，如下：<br>姓名 学号 英语 语文 数学 科学<br>张三 20100601 78 89 62 75<br>李四 20100602 78 54 98 86<br>王五 20100603 78 69 85 75<br>从这个文件当中读入学生的信息，然后按照总成绩从高到低进行排序并输出学生信息</p>
+          </div><br>Input<br><div class="note note-info">
             <p>输入文件 student.txt</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>总成绩从高到低进行排序并输出学生信息</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>此为文件内容：<br />张三 20100601 78 89 62 75<br />李四 20100602 78 54 98 86<br />王五 20100603 78 69 85 75</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>1.李四 20100602<br />2.王五 20100603<br />3.张三 20100601</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>此为文件内容：<br>张三 20100601 78 89 62 75<br>李四 20100602 78 54 98 86<br>王五 20100603 78 69 85 75  </p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>1.李四 20100602<br>2.王五 20100603<br>3.张三 20100601</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>文件处理题，需要使用 fstream，另外注意表头的处理</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;fstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">student</span> &#123;</span><br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>], id[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> a, b, c, d;<br>&#125; stu[<span class="hljs-number">1000</span>];<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(student m, student n)</span> </span>&#123; <span class="hljs-keyword">return</span> m.a + m.b + m.c + m.d &gt; n.a + n.b + n.c + n.d; &#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;<br>    ifstream in;<br>    in.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;..\\HDU2010test\\student.txt&quot;</span>, ios::in);<br>    <span class="hljs-keyword">if</span> (!in.<span class="hljs-built_in">is_open</span>()) cout &lt;&lt; <span class="hljs-string">&quot;error&quot;</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">while</span> (!in.<span class="hljs-built_in">eof</span>()) &#123;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) &#123;  <span class="hljs-comment">//处理第一行表头</span><br>            string s;<br>            <span class="hljs-built_in">getline</span>(in, s);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            in &gt;&gt; stu[n].name &gt;&gt; stu[n].id;<br>            in &gt;&gt; stu[n].a &gt;&gt; stu[n].b &gt;&gt; stu[n].c &gt;&gt; stu[n].d;<br>        &#125;<br>        n++;<br>    &#125;<br>    in.<span class="hljs-built_in">close</span>();  <span class="hljs-comment">//文件关闭</span><br>    <span class="hljs-built_in">sort</span>(stu, stu + n, cmp);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;<br>        cout &lt;&lt; i + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;.&quot;</span> &lt;&lt; stu[i].name &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; stu[i].id &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2021611087.html">杭电 2011 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1301471260.html">杭电 2012 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3893981202.html">杭电 2013 年计算机复试真题</a></li>

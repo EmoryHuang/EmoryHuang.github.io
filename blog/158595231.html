@@ -292,18 +292,14 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="二分查找学习笔记"><a class="markdownIt-Anchor" href="#二分查找学习笔记"></a> 二分查找学习笔记</h1>
-<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
-<p>二分查找也称折半查找，它是一种效率较高的查找方法。二分查找，思路很简单，细节是魔鬼。</p>
+              <h1 id="二分查找学习笔记"><a href="#二分查找学习笔记" class="headerlink" title="二分查找学习笔记"></a>二分查找学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>二分查找也称折半查找，它是一种效率较高的查找方法。二分查找，思路很简单，细节是魔鬼。</p>
 <p>本文主要探究几个最常用的二分查找场景：寻找一个数、寻找左侧、右侧边界。到底要给 <code>mid</code> 加一还是减一，<code>while</code> 里到底用 <code>&lt;=</code> 还是 <code>&lt;</code>，并给出二分模板。</p>
-<h2 id="寻找一个数"><a class="markdownIt-Anchor" href="#寻找一个数"></a> 寻找一个数</h2>
-<p>寻找一个数的问题是最简单最熟悉的，下面的代码相信你也很熟悉：</p>
+<h2 id="寻找一个数"><a href="#寻找一个数" class="headerlink" title="寻找一个数"></a>寻找一个数</h2><p>寻找一个数的问题是最简单最熟悉的，下面的代码相信你也很熟悉：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;  <span class="hljs-comment">// 注意</span><br>    <span class="hljs-keyword">while</span> (left &lt;= right) &#123;       <span class="hljs-comment">// 注意</span><br>        <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (nums[mid] == target)<br>            <span class="hljs-keyword">return</span> mid;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; target)<br>            left = mid + <span class="hljs-number">1</span>;  <span class="hljs-comment">// 注意</span><br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target)<br>            right = mid - <span class="hljs-number">1</span>;  <span class="hljs-comment">// 注意</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
 <div class="note note-info">
             <p>计算 <code>mid</code> 时需要防止溢出，代码中 <code>left + (right - left) / 2</code> 和 <code>(left + right) / 2</code> 的结果相同，但是有效防止了 <code>left</code> 和 <code>right</code> 太大直接相加导致溢出。</p>
           </div>
-<h3 id="1-while-中为什么是-而不是"><a class="markdownIt-Anchor" href="#1-while-中为什么是-而不是"></a> 1. <code>while</code> 中为什么是 <code>&lt;=</code>，而不是 <code>&lt;</code> ?</h3>
-<p>因为二分的区间为左闭右闭的 <code>[left, right]</code>，初始化 <code>right</code> 的赋值是 <code>nums.length - 1</code></p>
+<h3 id="1-while-中为什么是-lt-，而不是-lt"><a href="#1-while-中为什么是-lt-，而不是-lt" class="headerlink" title="1. while 中为什么是 &lt;=，而不是 &lt; ?"></a>1. <code>while</code> 中为什么是 <code>&lt;=</code>，而不是 <code>&lt;</code> ?</h3><p>因为二分的区间为左闭右闭的 <code>[left, right]</code>，初始化 <code>right</code> 的赋值是 <code>nums.length - 1</code></p>
 <p>当我们找到了 <code>target</code> 时，即停止搜索</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-keyword">if</span>(nums[mid] == target)<br>    <span class="hljs-keyword">return</span> mid;<br></code></pre></div></td></tr></table></figure></div>
 <p>但是如果没找到，<strong>搜索区间为空</strong>的时候应该终止。</p>
@@ -311,11 +307,9 @@
 <p><code>while(left &lt; right)</code> 的终止条件是 <code>left &gt;= right</code>，同样举例来说，<code>left = 2</code>，<code>right = 2</code>，按照前面的条件这时候应该终止，但是搜索区间为 <code>[2, 2]</code>，仍然还有元素未被搜索，说明这是错误的。</p>
 <p>如果一定要用 <code>while(left &lt; right)</code> 需要额外添加条件：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">//...</span><br><span class="hljs-keyword">while</span>(left &lt; right) &#123;<br>    <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-keyword">return</span> nums[left] == target ? left : <span class="hljs-number">-1</span>;<br></code></pre></div></td></tr></table></figure></div>
-<h3 id="2-为什么更新-left-和-right-时有些有写-1有些没有"><a class="markdownIt-Anchor" href="#2-为什么更新-left-和-right-时有些有写-1有些没有"></a> 2. 为什么更新 left 和 right 时，有些有写 ± 1，有些没有？</h3>
-<p>不同问题的处理方法不同，这也是容易混淆的点。</p>
+<h3 id="2-为什么更新-left-和-right-时，有些有写-±-1，有些没有？"><a href="#2-为什么更新-left-和-right-时，有些有写-±-1，有些没有？" class="headerlink" title="2. 为什么更新 left 和 right 时，有些有写 ± 1，有些没有？"></a>2. 为什么更新 left 和 right 时，有些有写 ± 1，有些没有？</h3><p>不同问题的处理方法不同，这也是容易混淆的点。</p>
 <p>对于<strong>寻找一个数</strong>的问题来说，如果 <code>nums[mid] != target</code>，那么我们就需要去寻找 <code>[left, mid - 1]</code> 或者 <code>[mid + 1, right]</code>，因为 <code>mid</code> 已经查找过了，不需要再次查找。</p>
-<h2 id="寻找左右侧边界"><a class="markdownIt-Anchor" href="#寻找左右侧边界"></a> 寻找左（右）侧边界</h2>
-<p>接下来进一步探讨，寻找左（右）侧边界。</p>
+<h2 id="寻找左（右）侧边界"><a href="#寻找左（右）侧边界" class="headerlink" title="寻找左（右）侧边界"></a>寻找左（右）侧边界</h2><p>接下来进一步探讨，寻找左（右）侧边界。</p>
 <p>由于左右侧边界的二分查找写法非常多，有的 <code>right = nums.length</code>，有的<code>right = nums.length - 1</code>；有的 <code>left &lt; right</code>，有的 <code>left &lt;= right</code>；有的 <code>return</code> 减 1，有的不减。</p>
 <p>下面直接介绍我自己认为比较好用的，好理解的二分模板，仅供参考。</p>
 <p>二分模板一共有两个，分别适用于不同情况。</p>
@@ -323,40 +317,34 @@
 <li>找大于等于给定数的第一个位置 （满足某个条件的第一个数）</li>
 <li>找小于等于给定数的最后一个数 （满足某个条件的最后一个数）</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620634386105-1620634386103-binarysearchpng.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620634386105-1620634386103-binarysearchpng.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <ul>
-<li>
-<p>如果要找<strong>左侧边界</strong>，即红色端点，用<strong>模板 1</strong></p>
+<li><p>如果要找<strong>左侧边界</strong>，即红色端点，用<strong>模板 1</strong></p>
 </li>
-<li>
-<p>如果要找<strong>右侧边界</strong>，即绿色端点，用<strong>模板 2</strong></p>
+<li><p>如果要找<strong>右侧边界</strong>，即绿色端点，用<strong>模板 2</strong></p>
 </li>
 </ul>
 <div class="note note-info">
             <p>二分查找模板的几个要点</p><ol><li>循环条件是 <code>l &lt; r</code></li><li><code>if</code> 的判断条件是让 <code>mid</code> 落在满足你想要结果的区间内</li><li>如果更新操作是 <code>r = mid - 1</code> 或者 <code>l = mid</code>，此时为了防止死循环，计算 <code>mid</code> 时需要加 1。</li><li>出循环一定是 <code>l == r</code></li></ol>
           </div>
-<h2 id="模板-1"><a class="markdownIt-Anchor" href="#模板-1"></a> 模板 1</h2>
-<p>当我们将区间 <code>[l, r]</code> 划分成 <code>[l, mid]</code> 和 <code>[mid + 1, r]</code> 时，其更新操作是 <code>r = mid</code> 或者 <code>l = mid + 1</code>，计算 <code>mid</code> 时不需要加 <code>1</code>。</p>
-<div class="tabs" id="模板1"><ul class="nav-tabs"><li class="tab active"><a href="#模板1-1">nums[mid] >= target</a></li><li class="tab"><a href="#模板1-2">nums[mid] < target</a></li></ul><div class="tab-content"><div class="tab-pane active" id="模板1-1"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636039643-1620636039640-binarysearchm1_1.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-</div><div class="tab-pane" id="模板1-2"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636101223-1620636101220-binarysearchm1_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="模板-1"><a href="#模板-1" class="headerlink" title="模板 1"></a>模板 1</h2><p>当我们将区间 <code>[l, r]</code> 划分成 <code>[l, mid]</code> 和 <code>[mid + 1, r]</code> 时，其更新操作是 <code>r = mid</code> 或者 <code>l = mid + 1</code>，计算 <code>mid</code> 时不需要加 <code>1</code>。</p>
+<div class="tabs" id="模板1"><ul class="nav-tabs"><li class="tab active"><a href="#模板1-1">nums[mid] >= target</a></li><li class="tab"><a href="#模板1-2">nums[mid] < target</a></li></ul><div class="tab-content"><div class="tab-pane active" id="模板1-1"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636039643-1620636039640-binarysearchm1_1.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+</div><div class="tab-pane" id="模板1-2"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636101223-1620636101220-binarysearchm1_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 </div></div></div>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bsearch_1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (l &lt; r) &#123;<br>        <span class="hljs-keyword">int</span> mid = l + r &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            r = mid;<br>        <span class="hljs-keyword">else</span><br>            l = mid + <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
 <div class="note note-info">
             <p>对 check 的说明：</p><p>判断条件很复杂时用 <code>check</code> 函数，否则 <code>if</code> 后直接写条件即可</p><p>例如：<code>nums[mid] &gt;= target</code></p><p>能二分的题一定是满足某种性质，分成左右两部分</p>
           </div>
-<h2 id="模板-2"><a class="markdownIt-Anchor" href="#模板-2"></a> 模板 2</h2>
-<p>当我们将区间 <code>[l, r]</code> 划分成 <code>[l, mid - 1]</code> 和 <code>[mid, r]</code> 时，其更新操作是 <code>r = mid - 1</code> 或者 <code>l = mid</code>，此时为了防止死循环，计算 <code>mid</code> 时需要加 <code>1</code>。</p>
-<div class="tabs" id="模板2"><ul class="nav-tabs"><li class="tab active"><a href="#模板2-1">nums[mid] >= target</a></li><li class="tab"><a href="#模板2-2">nums[mid] < target</a></li></ul><div class="tab-content"><div class="tab-pane active" id="模板2-1"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636417248-1620636417245-binarysearchm2_1.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-</div><div class="tab-pane" id="模板2-2"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636462882-1620636462876-binarysearchm2_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="模板-2"><a href="#模板-2" class="headerlink" title="模板 2"></a>模板 2</h2><p>当我们将区间 <code>[l, r]</code> 划分成 <code>[l, mid - 1]</code> 和 <code>[mid, r]</code> 时，其更新操作是 <code>r = mid - 1</code> 或者 <code>l = mid</code>，此时为了防止死循环，计算 <code>mid</code> 时需要加 <code>1</code>。</p>
+<div class="tabs" id="模板2"><ul class="nav-tabs"><li class="tab active"><a href="#模板2-1">nums[mid] >= target</a></li><li class="tab"><a href="#模板2-2">nums[mid] < target</a></li></ul><div class="tab-content"><div class="tab-pane active" id="模板2-1"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636417248-1620636417245-binarysearchm2_1.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+</div><div class="tab-pane" id="模板2-2"><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620636462882-1620636462876-binarysearchm2_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 </div></div></div>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bsearch_2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (l &lt; r) &#123;<br>        <span class="hljs-keyword">int</span> mid = l + r + <span class="hljs-number">1</span> &gt;&gt; <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            l = mid;<br>        <span class="hljs-keyword">else</span><br>            r = mid - <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
 <div class="note note-info">
             <p>关于 <code>mid = l + r + 1 &gt;&gt; 1</code> 为什么要加 1 的问题，</p><p>当 <code>l == r - 1</code> 时，<code>mid</code> 会等于 <code>l</code>，那么此时如果执行 <code>l = mid</code> 就死循环了。</p>
           </div>
-<h2 id="浮点数二分"><a class="markdownIt-Anchor" href="#浮点数二分"></a> 浮点数二分</h2>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">bsearch_3</span><span class="hljs-params">(<span class="hljs-keyword">double</span> l, <span class="hljs-keyword">double</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-6</span>;  <span class="hljs-comment">// eps 表示精度，取决于题目对精度的要求</span><br>    <span class="hljs-keyword">while</span> (r - l &gt; eps) &#123;<br>        <span class="hljs-keyword">double</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            r = mid;<br>        <span class="hljs-keyword">else</span><br>            l = mid;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2>
-<ul>
+<h2 id="浮点数二分"><a href="#浮点数二分" class="headerlink" title="浮点数二分"></a>浮点数二分</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">bsearch_3</span><span class="hljs-params">(<span class="hljs-keyword">double</span> l, <span class="hljs-keyword">double</span> r)</span> </span>&#123;<br>    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-6</span>;  <span class="hljs-comment">// eps 表示精度，取决于题目对精度的要求</span><br>    <span class="hljs-keyword">while</span> (r - l &gt; eps) &#123;<br>        <span class="hljs-keyword">double</span> mid = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(mid))<br>            r = mid;<br>        <span class="hljs-keyword">else</span><br>            l = mid;<br>    &#125;<br>    <span class="hljs-keyword">return</span> l;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1203199502.html">LeetCode 69. x 的平方根</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2775077317.html">LeetCode 34. 在排序数组中查找元素的第一个和最后一个位置</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3642450185.html">LeetCode 35. 搜索插入位置</a></li>
@@ -367,8 +355,7 @@
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3827211298.html">LeetCode 162. 寻找峰值</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1133161658.html">LeetCode 275. H 指数 II</a></li>
 </ul>
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.acwing.com/blog/content/31/">二分查找算法模板</a></li>
 <li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/binary-search/solution/er-fen-cha-zhao-xiang-jie-by-labuladong/">二分查找细节详解</a></li>
 </ul>
@@ -638,8 +625,40 @@
   
 
   
-    <!-- KaTeX -->
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" />
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
   
 
 

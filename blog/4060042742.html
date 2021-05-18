@@ -292,136 +292,90 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2018-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2018-年计算机复试真题"></a> 杭电 2018 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>杭电实验室定期会集体去电影院看电影，按照惯例，每个成员需要先抽个号码。给出n个人的名字，各抽取一个数字，自己用一种数据结构存取人的名字和抽取数字信息（票数），例如：Bob9 Alice12 Tom5 Listen7 Nick4<br />1.1定义一种数叫丑数，其因子除1外只用2,3,5的倍数（例如4,10是丑数,11,13不是），输出所有抽到丑数人的名字<br />1.2根据个人所抽数字大小升序排序，输出排序后的所有名字。<br />1.3现有一个新名字加入，将名字插入所以名字中间（n/2）处，并输出排序后所有人的名字。</p>
-          </div>
-<h4 id="11"><a class="markdownIt-Anchor" href="#11"></a> 1.1</h4>
-<div class="note note-info">
+              <h1 id="杭电-2018-年计算机复试真题"><a href="#杭电-2018-年计算机复试真题" class="headerlink" title="杭电 2018 年计算机复试真题"></a>杭电 2018 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
+            <p>杭电实验室定期会集体去电影院看电影，按照惯例，每个成员需要先抽个号码。给出n个人的名字，各抽取一个数字，自己用一种数据结构存取人的名字和抽取数字信息（票数），例如：Bob9 Alice12 Tom5 Listen7 Nick4<br>1.1定义一种数叫丑数，其因子除1外只用2,3,5的倍数（例如4,10是丑数,11,13不是），输出所有抽到丑数人的名字<br>1.2根据个人所抽数字大小升序排序，输出排序后的所有名字。<br>1.3现有一个新名字加入，将名字插入所以名字中间（n/2）处，并输出排序后所有人的名字。</p>
+          </div></p>
+<h4 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h4><div class="note note-info">
             <p>1.1定义一种数叫丑数，其因子除1外只用2,3,5的倍数（例如4,10是丑数,11,13不是），输出所有抽到丑数人的名字</p>
           </div>
-<p>Input</p>
-<div class="note note-info">
+<p>Input<br><div class="note note-info">
             <p>输入包含多个测试实例，首先是正整数n,接着是n行，每行包含姓名与抽取数字信息（票数）</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出所有抽到丑数人的名字</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />Bob 9<br />Alice 12<br />Tom 5<br />Listen 7<br />Nick 4</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>Bob<br />Alice<br />Tom<br />Nick</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>Bob 9<br>Alice 12<br>Tom 5<br>Listen 7<br>Nick 4</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>Bob<br>Alice<br>Tom<br>Nick</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>判断丑数，对2，3，5整除</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">// 1.1</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">people</span> &#123;</span><br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> num;<br>&#125; p[<span class="hljs-number">1000</span>];<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(people a, people b)</span> </span>&#123; <span class="hljs-keyword">return</span> a.num &lt; b.num; &#125;  <span class="hljs-comment">//升序</span><br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isugly</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">3</span>;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">5</span>;<br>    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-built_in">getchar</span>();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; p[i].name &gt;&gt; p[i].num;<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(p, p + n, cmp);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isugly</span>(p[i].num)) cout &lt;&lt; p[i].name &lt;&lt; endl;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<h4 id="12"><a class="markdownIt-Anchor" href="#12"></a> 1.2</h4>
-<div class="note note-info">
+<h4 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h4><div class="note note-info">
             <p>1.2根据个人所抽数字大小升序排序，输出排序后的所有名字。</p>
           </div>
-<p>Input</p>
-<div class="note note-info">
+<p>Input<br><div class="note note-info">
             <p>输入包含多个测试实例，首先是正整数n,接着是n行，每行包含姓名与抽取数字信息（票数）</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出排序后的所有名字。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />Bob 9<br />Alice 12<br />Tom 5<br />Listen 7<br />Nick 4</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>Nick<br />Tom<br />Listen<br />Bob<br />Alice</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>Bob 9<br>Alice 12<br>Tom 5<br>Listen 7<br>Nick 4</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>Nick<br>Tom<br>Listen<br>Bob<br>Alice</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>sort()排序</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">// 1.2</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">people</span> &#123;</span><br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> num;<br>&#125; p[<span class="hljs-number">1000</span>];<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(people a, people b)</span> </span>&#123; <span class="hljs-keyword">return</span> a.num &lt; b.num; &#125;  <span class="hljs-comment">//升序</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-built_in">getchar</span>();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; p[i].name &gt;&gt; p[i].num;<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(p, p + n, cmp);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cout &lt;&lt; p[i].name &lt;&lt; endl;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<h4 id="13"><a class="markdownIt-Anchor" href="#13"></a> 1.3</h4>
-<div class="note note-info">
+<h4 id="1-3"><a href="#1-3" class="headerlink" title="1.3"></a>1.3</h4><div class="note note-info">
             <p>1.3现有一个新名字加入，将名字插入所以名字中间（n/2）处，并输出排序后所有人的名字。</p>
           </div>
-<p>Input</p>
-<div class="note note-info">
+<p>Input<br><div class="note note-info">
             <p>输入包含多个测试实例，首先是正整数n,接着是n行，每行包含姓名与抽取数字信息（票数），第n+1行是一个新名字加入，以及他的票数</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出排序后的所有名字。</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />Bob 9<br />Alice 12<br />Tom 5<br />Listen 7<br />Nick 4<br />Emory 10</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>Bob<br />Alice<br />Emory<br />Tom<br />Listen<br />Nick</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>Bob 9<br>Alice 12<br>Tom 5<br>Listen 7<br>Nick 4<br>Emory 10</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>Bob<br>Alice<br>Emory<br>Tom<br>Listen<br>Nick</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>数组插入</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">// 1.3</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">people</span> &#123;</span><br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> num;<br>&#125; p[<span class="hljs-number">1000</span>], newp;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-built_in">getchar</span>();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; p[i].name &gt;&gt; p[i].num;<br>        &#125;<br>        cin &gt;&gt; newp.name &gt;&gt; newp.num;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= n / <span class="hljs-number">2</span>; i--) &#123;<br>            p[i + <span class="hljs-number">1</span>] = p[i];<br>        &#125;<br>        p[n / <span class="hljs-number">2</span>] = newp;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n + <span class="hljs-number">1</span>; i++) &#123;<br>            cout &lt;&lt; p[i].name &lt;&lt; endl;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>关于某同学没赶上拍毕业照，现用一个算法将他的头像从一张老照片P到毕业照某位置，输入源头像起始位置和头像宽，将数据拷贝到目的图片某起始位置某宽度<br />很长而且有图，没办法全部写出来，大意是给出两张bmp图像（可以理解为两个矩阵），将第一张图上的某个部分截取下来放入第二张的某个位置<br />（把图1中的人头像截下来贴到图2的人头上），然后给出了接函数的定义和参数的定义，readbmp读取图像，copybmp复制图像等。<br />2.1一道程序填空题，根据题目函数的定义填岀整个拷贝图像的过程，比较长，但很简单，基本送分题。<br />2.2写出 copybmp的整个具体函数<br /><code>void copybmp(unsigned char *pOldbuf,unsigned char *pNewbuf,int OldW,int NewW,int BlockW,int BlockH)</code><br />pOldbuf和pNewbuf是两张图像首地址<br />OldW和NewW是两图像宽度<br />BlockW和BlockH是待截取部分的宽和高</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
+            <p>关于某同学没赶上拍毕业照，现用一个算法将他的头像从一张老照片P到毕业照某位置，输入源头像起始位置和头像宽，将数据拷贝到目的图片某起始位置某宽度<br>很长而且有图，没办法全部写出来，大意是给出两张bmp图像（可以理解为两个矩阵），将第一张图上的某个部分截取下来放入第二张的某个位置<br>（把图1中的人头像截下来贴到图2的人头上），然后给出了接函数的定义和参数的定义，readbmp读取图像，copybmp复制图像等。<br>2.1一道程序填空题，根据题目函数的定义填岀整个拷贝图像的过程，比较长，但很简单，基本送分题。<br>2.2写出 copybmp的整个具体函数<br><code>void copybmp(unsigned char *pOldbuf,unsigned char *pNewbuf,int OldW,int NewW,int BlockW,int BlockH)</code><br>pOldbuf和pNewbuf是两张图像首地址<br>OldW和NewW是两图像宽度<br>BlockW和BlockH是待截取部分的宽和高</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">copybmp</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *pOldbuf,<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *pNewbuf,<span class="hljs-keyword">int</span> OldW,<span class="hljs-keyword">int</span> NewW,<span class="hljs-keyword">int</span> BlockW,<span class="hljs-keyword">int</span> BlockH)</span></span><br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>瓜农王大爷去年种西瓜赚了不少钱。看到收入不错，今年他又重新开辟了 n 个西瓜地。 为了能给他的 n 个西瓜地顺利的浇上水，对于每个西瓜地他可以选择在本地打井，也可以修管道从另一个瓜地（这个瓜地可能打了井；也可能没打井，他的水也是从其他瓜地引来的）将水引过来。 当然打井和修管道的费用有差别。已知在第 i 个西瓜地打井需要耗费 wi 元，在第 i、j 个西瓜地之间修管道需要耗费 pi,j 元。 <br />现在的问题是：王大爷要想使所有瓜地都被浇上水，至少需要花费多少钱（打井与修管道的费用和）？ 由于瓜地较多，王大爷无法选择在哪些（个）瓜地打井，哪些西瓜地之间修管道。 请你编程帮王大爷做出决策，求出最小费用。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
-            <p>第一行为一个整数 n。接下来n行每行一个整数 wi,接下来 n 行，每行 n 个整数，第 i 行的第 j个数，表示连接 i 号田和 j 号田需要的费用 P i,j ​<br /><code>1&lt;=N&lt;=300</code>;<code>1&lt;=wi&lt;=100000</code>;<code>p(i,i)=0</code>;<code>1&lt;=p(i,j)=p(j,i)&lt;=100000</code></p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+<hr>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>Problem Description<br><div class="note note-info">
+            <p>瓜农王大爷去年种西瓜赚了不少钱。看到收入不错，今年他又重新开辟了 n 个西瓜地。 为了能给他的 n 个西瓜地顺利的浇上水，对于每个西瓜地他可以选择在本地打井，也可以修管道从另一个瓜地（这个瓜地可能打了井；也可能没打井，他的水也是从其他瓜地引来的）将水引过来。 当然打井和修管道的费用有差别。已知在第 i 个西瓜地打井需要耗费 wi 元，在第 i、j 个西瓜地之间修管道需要耗费 pi,j 元。<br>现在的问题是：王大爷要想使所有瓜地都被浇上水，至少需要花费多少钱（打井与修管道的费用和）？ 由于瓜地较多，王大爷无法选择在哪些（个）瓜地打井，哪些西瓜地之间修管道。 请你编程帮王大爷做出决策，求出最小费用。</p>
+          </div><br>Input<br><div class="note note-info">
+            <p>第一行为一个整数 n。接下来n行每行一个整数 wi,接下来 n 行，每行 n 个整数，第 i 行的第 j个数，表示连接 i 号田和 j 号田需要的费用 P i,j ​<br><code>1&lt;=N&lt;=300</code>;<code>1&lt;=wi&lt;=100000</code>;<code>p(i,i)=0</code>;<code>1&lt;=p(i,j)=p(j,i)&lt;=100000</code></p>
+          </div><br>Output<br><div class="note note-info">
             <p>输出最小开销</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>6<br />5<br />4<br />4<br />3<br />1<br />20<br />0 2 2 2 9 9<br />2 0 3 3 9 9<br />2 3 0 4 9 9<br />2 3 4 0 9 9<br />9 9 9 9 0 9<br />9 9 9 9 9 0</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>6<br>5<br>4<br>4<br>3<br>1<br>20<br>0 2 2 2 9 9<br>2 0 3 3 9 9<br>2 3 0 4 9 9<br>2 3 4 0 9 9<br>9 9 9 9 0 9<br>9 9 9 9 9 0</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>19</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>构图时，可以多加一个隐藏的点，这个点与打井的点相连，可以抽象为地下泉，打井时，实际上是在往地下连边，之后就是最小生成树问题，可以使用Kruskal算法</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> t = <span class="hljs-number">0</span>, ans = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">int</span> fa[<span class="hljs-number">302</span>], w[<span class="hljs-number">302</span>];<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">edge</span> &#123;</span><br>    <span class="hljs-keyword">int</span> from, to, c;<br>&#125; E[<span class="hljs-number">100000</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (x == fa[x]) <span class="hljs-keyword">return</span> x;<br>    <span class="hljs-keyword">return</span> fa[x] = <span class="hljs-built_in">find</span>(fa[x]);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(edge a, edge b)</span> </span>&#123; <span class="hljs-keyword">return</span> a.c &lt; b.c; &#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, temp, num;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) cin &gt;&gt; w[i];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= n; j++) &#123;<br>            cin &gt;&gt; temp;<br>            <span class="hljs-keyword">if</span> (i != j) &#123;<br>                E[++t].from = i;<br>                E[t].to = j;<br>                E[t].c = temp;<br>            &#125; <span class="hljs-keyword">else</span> &#123;  <span class="hljs-comment">//加入打井的原点</span><br>                E[++t].from = <span class="hljs-number">0</span>;<br>                E[t].to = j;<br>                E[t].c = w[i];<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= n; i++) &#123;<br>        fa[i] = i;  <span class="hljs-comment">//初始化并查集</span><br>    &#125;<br>    <span class="hljs-built_in">sort</span>(E + <span class="hljs-number">1</span>, E + t + <span class="hljs-number">1</span>, cmp);  <span class="hljs-comment">//边权从小到大排序</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= t; i++) &#123;<br>        <span class="hljs-keyword">int</span> ff = <span class="hljs-built_in">find</span>(E[i].from);  <span class="hljs-comment">//寻找两个端点所在集合的根节点</span><br>        <span class="hljs-keyword">int</span> ft = <span class="hljs-built_in">find</span>(E[i].to);<br>        <span class="hljs-keyword">if</span> (ff != ft) &#123;     <span class="hljs-comment">//若不在同一集合</span><br>            ans += E[i].c;  <span class="hljs-comment">//累加</span><br>            fa[ff] = ft;    <span class="hljs-comment">//加入集合</span><br>            num++;          <span class="hljs-comment">//最小生成树边数+1</span><br>        &#125;<br>        <span class="hljs-keyword">if</span> (num == n) <span class="hljs-keyword">break</span>;<br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/642354362.html">杭电 2014 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2210536628.html">杭电 2015 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3056577255.html">杭电 2016 年计算机复试真题</a></li>

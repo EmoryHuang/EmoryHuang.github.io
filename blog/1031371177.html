@@ -292,20 +292,13 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="操作系统面试常见问题总结"><a class="markdownIt-Anchor" href="#操作系统面试常见问题总结"></a> 操作系统面试常见问题总结</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>本文记录了一些操作系统面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
-<hr />
-<h3 id="q操作系统的基本特征"><a class="markdownIt-Anchor" href="#q操作系统的基本特征"></a> Q：操作系统的基本特征？</h3>
-<p>A：并发、共享、虚拟、异步</p>
-<h3 id="q进程与线程的关系以及区别"><a class="markdownIt-Anchor" href="#q进程与线程的关系以及区别"></a> Q：进程与线程的关系以及区别？</h3>
-<p>A：</p>
+              <h1 id="操作系统面试常见问题总结"><a href="#操作系统面试常见问题总结" class="headerlink" title="操作系统面试常见问题总结"></a>操作系统面试常见问题总结</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本文记录了一些操作系统面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
+<hr>
+<h3 id="Q：操作系统的基本特征？"><a href="#Q：操作系统的基本特征？" class="headerlink" title="Q：操作系统的基本特征？"></a>Q：操作系统的基本特征？</h3><p>A：并发、共享、虚拟、异步</p>
+<h3 id="Q：进程与线程的关系以及区别？"><a href="#Q：进程与线程的关系以及区别？" class="headerlink" title="Q：进程与线程的关系以及区别？"></a>Q：进程与线程的关系以及区别？</h3><p>A：</p>
 <ul>
-<li>
-<p>进程是具有一定功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源调度和分配的一个独立单位</p>
-</li>
-<li>
-<p>线程是进程的实体，是操作系统能够进行运算调度的最小单位</p>
+<li>进程是具有一定功能的程序关于某个数据集合上的一次运行活动，进程是系统进行资源调度和分配的一个独立单位</li>
+<li><p>线程是进程的实体，是操作系统能够进行运算调度的最小单位</p>
 <ul>
 <li>一个进程可以有多个线程，多个线程也可以并发执行</li>
 <li>引入进程的目的：更好地使多道程序并发执行，提高资源利用率和系统吞吐量</li>
@@ -313,17 +306,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="q进程的状态"><a class="markdownIt-Anchor" href="#q进程的状态"></a> Q：进程的状态？</h3>
-<p>A：运行态、就绪态、阻塞态、创建态、结束态</p>
-<h3 id="q进程的通信方式"><a class="markdownIt-Anchor" href="#q进程的通信方式"></a> Q：进程的通信方式？</h3>
-<p>A：</p>
+<h3 id="Q：进程的状态？"><a href="#Q：进程的状态？" class="headerlink" title="Q：进程的状态？"></a>Q：进程的状态？</h3><p>A：运行态、就绪态、阻塞态、创建态、结束态</p>
+<h3 id="Q：进程的通信方式？"><a href="#Q：进程的通信方式？" class="headerlink" title="Q：进程的通信方式？"></a>Q：进程的通信方式？</h3><p>A：</p>
 <ul>
 <li>共享存储：多个进程可以访问同一块内存空间</li>
 <li>消息传递：通过发送消息和接收消息两个原语进行数据交换</li>
 <li>管道通信：半双工通信</li>
 </ul>
-<h3 id="q进程调度算法"><a class="markdownIt-Anchor" href="#q进程调度算法"></a> Q：进程调度算法？</h3>
-<p>A：</p>
+<h3 id="Q：进程调度算法？"><a href="#Q：进程调度算法？" class="headerlink" title="Q：进程调度算法？"></a>Q：进程调度算法？</h3><p>A：</p>
 <ul>
 <li>先来先服务（FCFS）：按照请求的顺序进行调度，非抢占式，开销小，无饥饿问题，对短进程不利</li>
 <li>最短作业优先（SJF）：按估计运行时间最短的顺序进行调度。非抢占式，可能导致饥饿问题，对长进程不利（平均最优）</li>
@@ -332,123 +322,97 @@
 <li>高响应比优先：按照高响应比（已等待时间 + 要求运行时间）/ 要求运行时间 优先</li>
 <li>多级反馈队列调度算法：设置多个就绪队列，优先级递减，时间片递增。只有等到优先级更高的队列为空时才会调度当前队列中的进程</li>
 </ul>
-<h3 id="q同步机制的-4-个准则"><a class="markdownIt-Anchor" href="#q同步机制的-4-个准则"></a> Q：同步机制的 4 个准则？</h3>
-<p>A：</p>
+<h3 id="Q：同步机制的-4-个准则？"><a href="#Q：同步机制的-4-个准则？" class="headerlink" title="Q：同步机制的 4 个准则？"></a>Q：同步机制的 4 个准则？</h3><p>A：</p>
 <ol>
 <li>空闲让进：当无进程处于临界区，可允许一个请求进入临界区的进程立即进入自己的临界区</li>
 <li>忙则等待：当已有进程进入自己的临界区，所有企图进入临界区的进程必须等待</li>
 <li>有限等待：对要求访问临界资源的进程，应保证该进程能在有限时间内进入自己的临界区</li>
 <li>让权等待：当进程不能进入自己的临界区，应释放处理机</li>
 </ol>
-<h3 id="q什么是临界区"><a class="markdownIt-Anchor" href="#q什么是临界区"></a> Q：什么是临界区？</h3>
-<p>A：每个进程中访问临界资源的那段程序称为临界区，每次只准许一个进程进入临界区</p>
-<h3 id="q什么是死锁"><a class="markdownIt-Anchor" href="#q什么是死锁"></a> Q：什么是死锁？</h3>
-<p>A：两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去</p>
-<h3 id="q死锁产生的必要条件"><a class="markdownIt-Anchor" href="#q死锁产生的必要条件"></a> Q：死锁产生的必要条件？</h3>
-<p>A：有一个条件不成立，则不会产生死锁</p>
+<h3 id="Q：什么是临界区？"><a href="#Q：什么是临界区？" class="headerlink" title="Q：什么是临界区？"></a>Q：什么是临界区？</h3><p>A：每个进程中访问临界资源的那段程序称为临界区，每次只准许一个进程进入临界区</p>
+<h3 id="Q：什么是死锁？"><a href="#Q：什么是死锁？" class="headerlink" title="Q：什么是死锁？"></a>Q：什么是死锁？</h3><p>A：两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去</p>
+<h3 id="Q：死锁产生的必要条件？"><a href="#Q：死锁产生的必要条件？" class="headerlink" title="Q：死锁产生的必要条件？"></a>Q：死锁产生的必要条件？</h3><p>A：有一个条件不成立，则不会产生死锁</p>
 <ul>
 <li>互斥条件：一个资源一次只能被一个进程使用</li>
 <li>不剥夺条件：进程获得的资源，在未完全使用完之前，不能强行剥夺</li>
 <li>请求并保持条件：一个进程因请求资源而阻塞时，对已获得资源保持不放</li>
 <li>循环等待条件：若干进程之间形成一种头尾相接的环形等待资源关系</li>
 </ul>
-<h3 id="q死锁的处理基本策略和常用方法"><a class="markdownIt-Anchor" href="#q死锁的处理基本策略和常用方法"></a> Q：死锁的处理基本策略和常用方法?</h3>
-<p>A：</p>
+<h3 id="Q：死锁的处理基本策略和常用方法"><a href="#Q：死锁的处理基本策略和常用方法" class="headerlink" title="Q：死锁的处理基本策略和常用方法?"></a>Q：死锁的处理基本策略和常用方法?</h3><p>A：</p>
 <ol>
 <li>死锁预防：破坏四个条件之一</li>
 <li>死锁避免：安全状态（银行家算法）</li>
 <li>死锁检测：死锁定理简化资源分配图</li>
 <li>死锁解除：资源剥夺法、撤销进程法、进程回退法</li>
 </ol>
-<h3 id="q饥饿与死锁的区别"><a class="markdownIt-Anchor" href="#q饥饿与死锁的区别"></a> Q：饥饿与死锁的区别？</h3>
-<p>A：饥饿与死锁都是由于进程竞争资源导致的</p>
+<h3 id="Q：饥饿与死锁的区别？"><a href="#Q：饥饿与死锁的区别？" class="headerlink" title="Q：饥饿与死锁的区别？"></a>Q：饥饿与死锁的区别？</h3><p>A：饥饿与死锁都是由于进程竞争资源导致的</p>
 <ul>
 <li>饥饿一般是指，进程在执行的过程中一直有高于当前进程优先级的进程，导致操作系统无法分配资源给当前进程（<strong>饥饿并不代表系统已经死锁</strong>，进入饥饿的进程可以只有一个）</li>
 <li>死锁是指<strong>两个或两个以上</strong>的进程在执行过程中，因争夺资源而造成的一种互相等待的现象</li>
 </ul>
-<h3 id="q程序的链接方式"><a class="markdownIt-Anchor" href="#q程序的链接方式"></a> Q：程序的链接方式？</h3>
-<p>A：静态链接、装入时动态链接、运行时动态链接</p>
-<h3 id="q程序的装入方式"><a class="markdownIt-Anchor" href="#q程序的装入方式"></a> Q：程序的装入方式？</h3>
-<p>A：绝对装入、可重定位装入（静态重定位）、动态运行装入（动态重定位）</p>
-<h3 id="q动态分区分配算法"><a class="markdownIt-Anchor" href="#q动态分区分配算法"></a> Q：动态分区分配算法</h3>
-<p>A：首次适应算法、最佳适应算法、最坏适应算法、邻近适应算法</p>
-<h3 id="q分段和分页的区别"><a class="markdownIt-Anchor" href="#q分段和分页的区别"></a> Q：分段和分页的区别？</h3>
-<p>A：</p>
+<h3 id="Q：程序的链接方式？"><a href="#Q：程序的链接方式？" class="headerlink" title="Q：程序的链接方式？"></a>Q：程序的链接方式？</h3><p>A：静态链接、装入时动态链接、运行时动态链接</p>
+<h3 id="Q：程序的装入方式？"><a href="#Q：程序的装入方式？" class="headerlink" title="Q：程序的装入方式？"></a>Q：程序的装入方式？</h3><p>A：绝对装入、可重定位装入（静态重定位）、动态运行装入（动态重定位）</p>
+<h3 id="Q：动态分区分配算法"><a href="#Q：动态分区分配算法" class="headerlink" title="Q：动态分区分配算法"></a>Q：动态分区分配算法</h3><p>A：首次适应算法、最佳适应算法、最坏适应算法、邻近适应算法</p>
+<h3 id="Q：分段和分页的区别？"><a href="#Q：分段和分页的区别？" class="headerlink" title="Q：分段和分页的区别？"></a>Q：分段和分页的区别？</h3><p>A：</p>
 <ul>
-<li>目的不同：
-<ul>
+<li>目的不同：<ul>
 <li>分页是由于系统管理的需要，它是信息的物理单位</li>
 <li>分段的目的是为了能更好地满足用户的需要，它是信息的逻辑单位，</li>
 </ul>
 </li>
-<li>大小不同：
-<ul>
+<li>大小不同：<ul>
 <li>页的大小固定且由系统决定</li>
 <li>段的长度不固定</li>
 </ul>
 </li>
-<li>地址空间不同：
-<ul>
+<li>地址空间不同：<ul>
 <li>页向用户提供的是一维地址空间</li>
 <li>段向用户提供的是二维地址空间</li>
 </ul>
 </li>
-<li>碎片：
-<ul>
+<li>碎片：<ul>
 <li>页式存储管理方式没有外部碎片，但会产生内部碎片</li>
 <li>段式存储管理方式没有内部碎片，但会产生外部碎片</li>
 </ul>
 </li>
 </ul>
-<h3 id="q页面置换算法"><a class="markdownIt-Anchor" href="#q页面置换算法"></a> Q：页面置换算法？</h3>
-<p>A：</p>
+<h3 id="Q：页面置换算法？"><a href="#Q：页面置换算法？" class="headerlink" title="Q：页面置换算法？"></a>Q：页面置换算法？</h3><p>A：</p>
 <ol>
 <li>最佳（OPT）置换算法</li>
 <li>先进先出（FIFO）置换算法（Belady 异常）</li>
 <li>最近最久未使用（LRU）算法</li>
 <li>时钟 (CLOCK) 置换算法</li>
 </ol>
-<h3 id="q颠簸抖动"><a class="markdownIt-Anchor" href="#q颠簸抖动"></a> Q：颠簸/抖动</h3>
-<p>A：刚刚换出的页面马上又要换入主存，刚刚换入的页面马上又要换出主存</p>
+<h3 id="Q：颠簸-抖动"><a href="#Q：颠簸-抖动" class="headerlink" title="Q：颠簸/抖动"></a>Q：颠簸/抖动</h3><p>A：刚刚换出的页面马上又要换入主存，刚刚换入的页面马上又要换出主存</p>
 <p>原因：某个进程频繁访问的页面数高于可用物理页帧数</p>
-<h3 id="q地址翻译的过程"><a class="markdownIt-Anchor" href="#q地址翻译的过程"></a> Q：地址翻译的过程</h3>
-<p>A：TLB → 页表（TLB 不命中）→ Cache → 主存（Cache 不命中）→ 外存</p>
-<h3 id="q磁盘调度算法"><a class="markdownIt-Anchor" href="#q磁盘调度算法"></a> Q：磁盘调度算法</h3>
-<p>A：</p>
+<h3 id="Q：地址翻译的过程"><a href="#Q：地址翻译的过程" class="headerlink" title="Q：地址翻译的过程"></a>Q：地址翻译的过程</h3><p>A：TLB → 页表（TLB 不命中）→ Cache → 主存（Cache 不命中）→ 外存</p>
+<h3 id="Q：磁盘调度算法"><a href="#Q：磁盘调度算法" class="headerlink" title="Q：磁盘调度算法"></a>Q：磁盘调度算法</h3><p>A：</p>
 <ol>
 <li>先来先服务算法（FCFS）</li>
 <li>最短寻道时间优先算法（SSTF）</li>
 <li>扫描算法（SCAN）电梯调度</li>
 <li>循环扫描算法（CSCAN）</li>
 </ol>
-<h3 id="qio-控制方式"><a class="markdownIt-Anchor" href="#qio-控制方式"></a> Q：I/O 控制方式</h3>
-<p>A：</p>
+<h3 id="Q：I-O-控制方式"><a href="#Q：I-O-控制方式" class="headerlink" title="Q：I/O 控制方式"></a>Q：I/O 控制方式</h3><p>A：</p>
 <ol>
 <li>程序直接控制</li>
 <li>中断驱动方式</li>
 <li>DMA 方式</li>
 <li>通道控制方式</li>
 </ol>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
 </li>
 </ul>
 

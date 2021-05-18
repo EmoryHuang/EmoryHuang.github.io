@@ -292,114 +292,91 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="数据库面试常见问题总结"><a class="markdownIt-Anchor" href="#数据库面试常见问题总结"></a> 数据库面试常见问题总结</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>本文记录了一些数据库面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
-<hr />
-<h3 id="q事务四大特性acid"><a class="markdownIt-Anchor" href="#q事务四大特性acid"></a> Q：事务四大特性（ACID）</h3>
-<p>A：</p>
+              <h1 id="数据库面试常见问题总结"><a href="#数据库面试常见问题总结" class="headerlink" title="数据库面试常见问题总结"></a>数据库面试常见问题总结</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本文记录了一些数据库面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
+<hr>
+<h3 id="Q：事务四大特性（ACID）"><a href="#Q：事务四大特性（ACID）" class="headerlink" title="Q：事务四大特性（ACID）"></a>Q：事务四大特性（ACID）</h3><p>A：</p>
 <ol>
 <li>原子性：事务是一个不可再分割的工作单位，要么执行，要么不执行</li>
 <li>一致性：数据库的完整性约束没有被破坏，在事务执行前后都保持一致性状态</li>
 <li>隔离性：多个事务并发时，每个事务应该是隔离的，一个事务不应影响其他事务的运行效果</li>
 <li>持久性：一旦事务提交，对数据的改变就是永久的</li>
 </ol>
-<h3 id="q什么是存储过程"><a class="markdownIt-Anchor" href="#q什么是存储过程"></a> Q：什么是存储过程？</h3>
-<p>A：存储过程是一些预编译的 SQL 语句</p>
-<h3 id="q什么是事务"><a class="markdownIt-Anchor" href="#q什么是事务"></a> Q：什么是事务？</h3>
-<p>A：事务是一个操作序列，这些操作要么都执行，要么都不执行，它是一个不可分割的工作单位</p>
-<h3 id="qdbms-是什么"><a class="markdownIt-Anchor" href="#qdbms-是什么"></a> Q：DBMS 是什么</h3>
-<p>A：数据库管理系统(DBMS)是数据库系统的核心，是管理数据库的软件</p>
-<h3 id="q数据库的三级模式"><a class="markdownIt-Anchor" href="#q数据库的三级模式"></a> Q：数据库的三级模式</h3>
-<p>A：</p>
+<h3 id="Q：什么是存储过程？"><a href="#Q：什么是存储过程？" class="headerlink" title="Q：什么是存储过程？"></a>Q：什么是存储过程？</h3><p>A：存储过程是一些预编译的 SQL 语句</p>
+<h3 id="Q：什么是事务？"><a href="#Q：什么是事务？" class="headerlink" title="Q：什么是事务？"></a>Q：什么是事务？</h3><p>A：事务是一个操作序列，这些操作要么都执行，要么都不执行，它是一个不可分割的工作单位</p>
+<h3 id="Q：DBMS-是什么"><a href="#Q：DBMS-是什么" class="headerlink" title="Q：DBMS 是什么"></a>Q：DBMS 是什么</h3><p>A：数据库管理系统(DBMS)是数据库系统的核心，是管理数据库的软件</p>
+<h3 id="Q：数据库的三级模式"><a href="#Q：数据库的三级模式" class="headerlink" title="Q：数据库的三级模式"></a>Q：数据库的三级模式</h3><p>A：</p>
 <ul>
 <li>模式：一个，逻辑结构</li>
 <li>外模式：多个，用户模式</li>
 <li>内模式：一个，物理结构</li>
 </ul>
-<h3 id="q什么是主键"><a class="markdownIt-Anchor" href="#q什么是主键"></a> Q：什么是主键</h3>
-<p>A：唯一标识表中每行的这个列</p>
-<h3 id="q视图和表的区别是什么"><a class="markdownIt-Anchor" href="#q视图和表的区别是什么"></a> Q：视图和表的区别是什么？</h3>
-<p>A：</p>
+<h3 id="Q：什么是主键"><a href="#Q：什么是主键" class="headerlink" title="Q：什么是主键"></a>Q：什么是主键</h3><p>A：唯一标识表中每行的这个列</p>
+<h3 id="Q：视图和表的区别是什么？"><a href="#Q：视图和表的区别是什么？" class="headerlink" title="Q：视图和表的区别是什么？"></a>Q：视图和表的区别是什么？</h3><p>A：</p>
 <ul>
 <li>视图：从一个或几个基本表导出的表，是虚表，我们对视图只能进行查询但不能进行修改</li>
 <li>表：数据库中的实体，可以对其进行增删改查操作</li>
 </ul>
-<h3 id="q索引是什么它的优点缺点"><a class="markdownIt-Anchor" href="#q索引是什么它的优点缺点"></a> Q：索引是什么？它的优点缺点？</h3>
-<p>A：索引是对数据库表中一或多个列的值进行排序的结构，可以加快检索表中数据</p>
+<h3 id="Q：索引是什么？它的优点缺点？"><a href="#Q：索引是什么？它的优点缺点？" class="headerlink" title="Q：索引是什么？它的优点缺点？"></a>Q：索引是什么？它的优点缺点？</h3><p>A：索引是对数据库表中一或多个列的值进行排序的结构，可以加快检索表中数据</p>
 <ul>
 <li>优点：大大加快数据的检索速度、唯一索引可以确保每一行数据的唯一性</li>
 <li>缺点：索引需要占物理空间、创建索引和维护索引需要时间</li>
 </ul>
-<h3 id="q索引类型"><a class="markdownIt-Anchor" href="#q索引类型"></a> Q：索引类型</h3>
-<p>A：</p>
+<h3 id="Q：索引类型"><a href="#Q：索引类型" class="headerlink" title="Q：索引类型"></a>Q：索引类型</h3><p>A：</p>
 <ul>
 <li>普通索引：最基本的索引，它没有任何限制</li>
 <li>唯一索引：索引列的值必须唯一</li>
 <li>主键索引：特殊的唯一性索引</li>
 <li>全文索引：对于大规模数据集更快</li>
 </ul>
-<h3 id="q数据库三范式"><a class="markdownIt-Anchor" href="#q数据库三范式"></a> Q：数据库三范式</h3>
-<p>A：</p>
+<h3 id="Q：数据库三范式"><a href="#Q：数据库三范式" class="headerlink" title="Q：数据库三范式"></a>Q：数据库三范式</h3><p>A：</p>
 <ul>
 <li>第一范式 (1NF)：属性不可分，即数据库表的每一列都是不可分割的基本数据项</li>
 <li>第二范式 (2NF)：要求所有非主键属性完全依赖主键</li>
 <li>第三范式 (3NF)：非主键属性无传递依赖</li>
 </ul>
-<h3 id="q数据库中几种删除都有什么有什么区别"><a class="markdownIt-Anchor" href="#q数据库中几种删除都有什么有什么区别"></a> Q：数据库中几种删除都有什么，有什么区别？</h3>
-<p>A：</p>
+<h3 id="Q：数据库中几种删除都有什么，有什么区别？"><a href="#Q：数据库中几种删除都有什么，有什么区别？" class="headerlink" title="Q：数据库中几种删除都有什么，有什么区别？"></a>Q：数据库中几种删除都有什么，有什么区别？</h3><p>A：</p>
 <ul>
 <li>delete：删除部分数据行</li>
 <li>truncate：保留表而删除所有数据</li>
 <li>drop：删除表</li>
 </ul>
-<h3 id="qe-r-图"><a class="markdownIt-Anchor" href="#qe-r-图"></a> Q：E-R 图？</h3>
-<p>A：实体关系图 (Entity-Relationship，E-R)，有三个组成部分：实体、属性、联系。用来进行关系型数据库系统的概念设计</p>
+<h3 id="Q：E-R-图？"><a href="#Q：E-R-图？" class="headerlink" title="Q：E-R 图？"></a>Q：E-R 图？</h3><p>A：实体关系图 (Entity-Relationship，E-R)，有三个组成部分：实体、属性、联系。用来进行关系型数据库系统的概念设计</p>
 <ol>
 <li>实体：矩形</li>
 <li>属性：椭圆</li>
 <li>联系：菱形</li>
 </ol>
-<h3 id="qe-r-模型转换为关系模式的原则"><a class="markdownIt-Anchor" href="#qe-r-模型转换为关系模式的原则"></a> Q：E-R 模型转换为关系模式的原则？</h3>
-<p>A：一个实体型转换为一个关系模式</p>
+<h3 id="Q：E-R-模型转换为关系模式的原则？"><a href="#Q：E-R-模型转换为关系模式的原则？" class="headerlink" title="Q：E-R 模型转换为关系模式的原则？"></a>Q：E-R 模型转换为关系模式的原则？</h3><p>A：一个实体型转换为一个关系模式</p>
 <ul>
 <li>一对一：遇到一对一关系的话，在两个实体任选一个添加另一个实体的主键即可</li>
 <li>一对多：遇到一对多关系的话，在多端添加另一端的主键</li>
 <li>多对多：遇到多对多关系的话，需要将联系转换为实体，然后在该实体上加上另外两个实体的主键，作为联系实体的主键，然后再加上该联系自身带的属性即可</li>
 </ul>
-<h3 id="q数据库完整性"><a class="markdownIt-Anchor" href="#q数据库完整性"></a> Q：数据库完整性</h3>
-<p>A：</p>
+<h3 id="Q：数据库完整性"><a href="#Q：数据库完整性" class="headerlink" title="Q：数据库完整性"></a>Q：数据库完整性</h3><p>A：</p>
 <ul>
 <li>实体完整性：保证表的每一个特定实体的记录都是唯一的</li>
 <li>参照完整性：保证相关联表之间数据的一致性</li>
 <li>用户定义完整性：针对某一具体应用必须满足的语义要求</li>
 </ul>
-<h3 id="q什么是触发器"><a class="markdownIt-Anchor" href="#q什么是触发器"></a> Q：什么是触发器？</h3>
-<p>A：触发器是用户定义在关系表上的一类由事件驱动的特殊过程</p>
-<h3 id="q-数据库有哪些锁各自的作用"><a class="markdownIt-Anchor" href="#q-数据库有哪些锁各自的作用"></a> Q： 数据库有哪些锁，各自的作用？</h3>
-<p>A：</p>
+<h3 id="Q：什么是触发器？"><a href="#Q：什么是触发器？" class="headerlink" title="Q：什么是触发器？"></a>Q：什么是触发器？</h3><p>A：触发器是用户定义在关系表上的一类由事件驱动的特殊过程</p>
+<h3 id="Q：-数据库有哪些锁，各自的作用？"><a href="#Q：-数据库有哪些锁，各自的作用？" class="headerlink" title="Q： 数据库有哪些锁，各自的作用？"></a>Q： 数据库有哪些锁，各自的作用？</h3><p>A：</p>
 <ul>
 <li>排他锁(X 锁,写锁)：当数据对象被加上排它锁(X 锁)时，其他的事务不能对它读取和修改</li>
 <li>共享锁(S 锁,读锁)：当数据对象被加上共享锁(S 锁)时，可以被其他事务读取，但不能修改</li>
 </ul>
-<h3 id="q死锁"><a class="markdownIt-Anchor" href="#q死锁"></a> Q：死锁？</h3>
-<p>A：指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去</p>
-<h3 id="q预防死锁"><a class="markdownIt-Anchor" href="#q预防死锁"></a> Q：预防死锁？</h3>
-<p>A：一次封锁法、顺序封锁法</p>
-<h3 id="q二段锁协议"><a class="markdownIt-Anchor" href="#q二段锁协议"></a> Q：二段锁协议</h3>
-<p>A：</p>
+<h3 id="Q：死锁？"><a href="#Q：死锁？" class="headerlink" title="Q：死锁？"></a>Q：死锁？</h3><p>A：指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，它们都将无法推进下去</p>
+<h3 id="Q：预防死锁？"><a href="#Q：预防死锁？" class="headerlink" title="Q：预防死锁？"></a>Q：预防死锁？</h3><p>A：一次封锁法、顺序封锁法</p>
+<h3 id="Q：二段锁协议"><a href="#Q：二段锁协议" class="headerlink" title="Q：二段锁协议"></a>Q：二段锁协议</h3><p>A：</p>
 <ul>
 <li>在对任何数据进行读、写操作之前，事务首先要申请并获得对该数据的封锁</li>
 <li>在释放一个封锁之后，事务不再申请和获得任何其他封锁</li>
 </ul>
-<h3 id="q冷备份和热备份"><a class="markdownIt-Anchor" href="#q冷备份和热备份"></a> Q：冷备份和热备份</h3>
-<p>A：</p>
+<h3 id="Q：冷备份和热备份"><a href="#Q：冷备份和热备份" class="headerlink" title="Q：冷备份和热备份"></a>Q：冷备份和热备份</h3><p>A：</p>
 <ul>
 <li>冷备份：在数据库停机的情况下，备份数据库</li>
 <li>热备份：在数据库运行的情况下，备份数据库</li>
 </ul>
-<h3 id="q数据库建立流程"><a class="markdownIt-Anchor" href="#q数据库建立流程"></a> Q：数据库建立流程</h3>
-<p>A：</p>
+<h3 id="Q：数据库建立流程"><a href="#Q：数据库建立流程" class="headerlink" title="Q：数据库建立流程"></a>Q：数据库建立流程</h3><p>A：</p>
 <ol>
 <li>需求分析</li>
 <li>概念结构设计</li>
@@ -408,26 +385,19 @@
 <li>实施</li>
 <li>运行维护</li>
 </ol>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
 </li>
 </ul>
 

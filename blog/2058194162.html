@@ -292,37 +292,30 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="github-pages-个性化域名配置"><a class="markdownIt-Anchor" href="#github-pages-个性化域名配置"></a> GitHub Pages 个性化域名配置</h1>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+              <h1 id="GitHub-Pages-个性化域名配置"><a href="#GitHub-Pages-个性化域名配置" class="headerlink" title="GitHub Pages 个性化域名配置"></a>GitHub Pages 个性化域名配置</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <p>本文主要介绍 GitHub Pages 个性化域名配置过程。</p>
-<h2 id="购买域名"><a class="markdownIt-Anchor" href="#购买域名"></a> 购买域名</h2>
-<p>部署完博客之后，会发现我们的域名是 <code>https://xxxxxx.github.io</code>，很明显这个域名不够高端大气上档次，因此我们可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/">阿里云</a>、<a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">腾讯云</a> 等域名供应商那里注册自己的域名，一年大概几十块的费用。</p>
+<h2 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h2><p>部署完博客之后，会发现我们的域名是 <code>https://xxxxxx.github.io</code>，很明显这个域名不够高端大气上档次，因此我们可以在 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/">阿里云</a>、<a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">腾讯云</a> 等域名供应商那里注册自己的域名，一年大概几十块的费用。</p>
 <p>这里以 <a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/">阿里云</a> 为例</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwang.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwang.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>输入喜欢的域名查询是否注册，然后 <code>加入清单</code>，<code>立即结算</code>，进入付费界面，选择年限即可。</p>
-<h2 id="dns-解析"><a class="markdownIt-Anchor" href="#dns-解析"></a> DNS 解析</h2>
-<p>域名购买完成之后，点击右上角 <code>控制台</code>，进入 <code>域名</code> 界面，选择<code>域名列表</code>，在你的域名一栏选择<code>解析</code>，进入 DNS 解析界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwangdns.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="DNS-解析"><a href="#DNS-解析" class="headerlink" title="DNS 解析"></a>DNS 解析</h2><p>域名购买完成之后，点击右上角 <code>控制台</code>，进入 <code>域名</code> 界面，选择<code>域名列表</code>，在你的域名一栏选择<code>解析</code>，进入 DNS 解析界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwangdns.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>在 DNS 解析界面添加如下两条记录</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwangdnsjilu.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/wanwangdnsjilu.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>这样无论用户输入 <code>www.emoryhuang.cn</code> 还是只输入 <code>emoryhuang.cn</code> 都可以直接定位到网站了，记录值修改为你自己的 GitHub Pages 地址。</p>
-<h2 id="添加-cname-文件"><a class="markdownIt-Anchor" href="#添加-cname-文件"></a> 添加 CNAME 文件</h2>
-<p>在 Hexo 本地目录中的 source 文件夹里，添加一个命名为 CNAME 的无后缀文件，文件中的填写你的域名</p>
+<h2 id="添加-CNAME-文件"><a href="#添加-CNAME-文件" class="headerlink" title="添加 CNAME 文件"></a>添加 CNAME 文件</h2><p>在 Hexo 本地目录中的 source 文件夹里，添加一个命名为 CNAME 的无后缀文件，文件中的填写你的域名</p>
 <p>例如：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="LASSO"><figure class="iseeu highlight /lasso"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lasso">emoryhuang.<span class="hljs-literal">cn</span><br></code></pre></div></td></tr></table></figure></div>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="EBNF"><figure class="iseeu highlight /ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span><br><span class="hljs-attribute">hexo d -g</span><br></code></pre></div></td></tr></table></figure></div>
-<h2 id="github-pages-添加自定义域名"><a class="markdownIt-Anchor" href="#github-pages-添加自定义域名"></a> Github Pages 添加自定义域名</h2>
-<p>进入你的 GitHub 仓库，选择<code>Setting</code> -&gt; <code>Page</code>，在 <code>Custom domain</code> 处添加你的自定义域名。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/githubpage.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<h2 id="Github-Pages-添加自定义域名"><a href="#Github-Pages-添加自定义域名" class="headerlink" title="Github Pages 添加自定义域名"></a>Github Pages 添加自定义域名</h2><p>进入你的 GitHub 仓库，选择<code>Setting</code> -&gt; <code>Page</code>，在 <code>Custom domain</code> 处添加你的自定义域名。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/githubpage.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>在完成上述步骤之后，就可以输入你的自定义域名访问你的网站了。</p>
-<hr />
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ul>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://tding.top/archives/b48e2719.html">GitHub Pages 绑定域名</a></li>
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/23b9e095c7c9">为你的 hexo 博客配置个性域名</a></li>
 </ul>
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2>
             </div>
             <hr>
             <div>

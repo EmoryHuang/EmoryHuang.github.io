@@ -235,7 +235,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      735 字
+      734 字
     </span>
   
 
@@ -292,55 +292,47 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="hexo-部署到-coding"><a class="markdownIt-Anchor" href="#hexo-部署到-coding"></a> Hexo 部署到 Coding</h1>
-<p>Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进行技术讨论和协作。</p>
+              <h1 id="Hexo-部署到-Coding"><a href="#Hexo-部署到-Coding" class="headerlink" title="Hexo 部署到 Coding"></a>Hexo 部署到 Coding</h1><p>Coding 是一个面向开发者的云端开发平台，目前提供代码托管，运行空间，质量控制，项目管理等功能。此外，还提供社会化协作功能，包含了社交元素，方便开发者进行技术讨论和协作。</p>
 <p>本文主要介绍 Hexo 部署到 Coding 的过程和可能遇到的一些问题。</p>
-<h2 id="创建-coding-仓库"><a class="markdownIt-Anchor" href="#创建-coding-仓库"></a> 创建 Coding 仓库</h2>
-<ol>
-<li>
-<p>首先进入 <a target="_blank" rel="noopener" href="https://coding.net/">Coding 官网</a> 注册一个账号，Coding 现在已经被腾讯收购，也可以用腾讯云账号。</p>
+<h2 id="创建-Coding-仓库"><a href="#创建-Coding-仓库" class="headerlink" title="创建 Coding 仓库"></a>创建 Coding 仓库</h2><ol>
+<li><p>首先进入 <a target="_blank" rel="noopener" href="https://coding.net/">Coding 官网</a> 注册一个账号，Coding 现在已经被腾讯收购，也可以用腾讯云账号。</p>
 </li>
-<li>
-<p>点击右上角头像的下拉菜单，选择<code>个人账户设置</code>，再进入 <code>SSH公钥</code>，选择 <code>新增公钥</code>，<code>公钥标题</code>可以随便取一个，<code>公钥内容</code> 是之前创建的 SSH 密匙，打开 <code>C:\Users\你的用户名\.ssh\id_rsa.pub</code> 将里面的内容全部复制粘贴即可，可以勾选永久有效。</p>
+<li><p>点击右上角头像的下拉菜单，选择<code>个人账户设置</code>，再进入 <code>SSH公钥</code>，选择 <code>新增公钥</code>，<code>公钥标题</code>可以随便取一个，<code>公钥内容</code> 是之前创建的 SSH 密匙，打开 <code>C:\Users\你的用户名\.ssh\id_rsa.pub</code> 将里面的内容全部复制粘贴即可，可以勾选永久有效。</p>
 </li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingssh.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-<ol start="3">
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingssh.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<ol>
 <li>之后进入 <code>项目</code> 页面，选择 <code>创建项目</code>，<code>DevOps项目</code>，<code>项目名称</code> 建议和你的用户名一致，<code>项目标识</code>自动填写</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingdevops.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-<ol start="4">
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingdevops.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<ol>
 <li>项目创建完成之后进入项目，选择<code>代码仓库</code>，右上角选择<code>创建代码仓库</code></li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingrep.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-<ol start="5">
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingrep.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<ol>
 <li>仓库初始化，然后将给出的 SSH 或者 HTTPS 在 <code>_config.yml</code> 中进行配置（当然也可以先放着，通过<code>README.md进行初始化</code>）</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codinginit.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codinginit.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>下面是我的 <code>_config.yml</code> 配置</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="DTS"><figure class="iseeu highlight /dts"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dts"><span class="hljs-meta"># Deployment</span><br><span class="hljs-meta">## Docs: https:<span class="hljs-comment">//hexo.io/docs/one-command-deployment</span></span><br><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">  type:</span> git<br><span class="hljs-symbol">  repo:</span><br>    <span class="hljs-meta"># 同时部署到GitHub和Coding</span><br><span class="hljs-symbol">    github:</span> git@github.com:EmoryHuang/EmoryHuang.github.io.git<br><span class="hljs-symbol">    coding:</span> git@e.coding.net:emoryhuang<span class="hljs-meta-keyword">/emoryhuang/</span>emoryhuang.git<br><span class="hljs-symbol">  branch:</span> master<br></code></pre></div></td></tr></table></figure></div>
 <p>配置完成之后，照常执行部署命令，完成之后就可以在 Coding 仓库中看见代码文件。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="EBNF"><figure class="iseeu highlight /ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo clean</span><br><span class="hljs-attribute">hexo d -g</span><br></code></pre></div></td></tr></table></figure></div>
-<h2 id="网站部署"><a class="markdownIt-Anchor" href="#网站部署"></a> 网站部署</h2>
-<p>进入 Coding 项目，选择<code>持续部署</code>，<code>静态网站</code>（选择升级的话会变成<code>网站托管</code>），之后按照步骤新建网站，注意这里需要<strong>实名注册</strong>。</p>
+<h2 id="网站部署"><a href="#网站部署" class="headerlink" title="网站部署"></a>网站部署</h2><p>进入 Coding 项目，选择<code>持续部署</code>，<code>静态网站</code>（选择升级的话会变成<code>网站托管</code>），之后按照步骤新建网站，注意这里需要<strong>实名注册</strong>。</p>
 <p><code>新建网站</code>，选择 <code>静态网站</code> 按下图进行配置，注意选择<code>静态网站</code>，不是<code>Hexo</code>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingweb.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingweb.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>完成之后会进行自动部署，部署成功之后即可根据生成的网站网站进行访问</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingtmpweb.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
-<h2 id="自定义域名"><a class="markdownIt-Anchor" href="#自定义域名"></a> 自定义域名</h2>
-<p>Coding 部署的网站域名非常长，个性化域名的设置可以参考 <a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2058194162.html">GitHub Pages 个性化域名配置</a>，在域名 DNS 设置中添加记录，这里不再赘述。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingtmpweb.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><p>Coding 部署的网站域名非常长，个性化域名的设置可以参考 <a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2058194162.html">GitHub Pages 个性化域名配置</a>，在域名 DNS 设置中添加记录，这里不再赘述。</p>
 <p>下面讲一下另一种方式，通过 Coding + 腾讯云进行部署，可以参考 <a target="_blank" rel="noopener" href="https://help.coding.net/docs/pages/operating/customize.html">Coding 官网帮助信息</a>，这可以获得 1 年免费的 SSL 证书，以及 120GB 的 CDN 加速服务。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingsite.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/codingsite.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
 <p>打开上述页面并填入你的自定义域名，然后在域名 DNS 解析中按照给出的要求添加记录，通过验证即可。</p>
 <p>完成这些步骤之后，境外访问就会走 GitHub，境内就会走 Coding，整个过程就完成了。</p>
-<hr />
-<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
-<ul>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://tding.top/archives/e09249d2.html">Hexo 博客部署到 Coding</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/bwqiang/article/details/105871955">将 Hexo 博客部署到 Coding（码云）</a></li>
 </ul>
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2>
             </div>
             <hr>
             <div>

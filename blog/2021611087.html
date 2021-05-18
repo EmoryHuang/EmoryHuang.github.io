@@ -292,96 +292,60 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2011-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2011-年计算机复试真题"></a> 杭电 2011 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+              <h1 id="杭电-2011-年计算机复试真题"><a href="#杭电-2011-年计算机复试真题" class="headerlink" title="杭电 2011 年计算机复试真题"></a>杭电 2011 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
             <p>给定三条边，请你判断一下能不能组成一个三角形。</p>
-          </div>  
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入数据第一行包含一个数 M，接下有 M 行，每行一个实例，包含三个正数 A,B,C。其中 A,B,C &lt;1000;</p>
-          </div>  
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>对于每个测试实例，如果三条边长 A,B,C 能组成三角形的话，输出 YES，否则 NO。</p>
-          </div>  
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />1 2 3<br />2 2 2</p>
-          </div>  
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>NO<br />YES</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>1 2 3<br>2 2 2</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>NO<br>YES</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>需要满足条件 a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">double</span> a, b, c;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;<br>        <span class="hljs-keyword">if</span> (a + b &gt; c &amp;&amp; a + c &gt; b &amp;&amp; b + c &gt; a) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        &#125; <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
             <p>有个人从 2003 年 1 月 1 日开始，三天打鱼两天晒网，请输入月份、日期，问在当年的某一天他是在打鱼还是在晒网</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入月份、日期</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出当前日期是在打鱼还是晒网，每组输出占一行</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
             <p>1 5</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Output<br><div class="note note-info">
             <p>晒网</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>只是当年的计算，不是跨年，比较简单，如果跨年的话，还要判断润平年，然后计算天数，基本方法都是一样的，对 5 取余即可</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> m, d, days[<span class="hljs-number">12</span>] = &#123;<span class="hljs-number">31</span>, <span class="hljs-number">28</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>, <span class="hljs-number">30</span>, <span class="hljs-number">31</span>&#125;;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; m &gt;&gt; d) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; m - <span class="hljs-number">1</span>; i++) &#123;<br>            d += days[i];<br>        &#125;<br>        <span class="hljs-keyword">if</span> (d % <span class="hljs-number">5</span> == <span class="hljs-number">0</span> || d % <span class="hljs-number">5</span> == <span class="hljs-number">4</span>)<br>            cout &lt;&lt; <span class="hljs-string">&quot;晒网&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;打鱼&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>Problem Description<br><div class="note note-info">
             <p>丑数是这样定义的：如果一个正整数的素因子只包含 2、3、5、7 四种，则它被称为丑数。以下数列 1， 2， 3，4， 5，6，7，8，9， 10，12，14，15，16，18， 20， 21，24，25， 27………. 就显示了前 20 个丑数。给出一个正整数 N，判断这个数是否为丑数</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入一个正整数，有多组数据，每组数据占一行</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出当前数字是否为丑数，若是则输出 “Yes” 否则输出 “No”，每组输出占一行</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>15<br />26<br />140</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>Yes<br />No<br />No</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>15<br>26<br>140</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>Yes<br>No<br>No</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>只要判断能否被 2，3，5，7 整除即可</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isugly</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">3</span>;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">5</span>;<br>    <span class="hljs-keyword">while</span> (a % <span class="hljs-number">7</span> == <span class="hljs-number">0</span>) a /= <span class="hljs-number">7</span>;<br>    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">1</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isugly</span>(n))<br>            cout &lt;&lt; <span class="hljs-string">&quot;Yes&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;No&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3723806273.html">杭电 2010 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1301471260.html">杭电 2012 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3893981202.html">杭电 2013 年计算机复试真题</a></li>

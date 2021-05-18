@@ -292,107 +292,69 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2019-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2019-年计算机复试真题"></a> 杭电 2019 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+              <h1 id="杭电-2019-年计算机复试真题"><a href="#杭电-2019-年计算机复试真题" class="headerlink" title="杭电 2019 年计算机复试真题"></a>杭电 2019 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
             <p>大家去电影院看电影，总共有 n 人来看电影，其中年龄不低于 18 岁的成年人的座位号为奇数，不满 18 岁的未成年人的座位号为偶数。现在请统计成年人与未成年的数目，以及他们在总人数里的比例。n&lt;=1000</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>第一行输入 n ，表示有 n 个人去看电影 (1&lt;=n&lt;1000)，接下来是 n 个座位号</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>依次输出此次看电影成人的人数以及成人在所有人中所占的比例、未成年人的人数以及未成年人在所有人中所占的比例，计算出的比例保留两位小数，每个输出用空格隔开</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />2 3 6 7 11</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>2 3 6 7 11</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>3 0.60 2 0.40</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>奇偶数判断</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, num, a = <span class="hljs-number">0</span>, b = <span class="hljs-number">0</span>;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; num;<br>        <span class="hljs-keyword">if</span> (num % <span class="hljs-number">2</span> != <span class="hljs-number">0</span>)<br>            a++;  <span class="hljs-comment">//成年人</span><br>        <span class="hljs-keyword">else</span><br>            b++;  <span class="hljs-comment">//未成年人</span><br>    &#125;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %.2f %d %.2f\n&quot;</span>, a, <span class="hljs-number">1.0</span> * a / (a + b), b, <span class="hljs-number">1.0</span> * b / (a + b));<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
             <p>有一个大容器，现在向其中加入若干铅锤的木板，每个木板的顶端坐标记为 <code>(i,yi)</code></p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>第一行输入 n ，表示有 n 个木板 (1&lt;=n&lt;1000)，接下来是 n 个木板高度</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出该容器最大能装多少体积的水（容器不允许倾斜）</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>8<br />1 8 6 4 5 3 7 2</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>8<br>1 8 6 4 5 3 7 2</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>35</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>直接暴力破解，找最大值</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, v = <span class="hljs-number">0</span>, num[<span class="hljs-number">1001</span>], maxv = <span class="hljs-number">0</span>;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) cin &gt;&gt; num[i];<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>            v = <span class="hljs-built_in">min</span>(num[i], num[j]) * (j - i);  <span class="hljs-comment">//最大体积</span><br>            maxv = <span class="hljs-built_in">max</span>(maxv, v);<br>        &#125;<br>    &#125;<br>    cout &lt;&lt; maxv &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h3>
-<div class="note note-info">
+<hr>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><div class="note note-info">
             
           </div>
-<p>解题思路</p>
-<div class="note note-success">
+<p>解题思路<br><div class="note note-success">
             
-          </div>
+          </div></p>
 <p>参考源码</p>
 <figure class="highlight"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs"><br></code></pre></div></td></tr></table></figure>
-<hr />
-<h3 id="第四题"><a class="markdownIt-Anchor" href="#第四题"></a> 第四题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>Problem Description<br><div class="note note-info">
             <p>有一群人，现在告诉你他们之间的朋友关系。若 A 与 B 是朋友，B 是 C 的朋友，则 A 与 C 也是朋友。朋友关系都是双向的，即 A 与 B 是朋友，B 与 A 也是朋友。那么 A、B、C 就在同一个 “朋友圈”</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>首先输入 n,m 表示有 n 个人，m 对关系 (1&lt;=n&lt;2000)，接下来有 m 行每一行表示一对关系</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出在当前输入关系的情况下 “朋友圈” 的数量</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>8 7<br />1 2<br />2 4<br />4 1<br />5 7<br />4 3<br />6 2<br />7 8</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>8 7<br>1 2<br>2 4<br>4 1<br>5 7<br>4 3<br>6 2<br>7 8</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>2</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>求连通分量的个数，使用并查集或者是DFS</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-comment">// 方法一：并查集</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> fa[<span class="hljs-number">2001</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (x == fa[x])<br>        <span class="hljs-keyword">return</span> x;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">find</span>(fa[x]);<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, m, a, b, ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) fa[i] = i;  <span class="hljs-comment">//初始化</span><br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">while</span> (m--) &#123;<br>        cin &gt;&gt; a &gt;&gt; b;<br>        <span class="hljs-keyword">int</span> fa1 = <span class="hljs-built_in">find</span>(a);<br>        <span class="hljs-keyword">int</span> fa2 = <span class="hljs-built_in">find</span>(b);<br>        <span class="hljs-keyword">if</span> (fa1 != fa2) fa[fa1] = fa2;  <span class="hljs-comment">//合并</span><br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">if</span> (i == fa[i]) ans++;  <span class="hljs-comment">//根节点</span><br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>    <span class="hljs-built_in">system</span>(<span class="hljs-string">&quot;pause&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><br><span class="hljs-comment">// 方法二：DFS</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> map[<span class="hljs-number">2001</span>][<span class="hljs-number">2001</span>];<br><span class="hljs-keyword">bool</span> vis[<span class="hljs-number">2001</span>];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DFS</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>    vis[u] = <span class="hljs-literal">true</span>;                  <span class="hljs-comment">//标记为已访问</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;  <span class="hljs-comment">//对每个顶点</span><br>        <span class="hljs-keyword">if</span> (!vis[i] &amp;&amp; map[u][i]) &#123;<br>            vis[i] = <span class="hljs-literal">true</span>;<br>            <span class="hljs-built_in">DFS</span>(i, n);<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, m, a, b, count = <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">memset</span>(map, <span class="hljs-number">0</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(map));<br>    <span class="hljs-built_in">memset</span>(vis, <span class="hljs-literal">false</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(vis));<br>    cin &gt;&gt; n &gt;&gt; m;<br>    <span class="hljs-keyword">while</span> (m--) &#123;<br>        cin &gt;&gt; a &gt;&gt; b;<br>        map[a][b] = map[b][a] = <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>        <span class="hljs-keyword">if</span> (!vis[i]) &#123;  <span class="hljs-comment">//若未访问</span><br>            <span class="hljs-built_in">DFS</span>(i, n);<br>            count++;  <span class="hljs-comment">//联通分量个数</span><br>        &#125;<br>    &#125;<br>    cout &lt;&lt; count &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/642354362.html">杭电 2014 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2210536628.html">杭电 2015 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3056577255.html">杭电 2016 年计算机复试真题</a></li>

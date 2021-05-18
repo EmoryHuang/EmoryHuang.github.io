@@ -292,12 +292,9 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="计算机组成原理面试常见问题总结"><a class="markdownIt-Anchor" href="#计算机组成原理面试常见问题总结"></a> 计算机组成原理面试常见问题总结</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>本文记录了一些计算机组成原理面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
-<hr />
-<h3 id="q冯诺依曼机"><a class="markdownIt-Anchor" href="#q冯诺依曼机"></a> Q：冯诺依曼机</h3>
-<p>A:冯诺依曼机特点</p>
+              <h1 id="计算机组成原理面试常见问题总结"><a href="#计算机组成原理面试常见问题总结" class="headerlink" title="计算机组成原理面试常见问题总结"></a>计算机组成原理面试常见问题总结</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>本文记录了一些计算机组成原理面试常见问题，本意用于考研复试，以下面试题为网上整理的问题以及自己加入的一些问题，答案仅供参考！</p>
+<hr>
+<h3 id="Q：冯诺依曼机"><a href="#Q：冯诺依曼机" class="headerlink" title="Q：冯诺依曼机"></a>Q：冯诺依曼机</h3><p>A:冯诺依曼机特点</p>
 <ol>
 <li>计算机硬件系统由<strong>运算器、存储器、控制器、输入设备和输出设备</strong> 5 大部件组成</li>
 <li>指令和数据以同等地位存储在存储器中，并可按地址寻访</li>
@@ -306,107 +303,85 @@
 <li>指令在存储器内按顺序存放</li>
 <li>早期的冯诺依曼机以<strong>运算器</strong>为中心，输入／输出设备通过运算器与存储器传送数据。现代计算机以<strong>存储器</strong>为中心</li>
 </ol>
-<h3 id="q存储程序"><a class="markdownIt-Anchor" href="#q存储程序"></a> Q：存储程序？</h3>
-<p>A：存储程序的概念是指将指令以代码的形式事先输入计算机的主存储器，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束</p>
-<h3 id="q在计算机系统结构中什么是编译什么是解释"><a class="markdownIt-Anchor" href="#q在计算机系统结构中什么是编译什么是解释"></a> Q：在计算机系统结构中，什么是编译？什么是解释？</h3>
-<p>A：</p>
+<h3 id="Q：存储程序？"><a href="#Q：存储程序？" class="headerlink" title="Q：存储程序？"></a>Q：存储程序？</h3><p>A：存储程序的概念是指将指令以代码的形式事先输入计算机的主存储器，然后按其在存储器中的首地址执行程序的第一条指令，以后就按该程序的规定顺序执行其他指令，直至程序执行结束</p>
+<h3 id="Q：在计算机系统结构中，什么是编译？什么是解释？"><a href="#Q：在计算机系统结构中，什么是编译？什么是解释？" class="headerlink" title="Q：在计算机系统结构中，什么是编译？什么是解释？"></a>Q：在计算机系统结构中，什么是编译？什么是解释？</h3><p>A：</p>
 <ul>
 <li>解释：在运行程序的时候才翻译，翻译一句执行一句，边翻译边执行</li>
 <li>编译：将高级语言转化为汇编语言</li>
 </ul>
-<h3 id="q计算机系统-5-层层次结构虚拟机是哪几层"><a class="markdownIt-Anchor" href="#q计算机系统-5-层层次结构虚拟机是哪几层"></a> Q：计算机系统 5 层层次结构？虚拟机是哪几层？</h3>
-<p>A：微程序机器层、传统机器语言层、操作系统层、汇编语言层、高级语言层</p>
+<h3 id="Q：计算机系统-5-层层次结构？虚拟机是哪几层？"><a href="#Q：计算机系统-5-层层次结构？虚拟机是哪几层？" class="headerlink" title="Q：计算机系统 5 层层次结构？虚拟机是哪几层？"></a>Q：计算机系统 5 层层次结构？虚拟机是哪几层？</h3><p>A：微程序机器层、传统机器语言层、操作系统层、汇编语言层、高级语言层</p>
 <p>虚拟机：操作系统层、汇编语言层、高级语言层</p>
-<h3 id="q字长"><a class="markdownIt-Anchor" href="#q字长"></a> Q：字长？</h3>
-<p>A：</p>
+<h3 id="Q：字长？"><a href="#Q：字长？" class="headerlink" title="Q：字长？"></a>Q：字长？</h3><p>A：</p>
 <ul>
 <li>机器字长：计算机能直接处理的二进制位数</li>
 <li>指令字长：一个指令字中包含的二进制代码位数</li>
 <li>存储字长：一个存储单元存储二进制代码长度</li>
 </ul>
-<h3 id="q为什么采用补码加减"><a class="markdownIt-Anchor" href="#q为什么采用补码加减"></a> Q：为什么采用补码加减？</h3>
-<p>A：省去计算机判断符号位或者说判断 +/- 运算的麻烦。采用补码表示后，不管是加法还是减法都是加法运算</p>
-<h3 id="qieee-754-标准"><a class="markdownIt-Anchor" href="#qieee-754-标准"></a> Q：IEEE 754 标准</h3>
-<p>A：<img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/IEEE754.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="IEEE754" /></p>
-<h3 id="q在计算机中为什么要采用二进制来表示数据"><a class="markdownIt-Anchor" href="#q在计算机中为什么要采用二进制来表示数据"></a> Q：在计算机中，为什么要采用二进制来表示数据？</h3>
-<p>A：</p>
+<h3 id="Q：为什么采用补码加减？"><a href="#Q：为什么采用补码加减？" class="headerlink" title="Q：为什么采用补码加减？"></a>Q：为什么采用补码加减？</h3><p>A：省去计算机判断符号位或者说判断 +/- 运算的麻烦。采用补码表示后，不管是加法还是减法都是加法运算</p>
+<h3 id="Q：IEEE-754-标准"><a href="#Q：IEEE-754-标准" class="headerlink" title="Q：IEEE 754 标准"></a>Q：IEEE 754 标准</h3><p>A：<img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/IEEE754.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="IEEE754"></p>
+<h3 id="Q：在计算机中，为什么要采用二进制来表示数据？"><a href="#Q：在计算机中，为什么要采用二进制来表示数据？" class="headerlink" title="Q：在计算机中，为什么要采用二进制来表示数据？"></a>Q：在计算机中，为什么要采用二进制来表示数据？</h3><p>A：</p>
 <ul>
 <li>从可行性来说，采用二进制，只有 0 和 1 两个状态，能够表示 0 、1 两种状态的电子器件很多</li>
 <li>从运算的简易性来说，二进制数的运算法则少，运算简单</li>
 <li>从逻辑上来说，由于二进制 0 和 1 正好和逻辑代数的假 (false) 和真 (true) 相对应</li>
 </ul>
-<h3 id="q什么是存储单元存储字存储字长存储体"><a class="markdownIt-Anchor" href="#q什么是存储单元存储字存储字长存储体"></a> Q：什么是存储单元，存储字，存储字长，存储体？</h3>
-<p>A：</p>
+<h3 id="Q：什么是存储单元，存储字，存储字长，存储体？"><a href="#Q：什么是存储单元，存储字，存储字长，存储体？" class="headerlink" title="Q：什么是存储单元，存储字，存储字长，存储体？"></a>Q：什么是存储单元，存储字，存储字长，存储体？</h3><p>A：</p>
 <ul>
 <li>存储单元：存储一个存储字并具有特定存储地址的存储单位。</li>
 <li>存储字：一个存储单元中存放的所有二进制数据。</li>
 <li>存储字长：存储字中存储的所有二进制数据的位数。</li>
 <li>存储体：有多个存储单元构成的存储器件。</li>
 </ul>
-<h3 id="q主存储器中什么是-mar-什么是-mdr存储器的最大容量由什么决定"><a class="markdownIt-Anchor" href="#q主存储器中什么是-mar-什么是-mdr存储器的最大容量由什么决定"></a> Q：主存储器中，什么是 MAR, 什么是 MDR，存储器的最大容量由什么决定？</h3>
-<p>A：</p>
+<h3 id="Q：主存储器中，什么是-MAR-什么是-MDR，存储器的最大容量由什么决定？"><a href="#Q：主存储器中，什么是-MAR-什么是-MDR，存储器的最大容量由什么决定？" class="headerlink" title="Q：主存储器中，什么是 MAR, 什么是 MDR，存储器的最大容量由什么决定？"></a>Q：主存储器中，什么是 MAR, 什么是 MDR，存储器的最大容量由什么决定？</h3><p>A：</p>
 <ul>
 <li>MAR：指存储地址寄存器，保存需要访问的存储单元地址，反应存储单元的个数</li>
 <li>MDR：指存储数据寄存器，缓存读出或写入存储单元的数据，反应存储字长</li>
 </ul>
 <p>存储器的最大容量由 MAR 寄存器的位数和 MDR 寄存器的位数决定</p>
-<h3 id="q多级存储系统"><a class="markdownIt-Anchor" href="#q多级存储系统"></a> Q：多级存储系统？</h3>
-<p>A：为了解决存储系统大容量、高速度和低成本 3 个相互制约的矛盾</p>
+<h3 id="Q：多级存储系统？"><a href="#Q：多级存储系统？" class="headerlink" title="Q：多级存储系统？"></a>Q：多级存储系统？</h3><p>A：为了解决存储系统大容量、高速度和低成本 3 个相互制约的矛盾</p>
 <ul>
 <li>“Cache - 主存”层次：解决 CPU 和主存速度不匹配的问题</li>
 <li>“主存 - 辅存”层次：解决存储系统的容量问题</li>
 </ul>
-<h3 id="q大端方式和小端方式"><a class="markdownIt-Anchor" href="#q大端方式和小端方式"></a> Q：大端方式和小端方式？</h3>
-<p>A：</p>
+<h3 id="Q：大端方式和小端方式？"><a href="#Q：大端方式和小端方式？" class="headerlink" title="Q：大端方式和小端方式？"></a>Q：大端方式和小端方式？</h3><p>A：</p>
 <ul>
 <li>大端方式：字的低位存在内存的高地址中，而字的高位存在内存的低地址中</li>
 <li>小端方式：字的低位存在内存的低地址中，而字的高位存在内存的高地址中</li>
 </ul>
-<h3 id="q随机存储器"><a class="markdownIt-Anchor" href="#q随机存储器"></a> Q：随机存储器</h3>
-<p>A：</p>
+<h3 id="Q：随机存储器"><a href="#Q：随机存储器" class="headerlink" title="Q：随机存储器"></a>Q：随机存储器</h3><p>A：</p>
 <ul>
 <li>静态随机存储器（SRAM）：速度快，集成度低，价格高，不需要刷新，用于高速缓存</li>
 <li>动态随机存储器（DRAM）：速度慢，集成度高，价格低，需要刷新，用于内存</li>
 </ul>
-<h3 id="q程序访问的局部性"><a class="markdownIt-Anchor" href="#q程序访问的局部性"></a> Q：程序访问的局部性</h3>
-<p>A：</p>
+<h3 id="Q：程序访问的局部性"><a href="#Q：程序访问的局部性" class="headerlink" title="Q：程序访问的局部性"></a>Q：程序访问的局部性</h3><p>A：</p>
 <ul>
 <li>时间局部性：如果一个存储项被访问，则可能该项会很快被再次访问</li>
 <li>空间局部性：如果一个存储项被访问，则该项及其邻近的项也可能很快被访问</li>
 </ul>
-<h3 id="qcache"><a class="markdownIt-Anchor" href="#qcache"></a> Q：Cache</h3>
-<p>A：利用程序访问的局部性原理，把程序中正在使用的部分存放在一个高速的、容量较小的临时存储器中</p>
+<h3 id="Q：Cache"><a href="#Q：Cache" class="headerlink" title="Q：Cache"></a>Q：Cache</h3><p>A：利用程序访问的局部性原理，把程序中正在使用的部分存放在一个高速的、容量较小的临时存储器中</p>
 <p>引入目的：解决 CPU 和主存之间运算速度的差异</p>
-<h3 id="qcache-与主存的映射方式"><a class="markdownIt-Anchor" href="#qcache-与主存的映射方式"></a> Q：Cache 与主存的映射方式</h3>
-<p>A：直接映射、全相联映射、组相联映射</p>
+<h3 id="Q：Cache-与主存的映射方式"><a href="#Q：Cache-与主存的映射方式" class="headerlink" title="Q：Cache 与主存的映射方式"></a>Q：Cache 与主存的映射方式</h3><p>A：直接映射、全相联映射、组相联映射</p>
 <ul>
 <li>直接映射：地址变换速度快，cache 利用率不高，块冲突率高</li>
 <li>全相联映射：cache 利用率高，块冲突率低，地址变换复杂</li>
 </ul>
-<h3 id="qcache-替换算法"><a class="markdownIt-Anchor" href="#qcache-替换算法"></a> Q：Cache 替换算法</h3>
-<p>A：随机算法、先进先出算法（FIFO）、近期最少使用算法（LRU）（最优）</p>
-<h3 id="qcache-写操作方式"><a class="markdownIt-Anchor" href="#qcache-写操作方式"></a> Q：Cache 写操作方式</h3>
-<p>A：</p>
+<h3 id="Q：Cache-替换算法"><a href="#Q：Cache-替换算法" class="headerlink" title="Q：Cache 替换算法"></a>Q：Cache 替换算法</h3><p>A：随机算法、先进先出算法（FIFO）、近期最少使用算法（LRU）（最优）</p>
+<h3 id="Q：Cache-写操作方式"><a href="#Q：Cache-写操作方式" class="headerlink" title="Q：Cache 写操作方式"></a>Q：Cache 写操作方式</h3><p>A：</p>
 <ul>
 <li>全写法：写操作既写入 Cache 又写入主存</li>
 <li>写回法：只把数据写入 Cache ，当 Cache 中数据被替换出去之后才写入主存</li>
 </ul>
-<h3 id="q虚拟存储器"><a class="markdownIt-Anchor" href="#q虚拟存储器"></a> Q：虚拟存储器</h3>
-<p>A：虚拟存储器是指具有请求调入和置换功能，能从逻辑上对内存容量加以扩存的一种存储器系统</p>
+<h3 id="Q：虚拟存储器"><a href="#Q：虚拟存储器" class="headerlink" title="Q：虚拟存储器"></a>Q：虚拟存储器</h3><p>A：虚拟存储器是指具有请求调入和置换功能，能从逻辑上对内存容量加以扩存的一种存储器系统</p>
 <ul>
 <li>页式虚拟存储器：把虚拟存储空间和实际空间等分成固定大小的页</li>
 <li>段式虚拟存储器：把程序按段划分</li>
 <li>段页式虚拟存储器：将程序按逻辑结构分成段，每段又分成若干个页</li>
 </ul>
-<h3 id="q快表"><a class="markdownIt-Anchor" href="#q快表"></a> Q：快表</h3>
-<p>A：加快地址变换，虚页号变换成主存中实页号</p>
-<h3 id="q一条指令包含哪些部分"><a class="markdownIt-Anchor" href="#q一条指令包含哪些部分"></a> Q：一条指令包含哪些部分？</h3>
-<p>A：操作码字段、地址码字段</p>
+<h3 id="Q：快表"><a href="#Q：快表" class="headerlink" title="Q：快表"></a>Q：快表</h3><p>A：加快地址变换，虚页号变换成主存中实页号</p>
+<h3 id="Q：一条指令包含哪些部分？"><a href="#Q：一条指令包含哪些部分？" class="headerlink" title="Q：一条指令包含哪些部分？"></a>Q：一条指令包含哪些部分？</h3><p>A：操作码字段、地址码字段</p>
 <p>指令中的地址可以为四地址（访存 4 次），三地址（访存 4 次），二地址（访存 3 次），一地址（访存 2 次）和零地址</p>
-<h3 id="q寻址方式包括哪两类"><a class="markdownIt-Anchor" href="#q寻址方式包括哪两类"></a> Q：寻址方式包括哪两类？</h3>
-<p>A：指令寻址、数据寻址</p>
-<h3 id="q各种数据寻址方式概念"><a class="markdownIt-Anchor" href="#q各种数据寻址方式概念"></a> Q：各种数据寻址方式概念</h3>
-<p>A：</p>
+<h3 id="Q：寻址方式包括哪两类？"><a href="#Q：寻址方式包括哪两类？" class="headerlink" title="Q：寻址方式包括哪两类？"></a>Q：寻址方式包括哪两类？</h3><p>A：指令寻址、数据寻址</p>
+<h3 id="Q：各种数据寻址方式概念"><a href="#Q：各种数据寻址方式概念" class="headerlink" title="Q：各种数据寻址方式概念"></a>Q：各种数据寻址方式概念</h3><p>A：</p>
 <ul>
 <li>隐含寻址：不显式的给出第二操作数的地址，规定累加器作为第二操作数地址</li>
 <li>立即（数）寻址：地址字段存放操作数本身，数据以补码形式存放</li>
@@ -418,44 +393,33 @@
 <li>基址寻址：基址寄存器 BR 的内容加上指令格式中的形式地址而形成操作数的有效地址，利于多道程序设计，可用于编制浮动程序</li>
 <li>变址寻址：变址寄存器 IX 的内容加上指令格式中的形式地址而形成操作数的有效地址，适用于编制循环程序，处理数组问题</li>
 </ul>
-<h3 id="qcisc-和-risc"><a class="markdownIt-Anchor" href="#qcisc-和-risc"></a> Q：CISC 和 RISC</h3>
-<p>A：</p>
+<h3 id="Q：CISC-和-RISC"><a href="#Q：CISC-和-RISC" class="headerlink" title="Q：CISC 和 RISC"></a>Q：CISC 和 RISC</h3><p>A：</p>
 <ul>
 <li>CISC：复杂指令系统计算机，指令数目多，字长不固定，寻址方式多，寄存器数量少，一般为微程序控制</li>
 <li>RISC：精简指令系统计算机，指令数目少，字长固定，寻址方式少，寄存器数量多，一般为组合逻辑控制</li>
 </ul>
-<h3 id="q指令周期"><a class="markdownIt-Anchor" href="#q指令周期"></a> Q：指令周期</h3>
-<p>A：取指周期、间址周期、执行周期、中断周期</p>
-<h3 id="q影响流水线性能的因素"><a class="markdownIt-Anchor" href="#q影响流水线性能的因素"></a> Q：影响流水线性能的因素</h3>
-<p>A：数据冲突（数据旁路）、控制冲突（动态预测）</p>
-<h3 id="q总线的两大基本特征"><a class="markdownIt-Anchor" href="#q总线的两大基本特征"></a> Q：总线的两大基本特征</h3>
-<p>A：分时、共享</p>
-<h3 id="q系统总线按照传输信息的不同分成哪几类"><a class="markdownIt-Anchor" href="#q系统总线按照传输信息的不同分成哪几类"></a> Q：系统总线按照传输信息的不同，分成哪几类？</h3>
-<p>A：数据总线（双向）、地址总线（单向）、控制总线（单向）</p>
-<h3 id="q集中式总线判优控制有哪三种方式"><a class="markdownIt-Anchor" href="#q集中式总线判优控制有哪三种方式"></a> Q：集中式总线判优控制有哪三种方式？</h3>
-<p>A：链式查询、计数器定时查询、独立请求方式</p>
-<h3 id="q总线通信控制"><a class="markdownIt-Anchor" href="#q总线通信控制"></a> Q：总线通信控制</h3>
-<p>A：</p>
+<h3 id="Q：指令周期"><a href="#Q：指令周期" class="headerlink" title="Q：指令周期"></a>Q：指令周期</h3><p>A：取指周期、间址周期、执行周期、中断周期</p>
+<h3 id="Q：影响流水线性能的因素"><a href="#Q：影响流水线性能的因素" class="headerlink" title="Q：影响流水线性能的因素"></a>Q：影响流水线性能的因素</h3><p>A：数据冲突（数据旁路）、控制冲突（动态预测）</p>
+<h3 id="Q：总线的两大基本特征"><a href="#Q：总线的两大基本特征" class="headerlink" title="Q：总线的两大基本特征"></a>Q：总线的两大基本特征</h3><p>A：分时、共享</p>
+<h3 id="Q：系统总线按照传输信息的不同，分成哪几类？"><a href="#Q：系统总线按照传输信息的不同，分成哪几类？" class="headerlink" title="Q：系统总线按照传输信息的不同，分成哪几类？"></a>Q：系统总线按照传输信息的不同，分成哪几类？</h3><p>A：数据总线（双向）、地址总线（单向）、控制总线（单向）</p>
+<h3 id="Q：集中式总线判优控制有哪三种方式？"><a href="#Q：集中式总线判优控制有哪三种方式？" class="headerlink" title="Q：集中式总线判优控制有哪三种方式？"></a>Q：集中式总线判优控制有哪三种方式？</h3><p>A：链式查询、计数器定时查询、独立请求方式</p>
+<h3 id="Q：总线通信控制"><a href="#Q：总线通信控制" class="headerlink" title="Q：总线通信控制"></a>Q：总线通信控制</h3><p>A：</p>
 <ul>
 <li>同步通信：总线上各个部件由统一的时钟信号控制</li>
-<li>异步通信：总线上各部件没有统一的时钟标准，采用应答式通信
-<ul>
+<li>异步通信：总线上各部件没有统一的时钟标准，采用应答式通信<ul>
 <li>不互锁、半互锁、全互锁</li>
 </ul>
 </li>
 </ul>
-<h3 id="qio-控制方式"><a class="markdownIt-Anchor" href="#qio-控制方式"></a> Q：I/O 控制方式</h3>
-<p>A：</p>
+<h3 id="Q：I-O-控制方式"><a href="#Q：I-O-控制方式" class="headerlink" title="Q：I/O 控制方式"></a>Q：I/O 控制方式</h3><p>A：</p>
 <ul>
 <li>程序查询方式：由程序不断的查询外设的状态，直到外设准备就绪</li>
 <li>程序中断方式：在计算机执行现行程序的过程中，出现某些急需处理的异常情况或特殊请求，CPU 暂时中止现行程序，而转去对这些异常情况或特殊请求进行处理，在处理完毕后 CPU 又自动返回到现行程序的断点处，继续执行原程序</li>
 <li>DMA 方式：在外设和主存之间开辟一条直接数据通道</li>
 <li>通道方式：专门管理 I/O 的处理机</li>
 </ul>
-<h3 id="qio-设备编址方式"><a class="markdownIt-Anchor" href="#qio-设备编址方式"></a> Q：I/O 设备编址方式</h3>
-<p>A：统一编址方式、独立编址方式</p>
-<h3 id="q中断服务程序的基本流程"><a class="markdownIt-Anchor" href="#q中断服务程序的基本流程"></a> Q：中断服务程序的基本流程</h3>
-<p>A：</p>
+<h3 id="Q：I-O-设备编址方式"><a href="#Q：I-O-设备编址方式" class="headerlink" title="Q：I/O 设备编址方式"></a>Q：I/O 设备编址方式</h3><p>A：统一编址方式、独立编址方式</p>
+<h3 id="Q：中断服务程序的基本流程"><a href="#Q：中断服务程序的基本流程" class="headerlink" title="Q：中断服务程序的基本流程"></a>Q：中断服务程序的基本流程</h3><p>A：</p>
 <ol>
 <li>保护现场</li>
 <li>执行中断服务程序</li>
@@ -463,33 +427,25 @@
 <li>开中断</li>
 <li>中断返回</li>
 </ol>
-<h3 id="qdma-工作过程包括哪三部分"><a class="markdownIt-Anchor" href="#qdma-工作过程包括哪三部分"></a> Q：DMA 工作过程包括哪三部分</h3>
-<p>A：</p>
+<h3 id="Q：DMA-工作过程包括哪三部分"><a href="#Q：DMA-工作过程包括哪三部分" class="headerlink" title="Q：DMA 工作过程包括哪三部分"></a>Q：DMA 工作过程包括哪三部分</h3><p>A：</p>
 <ol>
 <li>预处理</li>
 <li>数据传输</li>
 <li>后处理</li>
 </ol>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2420274935.html">数据结构面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/910495705.html">计算机组成原理面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/502033707.html">计算机网络面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1031371177.html">操作系统面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2650639933.html">数据库面试常见问题总结</a></p>
 </li>
-<li>
-<p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/4234684775.html">软件工程面试常见问题总结</a></p>
 </li>
 </ul>
 

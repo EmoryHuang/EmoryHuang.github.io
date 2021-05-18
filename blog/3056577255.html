@@ -292,124 +292,77 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2016-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2016-年计算机复试真题"></a> 杭电 2016 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+              <h1 id="杭电-2016-年计算机复试真题"><a href="#杭电-2016-年计算机复试真题" class="headerlink" title="杭电 2016 年计算机复试真题"></a>杭电 2016 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
             <p>判断一个数 N 是否是素数，是的话输出 “YES”，否则输出 “NO”</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入包含多个测试实例，每行包含一个正整数</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>若是的素数输出 “YES”，否则输出 “NO”</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>1000000007<br />100</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>YES<br />NO</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>1000000007<br>100</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>YES<br>NO</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>整除或者打表</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-comment">//方法一：整除</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isprime</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> a)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (a &lt;= <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-built_in">sqrt</span>(a); i++) &#123;<br>        <span class="hljs-keyword">if</span> (a % i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> n;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isprime</span>(n))<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-comment">//方法二：打表</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX 1000000</span><br><span class="hljs-keyword">bool</span> prime[MAX];<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findprime</span><span class="hljs-params">()</span> </span>&#123;<br>    prime[<span class="hljs-number">0</span>] = <span class="hljs-literal">false</span>;<br>    prime[<span class="hljs-number">1</span>] = <span class="hljs-literal">false</span>;<br>    <span class="hljs-built_in">memset</span>(prime, <span class="hljs-literal">true</span>, <span class="hljs-built_in"><span class="hljs-keyword">sizeof</span></span>(prime));<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; MAX; i++)<br>        <span class="hljs-keyword">if</span> (prime[i])  <span class="hljs-comment">//如果是素数</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span> * i; j &lt; MAX; j += i) &#123;<br>                prime[j] = <span class="hljs-literal">false</span>;  <span class="hljs-comment">//筛去所有i的倍数</span><br>            &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-built_in">findprime</span>();<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-keyword">if</span> (prime[n])<br>            cout &lt;&lt; <span class="hljs-string">&quot;YES&quot;</span> &lt;&lt; endl;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot;NO&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
             <p>在一个二维平面内有 n 个点，每个点坐标为（x，y），求最近的两点的距离</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入首先是一个正整数，表示平面上点的个数，接下来是n行，分别是每个点的坐标（x，y）</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>最近的两点的距离</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>5<br />1 2<br />100 200<br />1000 2000<br />1000 1<br />1 3</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>5<br>1 2<br>100 200<br>1000 2000<br>1000 1<br>1 3</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>1</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>暴力破解，计算每个点之间的距离</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><br>    <span class="hljs-keyword">int</span> x, y;<br>&#125; temp;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n;<br>    <span class="hljs-keyword">double</span> min = <span class="hljs-number">0x3fffffff</span>;<br>    vector&lt;node&gt; vt;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; n) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            cin &gt;&gt; temp.x &gt;&gt; temp.y;<br>            vt.<span class="hljs-built_in">push_back</span>(temp);<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) &#123;  <span class="hljs-comment">//遍历每个点</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; n; j++) &#123;<br>                <span class="hljs-keyword">double</span> dis = <span class="hljs-built_in">sqrt</span>(<span class="hljs-built_in">pow</span>((vt[i].x - vt[j].x), <span class="hljs-number">2</span>) + <span class="hljs-built_in">pow</span>((vt[i].y - vt[j].y), <span class="hljs-number">2</span>));<br>                <span class="hljs-keyword">if</span> (min &gt; dis) min = dis;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; min &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h3><p>Problem Description<br><div class="note note-info">
             <p>有一个文件记录了学生期末考试的几门成绩和学号，求出这几门课程的平均分和总分，并按照总分排序，从高到底，如果成绩相同，按照学号从小到大的顺序。</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>数据从文件读入。第一行是表头，接下来数行每一行表示一个学生的数据</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>按照总分排序，从高到底，如果成绩相同，按照学号从小到大的顺序输出</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>姓名 学号 语文 数学 英语<br />A 1 20 40 40<br />B 2 30 39 31<br />C 3 99 5 5</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>姓名 学号 语文 数学 英语<br>A 1 20 40 40<br>B 2 30 39 31<br>C 3 99 5 5</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>B C A</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>文件处理题，需要使用fstream，另外注意表头的处理</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;fstream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">student</span> &#123;</span><br>    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>], id[<span class="hljs-number">20</span>];<br>    <span class="hljs-keyword">int</span> a, b, c, d;<br>&#125; stu[<span class="hljs-number">1000</span>];<br><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(student m, student n)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (m.a + m.b + m.c + m.d != n.a + n.b + n.c + n.d)<br>        <span class="hljs-keyword">return</span> m.a + m.b + m.c + m.d &gt; n.a + n.b + n.c + n.d;<br>    <span class="hljs-keyword">else</span><br>        <span class="hljs-keyword">return</span> m.id &lt; n.id;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;<br>    fstream in;<br>    in.<span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;..\\HDU2016test\\student.txt&quot;</span>, ios::in);<br>    <span class="hljs-keyword">if</span> (!in) cout &lt;&lt; <span class="hljs-string">&quot;error&quot;</span> &lt;&lt; endl;<br>    string s;<br>    <span class="hljs-built_in">getline</span>(in, s);  <span class="hljs-comment">//处理第一行</span><br>    <span class="hljs-keyword">while</span> (!in.<span class="hljs-built_in">eof</span>()) &#123;<br>        in &gt;&gt; stu[n].name &gt;&gt; stu[n].id;<br>        in &gt;&gt; stu[n].a &gt;&gt; stu[n].b &gt;&gt; stu[n].c &gt;&gt; stu[n].d;<br>        n++;<br>    &#125;<br>    in.<span class="hljs-built_in">close</span>();  <span class="hljs-comment">//文件关闭</span><br>    <span class="hljs-built_in">sort</span>(stu, stu + n, cmp);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>)<br>            cout &lt;&lt; stu[i].name;<br>        <span class="hljs-keyword">else</span><br>            cout &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; stu[i].name;<br>    &#125;<br>    cout &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第四题"><a class="markdownIt-Anchor" href="#第四题"></a> 第四题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
+<hr>
+<h3 id="第四题"><a href="#第四题" class="headerlink" title="第四题"></a>第四题</h3><p>Problem Description<br><div class="note note-info">
             <p>有一个由数字组成的二维矩阵，大小为 <code>N*M</code>；还有一个大小为 <code>n*m</code> 小二维矩阵，想象将小二维矩阵上面（小矩阵左上角位置和大矩阵某个位置对应放置），在不同的位置，这两个二维矩阵对应位置的数字绝对值之差的和一般是不同的，求这个绝对值之差的和的最小值，并求出对应的大矩阵位置</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+          </div><br>Input<br><div class="note note-info">
             <p>输入首先是N与M，接着是<code>N*M</code>的矩阵，之后是n与m，接着<code>n*m</code>的小二维矩阵</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>输出大矩阵与小矩阵对应元素绝对值差的和 s，并输出起始坐标</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>4 4<br />1 2 3 4<br />4 5 6 8<br />1 2 3 4<br />5 6 7 8<br />2 2<br />2 2<br />4 5</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>4 4<br>1 2 3 4<br>4 5 6 8<br>1 2 3 4<br>5 6 7 8<br>2 2<br>2 2<br>4 5</p>
+          </div><br>Sample Output<br><div class="note note-info">
             <p>1 (1,1)</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>把小矩阵放到大矩阵上一一计算，找到绝对值之差的和的最小值</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-keyword">int</span> map1[<span class="hljs-number">1000</span>][<span class="hljs-number">1000</span>];<br><span class="hljs-keyword">int</span> map2[<span class="hljs-number">1000</span>][<span class="hljs-number">1000</span>];<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> N, M, n, m;<br>    <span class="hljs-keyword">int</span> posi, posj, min;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; N &gt;&gt; M) &#123;<br>        posi = posj = <span class="hljs-number">0</span>;<br>        min = <span class="hljs-number">0x3fffffff</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; M; j++) cin &gt;&gt; map1[i][j];<br>        cin &gt;&gt; n &gt;&gt; m;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; m; j++) cin &gt;&gt; map2[i][j];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= N - n; i++) &#123;  <span class="hljs-comment">// i,j为小矩阵起始位置</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= M - m; j++) &#123;<br>                <span class="hljs-keyword">int</span> temp = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> p = <span class="hljs-number">0</span>; p &lt; n; p++) &#123;<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> q = <span class="hljs-number">0</span>; q &lt; m; q++) &#123;<br>                        temp += <span class="hljs-built_in">fabs</span>(map1[i + p][j + q] - map2[p][q]);<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (min &gt; temp) &#123;<br>                    posi = i;<br>                    posj = j;<br>                    min = temp;<br>                &#125;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; min &lt;&lt; <span class="hljs-string">&quot; (&quot;</span> &lt;&lt; posi + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;,&quot;</span> &lt;&lt; posj + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;)&quot;</span> &lt;&lt; endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/642354362.html">杭电 2014 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2210536628.html">杭电 2015 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/329530089.html">杭电 2017 年计算机复试真题</a></li>

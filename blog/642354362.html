@@ -292,68 +292,43 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="杭电-2014-年计算机复试真题"><a class="markdownIt-Anchor" href="#杭电-2014-年计算机复试真题"></a> 杭电 2014 年计算机复试真题</h1>
-<h2 id="写在前面"><a class="markdownIt-Anchor" href="#写在前面"></a> 写在前面</h2>
-<p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
-<hr />
-<h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>If you ever tried to read a html document on a Macintosh, you know how hard it is if no Netscape is installed. Now, who can forget to install a HTML browser? This is very easy because most of the times you don’t need one on a MAC because there is a Acrobate Reader which is native to MAC. But if you ever need one, what do you do? Your task is to write a small html-browser. It should only<br />display the content of the input-file and knows only the html commands (tags) <br> which is a linebreak and <hr> which is a horizontal ruler. Then you should treat all tabulators, spaces and newlines as one space and display the resulting text with no more than 80 characters on a line.</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
-            <p>The input consists of a text you should display. This text consists of words and HTML tags separated by one or more spaces, tabulators or newlines. A word is a sequence of letters, numbers and punctuation. For example, “abc,123” is one word, but “abc, 123” are two words, namely “abc,” and “123”. A word is always shorter than 81 characters and does not contain any ‘&lt;’ or ‘&gt;’. All HTML<br />tags are either <code>&lt;br&gt;</code> or <code>&lt;hr&gt;</code>.</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
-            <p>You should display the the resulting text using this rules:<br />. If you read a word in the input and the resulting line does not get longer than 80 chars, print it, else print it on a new line.<br />. If you read a <code>&lt;br&gt;</code> in the input, start a new line.<br />. If you read a <code>&lt;hr&gt;</code> in the input, start a new line unless you already are at the beginning of a line, display 80 characters of ‘-’ and start a new line (again). The last line is ended by a newline character.</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>Hallo, dies ist eine<br />ziemlich lange Zeile, die in Html<br />aber nicht umgebrochen wird.<br /><code>&lt;br&gt;</code><br />Zwei <code>&lt;br&gt;</code> <code>&lt;br&gt;</code> produzieren zwei Newlines.<br />Es gibt auch noch das tag <code>&lt;hr&gt;</code> was einen Trenner darstellt.<br />Zwei <code>&lt;hr&gt;</code> <code>&lt;hr&gt;</code> produzieren zwei Horizontal Rulers.<br />Achtung mehrere Leerzeichen irritieren</p><p>Html genauso wenig wie</p><p>mehrere Leerzeilen.</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>Hallo, dies ist eine ziemlich lange Zeile, die in Html aber nicht umgebrochen<br />wird.<br />Zwei</p><p>produzieren zwei Newlines. Es gibt auch noch das tag<br />--------------------------------------------------------------------------------<br />was einen Trenner darstellt. Zwei<br />--------------------------------------------------------------------------------<br />--------------------------------------------------------------------------------<br />produzieren zwei Horizontal Rulers. Achtung mehrere Leerzeichen irritieren Html<br />genauso wenig wie mehrere Leerzeilen.</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+              <h1 id="杭电-2014-年计算机复试真题"><a href="#杭电-2014-年计算机复试真题" class="headerlink" title="杭电 2014 年计算机复试真题"></a>杭电 2014 年计算机复试真题</h1><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>此题目是根据 CSDN 博客<a target="_blank" rel="noopener" href="https://huhaizhou.blog.csdn.net/">粥粥同学</a>发布的内容进行收集整理，记录了本人的解题过程和一些想法。仅供大家参考，如有错误，欢迎大家指出！</p>
+<hr>
+<h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>Problem Description<br><div class="note note-info">
+            <p>If you ever tried to read a html document on a Macintosh, you know how hard it is if no Netscape is installed. Now, who can forget to install a HTML browser? This is very easy because most of the times you don’t need one on a MAC because there is a Acrobate Reader which is native to MAC. But if you ever need one, what do you do? Your task is to write a small html-browser. It should only<br>display the content of the input-file and knows only the html commands (tags) <br> which is a linebreak and <hr> which is a horizontal ruler. Then you should treat all tabulators, spaces and newlines as one space and display the resulting text with no more than 80 characters on a line.</p>
+          </div><br>Input<br><div class="note note-info">
+            <p>The input consists of a text you should display. This text consists of words and HTML tags separated by one or more spaces, tabulators or newlines. A word is a sequence of letters, numbers and punctuation. For example, “abc,123” is one word, but “abc, 123” are two words, namely “abc,” and “123”. A word is always shorter than 81 characters and does not contain any ‘&lt;’ or ‘&gt;’. All HTML<br>tags are either <code>&lt;br&gt;</code> or <code>&lt;hr&gt;</code>.</p>
+          </div><br>Output<br><div class="note note-info">
+            <p>You should display the the resulting text using this rules:<br>. If you read a word in the input and the resulting line does not get longer than 80 chars, print it, else print it on a new line.<br>. If you read a <code>&lt;br&gt;</code> in the input, start a new line.<br>. If you read a <code>&lt;hr&gt;</code> in the input, start a new line unless you already are at the beginning of a line, display 80 characters of ‘-‘ and start a new line (again). The last line is ended by a newline character.</p>
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>Hallo, dies ist eine<br>ziemlich lange Zeile, die in Html<br>aber nicht umgebrochen wird.<br><code>&lt;br&gt;</code><br>Zwei <code>&lt;br&gt;</code> <code>&lt;br&gt;</code> produzieren zwei Newlines.<br>Es gibt auch noch das tag <code>&lt;hr&gt;</code> was einen Trenner darstellt.<br>Zwei <code>&lt;hr&gt;</code> <code>&lt;hr&gt;</code> produzieren zwei Horizontal Rulers.<br>Achtung mehrere Leerzeichen irritieren</p><p>Html genauso wenig wie</p><p>mehrere Leerzeilen.</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>Hallo, dies ist eine ziemlich lange Zeile, die in Html aber nicht umgebrochen<br>wird.<br>Zwei</p><p>produzieren zwei Newlines. Es gibt auch noch das tag<br>-———————————————————————————————————————-<br>was einen Trenner darstellt. Zwei<br>-———————————————————————————————————————-<br>-———————————————————————————————————————-<br>produzieren zwei Horizontal Rulers. Achtung mehrere Leerzeichen irritieren Html<br>genauso wenig wie mehrere Leerzeilen.</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>题目大意：处理 HTML 标签<code>&lt;br&gt;&lt;hr&gt;</code>，处理格式的题</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="CPP"><figure class="iseeu highlight /cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    string s;<br>    <span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (cin &gt;&gt; s) &#123;<br>        <span class="hljs-keyword">if</span> (s == <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>) &#123;  <span class="hljs-comment">//换行</span><br>            cout &lt;&lt; endl;<br>            c = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (s == <span class="hljs-string">&quot;&lt;hr&gt;&quot;</span>) &#123;  <span class="hljs-comment">//间隔线</span><br>            <span class="hljs-keyword">if</span> (c)<br>                cout &lt;&lt; endl<br>                     &lt;&lt; <span class="hljs-string">&quot;--------------------------------------------------------------------------------&quot;</span><br>                     &lt;&lt; endl;<br>            <span class="hljs-keyword">else</span><br>                cout &lt;&lt; <span class="hljs-string">&quot;--------------------------------------------------------------------------------&quot;</span><br>                     &lt;&lt; endl;<br>            c = <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">if</span> (!c) &#123;<br>                c = s.<span class="hljs-built_in">length</span>();<br>                cout &lt;&lt; s;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (c + s.<span class="hljs-built_in">length</span>() + <span class="hljs-number">1</span> &gt; <span class="hljs-number">80</span>) &#123;  <span class="hljs-comment">//超过80个字符</span><br>                cout &lt;&lt; endl &lt;&lt; s;<br>                c = s.<span class="hljs-built_in">length</span>();<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                cout &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; s;<br>                c += s.<span class="hljs-built_in">length</span>() + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (c) cout &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h3 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h3>
-<p>Problem Description</p>
-<div class="note note-info">
-            <p>Given a string containing only ‘A’ - ‘Z’, we could encode it using the following method:</p><p>1.Each sub-string containing k same characters should be encoded to “kX” where “X” is the only character in this sub-string.<br />2.If the length of the sub-string is 1, ‘1’ should be ignored.</p>
-          </div>
-<p>Input</p>
-<div class="note note-info">
+<hr>
+<h3 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h3><p>Problem Description<br><div class="note note-info">
+            <p>Given a string containing only ‘A’ - ‘Z’, we could encode it using the following method:</p><p>1.Each sub-string containing k same characters should be encoded to “kX” where “X” is the only character in this sub-string.<br>2.If the length of the sub-string is 1, ‘1’ should be ignored.</p>
+          </div><br>Input<br><div class="note note-info">
             <p>The first line contains an integer N (1 &lt;= N &lt;= 100) which indicates the number of test cases. The next N lines contain N strings. Each string consists of only ‘A’ - ‘Z’ and the length is less than</p>
-          </div>
-<p>Output</p>
-<div class="note note-info">
+          </div><br>Output<br><div class="note note-info">
             <p>For each test case, output the encoded string in a line.</p>
-          </div>
-<p>Sample Input</p>
-<div class="note note-info">
-            <p>2<br />ABC<br />ABBCCC</p>
-          </div>
-<p>Sample Output</p>
-<div class="note note-info">
-            <p>ABC<br />A2B3C</p>
-          </div>
-<p>解题思路</p>
-<div class="note note-success">
+          </div><br>Sample Input<br><div class="note note-info">
+            <p>2<br>ABC<br>ABBCCC</p>
+          </div><br>Sample Output<br><div class="note note-info">
+            <p>ABC<br>A2B3C</p>
+          </div></p>
+<p>解题思路<br><div class="note note-success">
             <p>遍历字符串进行比较，若相同，则 count 加 1，否则输出</p>
-          </div>
+          </div></p>
 <p>参考源码</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="ARDUINO"><figure class="iseeu highlight /arduino"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> n, c;<br>    string s, cs;<br>    cin &gt;&gt; n;<br>    <span class="hljs-built_in">getchar</span>();<br>    <span class="hljs-keyword">while</span> (n--) &#123;<br>        cin &gt;&gt; s;<br>        c = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">length</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span> (s[i] == s[i + <span class="hljs-number">1</span>])<br>                c++;  <span class="hljs-comment">//相同则加1</span><br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (c &gt; <span class="hljs-number">1</span>) cs += <span class="hljs-built_in">to_string</span>(c);  <span class="hljs-comment">//大于1则添加数字</span><br>                cs += s[i];<br>                c = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; cs &lt;&lt; endl;<br>        cs.<span class="hljs-built_in">clear</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
-<hr />
-<h2 id="相关内容"><a class="markdownIt-Anchor" href="#相关内容"></a> 相关内容</h2>
-<ul>
+<hr>
+<h2 id="相关内容"><a href="#相关内容" class="headerlink" title="相关内容"></a>相关内容</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1301471260.html">杭电 2012 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3893981202.html">杭电 2013 年计算机复试真题</a></li>
 <li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2210536628.html">杭电 2015 年计算机复试真题</a></li>
