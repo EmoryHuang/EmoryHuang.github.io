@@ -291,7 +291,7 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/blog/2871732810.html" target="_self">
-          <img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/LeetCode.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="LeetCode 0. 解题报告">
+          <img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/LeetCode.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="LeetCode 解题报告">
         </a>
       </div>
     
@@ -301,7 +301,7 @@
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
         <a href="/blog/2871732810.html" target="_self">
-          LeetCode 0. 解题报告
+          LeetCode 解题报告
         </a>
       </h1>
 
@@ -935,7 +935,34 @@
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+      $.ajax({
+        type: 'GET',
+        url: 'https://api.eatrice.top/',
+        headers: {},
+        dataType: 'json',
+        success: function (result) {
+          var text;
+          if (result) {
+            var keys = 'Content'.split('.')
+            if (result instanceof Array) {
+              result = result[0]
+            }
+            for (const k of keys) {
+              var value = result[k]
+              if (typeof value === 'string') {
+                text = value
+                break
+              } else if (value instanceof Object) {
+                result = value
+              }
+            }
+          }
+          text ? typing(text) : typing(title);
+        },
+        error: function () {
+          typing(title)
+        }
+      })
       
     })(window, document);
   </script>
