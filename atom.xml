@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-05-18T10:03:04.878Z</updated>
+  <updated>2021-06-04T08:51:46.048Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>便利工具和网站分享</title>
+    <link href="https://emoryhuang.cn/blog/1772203212.html"/>
+    <id>https://emoryhuang.cn/blog/1772203212.html</id>
+    <published>2021-06-04T08:27:36.000Z</published>
+    <updated>2021-06-04T08:51:46.048Z</updated>
+    
+    
+    <summary type="html">便利工具和网站分享</summary>
+    
+    
+    
+    <category term="分享" scheme="https://emoryhuang.cn/categories/%E5%88%86%E4%BA%AB/"/>
+    
+    
+    <category term="资料分享" scheme="https://emoryhuang.cn/tags/%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 速查备忘手册</title>
+    <link href="https://emoryhuang.cn/blog/8853766.html"/>
+    <id>https://emoryhuang.cn/blog/8853766.html</id>
+    <published>2021-06-04T08:07:36.000Z</published>
+    <updated>2021-06-04T09:03:40.401Z</updated>
+    
+    
+    <summary type="html">关于Linux操作系统命令的使用</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Linux 命令" scheme="https://emoryhuang.cn/tags/Linux-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>算法专题汇总</title>
@@ -368,48 +406,6 @@
     
     
     <summary type="html">Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Fluid是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GitHub Pages个性化域名配置</title>
-    <link href="https://emoryhuang.cn/blog/2058194162.html"/>
-    <id>https://emoryhuang.cn/blog/2058194162.html</id>
-    <published>2021-04-30T02:27:36.000Z</published>
-    <updated>2021-05-04T11:03:43.691Z</updated>
-    
-    
-    <summary type="html">Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文主要介绍 GitHub Pages 个性化域名配置过程。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo部署到Coding</title>
-    <link href="https://emoryhuang.cn/blog/3742237279.html"/>
-    <id>https://emoryhuang.cn/blog/3742237279.html</id>
-    <published>2021-04-30T01:40:36.000Z</published>
-    <updated>2021-05-04T11:12:35.944Z</updated>
-    
-    
-    <summary type="html">Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。本文主要介绍Hexo部署到Coding的过程和可能遇到的一些问题。</summary>
     
     
     

@@ -1,0 +1,1705 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="关于Linux操作系统命令的使用">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>Linux 速查备忘手册 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622796722806-1622796722797-8853766.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Linux 速查备忘手册">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-04 16:07" pubdate>
+        2021年6月4日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      39
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Linux 速查备忘手册</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <div class="note note-info">
+            <p>本文转载自：微信公众号『CodeSheep』</p>
+          </div>
+<h2 id="关机-重启-注销"><a href="#关机-重启-注销" class="headerlink" title="关机/重启/注销"></a>关机/重启/注销</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shutdown -h now</td>
+<td>即刻关机</td>
+</tr>
+<tr>
+<td>shutdown -h 10</td>
+<td>10 分钟后关机</td>
+</tr>
+<tr>
+<td>shutdown -h 11:00</td>
+<td>11：00 关机</td>
+</tr>
+<tr>
+<td>shutdown -h +10</td>
+<td>预定时间关机（10 分钟后）</td>
+</tr>
+<tr>
+<td>shutdown -c</td>
+<td>取消指定时间关机</td>
+</tr>
+<tr>
+<td>shutdown -r now</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>shutdown -r 10</td>
+<td>10 分钟之后重启</td>
+</tr>
+<tr>
+<td>shutdown -r 11:00</td>
+<td>定时重启</td>
+</tr>
+<tr>
+<td>reboot</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>init 6</td>
+<td>重启</td>
+</tr>
+<tr>
+<td>init 0</td>
+<td>立刻关机</td>
+</tr>
+<tr>
+<td>telinit 0</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>poweroff</td>
+<td>立刻关机</td>
+</tr>
+<tr>
+<td>halt</td>
+<td>关机</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>buff 数据同步到磁盘</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>退出登录 Shell</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="系统信息和性能查看"><a href="#系统信息和性能查看" class="headerlink" title="系统信息和性能查看"></a>系统信息和性能查看</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uname -a</td>
+<td>查看内核/OS/CPU 信息</td>
+</tr>
+<tr>
+<td>uname -r</td>
+<td>查看内核版本</td>
+</tr>
+<tr>
+<td>uname -m</td>
+<td>查看处理器架构</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>查看处理器架构</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>查看计算机名</td>
+</tr>
+<tr>
+<td>who</td>
+<td>显示当前登录系统的用户</td>
+</tr>
+<tr>
+<td>who am i</td>
+<td>显示登录时的用户名</td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>显示当前用户名</td>
+</tr>
+<tr>
+<td>cat /proc/version</td>
+<td>查看 linux 版本信息</td>
+</tr>
+<tr>
+<td>cat /proc/cpuinfo</td>
+<td>查看 CPU 信息</td>
+</tr>
+<tr>
+<td>cat /proc/interrupts</td>
+<td>查看中断</td>
+</tr>
+<tr>
+<td>cat /proc/loadavg</td>
+<td>查看系统负载</td>
+</tr>
+<tr>
+<td>uptime</td>
+<td>查看系统运行时间、用户数、负载</td>
+</tr>
+<tr>
+<td>env</td>
+<td>查看系统的环境变量</td>
+</tr>
+<tr>
+<td>lsusb -tv</td>
+<td>查看系统 USB 设备信息</td>
+</tr>
+<tr>
+<td>lspci -tv</td>
+<td>查看系统 PCI 设备信息</td>
+</tr>
+<tr>
+<td>lsmod</td>
+<td>查看已加载的系统模块</td>
+</tr>
+<tr>
+<td>grep MemTotal /proc/meminfo</td>
+<td>查看内存总量</td>
+</tr>
+<tr>
+<td>grep MemFree /proc/meminfo</td>
+<td>查看空闲内存量</td>
+</tr>
+<tr>
+<td>free -m</td>
+<td>查看内存用量和交换区用量</td>
+</tr>
+<tr>
+<td>date</td>
+<td>显示系统日期时间</td>
+</tr>
+<tr>
+<td>cal 2021</td>
+<td>显示 2021 日历表</td>
+</tr>
+<tr>
+<td>top</td>
+<td>动态显示 cpu/内存/进程等情况</td>
+</tr>
+<tr>
+<td>vmstat 1 20</td>
+<td>每 1 秒采一次系统状态，采 20 次</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>查看 io 读写/cpu 使用情况</td>
+</tr>
+<tr>
+<td>sar -u 1 10</td>
+<td>查询 cpu 使用情况（1 秒一次，共 10 次）</td>
+</tr>
+<tr>
+<td>sar -d 1 10</td>
+<td>查询磁盘性能</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fdisk -l</td>
+<td>查看所有磁盘分区</td>
+</tr>
+<tr>
+<td>swapon -s</td>
+<td>查看所有交换分区</td>
+</tr>
+<tr>
+<td>df -h</td>
+<td>查看磁盘使用情况及挂载点</td>
+</tr>
+<tr>
+<td>df -hl</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>du -sh /dir</td>
+<td>查看指定某个用录的大小</td>
+</tr>
+<tr>
+<td>du -sk * &#124; sort -rn</td>
+<td>从高到低依次显示文件和目录大小</td>
+</tr>
+<tr>
+<td>mount /dev/hda2 /mnt/hda2</td>
+<td>挂载 hda2 盘</td>
+</tr>
+<tr>
+<td>mount -t ntfs /dev/sdc1 /mnt/usbhd1</td>
+<td>指定文件系统类型挂载（如 ntfs）</td>
+</tr>
+<tr>
+<td>mount -o loop xxx.iso /mnt/cdrom</td>
+<td>挂载 iso 文件</td>
+</tr>
+<tr>
+<td>umount -v /dev/sda1</td>
+<td>通过设备名卸载</td>
+</tr>
+<tr>
+<td>umount -v /mnt/mymnt</td>
+<td>通过挂载点卸载</td>
+</tr>
+<tr>
+<td>fuser -km /mnt/hda1</td>
+<td>强制卸载(慎用)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="用户和用户组"><a href="#用户和用户组" class="headerlink" title="用户和用户组"></a>用户和用户组</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>useradd codesheep</td>
+<td>创建用户</td>
+</tr>
+<tr>
+<td>userdel -r codesheep</td>
+<td>删除用户</td>
+</tr>
+<tr>
+<td>usermod -g group_name user_name</td>
+<td>修改用户的组</td>
+</tr>
+<tr>
+<td>usermod -aG group_name user_name</td>
+<td>将用户添加到组</td>
+</tr>
+<tr>
+<td>usermod -s /bin/ksh -d /home/codepig –g dev codesheep</td>
+<td>修改用户 codesheep 的登录 Shell、主目录以及用户组</td>
+</tr>
+<tr>
+<td>groups test</td>
+<td>查看 test 用户所在的组</td>
+</tr>
+<tr>
+<td>groupadd group_name</td>
+<td>创建用户组</td>
+</tr>
+<tr>
+<td>groupdel group_name</td>
+<td>删除用户组</td>
+</tr>
+<tr>
+<td>groupmod -n new_name old_name</td>
+<td>重命名用户组</td>
+</tr>
+<tr>
+<td>su - user_name</td>
+<td>完整切换到一个用户环境</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>修改口令</td>
+</tr>
+<tr>
+<td>passwd codesheep</td>
+<td>修改某用户的口令</td>
+</tr>
+<tr>
+<td>w</td>
+<td>查看活动用户</td>
+</tr>
+<tr>
+<td>id codesheep</td>
+<td>查看指定用户 codesheep 信息</td>
+</tr>
+<tr>
+<td>last</td>
+<td>查看用户登录日志</td>
+</tr>
+<tr>
+<td>crontab -l</td>
+<td>查看当前用户的计划任务</td>
+</tr>
+<tr>
+<td>cut -d: -f1 /etc/passwd</td>
+<td>查看系统所有用户</td>
+</tr>
+<tr>
+<td>cut -d: -f1 /etc/group</td>
+<td>查看系统所有组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="网络和进程管理"><a href="#网络和进程管理" class="headerlink" title="网络和进程管理"></a>网络和进程管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifconfig</td>
+<td>查看网络接口属性</td>
+</tr>
+<tr>
+<td>ifconfig eth0</td>
+<td>查看某网卡的配置</td>
+</tr>
+<tr>
+<td>route -n</td>
+<td>查看路由表</td>
+</tr>
+<tr>
+<td>netstat -lntp</td>
+<td>查看所有监听端口</td>
+</tr>
+<tr>
+<td>netstat -antp</td>
+<td>查看已经建立的 TCP 连接</td>
+</tr>
+<tr>
+<td>netstat -lutp</td>
+<td>查看 TCP/UDP 的状态信息</td>
+</tr>
+<tr>
+<td>ifup eth0</td>
+<td>启用 eth0 网络设备</td>
+</tr>
+<tr>
+<td>ifdown eth0</td>
+<td>禁用 eth0 网络设备</td>
+</tr>
+<tr>
+<td>iptables -L</td>
+<td>查看 iptables 规则</td>
+</tr>
+<tr>
+<td>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</td>
+<td>配置 ip 地址</td>
+</tr>
+<tr>
+<td>dhclient eth0</td>
+<td>以 dhcp 模式启用 eth0</td>
+</tr>
+<tr>
+<td>route add -net 0/0 gw Gateway_IP</td>
+<td>配置默认网关</td>
+</tr>
+<tr>
+<td>route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1</td>
+<td>配置静态路由到达⽹络’192.168.0.0/16’</td>
+</tr>
+<tr>
+<td>route del 0/0 gw Gateway_IP</td>
+<td>删除静态路由</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>查看主机名</td>
+</tr>
+<tr>
+<td>host <a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a></td>
+<td>解析主机名</td>
+</tr>
+<tr>
+<td>nslookup <a target="_blank" rel="noopener" href="http://www.baidu.com">www.baidu.com</a></td>
+<td>查询 DNS 记录，查看域名解析是否正常</td>
+</tr>
+<tr>
+<td>ps -ef</td>
+<td>查看所有进程</td>
+</tr>
+<tr>
+<td>ps -ef &#124; grep codesheep</td>
+<td>过滤出你需要的进程</td>
+</tr>
+<tr>
+<td>kill -s name</td>
+<td>kill 指定名称的进程</td>
+</tr>
+<tr>
+<td>kill -s pid</td>
+<td>kill 指定 pid 的进程</td>
+</tr>
+<tr>
+<td>top</td>
+<td>实时显示进程状态</td>
+</tr>
+<tr>
+<td>vmstat 1 20</td>
+<td>每 1 秒采一次系统状态，采 20 次</td>
+</tr>
+<tr>
+<td>iostat</td>
+<td>iostat</td>
+</tr>
+<tr>
+<td>sar -u 1 10</td>
+<td>查询 cpu 使用情况（1 秒一次，共 10 次）</td>
+</tr>
+<tr>
+<td>sar -d 1 10</td>
+<td>查询磁盘性能</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="常用系统服务命令"><a href="#常用系统服务命令" class="headerlink" title="常用系统服务命令"></a>常用系统服务命令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chkconfig —list</td>
+<td>列出系统服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; status</td>
+<td>查看某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; start</td>
+<td>启动某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; stop</td>
+<td>终止某个服务</td>
+</tr>
+<tr>
+<td>service &lt;服务名&gt; restart</td>
+<td>重启某个服务</td>
+</tr>
+<tr>
+<td>systemctl status &lt;服务名&gt;</td>
+<td>查看某个服务</td>
+</tr>
+<tr>
+<td>systemctl start &lt;服务名&gt;</td>
+<td>启动某个服务</td>
+</tr>
+<tr>
+<td>systemctl stop &lt;服务名&gt;</td>
+<td>终止某个服务</td>
+</tr>
+<tr>
+<td>systemctl restart &lt;服务名&gt;</td>
+<td>重启某个服务</td>
+</tr>
+<tr>
+<td>systemctl enable &lt;服务名&gt;</td>
+<td>关闭自启动</td>
+</tr>
+<tr>
+<td>systemctl disable &lt;服务名&gt;</td>
+<td>关闭自启动</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd &lt;目录名&gt;</td>
+<td>进入某个目录</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>回上级目录</td>
+</tr>
+<tr>
+<td>cd ../..</td>
+<td>回上两级目录</td>
+</tr>
+<tr>
+<td>cd</td>
+<td>进个入主目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>回上一步所在目录</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前路径</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>查看文件目录列表</td>
+</tr>
+<tr>
+<td>ls -F</td>
+<td>查看目录中内容（显示是文件还是目录）</td>
+</tr>
+<tr>
+<td>ls -l</td>
+<td>查看文件和目录的详情列表</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>查看隐藏文件</td>
+</tr>
+<tr>
+<td>ls -lh</td>
+<td>查看文件和目录的详情列表（增强文件大小易读性）</td>
+</tr>
+<tr>
+<td>ls -lSr</td>
+<td>查看文件和目录列表（以文件大小升序查看）</td>
+</tr>
+<tr>
+<td>tree</td>
+<td>查看文件和目录的树形结构</td>
+</tr>
+<tr>
+<td>mkdir &lt;目录名&gt;</td>
+<td>创建目录</td>
+</tr>
+<tr>
+<td>mkdir dir1 dir2</td>
+<td>同时创建两个目录</td>
+</tr>
+<tr>
+<td>mkdir -p /tmp/dir1/dir2</td>
+<td>创建目录树</td>
+</tr>
+<tr>
+<td>rm -f file1</td>
+<td>删除’file1’文件</td>
+</tr>
+<tr>
+<td>rmdir dir1</td>
+<td>删除’dir1’目录</td>
+</tr>
+<tr>
+<td>rm -rf dir1</td>
+<td>删除’dir1’目录和其内容</td>
+</tr>
+<tr>
+<td>rm -rf dir1 dir2</td>
+<td>同时删除两个目录及其内容</td>
+</tr>
+<tr>
+<td>mv old_dir new_dir</td>
+<td>重命名/移动目录</td>
+</tr>
+<tr>
+<td>cp file1 file2</td>
+<td>复制文件</td>
+</tr>
+<tr>
+<td>cp dir/* .</td>
+<td>复制某目录下的所有文件下当前目录</td>
+</tr>
+<tr>
+<td>cp -a dir1 dir2</td>
+<td>复制目录</td>
+</tr>
+<tr>
+<td>cp -a /tmp/dir1 .</td>
+<td>复制一个目录至当前目录</td>
+</tr>
+<tr>
+<td>ln -s file1 link1</td>
+<td>创建指向文件/目录的软链接</td>
+</tr>
+<tr>
+<td>ln file1 lnk1</td>
+<td>创建指向文件/目录的物理链接</td>
+</tr>
+<tr>
+<td>find / -name file1</td>
+<td>从根目录开始搜索文件/目录</td>
+</tr>
+<tr>
+<td>find / -user user1</td>
+<td>搜索用户 user1 的文件/目录</td>
+</tr>
+<tr>
+<td>find /dir -name *.bin</td>
+<td>在目录/dir 中搜带有.bin 后缀的文件</td>
+</tr>
+<tr>
+<td>locate &lt;关键词&gt;</td>
+<td>快速定位文件</td>
+</tr>
+<tr>
+<td>locate *.mp4</td>
+<td>寻找.mp4 结尾的文件</td>
+</tr>
+<tr>
+<td>whereis &lt;关键词&gt;</td>
+<td>显示某二进制文件/可执行文件的路径</td>
+</tr>
+<tr>
+<td>which &lt;关键词&gt;</td>
+<td>查找系统目录下某的二进制文件</td>
+</tr>
+<tr>
+<td>chmod ugo+rwx dir1</td>
+<td>设置目录所有者(u)、群组(g)及其他人(o)的读（r）写(w)执行(x)权限</td>
+</tr>
+<tr>
+<td>chmod go-rwx dir1</td>
+<td>移除群组(g)与其他人(o)对目录的读写执行权限</td>
+</tr>
+<tr>
+<td>chown user1 file1</td>
+<td>改变文件的所有者属性</td>
+</tr>
+<tr>
+<td>chown -R user1 dir1</td>
+<td>改变目录的所有者属性</td>
+</tr>
+<tr>
+<td>chgrp group1 file1</td>
+<td>改变文件群组</td>
+</tr>
+<tr>
+<td>chown user1:group1 file1</td>
+<td>改变文件的所有人和群组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="文件查看和处理"><a href="#文件查看和处理" class="headerlink" title="文件查看和处理"></a>文件查看和处理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cat file1</td>
+<td>查看文件内容</td>
+</tr>
+<tr>
+<td>cat -n file1</td>
+<td>查看内容并标示行数</td>
+</tr>
+<tr>
+<td>tac file1</td>
+<td>从最后一行开始反看文件内容</td>
+</tr>
+<tr>
+<td>more file1</td>
+<td>more file1</td>
+</tr>
+<tr>
+<td>less file1</td>
+<td>类似 more 命令，但允许反向操作</td>
+</tr>
+<tr>
+<td>head -2 file1</td>
+<td>查看文件前两行</td>
+</tr>
+<tr>
+<td>tail -2 file1</td>
+<td>查看文件后两行</td>
+</tr>
+<tr>
+<td>tail -f /log/msg</td>
+<td>实时查看添加到文件中的内容</td>
+</tr>
+<tr>
+<td>grep codesheep hello.txt</td>
+<td>在文件 hello.txt 中查找关键词 codesheep</td>
+</tr>
+<tr>
+<td>grep ^sheep hello.txt</td>
+<td>在文件 hello.txt 中查找以 sheep 开头的内容</td>
+</tr>
+<tr>
+<td>grep [0-9] hello.txt</td>
+<td>选择 hello.txt 文件中所有包含数字的行</td>
+</tr>
+<tr>
+<td>sed ‘s/s1/s2/g’ hello.txt</td>
+<td>将 hello.txt 文件中的 s1 替换成 s2</td>
+</tr>
+<tr>
+<td>sed ‘/^$/d’ hello.txt</td>
+<td>从 hello.txt 文件中删除所有空白行</td>
+</tr>
+<tr>
+<td>sed ‘/ *#/d; /^$/d’ hello.txt</td>
+<td>从 hello.txt 文件中删除所有注释和空白行</td>
+</tr>
+<tr>
+<td>sed -e ‘1d’ hello.txt</td>
+<td>从文件 hello.txt 中排除第一行</td>
+</tr>
+<tr>
+<td>sed -n ‘/s1/p’ hello.txt</td>
+<td>查看只包含关键词”s1”的行</td>
+</tr>
+<tr>
+<td>sed -e ‘s/ *$//‘ hello.txt</td>
+<td>删除每一行最后的空白字符</td>
+</tr>
+<tr>
+<td>sed -e ‘s/s1//g’ hello.txt</td>
+<td>从文档中只删除词汇 s1 并保留剩余全部</td>
+</tr>
+<tr>
+<td>sed -n ‘1,5p;5q’ hello.txt</td>
+<td>查看从第 1 行到第 5 行内容</td>
+</tr>
+<tr>
+<td>sed -n ‘5p;5q’ hello.txt</td>
+<td>查看第 5 行</td>
+</tr>
+<tr>
+<td>paste file1 file2</td>
+<td>合并两个文件或两栏的内容</td>
+</tr>
+<tr>
+<td>paste -d ‘+’ file1 file2</td>
+<td>合并两个文件或两栏的内容，中间用”+”区分</td>
+</tr>
+<tr>
+<td>sort file1 file2</td>
+<td>排序两个文件的内容</td>
+</tr>
+<tr>
+<td>comm -1 file1 file2</td>
+<td>比较两个文件的内容(去除’file1’所含内容)</td>
+</tr>
+<tr>
+<td>comm -2 file1 file2</td>
+<td>比较两个文件的内容(去除’file2’所含内容</td>
+</tr>
+<tr>
+<td>comm -3 file1 file2</td>
+<td>比较两个文件的内容(去除两文件共有部分)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="打包和解压"><a href="#打包和解压" class="headerlink" title="打包和解压"></a>打包和解压</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zip xxx.zip file</td>
+<td>压缩至 zip 包</td>
+</tr>
+<tr>
+<td>zip -r xxx.zip file1 file2 dir1</td>
+<td>将多个文件+目录压成 zip 包</td>
+</tr>
+<tr>
+<td>unzip xxx.zip</td>
+<td>解压 zip 包</td>
+</tr>
+<tr>
+<td>tar -cvf xxx.tar file</td>
+<td>创建非压缩 tar 包</td>
+</tr>
+<tr>
+<td>tar -cvf xxx.tar file1 file2 dir1</td>
+<td>将多个文件+目录打 tar 包</td>
+</tr>
+<tr>
+<td>tar -tf xxx.tar</td>
+<td>查看 tar 包的内容</td>
+</tr>
+<tr>
+<td>tar -xvf xxx.tar</td>
+<td>解压 tar 包</td>
+</tr>
+<tr>
+<td>tar -xvf xxx.tar -C /dir</td>
+<td>将 tar 包解压到指定目录</td>
+</tr>
+<tr>
+<td>tar -cvfj xxx.tar.bz2 dir</td>
+<td>创建 bz2 压缩包</td>
+</tr>
+<tr>
+<td>tar -jxvf xxx.tar.bz2</td>
+<td>解压 bz2 压缩包</td>
+</tr>
+<tr>
+<td>tar -cvfz xxx.tar.gz dir</td>
+<td>创建 gzip 压缩包</td>
+</tr>
+<tr>
+<td>tar -zxvf xxx.tar.gz</td>
+<td>解压 gzip 压缩包</td>
+</tr>
+<tr>
+<td>bunzip2 xxx.bz2</td>
+<td>解压 bz2 压缩包</td>
+</tr>
+<tr>
+<td>bzip2 filename</td>
+<td>压缩文件</td>
+</tr>
+<tr>
+<td>gunzip xxx.gz</td>
+<td>解压 gzip 压缩包</td>
+</tr>
+<tr>
+<td>gzip filename</td>
+<td>压缩文件</td>
+</tr>
+<tr>
+<td>gzip -9 filename</td>
+<td>最大程度压缩</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="RPM-包管理命令"><a href="#RPM-包管理命令" class="headerlink" title="RPM 包管理命令"></a>RPM 包管理命令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rpm -qa</td>
+<td>查看已安装的 rpm 包</td>
+</tr>
+<tr>
+<td>rpm -q pkg_name</td>
+<td>查询某个 rpm 包</td>
+</tr>
+<tr>
+<td>rpm -q —whatprovides xxx</td>
+<td>显示 xxx 功能是由哪个包提供的</td>
+</tr>
+<tr>
+<td>rpm -q —whatrequires xxx</td>
+<td>显示 xxx 功能被哪个程序包依赖的</td>
+</tr>
+<tr>
+<td>rpm -q —changelog xxx</td>
+<td>显示 xxx 包的更改记录</td>
+</tr>
+<tr>
+<td>rpm -qi pkg_name</td>
+<td>查看某个包的详细信息</td>
+</tr>
+<tr>
+<td>rpm -qd pkg_name</td>
+<td>查询某个包所提供的文档</td>
+</tr>
+<tr>
+<td>rpm -qc pkg_name</td>
+<td>查看已安装 rpm 包提供的配置文件</td>
+</tr>
+<tr>
+<td>rpm -ql pkg_name</td>
+<td>查看某个包安装了哪些文件</td>
+</tr>
+<tr>
+<td>rpm -qf filename</td>
+<td>查看某个文件属于哪个包</td>
+</tr>
+<tr>
+<td>rpm -qR pkg_name</td>
+<td>查询包的依赖关系</td>
+</tr>
+<tr>
+<td>rpm -ivh xxx.rpm</td>
+<td>安装 rpm 包</td>
+</tr>
+<tr>
+<td>rpm -ivh —test xxx.rpm</td>
+<td>测试安装 rpm 包</td>
+</tr>
+<tr>
+<td>rpm -ivh —nodeps xxx.rpm</td>
+<td>安装 rpm 包时忽略依赖关系</td>
+</tr>
+<tr>
+<td>rpm -e xxx</td>
+<td>卸载程序包</td>
+</tr>
+<tr>
+<td>rpm -Fvh pkg_name</td>
+<td>升级确定已安装的 rpm 包</td>
+</tr>
+<tr>
+<td>rpm -Uvh pkg_name</td>
+<td>升级 rpm 包(若未安装则会安装)</td>
+</tr>
+<tr>
+<td>rpm -V pkg_name</td>
+<td>RPM 包详细信息校验</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="YUM-包管理命令"><a href="#YUM-包管理命令" class="headerlink" title="YUM 包管理命令"></a>YUM 包管理命令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yum repolist enabled</td>
+<td>显示可用的源仓库</td>
+</tr>
+<tr>
+<td>yum search pkg_name</td>
+<td>搜索软件包</td>
+</tr>
+<tr>
+<td>yum install pkg_name</td>
+<td>下载并安装软件包</td>
+</tr>
+<tr>
+<td>yum install —downloadonly pkg_name</td>
+<td>只 下 载 不 安 装</td>
+</tr>
+<tr>
+<td>yum list</td>
+<td>显示所有程序包</td>
+</tr>
+<tr>
+<td>yum list installed</td>
+<td>查看当前系统已安装包</td>
+</tr>
+<tr>
+<td>yum list updates</td>
+<td>查看可以更新的包列表</td>
+</tr>
+<tr>
+<td>yum check-update</td>
+<td>查看可升级的软件包</td>
+</tr>
+<tr>
+<td>yum update</td>
+<td>更新所有软件包</td>
+</tr>
+<tr>
+<td>yum update pkg_name</td>
+<td>升级指定软件包</td>
+</tr>
+<tr>
+<td>yum deplist pkg_name</td>
+<td>列出软件包依赖关系</td>
+</tr>
+<tr>
+<td>yum remove pkg_name</td>
+<td>删除软件包</td>
+</tr>
+<tr>
+<td>yum clean all</td>
+<td>清除缓存</td>
+</tr>
+<tr>
+<td>yum clean packages</td>
+<td>清除缓存的软件包</td>
+</tr>
+<tr>
+<td>yum clean headers</td>
+<td>清除缓存的 header</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="DPKG-包管理命令"><a href="#DPKG-包管理命令" class="headerlink" title="DPKG 包管理命令"></a>DPKG 包管理命令</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dpkg -c xxx.deb</td>
+<td>列出 deb 包的内容</td>
+</tr>
+<tr>
+<td>dpkg -i xxx.deb</td>
+<td>安装/更新 deb 包</td>
+</tr>
+<tr>
+<td>dpkg -r pkg_name</td>
+<td>移除 deb 包</td>
+</tr>
+<tr>
+<td>dpkg -P pkg_name</td>
+<td>移除 deb 包(不保留配置)</td>
+</tr>
+<tr>
+<td>dpkg -l</td>
+<td>查看系统中已安装 deb 包</td>
+</tr>
+<tr>
+<td>dpkg -l pkg_name</td>
+<td>显示包的大致信息</td>
+</tr>
+<tr>
+<td>dpkg -L pkg_name</td>
+<td>查看 deb 包安装的文件</td>
+</tr>
+<tr>
+<td>dpkg -s pkg_name</td>
+<td>查看包的详细信息</td>
+</tr>
+<tr>
+<td>dpkg –unpack xxx.deb</td>
+<td>解开 deb 包的内容</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="APT-软件工具"><a href="#APT-软件工具" class="headerlink" title="APT 软件工具"></a>APT 软件工具</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>常用命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apt-cache search pkg_name</td>
+<td>搜索程序包</td>
+</tr>
+<tr>
+<td>apt-cache show pkg_name</td>
+<td>获取包的概览信息</td>
+</tr>
+<tr>
+<td>apt-get install pkg_name</td>
+<td>安装/升级软件包</td>
+</tr>
+<tr>
+<td>apt-get purge pkg_name</td>
+<td>卸载软件（包括配置）</td>
+</tr>
+<tr>
+<td>apt-get remove pkg_name</td>
+<td>卸载软件（不包括配置）</td>
+</tr>
+<tr>
+<td>apt-get update</td>
+<td>更新包索引信息</td>
+</tr>
+<tr>
+<td>apt-get upgrade</td>
+<td>更新已安装软件包</td>
+</tr>
+<tr>
+<td>apt-get clean</td>
+<td>清理缓存</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/">学习教程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux-%E5%91%BD%E4%BB%A4/">Linux 命令</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/8853766.html">https://emoryhuang.cn/blog/8853766.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/1772203212.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">便利工具和网站分享</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/1603169503.html">
+                        <span class="hidden-mobile">算法专题汇总</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <span>|</span> <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021014392号-1</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
