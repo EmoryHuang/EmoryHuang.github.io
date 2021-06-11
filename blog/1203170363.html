@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>经典策略——双均线策略(期货) - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124376948-1620124376942-banner.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="经典策略——双均线策略(期货)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-09 14:50" pubdate>
+        2021年6月9日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">经典策略——双均线策略(期货)</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2 小时前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <div class="note note-info">
+            <p>本文转载自：<a target="_blank" rel="noopener" href="https://www.myquant.cn/docs/python_strategyies/153">掘金量化</a></p>
+          </div>
+<h1 id="经典策略——双均线策略-期货"><a href="#经典策略——双均线策略-期货" class="headerlink" title="经典策略——双均线策略(期货)"></a>经典策略——双均线策略(期货)</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>从统计角度来说，均线就是历史价格的平均值，可以代表过去 N 日股价的平均走势。</p>
+<p>Granville 八大法则其中有四条是用于判断买进时机，另外四条是用于判断卖出时机。买进和卖出法则一一对应，分布在高点的左右两侧（除买 4 和卖 4 以外）。法则内容如下所示：</p>
+<ul>
+<li>买 1：均线整体上行，股价由下至上上穿均线，此为黄金交叉，形成第一个买点。</li>
+<li>买 2：股价出现下跌迹象，但尚未跌破均线，此时均线变成支撑线，形成第二个买点。</li>
+<li>买 3：股价仍处于均线上方，但呈现急剧下跌趋势。当跌破均线时，出现第三个买点。</li>
+<li><p>买 4：（右侧）股价和均线都处于下降通道，且股价处于均线下方，严重远离均线，出现第四个买点。</p>
+</li>
+<li><p>卖 1：均线由上升状态变为缓慢下降的状态，股价也开始下降。当股价跌破均线时，此为死亡交叉，形成第一个卖点。</p>
+</li>
+<li>卖 2：股价仍处于均线之下，但股价开始呈现上涨趋势，当股价无限接近均线但尚未突破时，此时均线变成阻力线，形成第二个卖点。</li>
+<li>卖 3：股价终于突破均线，处于均线上方。但持续时间不长，股价开始下跌，直至再一次跌破均线，此为第三个卖点。</li>
+<li>卖 4：（左侧）股价和均线都在上涨，股价上涨的速度远快于均线上涨的速度。当股价严重偏离均线时，出现第四个卖点。</li>
+</ul>
+<h3 id="均线理论为什么有效？"><a href="#均线理论为什么有效？" class="headerlink" title="均线理论为什么有效？"></a>均线理论为什么有效？</h3><p>Shiller（1981）在研究中发现，资产的长期价格呈现均值回复的特征，即从长期来看，资产的价格会回归均值。这也是均线理论被广泛应用的前提。</p>
+<h3 id="均线理论的缺陷"><a href="#均线理论的缺陷" class="headerlink" title="均线理论的缺陷"></a>均线理论的缺陷</h3><p>均线归根到底是一种平均值，平均值在应用过程中存在最大的问题就是其滞后性。当出现买入卖出信号时，最佳时机早已过去。</p>
+<h3 id="均线理论的改进"><a href="#均线理论的改进" class="headerlink" title="均线理论的改进"></a>均线理论的改进</h3><ol>
+<li>对均线的计算方法进行改正。</li>
+</ol>
+<p>加权移动平均线是在移动平均线的基础上按照时间进行加权。越靠近当前日期的价格对未来价格的影响越大，赋予更大的权重；越远离当前日期价格，赋予越小的权重。</p>
+<ol>
+<li>调整均线周期</li>
+</ol>
+<p>利用不同周期均线得到的结果也不同。</p>
+<h2 id="策略逻辑"><a href="#策略逻辑" class="headerlink" title="策略逻辑"></a>策略逻辑</h2><p>第一步：获取数据，计算长短期均线<br>第二步：设置交易信号</p>
+<ul>
+<li>当短期均线由上向下穿越长期均线时做空</li>
+<li>当短期均线由下向上穿越长期均线时做多</li>
+</ul>
+<h2 id="策略代码"><a href="#策略代码" class="headerlink" title="策略代码"></a>策略代码</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># coding=utf-8</span><br><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function, absolute_import<br><span class="hljs-keyword">from</span> gm.api <span class="hljs-keyword">import</span> *<br><span class="hljs-keyword">import</span> talib<br><br><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">本策略以SHFE.rb2101为交易标的，根据其一分钟(即60s频度）bar数据建立双均线模型，</span><br><span class="hljs-string">短周期为20，长周期为60，当短期均线由上向下穿越长期均线时做空，</span><br><span class="hljs-string">当短期均线由下向上穿越长期均线时做多,每次开仓前先平掉所持仓位，再开仓。</span><br><span class="hljs-string">注：为了适用于仿真和实盘，在策略中增加了一个“先判断是否平仓成功再开仓”的判断逻辑，以避免出现未平仓成功，可用资金不足的情况。</span><br><span class="hljs-string">回测数据为:SHFE.rb2101的60s频度bar数据</span><br><span class="hljs-string">回测时间为:2020-04-01 09:00:00到2020-05-31 15:00:00</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init</span>(<span class="hljs-params">context</span>):</span><br>    context.short = <span class="hljs-number">20</span>                                             <span class="hljs-comment"># 短周期均线</span><br>    context.long = <span class="hljs-number">60</span>                                              <span class="hljs-comment"># 长周期均线</span><br>    context.symbol = <span class="hljs-string">&#x27;SHFE.rb2101&#x27;</span>                                 <span class="hljs-comment"># 订阅交易标的</span><br>    context.period = context.long + <span class="hljs-number">1</span>                              <span class="hljs-comment"># 订阅数据滑窗长度</span><br>    context.open_long = <span class="hljs-literal">False</span>                                      <span class="hljs-comment"># 开多单标记</span><br>    context.open_short = <span class="hljs-literal">False</span>                                     <span class="hljs-comment"># 开空单标记</span><br>    subscribe(context.symbol, <span class="hljs-string">&#x27;60s&#x27;</span>, count=context.period)         <span class="hljs-comment"># 订阅行情</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_bar</span>(<span class="hljs-params">context, bars</span>):</span><br>    <span class="hljs-comment"># 获取通过subscribe订阅的数据</span><br>    prices = context.data(context.symbol, <span class="hljs-string">&#x27;60s&#x27;</span>, context.period, fields=<span class="hljs-string">&#x27;close&#x27;</span>)<br><br>    <span class="hljs-comment"># 利用talib库计算长短周期均线</span><br>    short_avg = talib.SMA(prices.values.reshape(context.period), context.short)<br>    long_avg = talib.SMA(prices.values.reshape(context.period), context.long)<br><br>    <span class="hljs-comment"># 查询持仓</span><br>    position_long = context.account().position(symbol=context.symbol, side=<span class="hljs-number">1</span>)<br>    position_short = context.account().position(symbol=context.symbol, side=<span class="hljs-number">2</span>)<br><br>    <span class="hljs-comment"># 短均线下穿长均线，做空(即当前时间点短均线处于长均线下方，前一时间点短均线处于长均线上方)</span><br>    <span class="hljs-keyword">if</span> long_avg[-<span class="hljs-number">2</span>] &lt; short_avg[-<span class="hljs-number">2</span>] <span class="hljs-keyword">and</span> long_avg[-<span class="hljs-number">1</span>] &gt;= short_avg[-<span class="hljs-number">1</span>]:<br>        <span class="hljs-comment"># 无多仓情况下，直接开空</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> position_long:<br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Sell, position_effect=PositionEffect_Open, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单调空仓到仓位&#x27;</span>)<br><br>        <span class="hljs-comment"># 有多仓情况下，先平多，再开空(开空命令放在on_order_status里面)</span><br>        <span class="hljs-keyword">else</span>:<br>            context.open_short = <span class="hljs-literal">True</span><br>            <span class="hljs-comment"># 以市价平多仓</span><br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Sell, position_effect=PositionEffect_Close, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单平多仓&#x27;</span>)<br><br>    <span class="hljs-comment"># 短均线上穿长均线，做多（即当前时间点短均线处于长均线上方，前一时间点短均线处于长均线下方）</span><br>    <span class="hljs-keyword">if</span> short_avg[-<span class="hljs-number">2</span>] &lt; long_avg[-<span class="hljs-number">2</span>] <span class="hljs-keyword">and</span> short_avg[-<span class="hljs-number">1</span>] &gt;= long_avg[-<span class="hljs-number">1</span>]:<br>        <span class="hljs-comment"># 无空仓情况下，直接开多</span><br>        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> position_short:<br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Buy, position_effect=PositionEffect_Open, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单调多仓到仓位&#x27;</span>)<br><br>        <span class="hljs-comment"># 有空仓的情况下，先平空，再开多(开多命令放在on_order_status里面)</span><br>        <span class="hljs-keyword">else</span>:<br>            context.open_long = <span class="hljs-literal">True</span><br>            <span class="hljs-comment"># 以市价平空仓</span><br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Buy,<br>                         position_effect=PositionEffect_Close, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单平空仓&#x27;</span>)<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">on_order_status</span>(<span class="hljs-params">context, order</span>):</span><br>    <span class="hljs-comment"># 查看下单后的委托状态</span><br>    status = order[<span class="hljs-string">&#x27;status&#x27;</span>]<br>    <span class="hljs-comment"># 成交命令的方向</span><br>    side = order[<span class="hljs-string">&#x27;side&#x27;</span>]<br>    <span class="hljs-comment"># 交易类型</span><br>    effect = order[<span class="hljs-string">&#x27;position_effect&#x27;</span>]<br>    <span class="hljs-comment"># 当平仓委托全成后，再开仓</span><br>    <span class="hljs-keyword">if</span> status == <span class="hljs-number">3</span>:<br>        <span class="hljs-comment"># 以市价开空仓，需等到平仓成功无仓位后再开仓</span><br>        <span class="hljs-comment"># 如果无多仓且side=2（说明平多仓成功），开空仓</span><br>        <span class="hljs-keyword">if</span> effect == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> side == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> context.open_short:<br>            context.open_short = <span class="hljs-literal">False</span><br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Sell, position_effect=PositionEffect_Open, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单调空仓到仓位&#x27;</span>)<br>        <span class="hljs-comment"># 以市价开多仓,需等到平仓成功无仓位后再开仓</span><br>        <span class="hljs-comment"># 如果无空仓且side=1（说明平空仓成功），开多仓</span><br>        <span class="hljs-keyword">if</span> effect == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> side == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> context.open_long:<br>            context.open_long = <span class="hljs-literal">False</span><br>            order_volume(symbol=context.symbol, volume=<span class="hljs-number">1</span>, side=OrderSide_Buy, position_effect=PositionEffect_Open, order_type=OrderType_Market)<br>            <span class="hljs-built_in">print</span>(context.symbol, <span class="hljs-string">&#x27;以市价单调多仓到仓位&#x27;</span>)<br><br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">        strategy_id策略ID,由系统生成</span><br><span class="hljs-string">        filename文件名,请与本文件名保持一致</span><br><span class="hljs-string">        mode实时模式:MODE_LIVE回测模式:MODE_BACKTEST</span><br><span class="hljs-string">        token绑定计算机的ID,可在系统设置-密钥管理中生成</span><br><span class="hljs-string">        backtest_start_time回测开始时间</span><br><span class="hljs-string">        backtest_end_time回测结束时间</span><br><span class="hljs-string">        backtest_adjust股票复权方式不复权:ADJUST_NONE前复权:ADJUST_PREV后复权:ADJUST_POST</span><br><span class="hljs-string">        backtest_initial_cash回测初始资金</span><br><span class="hljs-string">        backtest_commission_ratio回测佣金比例</span><br><span class="hljs-string">        backtest_slippage_ratio回测滑点比例</span><br><span class="hljs-string">    &#x27;&#x27;&#x27;</span><br>    run(strategy_id=<span class="hljs-string">&#x27;strategy_id&#x27;</span>,<br>        filename=<span class="hljs-string">&#x27;main.py&#x27;</span>,<br>        mode=MODE_BACKTEST,<br>        token=<span class="hljs-string">&#x27;&#123;&#123;token&#125;&#125;&#x27;</span>,<br>        backtest_start_time=<span class="hljs-string">&#x27;2020-04-01 09:00:00&#x27;</span>,<br>        backtest_end_time=<span class="hljs-string">&#x27;2020-05-31 15:00:00&#x27;</span>,<br>        backtest_adjust=ADJUST_NONE,<br>        backtest_initial_cash=<span class="hljs-number">10000000</span>,<br>        backtest_commission_ratio=<span class="hljs-number">0.0001</span>,<br>        backtest_slippage_ratio=<span class="hljs-number">0.0001</span>)<br></code></pre></div></td></tr></table></figure></div>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/">经典策略</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/1203170363.html">https://emoryhuang.cn/blog/1203170363.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/3204850285.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">经典策略——Dual Thrust(期货)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2893732107.html">
+                        <span class="hidden-mobile">经典策略——菲阿里四价(期货)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <span>|</span> <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021014392号-1</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

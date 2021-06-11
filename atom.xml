@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-06-04T09:11:27.766Z</updated>
+  <updated>2021-06-11T09:56:39.800Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,384 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>量化分析经典策略总结</title>
+    <link href="https://emoryhuang.cn/blog/3709186536.html"/>
+    <id>https://emoryhuang.cn/blog/3709186536.html</id>
+    <published>2021-06-10T12:02:34.000Z</published>
+    <updated>2021-06-11T09:56:39.800Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——机器学习(股票)</title>
+    <link href="https://emoryhuang.cn/blog/47590827.html"/>
+    <id>https://emoryhuang.cn/blog/47590827.html</id>
+    <published>2021-06-10T08:41:30.000Z</published>
+    <updated>2021-06-11T09:55:23.094Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——小市值(股票)</title>
+    <link href="https://emoryhuang.cn/blog/4290062851.html"/>
+    <id>https://emoryhuang.cn/blog/4290062851.html</id>
+    <published>2021-06-10T07:57:30.000Z</published>
+    <updated>2021-06-11T09:53:21.821Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——行业轮动(股票)</title>
+    <link href="https://emoryhuang.cn/blog/3270063667.html"/>
+    <id>https://emoryhuang.cn/blog/3270063667.html</id>
+    <published>2021-06-10T07:28:30.000Z</published>
+    <updated>2021-06-11T09:55:09.827Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——海龟交易法(期货)</title>
+    <link href="https://emoryhuang.cn/blog/301246221.html"/>
+    <id>https://emoryhuang.cn/blog/301246221.html</id>
+    <published>2021-06-10T06:56:36.000Z</published>
+    <updated>2021-06-11T09:54:57.210Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——做市商交易(期货)</title>
+    <link href="https://emoryhuang.cn/blog/508159756.html"/>
+    <id>https://emoryhuang.cn/blog/508159756.html</id>
+    <published>2021-06-10T06:34:36.000Z</published>
+    <updated>2021-06-11T09:54:46.616Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——日内回转交易(股票)</title>
+    <link href="https://emoryhuang.cn/blog/3096179771.html"/>
+    <id>https://emoryhuang.cn/blog/3096179771.html</id>
+    <published>2021-06-10T06:02:36.000Z</published>
+    <updated>2021-06-11T09:54:36.388Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——跨期套利(期货)</title>
+    <link href="https://emoryhuang.cn/blog/1211196962.html"/>
+    <id>https://emoryhuang.cn/blog/1211196962.html</id>
+    <published>2021-06-10T05:28:36.000Z</published>
+    <updated>2021-06-11T09:54:26.984Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——跨品种套利(期货)</title>
+    <link href="https://emoryhuang.cn/blog/2629297677.html"/>
+    <id>https://emoryhuang.cn/blog/2629297677.html</id>
+    <published>2021-06-10T04:56:36.000Z</published>
+    <updated>2021-06-11T09:54:15.416Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——指数增强(股票)</title>
+    <link href="https://emoryhuang.cn/blog/3314921282.html"/>
+    <id>https://emoryhuang.cn/blog/3314921282.html</id>
+    <published>2021-06-10T04:31:36.000Z</published>
+    <updated>2021-06-11T09:54:07.752Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——网格交易(期货)</title>
+    <link href="https://emoryhuang.cn/blog/1698949302.html"/>
+    <id>https://emoryhuang.cn/blog/1698949302.html</id>
+    <published>2021-06-10T03:12:36.000Z</published>
+    <updated>2021-06-11T09:53:57.311Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——布林线均值回归(股票)</title>
+    <link href="https://emoryhuang.cn/blog/585299945.html"/>
+    <id>https://emoryhuang.cn/blog/585299945.html</id>
+    <published>2021-06-10T02:30:36.000Z</published>
+    <updated>2021-06-11T09:52:36.546Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——alpha 对冲(股票+期货)</title>
+    <link href="https://emoryhuang.cn/blog/2490329063.html"/>
+    <id>https://emoryhuang.cn/blog/2490329063.html</id>
+    <published>2021-06-10T01:50:36.000Z</published>
+    <updated>2021-06-11T09:53:32.713Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——多因子选股(股票)</title>
+    <link href="https://emoryhuang.cn/blog/1058937000.html"/>
+    <id>https://emoryhuang.cn/blog/1058937000.html</id>
+    <published>2021-06-09T08:47:36.000Z</published>
+    <updated>2021-06-11T09:53:43.676Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——R-Breaker(期货)</title>
+    <link href="https://emoryhuang.cn/blog/4156841833.html"/>
+    <id>https://emoryhuang.cn/blog/4156841833.html</id>
+    <published>2021-06-09T08:02:36.000Z</published>
+    <updated>2021-06-11T09:53:03.293Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——Dual Thrust(期货)</title>
+    <link href="https://emoryhuang.cn/blog/3204850285.html"/>
+    <id>https://emoryhuang.cn/blog/3204850285.html</id>
+    <published>2021-06-09T07:33:36.000Z</published>
+    <updated>2021-06-11T09:52:52.819Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——双均线策略(期货)</title>
+    <link href="https://emoryhuang.cn/blog/1203170363.html"/>
+    <id>https://emoryhuang.cn/blog/1203170363.html</id>
+    <published>2021-06-09T06:50:36.000Z</published>
+    <updated>2021-06-11T09:52:30.213Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>经典策略——菲阿里四价(期货)</title>
+    <link href="https://emoryhuang.cn/blog/2893732107.html"/>
+    <id>https://emoryhuang.cn/blog/2893732107.html</id>
+    <published>2021-06-09T06:05:36.000Z</published>
+    <updated>2021-06-11T09:53:12.118Z</updated>
+    
+    
+    <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="经典策略" scheme="https://emoryhuang.cn/tags/%E7%BB%8F%E5%85%B8%E7%AD%96%E7%95%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>便利工具和网站分享</title>
@@ -51,370 +429,6 @@
     
     
     <category term="Linux 命令" scheme="https://emoryhuang.cn/tags/Linux-%E5%91%BD%E4%BB%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法专题汇总</title>
-    <link href="https://emoryhuang.cn/blog/1603169503.html"/>
-    <id>https://emoryhuang.cn/blog/1603169503.html</id>
-    <published>2021-05-18T09:42:36.000Z</published>
-    <updated>2021-05-18T10:03:04.878Z</updated>
-    
-    
-    <summary type="html">对算法专题的文章进行整理汇总</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>背包九讲学习笔记</title>
-    <link href="https://emoryhuang.cn/blog/381047778.html"/>
-    <id>https://emoryhuang.cn/blog/381047778.html</id>
-    <published>2021-05-18T07:30:36.000Z</published>
-    <updated>2021-05-20T08:18:29.134Z</updated>
-    
-    
-    <summary type="html">背包问题是一个经典的动态规划问题，本文内容基本涵盖了 dd_engi 的背包九讲，在此基础上加上了自己的理解和代码实现</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="动态规划" scheme="https://emoryhuang.cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-    <category term="背包问题" scheme="https://emoryhuang.cn/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用算法模板——数学知识</title>
-    <link href="https://emoryhuang.cn/blog/1328337473.html"/>
-    <id>https://emoryhuang.cn/blog/1328337473.html</id>
-    <published>2021-05-18T03:19:36.000Z</published>
-    <updated>2021-05-18T03:25:37.626Z</updated>
-    
-    
-    <summary type="html">常用算法模板——数学知识</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用算法模板——搜索与图论</title>
-    <link href="https://emoryhuang.cn/blog/4096131275.html"/>
-    <id>https://emoryhuang.cn/blog/4096131275.html</id>
-    <published>2021-05-13T05:39:36.000Z</published>
-    <updated>2021-05-18T03:25:44.458Z</updated>
-    
-    
-    <summary type="html">常用算法模板——搜索与图论</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ STL简介</title>
-    <link href="https://emoryhuang.cn/blog/1876408705.html"/>
-    <id>https://emoryhuang.cn/blog/1876408705.html</id>
-    <published>2021-05-12T07:20:36.000Z</published>
-    <updated>2021-05-17T09:08:15.865Z</updated>
-    
-    
-    <summary type="html">STL，英文全称 standard template library，中文可译为 标准模板库或者泛型库，其包含有大量的模板类和模板函数，是 C++ 提供的一个基础模板的集合，用于完成诸如输入 / 输出、数学计算等功能。</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="C++" scheme="https://emoryhuang.cn/tags/C/"/>
-    
-    <category term="STL" scheme="https://emoryhuang.cn/tags/STL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用算法模板——数据结构</title>
-    <link href="https://emoryhuang.cn/blog/2146740120.html"/>
-    <id>https://emoryhuang.cn/blog/2146740120.html</id>
-    <published>2021-05-12T06:14:36.000Z</published>
-    <updated>2021-05-18T03:25:40.670Z</updated>
-    
-    
-    <summary type="html">常用算法模板——数据结构</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常用算法模板——常见算法</title>
-    <link href="https://emoryhuang.cn/blog/2731339405.html"/>
-    <id>https://emoryhuang.cn/blog/2731339405.html</id>
-    <published>2021-05-11T06:25:36.000Z</published>
-    <updated>2021-05-18T03:25:28.273Z</updated>
-    
-    
-    <summary type="html">常用算法模板——常见算法</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>由数据范围反推算法复杂度以及算法内容</title>
-    <link href="https://emoryhuang.cn/blog/2653263923.html"/>
-    <id>https://emoryhuang.cn/blog/2653263923.html</id>
-    <published>2021-05-11T01:05:36.000Z</published>
-    <updated>2021-05-12T08:58:54.478Z</updated>
-    
-    
-    <summary type="html">由数据范围反推算法复杂度以及算法内容</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二分查找学习笔记</title>
-    <link href="https://emoryhuang.cn/blog/158595231.html"/>
-    <id>https://emoryhuang.cn/blog/158595231.html</id>
-    <published>2021-05-10T11:05:36.000Z</published>
-    <updated>2021-05-11T03:10:42.526Z</updated>
-    
-    
-    <summary type="html">二分查找也称折半查找，它是一种效率较高的查找方法，思路很简单，细节是魔鬼。本文主要探究几个最常用的二分查找场景：寻找一个数、寻找左侧、右侧边界，并给出二分模板。</summary>
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="二分查找" scheme="https://emoryhuang.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 常用插件推荐</title>
-    <link href="https://emoryhuang.cn/blog/2220940575.html"/>
-    <id>https://emoryhuang.cn/blog/2220940575.html</id>
-    <published>2021-05-09T02:20:36.000Z</published>
-    <updated>2021-05-09T08:24:08.387Z</updated>
-    
-    
-    <summary type="html">Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用 LaTeX 写数学公式</title>
-    <link href="https://emoryhuang.cn/blog/3910843626.html"/>
-    <id>https://emoryhuang.cn/blog/3910843626.html</id>
-    <published>2021-05-08T06:00:36.000Z</published>
-    <updated>2021-05-18T11:52:06.394Z</updated>
-    
-    
-    <summary type="html">LaTeX是一种高质量的排版格式，可以生成复杂的表格与数学公式，是当前电子与数学出版行业的事实标准，相信很多人都应该或多或少听说过 LaTeX。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="LaTeX" scheme="https://emoryhuang.cn/tags/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速幂算法详解</title>
-    <link href="https://emoryhuang.cn/blog/1504958816.html"/>
-    <id>https://emoryhuang.cn/blog/1504958816.html</id>
-    <published>2021-05-07T06:10:36.000Z</published>
-    <updated>2021-05-18T12:00:03.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;快速幂算法详解&quot;&gt;&lt;a href=&quot;#快速幂算法详解&quot; class=&quot;headerlink&quot; title=&quot;快速幂算法详解&quot;&gt;&lt;/a&gt;快速幂算法详解&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="快速幂算法" scheme="https://emoryhuang.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建博客图床</title>
-    <link href="https://emoryhuang.cn/blog/242848489.html"/>
-    <id>https://emoryhuang.cn/blog/242848489.html</id>
-    <published>2021-05-07T05:40:36.000Z</published>
-    <updated>2021-05-07T05:51:10.643Z</updated>
-    
-    
-    <summary type="html">随着博客内容的增加，文章图片的数量也不断增长，如何引用存储图片就成了一个问题。本文采用GitHub + JsDelivr + uTools图床插件。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="图床" scheme="https://emoryhuang.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打造精致的 Windows 终端</title>
-    <link href="https://emoryhuang.cn/blog/4206502039.html"/>
-    <id>https://emoryhuang.cn/blog/4206502039.html</id>
-    <published>2021-05-06T08:20:36.000Z</published>
-    <updated>2021-05-08T06:09:33.748Z</updated>
-    
-    
-    <summary type="html">Windows Terminal + Oh my posh 打造精致的 Windows 终端</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Windows Terminal" scheme="https://emoryhuang.cn/tags/Windows-Terminal/"/>
-    
-    <category term="oh my posh" scheme="https://emoryhuang.cn/tags/oh-my-posh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 基本使用</title>
-    <link href="https://emoryhuang.cn/blog/3101066174.html"/>
-    <id>https://emoryhuang.cn/blog/3101066174.html</id>
-    <published>2021-05-06T06:50:36.000Z</published>
-    <updated>2021-05-07T05:51:08.368Z</updated>
-    
-    
-    <summary type="html">Git 是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有内容。易于学习，占用空间小，具有闪电般的快速性能。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Git" scheme="https://emoryhuang.cn/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo在Fluid主题中添加tabs标签</title>
-    <link href="https://emoryhuang.cn/blog/3375592349.html"/>
-    <id>https://emoryhuang.cn/blog/3375592349.html</id>
-    <published>2021-05-05T07:10:36.000Z</published>
-    <updated>2021-05-14T11:13:38.900Z</updated>
-    
-    
-    <summary type="html">之前逛主题的时候，发现了next主题有置标签tabs，由于在 Fluid 主题中没有这样的内置标签，但感觉又非常有用，所以就想着实现一个类似的内置标签。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MarkDown 写作语法</title>
-    <link href="https://emoryhuang.cn/blog/2494528747.html"/>
-    <id>https://emoryhuang.cn/blog/2494528747.html</id>
-    <published>2021-05-03T13:52:36.000Z</published>
-    <updated>2021-05-14T11:14:41.104Z</updated>
-    
-    
-    <summary type="html">Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Md语法" scheme="https://emoryhuang.cn/tags/Md%E8%AF%AD%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo + Fluid 美化</title>
-    <link href="https://emoryhuang.cn/blog/1729600336.html"/>
-    <id>https://emoryhuang.cn/blog/1729600336.html</id>
-    <published>2021-05-02T02:20:36.000Z</published>
-    <updated>2021-05-04T11:08:52.209Z</updated>
-    
-    
-    <summary type="html">Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。Fluid是基于 Hexo 的一款 Material Design 风格的主题，由 Fluid-dev 负责开发与维护。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
