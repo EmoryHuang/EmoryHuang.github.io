@@ -1,0 +1,1128 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="本文主要记录了我在学习《思维工程》（钱小一·著）这本书时的学习笔记，以及一些想法。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>思维工程学习笔记 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623573446740-1623573446735-2717466625.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="思维工程学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-13 14:55" pubdate>
+        2021年6月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      115
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">思维工程学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="思维工程学习笔记"><a href="#思维工程学习笔记" class="headerlink" title="思维工程学习笔记"></a>思维工程学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要记录了我在学习《思维工程》（钱小一·著）这本书时的学习笔记，以及一些想法。</p>
+<p>基于符号主义的方法，将人类的思维逻辑工程化，通过符号来描述人的认知过程，基于逻辑推理的智能模拟方法模拟人的智能行为</p>
+<blockquote>
+<p>所有对人类智能表象的讨论，需要有机制层面的总结，所有机制层面的总结需要在工程上定义实现的模块。</p>
+</blockquote>
+<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1623116201541-1623116201535-思维工程思维导图.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<h2 id="意识流结构"><a href="#意识流结构" class="headerlink" title="意识流结构"></a>意识流结构</h2><p>如果我们认同意识或感知来源于某种信息，就把这个 <strong>信息创造意识和感受的地方</strong> 叫作意识流（Conscions Flow，CF）</p>
+<blockquote>
+<p>在工程上，我们可以这样理解意识流，如果把人类大脑中流转的信息类比为食物，那么意识流就像日本寿司餐馆中的传送带，我们可以把人工智能系统中的其他子系统想象成是食客，他们会从传送带上拿走一些信息进行加工，同时也是信息的生产者，因为它们会把加工完的信息放回来。</p>
+</blockquote>
+<h3 id="思维工程的起点——意识流"><a href="#思维工程的起点——意识流" class="headerlink" title="思维工程的起点——意识流"></a>思维工程的起点——意识流</h3><blockquote>
+<p>我们意识到的的内容，会被记忆系统存储起来，然后会在特定条件下把这个信息放回到意识流中去创造回忆体验，这样我们就能对意识流进行反思了。</p>
+</blockquote>
+<p><strong>对意识流的反思</strong> 是思维工程的起点</p>
+<blockquote>
+<p>仿生 AI 的方法论：对意识流中的信息生成关系的考察，基于生成关系猜想其背后信息处理的逻辑，重建其背后的逻辑。</p>
+</blockquote>
+<h3 id="记忆和回忆"><a href="#记忆和回忆" class="headerlink" title="记忆和回忆"></a>记忆和回忆</h3><p>如果一个被存储的信息放到了意识流中重新被意识到，就是回忆</p>
+<blockquote>
+<p>回忆广义而言是联想，是利用结构信息描述的信息间的联系，在其中一个信息出现在意识流的时候，通过结构信息找到另外一个信息，并把它放入意识流。</p>
+</blockquote>
+<p>把回忆归为两类：</p>
+<ul>
+<li>搜索联想（对应搜索式回忆）</li>
+<li>自由联想（信息爆炸）：设置阈值；超负荷提高阈值</li>
+</ul>
+<h3 id="遗忘和回忆障碍"><a href="#遗忘和回忆障碍" class="headerlink" title="遗忘和回忆障碍"></a>遗忘和回忆障碍</h3><p>遗忘是 <strong>信息强度</strong> 逐渐变弱最终从记忆中删除的过程</p>
+<blockquote>
+<p>从人类身上我们能够看到这种机制的合理性和缺陷，因为如果一个信息经常被使用，经常被想起，那么它就能维持自己的关注度；反过来，一个信息的关注度会不断衰减，必定是因为它不经常被使用，不经常被想起，这样的信息往往就没有那么重要。</p>
+</blockquote>
+<p>回忆障碍：<strong>信息缺乏被放到意识流的方式</strong></p>
+<ul>
+<li>信息强度不足导致</li>
+<li>缺少联想路径导致</li>
+</ul>
+<h3 id="意识流爆炸和选择机制"><a href="#意识流爆炸和选择机制" class="headerlink" title="意识流爆炸和选择机制"></a>意识流爆炸和选择机制</h3><p>意识流爆炸：在自由联系中，可以从意识流中拿走一个信息而放回多个信息，这样就会导致信息爆炸式的增长。如果不加以控制，意识流的信息流量很可能会在某些情形下突破系统可承载的量。</p>
+<p>选择机制</p>
+<ol>
+<li>所有意识流中的信息在写入后需要被 <strong>评估关注度</strong></li>
+<li>所有模块维护了自身的一个阈值，不处理低于阈值的信息</li>
+<li>系统能够检测系统的运算消耗，在运算消耗接近负荷的时候通过一个控制变量，同比例升高所有模块的阈值</li>
+</ol>
+<p>选择机制的效果</p>
+<ol>
+<li>主动意志控制模块阈值</li>
+<li>高关注度信息不断创造其他高关注度信息</li>
+</ol>
+<h3 id="感知但未被意识"><a href="#感知但未被意识" class="headerlink" title="感知但未被意识"></a>感知但未被意识</h3><blockquote>
+<p>感知但未被意识是一个假象，事实上感知的信息都被意识，只是意识的信息未必被处理。</p>
+</blockquote>
+<ul>
+<li>本身的关注度不够</li>
+<li>处理它的模块因为资源竞争被选择机制抑制</li>
+</ul>
+<h2 id="信息的表述"><a href="#信息的表述" class="headerlink" title="信息的表述"></a>信息的表述</h2><h3 id="符号化表述"><a href="#符号化表述" class="headerlink" title="符号化表述"></a>符号化表述</h3><blockquote>
+<p>我们把客观世界的信息拆解为概念和结构进行存储，因为概念和结构都是代表客观世界某个元素和结构的符号，所以我们把这种信息的存储方式称为符号化存储。</p>
+</blockquote>
+<p>符号化存储：把客观事件的信息拆解为<strong>概念和结构</strong>进行存储</p>
+<p>比如信息（爸爸 = 老王, 儿子 = 小王），其中老王是一个概念，小王是一个概念，而（爸爸 = , 女儿 = ）就是描述这两个概念的结构信息。</p>
+<h3 id="信息的层级"><a href="#信息的层级" class="headerlink" title="信息的层级"></a>信息的层级</h3><ul>
+<li>属性层：属性，行为，对象类，根源性概念</li>
+<li>事件层：对象行为类型的事件，衍生性概念</li>
+<li>事件关系层：事件间的各种关系（时序关系，意味关系，因果关系）</li>
+</ul>
+<h3 id="事件关系层和人工智能"><a href="#事件关系层和人工智能" class="headerlink" title="事件关系层和人工智能"></a>事件关系层和人工智能</h3><blockquote>
+<p>人类的反应模式信息，无论多么复杂，拆解到底层都是一些条件——反应信息，条件和反应都是事件。我们预测归因用的是因果关系的知识，原因结果都是事件信息，其本身是事件关系层的信息；我们利用知识去转移目标，依赖的知识也是事件关系层的信息；我们对一个事件的情绪，能够转移到导致它的另外一个事件上，依赖的知识也是事件关系层的信息。</p>
+</blockquote>
+<p>事件关系层：</p>
+<ul>
+<li>事件关系组织具体事件</li>
+<li>事件关系组织事件类</li>
+</ul>
+<p>认知过程：由有限的事件间关系的表象抽象归纳出事件类间的关系，事件类间的关系作为背后知识的猜想，在演绎中创造具体事件层的归因和预测，并在实践中增强或削弱一个猜想。</p>
+<p>人类智能功能共有的运算特征：<strong>从具体的事件关系出发，创造出事件类关系，作为知识；然后在使用时，用此知识创造具体事件层关系</strong>。</p>
+<p>抽象：<strong>从具体事件关系出发创造出事件类关系的过程</strong></p>
+<p>演绎：<strong>从事件类关系出发创造具体事件关系的过程</strong></p>
+<h3 id="统辖关系"><a href="#统辖关系" class="headerlink" title="统辖关系"></a>统辖关系</h3><blockquote>
+<p>我们来看两个结构信息：（主语对象 = Mike，状态 = 感冒）和（主语对象 = 人，状态 = 生病）。我们能够发现，这是两个相同结构的信息，且第一个结构信息中的两个元素，分别是第二个结构信息两个元素的子类：Mike 是人的子类，感冒是生病的子类。</p>
+</blockquote>
+<p>统辖关系：对于相同结构的两个信息，如果前者每个位置的概念，都是后者对应位置概念的子类，那么前者是后者的子类。把这两个信息之间的关系称为统辖关系。</p>
+<p>统辖映射：对应位置子类概念和母类概念之间的对应称为统辖映射</p>
+<blockquote>
+<p>统辖关系是我们对类人先天符号系统最主要的设定，是我们上面描述的人类主要智能活动的相关运算的核心逻辑依赖的唯一关系。</p>
+</blockquote>
+<p>抽象：对于一个具体层的事件关系，我们用母类元素替换其中事件中元素的子类，就会生成一个事件类层的事件关系；生成事件关系的两个事件分别统辖原始事件关系中的两个事件；生成事件类的关系，作为背后的规律，统辖原始事件关系，作为表象。</p>
+<p>演绎：对于事件类层关系中的某个事件 A，统辖一个具体事件 A*，我们能够建立起事件 A 中元素到事件 A*中元素的统辖映射。我们在事件类层关系的另一个事件 B 中找到统辖关系的母类，替换为对应的子类，生成事件 B*，那么事件 B*和事件 A* 继承了事件 B 和事件 A 之间的关系。</p>
+<p>统辖关系定义了信息的母类子类关系：</p>
+<ul>
+<li>凡是定义在母类的<strong>知识</strong>，可以被子类继承</li>
+<li>凡是定义在母类的<strong>表达，行为或思维的反应模式</strong>可以被子类继承</li>
+<li>凡是定义在母类的<strong>语法映射</strong>可以被子类继承</li>
+<li>凡是定义在母类的<strong>情绪反应</strong>可以被子类继承</li>
+</ul>
+<h2 id="M-语言"><a href="#M-语言" class="headerlink" title="M 语言"></a>M 语言</h2><blockquote>
+<p>结构信息是符号主义类人 AI 存储和运算的信息载体，是一切基础智能功能赖以实现的必需要素。</p>
+</blockquote>
+<p>M 语言：为在 AI 上再现人类底层核心智能机制而创造的对先天语言信息表述的约定</p>
+<h3 id="概念和名称"><a href="#概念和名称" class="headerlink" title="概念和名称"></a>概念和名称</h3><p>一个概念和它的名称之间的关系：（概念 =，名称 =）</p>
+<p>概念位置填写的就是此概念在先天语言中的概念 ID，名称位置填写是对应的某个名称</p>
+<h3 id="具体对象和对象类"><a href="#具体对象和对象类" class="headerlink" title="具体对象和对象类"></a>具体对象和对象类</h3><p>具体对象属性的表述：（具体对象 = ID1, 属性维度 = 属性）</p>
+<blockquote>
+<p>比如：（具体对象 = Lucyc, 发色 = 红色）</p>
+</blockquote>
+<p>具体对象属类的表述：（具体对象 = ID1, 属类 = ）</p>
+<blockquote>
+<p>比如：（具体对象 = Kittyc, 属类 = 猫）</p>
+</blockquote>
+<h3 id="具体事件"><a href="#具体事件" class="headerlink" title="具体事件"></a>具体事件</h3><p>具体事件区别于事件类，是 <strong>发生的事件</strong></p>
+<p>参与具体事件的对象，行为活动，时间空间一定是 <strong>具体</strong> 的</p>
+<p>一般而言，系统会用一个具体 ID 作为构成事件结构信息的元素，然后用其他结构信息对此 ID 进行限制</p>
+<blockquote>
+<p>比如：“早上年轻的猫吃了桌上的鱼”，严格的表述为（主语对象 = ID1, 行为 = IDa, 行为施与 = ID2, 事件 = IDt），其中（具体对象 = ID1, 属类 = 猫）（具体对象 = ID1, 年龄 = 年轻的）（具体对象 = ID2, 属类 = 鱼）（具体对象 = ID2, 空间相关对象 = ID3, 方位 = 上）（具体对象 = ID3, 属类 = 桌子）</p>
+</blockquote>
+<p>表达策略：无论对于对象、行为、空间、时间都有一个具体的 ID，然后建立这个具体 ID 相关的属性和属类信息</p>
+<h3 id="事件类"><a href="#事件类" class="headerlink" title="事件类"></a>事件类</h3><p>事件类指的是 <strong>某一类的事件</strong>。</p>
+<blockquote>
+<p>人类的感知总是以具体事件为起点，抽象功能可以从具体事件信息生成事件类信息；而演绎功能能够通过事件关系层信息，由事件类生成具体事件信息。</p>
+</blockquote>
+<p>事件类在结构上和具体事件是一样的。</p>
+<h3 id="事件类规律"><a href="#事件类规律" class="headerlink" title="事件类规律"></a>事件类规律</h3><blockquote>
+<p>事件类规律是我们从具体事件信息抽象发现的服务认知和决策的信息，预测、归因、转移动机等都是以此类信息为依据进行的。</p>
+</blockquote>
+<ul>
+<li>事件类的时点规律<ul>
+<li>比如：（事件类 = 小明起床, 规律时点 = 7 点）</li>
+</ul>
+</li>
+<li>事件类间相关性、时序、因果规律<ul>
+<li>比如：（原因 = 人着凉了, 创造事件 = 人感冒）</li>
+</ul>
+</li>
+<li>事件类时长、次数、数量、频率规律<ul>
+<li>比如：（事件类 = 小明刷牙, 频率 = 2 次/天）</li>
+</ul>
+</li>
+</ul>
+<h3 id="事件关系"><a href="#事件关系" class="headerlink" title="事件关系"></a>事件关系</h3><p>因果类事件关系分类</p>
+<ul>
+<li>创造关系</li>
+<li>阻止发生关系</li>
+<li>终止关系</li>
+<li>维持关系</li>
+</ul>
+<h3 id="时间概念"><a href="#时间概念" class="headerlink" title="时间概念"></a>时间概念</h3><ul>
+<li>时点概念<ul>
+<li>具体时间</li>
+<li>时间类</li>
+</ul>
+</li>
+<li>时长概念</li>
+</ul>
+<h3 id="疑问和好奇点"><a href="#疑问和好奇点" class="headerlink" title="疑问和好奇点"></a>疑问和好奇点</h3><p>疑问的结构信息是在形成自然语言询问前后最后的信息形态。</p>
+<p>疑问的来源是好奇点，好奇点和询问的结构信息拥有几乎相同的内容。</p>
+<h2 id="反应模式"><a href="#反应模式" class="headerlink" title="反应模式"></a>反应模式</h2><h3 id="反应模式-1"><a href="#反应模式-1" class="headerlink" title="反应模式"></a>反应模式</h3><p>反应模式即在特定情境下或完成特定目标的训练完成的条件——反应信息</p>
+<blockquote>
+<p>反应模式组织了人类的行为、思维、语言</p>
+<p>行为的反应模式：从一开始针对某类任务的反应模式，在单次实践中创造了针对某个任务的反应模式，然后在多次实践中优化。</p>
+</blockquote>
+<h3 id="宏观行为和触发——条件——执行"><a href="#宏观行为和触发——条件——执行" class="headerlink" title="宏观行为和触发——条件——执行"></a>宏观行为和触发——条件——执行</h3><blockquote>
+<p>一个反应模式信息的信息单元是条件——执行，其中的条件自然是意识到的信息，或是“感知但未必被意识到的信息”。</p>
+</blockquote>
+<p>组成：宏观行为——触发——条件——执行</p>
+<p>反应模式总是隶属于某个宏观行为（思维/表达动机），只有一个宏观行为被激活，旗下的条件——反应信息才会处于预激活状态，思维开始在意识流、感知流中检测是否存在这些条件的子类信息，条件成立时就激活旗下的执行，而这个执行就有可能时另外一个宏观行为节点。</p>
+<blockquote>
+<p>一个宏观行为节点包含的信息往往是诸多层级的：一个宏观行为节点直接包含了若干作为子节点的宏观行为节点，这些宏观行为节点又包含若干宏观行为节点，直到那些不可分解的基础行为（思维、表达）</p>
+</blockquote>
+<h3 id="信息表述"><a href="#信息表述" class="headerlink" title="信息表述"></a>信息表述</h3><p>宏观行为下定义的反应模式信息的实体是诸多条件——执行类型的信息</p>
+<p>（检测条件 =，判断条件 1 =，判读条件 2 =，执行 1 =，执行 2 =）</p>
+<blockquote>
+<p>（宏观行为＝接待客人，反映模式＝条件执行 1/条件执行 2/条件执行 3/条件执行 4/条件执行 5/条件执行 6)</p>
+<p>条件执行 1=(执行 1=询问找谁）</p>
+<p>条件执行 2=(检测条件＝要找的人不在公司，执行 1=告知要找的人不在公司）</p>
+<p>条件执行 3=(检测条件＝要找的人在公司，执行 1=带客人到一个空的会议室）</p>
+<p>条件执行 4=(检测条件＝客人到会议室，执行 1=告知稍等，马上去叫要找的人）</p>
+<p>条件执行 5=(检测条件＝告知稍等，马上去叫要找的人，执行 1=去找要找的人）</p>
+<p>条件执行 6=(检测条件＝找到要找的人，执行 1=告知有人找他，执行 2=告知那人在哪）</p>
+</blockquote>
+<h3 id="省略表达和信息补全"><a href="#省略表达和信息补全" class="headerlink" title="省略表达和信息补全"></a>省略表达和信息补全</h3><ol>
+<li><p>直接表达执行，但执行中的某个信息是缺失的</p>
+<p>只要知道为获得缺失的信息需要询问什么，就可以补全之前的执行所需的信息</p>
+</li>
+<li><p>省略某种可能需要的执行</p>
+<p>寻找已有的反应模式，补全这个省略的条件对应的执行</p>
+</li>
+<li><p>连接词的省略（然后，接下来）</p>
+<p>把连续执行表达中前者行为的结束作为后者行为的条件</p>
+</li>
+<li><p>表达直接停在了某个位置，省略了后续的执行</p>
+</li>
+</ol>
+<h3 id="实践反馈修正"><a href="#实践反馈修正" class="headerlink" title="实践反馈修正"></a>实践反馈修正</h3><blockquote>
+<p>实践反馈时反应模式沉淀的一个重要机制。宏观行为往往是带有目标的，一个宏观行为下往往有为实现目标的不同的反应模式。思维会在每次实践中削弱那些难以实现目标的反应模式强度。</p>
+</blockquote>
+<p>在实践中考察所尝试的反应实现宏观行为的效果如何，从而增强或削弱抽象到母类后此反应模式的强度</p>
+<p>在每次实践中记录某个人对某个反应模式的效果，若这个反应模式对这个对象有效，那么将这个反应模式与对象的标签相对应</p>
+<h2 id="自然语言和先天语言"><a href="#自然语言和先天语言" class="headerlink" title="自然语言和先天语言"></a>自然语言和先天语言</h2><h3 id="自然语言"><a href="#自然语言" class="headerlink" title="自然语言"></a>自然语言</h3><blockquote>
+<p>对于人类，以先天语言编码的信息无法直接输出，所以无法作为个体间沟通的信息。<br>于是就产生了具有声音符号和图像符号的文字。我们把一个人类群体自然演化出的先天语言到声音图像符号的统一的映射约定叫作自然语言。</p>
+</blockquote>
+<p>自然语言的本质：</p>
+<ol>
+<li>自然语言以 <strong>词汇</strong> 为信息单元和符号系统</li>
+<li>词汇具有声音、图像符号的对应关系</li>
+<li>自然语言约定了 <strong>词汇和概念的对应关系</strong></li>
+<li>自然语言约定了：概念组成的结构信息到概念对应的词汇组成句子信息的映射关系（<strong>语法映射</strong>）</li>
+</ol>
+<p>逆转录：从先天语言编码的信息转化为自然语言编码的信息（<strong>意识流 -&gt; 文字信息</strong>）</p>
+<p>正转录：从自然语言编码的信息转化为先天语言编码的信息（<strong>文字信息 -&gt; 意识流</strong>）</p>
+<h3 id="结构信息和语法"><a href="#结构信息和语法" class="headerlink" title="结构信息和语法"></a>结构信息和语法</h3><p>语法决定了人脑中由概念按照特定结构组织的结构信息如何表达</p>
+<h3 id="语法习得"><a href="#语法习得" class="headerlink" title="语法习得"></a>语法习得</h3><p>抽象：以两个结构信息和它们的某种关系为起点，生成对应的结构信息类以及之前关系的猜想</p>
+<p>演绎：通过识别某个具体的结构信息 A 和结构信息类 A’的统辖关系建立结构信息组成元素的约束映射，根据约束映射，替换与此结构信息类有特定关系的另外一个结构信息类 B’中的母类元素为子类，生成具体层的结构信息 B 的过程</p>
+<blockquote>
+<p>语法习得的本质运算是抽象，而自然语言正转录和逆转录的过程是演绎。</p>
+</blockquote>
+<h3 id="自然语言的习得"><a href="#自然语言的习得" class="headerlink" title="自然语言的习得"></a>自然语言的习得</h3><p>关键：<strong>建立具体语义结构到具体句子结构信息的映射</strong></p>
+<ul>
+<li>词汇到概念的对应关系</li>
+<li>概念组成的结构信息到概念对应的词汇组成句子信息的映射关系</li>
+</ul>
+<p>学习阶段</p>
+<ul>
+<li>空白累积：高关注度建立映射；抽象；时间推移</li>
+<li>持续累积：模糊匹配；修正语言</li>
+</ul>
+<h2 id="自然语言特征"><a href="#自然语言特征" class="headerlink" title="自然语言特征"></a>自然语言特征</h2><p>自然语言的共有特征：概念的指向，语境记忆，表达省略，意向表达</p>
+<h3 id="概念的指向"><a href="#概念的指向" class="headerlink" title="概念的指向"></a>概念的指向</h3><blockquote>
+<p>如果一个概念没有名称，就需要用其他方式去指向;</p>
+<p>如果概念本身是一个结构信息，我们就可以通过组成结构信息的元素去指向这个概念；</p>
+<p>如果概念存在于一个结构信息中，我们就能用结构信息去指向这个概念；</p>
+<p>如果用以指向一个概念的元素自己也没有名称，我们就需要先设法指向这个元素。</p>
+</blockquote>
+<h3 id="语境省略"><a href="#语境省略" class="headerlink" title="语境省略"></a>语境省略</h3><blockquote>
+<p>人类在听一个人的讲话、读一本书，或是自己在讲话时，都会在语言处理过程中保存特定的信息；</p>
+<p>最短期的记忆比如最近谈及的对象、属性、事件、事件规律等等，这些信息让我们创造表达的省略，读懂对方表达中的省略；</p>
+<p>较为长期的记忆比如一大段表达中每个信息被重复的次数，这让我们知晓逻辑不那么清晰的重点；</p>
+<p>表达的信息之间的相互关系，能让 AI 听到的不再是局部的碎片化的信息，让 AI 能够带有整体感受地复述一大段表达。</p>
+</blockquote>
+<p>只要省略后的句子有足够的特征归属到一个语义结构，智能体就能找到结构中缺失信息的位置而后所需的信息类型，然后去语境中寻找是否有此类型的信息</p>
+<h3 id="意向表达"><a href="#意向表达" class="headerlink" title="意向表达"></a>意向表达</h3><blockquote>
+<p>人类的表达很少是精确的，无论是语法上还是逻辑上；人类也极少会通过精确的定义去掌握某一词汇。</p>
+</blockquote>
+<p>相比于严格的定义，对于很多概念，人类会通过他人的表达，生成关于这个词的意向信息。</p>
+<p>抽象概念的习得</p>
+<ul>
+<li>通过定义语言</li>
+<li>通过对方使用</li>
+</ul>
+<h2 id="表达信息单元"><a href="#表达信息单元" class="headerlink" title="表达信息单元"></a>表达信息单元</h2><h3 id="表达动机、表达策略、表达信息单元"><a href="#表达动机、表达策略、表达信息单元" class="headerlink" title="表达动机、表达策略、表达信息单元"></a>表达动机、表达策略、表达信息单元</h3><blockquote>
+<p>表达动机就是我们通过表达要实现的目的，包括了传递某个信息，向对方索取某个信息，改变对方的动机，改变对方的情绪态度。为实现一个目标，我们会有表达策略。一个表达策略的执行会包含很多表达单元信息。</p>
+</blockquote>
+<h3 id="陈述一个信息"><a href="#陈述一个信息" class="headerlink" title="陈述一个信息"></a>陈述一个信息</h3><p>陈述一个信息是最基础的表达单元信息</p>
+<p>三种方式:</p>
+<ul>
+<li>这个信息本身有名称（可以用这个名称）</li>
+<li>非结构信息且不带名称（可以用这个信息参与的结构信息去指向）</li>
+<li>结构信息（利用语法模板和里面元素对应的表达去表达）</li>
+</ul>
+<p>陈述一个信息的表达单元信息表述为：（信息主体 =，表达类型 = 陈述）</p>
+<h3 id="用结构信息指向"><a href="#用结构信息指向" class="headerlink" title="用结构信息指向"></a>用结构信息指向</h3><p>用概念所在的结构信息去指向这个概念</p>
+<p>指向一个信息的表达单元信息表述为：（主体信息 =，表达类型 = 指向，指向位置 =）</p>
+<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><ul>
+<li>一般疑问（确认）</li>
+<li>选择疑问（确认）</li>
+<li>特殊疑问（疑问）</li>
+</ul>
+<p>疑问的表达单元信息：（主体信息 =，表达类型 = 疑问，疑问点 =）</p>
+<p>确认的表达单元信息：（主体信息 =，表达类型 = 确认，确认点 =，确认内容 =）</p>
+<h3 id="祈使"><a href="#祈使" class="headerlink" title="祈使"></a>祈使</h3><p>祈使的表达信息单元包含了不同的情绪，有不带情绪的要求、命令、恳求。对应回应表达信息单元有同意和拒绝。</p>
+<h2 id="语言的输入"><a href="#语言的输入" class="headerlink" title="语言的输入"></a>语言的输入</h2><h3 id="正转录"><a href="#正转录" class="headerlink" title="正转录"></a>正转录</h3><blockquote>
+<p>人类处理输入的语言，无论是一句话表达，还是成段的表达，还是一本书的信息，都是以每个单句作为信息单元逐句处理的。处理的过程会维护一段语境记忆，以应对表达中的省略，形成对表达信息的主要逻辑，以及各种信息之间关系的提取。</p>
+</blockquote>
+<ol>
+<li>识别词汇</li>
+<li>把词汇替换为对应的概念</li>
+</ol>
+<p>主要问题：</p>
+<ol>
+<li>如何让应付嵌套，尤其是多重嵌套</li>
+<li>如何维护语境信息</li>
+<li>如何应付语境省略和常识省略</li>
+<li>如何应付意向表达</li>
+</ol>
+<h3 id="原始句子转为词汇流"><a href="#原始句子转为词汇流" class="headerlink" title="原始句子转为词汇流"></a>原始句子转为词汇流</h3><ol>
+<li>句子中的词汇识别</li>
+<li>对词汇识别后剩下的句子片段进行处理</li>
+<li>维护一个猜想库</li>
+<li>识别片段中的两两组合，如果猜想词库中存在，则增加频次强度，不存在则新建</li>
+<li>频次强度随时间递减，若超出阈值则保存为正式词汇</li>
+<li>考察前后词汇，3 字、4 字词语</li>
+</ol>
+<h3 id="词汇流转为概念流"><a href="#词汇流转为概念流" class="headerlink" title="词汇流转为概念流"></a>词汇流转为概念流</h3><ul>
+<li>句子中可能存在代词（在语境中寻找合适的替换代词概念）</li>
+</ul>
+<p>在语境变量中依次考察每个具体对象是否是男人/女人/动物的子类，最先找到的具体对象为用来替换代词的对象</p>
+<ul>
+<li>具体对象没有名称（用具体对象从属的对象类去指向）</li>
+</ul>
+<p>对于用对象类对应的词汇指向具体对象，与代词类似，默认指代语境中最近的对象类的子类</p>
+<p>通过句子结构对应表达信息单元来判断到底指向的是具体对象还是对象类</p>
+<ul>
+<li>人类的意向表达</li>
+</ul>
+<p>当 AI 识别到句子中一个属性概念的时候，会先查看它的语境中已有属性概念的意向距离，如果意向很接近，我们就会用语境中已有的属性概念替代它；或者去长期记忆中寻找那些频次强度足够高的属性。</p>
+<h3 id="正转录算子"><a href="#正转录算子" class="headerlink" title="正转录算子"></a>正转录算子</h3><blockquote>
+<p>如果存在嵌套的信息，比如一个结构信息，或是一个属性层的信息如对象、属性、时间、地点的从句指向。这个时候我们就需要先识别到嵌套信息的句子片段，识别结构，找到结构信息的 ID，或是指向的 ID，用其替换句子片段，这样更上层的结构才会显现出来。</p>
+</blockquote>
+<p>循环执行主体逻辑：每次执行输入的句子被提取转化了部分信息，对应的句子片段被替换为所指向的概念 ID，然后输出剩下的部分继续同样的运算</p>
+<h3 id="语境记忆——记录最近出现的元素"><a href="#语境记忆——记录最近出现的元素" class="headerlink" title="语境记忆——记录最近出现的元素"></a>语境记忆——记录最近出现的元素</h3><p>在 <strong>语境记忆</strong> 中保存最近出现的元素，包括最近表达中的对象、属性、实践、地点、相对关系</p>
+<p>程序上，当文本中出现了代词、对象类名称、属性名称、时间指向、地点指向的时候，就会去语境中寻找名称对应的概念类的子类；当文本种出现了关系名称，就去语境中寻找出现过的相对关系信息</p>
+<p><strong>语境强度</strong> 体现了一个信息在表达中被重复的次数以及被关联的次数，这个强度反映了信息在整个表达中的重要程度。</p>
+<h3 id="语境记忆——碎片信息关系的补全"><a href="#语境记忆——碎片信息关系的补全" class="headerlink" title="语境记忆——碎片信息关系的补全"></a>语境记忆——碎片信息关系的补全</h3><p>每次正转录获得事件的考察和语境中相关的事件的因果关系，并在语境中保存这个因果关系</p>
+<h3 id="不严格逻辑"><a href="#不严格逻辑" class="headerlink" title="不严格逻辑"></a>不严格逻辑</h3><blockquote>
+<p>人类身上存在严格逻辑的能力，也存在不严格逻辑的能力。在严格逻辑中，每个概念都力求像数学定义那样精确完整，所有运算都有明确定义域，都有确定的输出，所有的概念的语言表达在词性的使用、语法结构上都是精确的；在不严格逻辑中，概念的定义只求“意向”正确，运算可以利用不精确的“意向”信息，概念的语言表达可以忽略词性，在语法结构上随意，追求“刚好足够指向，不引起误解就好”。</p>
+<p>我们会发现对于大部分人而言，严格逻辑在思维中的比例是极低的：我们掌握的大部分词汇对应的概念，我们从来没有学习过其精准的定义；尽管概念没有被精确定义过，但却不影响我们的日常思维和沟通；我们的逻辑思维较大比例是建立在意向层的运算；即使表达是不严格、不精确的，我们也能从不严格、不精确的表达中获得语义。</p>
+</blockquote>
+<p>不严格逻辑中，概念的定义只求“意向”正确，运算可以利用不精确的“意向”指向</p>
+<h3 id="意向的印象"><a href="#意向的印象" class="headerlink" title="意向的印象"></a>意向的印象</h3><p>用另外一个概念不精确地描述定义目标概念，形成了意向印象，每个意向的印象会在每次被指向时累积频次逐渐凸显</p>
+<h3 id="意向的作用"><a href="#意向的作用" class="headerlink" title="意向的作用"></a>意向的作用</h3><ol>
+<li>文章重点的把握。印象冲击</li>
+<li>联想起可以发挥作用的知识</li>
+<li>创造比喻。意向距离相近的概念</li>
+<li>听懂比喻</li>
+</ol>
+<h3 id="场景描述、事件描述、对象描述、事件评论"><a href="#场景描述、事件描述、对象描述、事件评论" class="headerlink" title="场景描述、事件描述、对象描述、事件评论"></a>场景描述、事件描述、对象描述、事件评论</h3><p>场景描述：以空间描述为核心描述一个场景，包含每个对象在空间中的位置，相对位置</p>
+<p>事件描述：以某个时段或活动作为大的事件发生的背景描述期间发生的事件</p>
+<p>对象描述：以某个对象为核心描述这个对象在某个时间的属性、行为、活动等信息</p>
+<p>事件评论：以一事件为核心表达这个事件包含的内容，和事件的原因、后果、反应其他的事件</p>
+<h2 id="语言的习得"><a href="#语言的习得" class="headerlink" title="语言的习得"></a>语言的习得</h2><ol>
+<li>记住概念在这门语言中对应的词汇</li>
+<li>掌握表达单元信息对应的句子结构</li>
+</ol>
+<h3 id="空白累积阶段"><a href="#空白累积阶段" class="headerlink" title="空白累积阶段"></a>空白累积阶段</h3><h4 id="词汇的习得"><a href="#词汇的习得" class="headerlink" title="词汇的习得"></a>词汇的习得</h4><ol>
+<li>句子中的词汇识别</li>
+<li>对词汇识别后剩下的句子片段进行处理</li>
+<li>维护一个猜想库</li>
+<li>识别片段中的两两组合，如果猜想词库中存在，则增加频次强度，不存在则新建</li>
+<li>频次强度随时间递减，若超出阈值则保存为正式词汇</li>
+<li>考察前后词汇，3 字、4 字词语</li>
+</ol>
+<h4 id="词义的习得"><a href="#词义的习得" class="headerlink" title="词义的习得"></a>词义的习得</h4><ol>
+<li>在意识流中创造足够信息强度的对象类或属性的概念信息</li>
+<li>创造足够强度的自然语言符号信息</li>
+</ol>
+<p>意识流中足够强度的概念和自然语言符号信息会自发生对应关系</p>
+<h4 id="语法的习得"><a href="#语法的习得" class="headerlink" title="语法的习得"></a>语法的习得</h4><p>以先天语法映射为起点进行语法生长</p>
+<p>先天语法映射：通过已有的语法猜想对方不完全吻合的表达，实现表达信息单元（语义）到句子的对应，从而抽象出新语法映射</p>
+<p>语法生长：在这个表达方式重复出现时，这个表达方式的语法映射的频次强度就会不断增强</p>
+<h3 id="持续累积阶段"><a href="#持续累积阶段" class="headerlink" title="持续累积阶段"></a>持续累积阶段</h3><h4 id="语法分化"><a href="#语法分化" class="headerlink" title="语法分化"></a>语法分化</h4><blockquote>
+<p>人类的语法有自然分化的倾向。在人类自然语言形成的过程中，有一个规律叫作“听懂即可”。只要语境足够强，表达就会随意和省略。</p>
+</blockquote>
+<p>= 语法的形成是抽象的过程<br>= 语言的输入输出是演绎的过程</p>
+<p>语法生长机制能用来学习分化的语法</p>
+<h4 id="特殊语法的习得"><a href="#特殊语法的习得" class="headerlink" title="特殊语法的习得"></a>特殊语法的习得</h4><ol>
+<li>维护语法猜想</li>
+<li>维护特定用户使用此语法的次数</li>
+<li>维护特定群体使用此语法的次数</li>
+</ol>
+<h4 id="未知词汇的询问和学习"><a href="#未知词汇的询问和学习" class="headerlink" title="未知词汇的询问和学习"></a>未知词汇的询问和学习</h4><p>对不同类型的词汇考察人类听到询问时可能会有的解释回答</p>
+<p>词义（概念）的学习可能获得两类信息：</p>
+<ul>
+<li>精确的，比如概念归属某个属类或属性维度，概念的属性</li>
+<li>不精确的，比如概念的意向</li>
+</ul>
+<h4 id="意向累积"><a href="#意向累积" class="headerlink" title="意向累积"></a>意向累积</h4><p>用另外一个概念不精确地描述定义目标概念，实际的效果是形成了一个概念拥有意向的印象，多次印象冲击会让概念应有的意向凸显</p>
+<p>其次，作为每个独立个体，保存的概念意向就是这种不精确形式，有点像是一个总的比重在许多意向上的分布，只是我们会把强度高的意向视为这个概念的定义意向。</p>
+<h2 id="表达策略的习得"><a href="#表达策略的习得" class="headerlink" title="表达策略的习得"></a>表达策略的习得</h2><h3 id="表达策略"><a href="#表达策略" class="headerlink" title="表达策略"></a>表达策略</h3><p>表达策略：实现表达动机的表达相关的反应模式</p>
+<p>表达动机是一个宏观节点，旗下有若干“触发——条件——执行”的反应模式信息</p>
+<p>（检测意识流中是否出现触发信息的子类，生成统辖映射，然后演绎出具体的条件——执行，如果条件通过判断，则点亮具体的执行，而执行的可能又是一个宏观节点）</p>
+<p>驱动一个宏观行为执行的过程大致如下：一个具体的宏观行为 IDA’ 被点亮，在反应模式的宏观行为域中进行统辖搜索，找到抽象的宏观行为 IDA，创造约束映射，演绎出这个宏观行为旗下全部的“宏观行为——触发——条件——执行”，注意只演绎一层，也就是只演绎宏观行为 IDA 的这些信息单元。这样反应模式驱动程序会在意识流中统辖检测每个信息是否是触发信息的子类；一旦满足触发就判断对应的条件，判断条件是个统辖搜索的过程，在记忆中统辖搜索子类，条件通过判断就触发执行，此时如果执行的是一个可执行的基础行为，就纳入执行。如果又是一个宏观行为，则回到前面的起点，继续上面的过程。</p>
+<ul>
+<li>表达策略可以通过教授生成</li>
+<li>可以通过观察他人对话样本模仿习得</li>
+<li>可以在执行实践中通过认知层的反思修正</li>
+</ul>
+<blockquote>
+<p>当我们观察其他人的对话时，我们能够意识到某个对话者的表达动机，能够识别其中每个语境下被执行的表达目标和表达信息单元，通过自发的抽象，习得反应模式</p>
+</blockquote>
+<h2 id="语言的输出"><a href="#语言的输出" class="headerlink" title="语言的输出"></a>语言的输出</h2><h3 id="表达反射"><a href="#表达反射" class="headerlink" title="表达反射"></a>表达反射</h3><ul>
+<li>简单的表达反射</li>
+<li>由动机为起点由表达策略信息不断分解形成的表达</li>
+<li>大段的表达</li>
+</ul>
+<h3 id="应答反射"><a href="#应答反射" class="headerlink" title="应答反射"></a>应答反射</h3><p>按询问类型分类：</p>
+<ul>
+<li>对具体事件的询问</li>
+<li>对知识的询问</li>
+<li>对 AI 自身状态的询问</li>
+</ul>
+<p>询问的事件或知识若在记忆中不存在，则会转化为一个好奇点</p>
+<h3 id="提问反射"><a href="#提问反射" class="headerlink" title="提问反射"></a>提问反射</h3><p>好奇点来源：</p>
+<ol>
+<li>先天定义的好奇形成反射</li>
+<li>来自用户的询问</li>
+<li>判断一个事件是否发生，转移因果链条</li>
+</ol>
+<h3 id="大段表达的组织"><a href="#大段表达的组织" class="headerlink" title="大段表达的组织"></a>大段表达的组织</h3><p>不同类型的大段表达、每类的信息组织逻辑、每种类型的构成元素同时是另外一种类型的表达的核心元素，因此可以嵌套组织大量信息的表达</p>
+<h3 id="表达动机"><a href="#表达动机" class="headerlink" title="表达动机"></a>表达动机</h3><ol>
+<li>让对方知晓一个信息，包括了具体事件、知识</li>
+<li>促使或阻止对方的某个行为</li>
+<li>创造对方的某种情绪</li>
+<li>改变对方对自己或某个人的态度</li>
+<li>改变对方对某个事件的看法</li>
+</ol>
+<ul>
+<li>表达动机来源：某个动机的转移或分解</li>
+<li>表达动机下反应模式的生成<ul>
+<li>语言教授</li>
+<li>观察样本习得</li>
+<li>反馈收敛</li>
+</ul>
+</li>
+</ul>
+<h3 id="组织大段的表达"><a href="#组织大段的表达" class="headerlink" title="组织大段的表达"></a>组织大段的表达</h3><blockquote>
+<p>AI 在组织大段表达的时候，需要先在思维中梳理要表达的信息，包括：要表达的主要信息，每个主要信息之间的关系；决定要用什么样的信息支持主要信息的表达，而这些信息又被怎样的信息支持，从而会出现不同类型核心内容表达的嵌套；而最终所有表达都划归到有反应模式定义的某种类型的大段表达上。</p>
+</blockquote>
+<p>每类以某个元素为核心的表达目标都有对应的表达框架，大篇幅表达的组织需要把记忆中的信息组织到既定的表达框架中</p>
+<p>构建场景/对象信息 -&gt; 表达反应模式生成表达</p>
+<h2 id="类人认知系统综述"><a href="#类人认知系统综述" class="headerlink" title="类人认知系统综述"></a>类人认知系统综述</h2><h3 id="认知系统的任务"><a href="#认知系统的任务" class="headerlink" title="认知系统的任务"></a>认知系统的任务</h3><p>功能：</p>
+<ul>
+<li>通过目标的分解、转移实现原始目标</li>
+<li>对客观世界事件是否发生形成认知</li>
+<li>获取知识，发现新的知识，细化已有知识</li>
+</ul>
+<h3 id="统辖关系和统辖检测"><a href="#统辖关系和统辖检测" class="headerlink" title="统辖关系和统辖检测"></a>统辖关系和统辖检测</h3><p>当意识流中出现一个具体事件信息时，我们必须找到统辖它的母类事件，然后让<strong>子类事件继承母类所在的知识</strong></p>
+<ul>
+<li><p>统辖关系：事件拥有同样的结构信息，并且对应位置是子类母类关系</p>
+</li>
+<li><p>统辖检测：检验 A 是否统辖 B 的运算过程</p>
+</li>
+<li><p>统辖搜索：在一个事件域中，对域中所有事件进行统辖检测，找到统辖它的母类</p>
+</li>
+</ul>
+<p>若统辖关系不是显在的，就需要把信息展开一层</p>
+<h3 id="演绎"><a href="#演绎" class="headerlink" title="演绎"></a>演绎</h3><p>在统辖关系下建立子类对母类的<strong>约束映射</strong>，用约束映射中的子类替代母类元素写入另一个事件</p>
+<p>一般过程：</p>
+<ol>
+<li>起点输入为子类事件 IDA’</li>
+<li>在记忆空间中进行统辖搜索找到 IDA’ 的母类 IDA，并建立子类和母类间元素的约束映射</li>
+<li>在记忆空间中寻找 IDA 所在的知识 ID0（位格 1 = IDA, 位格 2 = IDB）</li>
+<li>把约束映射写入 IDB，生成 IDB’ 和新知识 ID0’（位格 1 = IDA’, 位格 2 = IDB’）</li>
+</ol>
+<h3 id="抽象和归纳"><a href="#抽象和归纳" class="headerlink" title="抽象和归纳"></a>抽象和归纳</h3><p><strong>抽象</strong>：通过母类元素替换具体层知识的子类元素生成较为抽象的知识</p>
+<p><strong>归纳</strong>：由至少两个表象层的信息为起点，展开这些信息，通过寻找这些信息的结构中每个位置元素的最小母类，替换任意信息中的子类来生成知识</p>
+<p>可以利用抽象过程生成的知识，找回生成它的具体案例信息来为归纳提供素材</p>
+<h3 id="演绎反馈"><a href="#演绎反馈" class="headerlink" title="演绎反馈"></a>演绎反馈</h3><blockquote>
+<p>在使用知识进行演绎，比如预测、归因、解释，一些知识的可信度会增强，一些知识会被修正，而另外一些知识会被认为是错误的，这个过程我们称之为演绎反馈。</p>
+</blockquote>
+<p>演绎反馈：在使用知识的过程中修正细化知识</p>
+<h3 id="最小母类原则"><a href="#最小母类原则" class="headerlink" title="最小母类原则"></a>最小母类原则</h3><p>最小母类原则：如果子类在继承知识时，存在不同母类出现相互矛盾的知识，这是优先继承较小母类的知识。</p>
+<h2 id="事件目标的转移"><a href="#事件目标的转移" class="headerlink" title="事件目标的转移"></a>事件目标的转移</h2><h3 id="事件目标"><a href="#事件目标" class="headerlink" title="事件目标"></a>事件目标</h3><p>事件目标：人类对事件的发生和不发生，即存事件的终止和维持由自己的意志和目标</p>
+<blockquote>
+<p>人类对一个事件目标存有意志却不知如何实现时候，如何利用即存的因果知识转移事件目标到一个能力可及事件目标的认知过程</p>
+</blockquote>
+<p>分类：</p>
+<ul>
+<li>创造事件或状态</li>
+<li>阻止事件或状态发生</li>
+<li>终止事件或状态</li>
+<li>维持事件或状态</li>
+</ul>
+<h3 id="能力可及目标"><a href="#能力可及目标" class="headerlink" title="能力可及目标"></a>能力可及目标</h3><blockquote>
+<p>我们之所以要利用知识转移一个事件目标，去寻找实现它的方式，是因为这个目标并不处在我们能力可及的范围内，所以意识到事件目标不是能力可及是我们转移它的原因。</p>
+</blockquote>
+<h2 id="具体事件是否发生"><a href="#具体事件是否发生" class="headerlink" title="具体事件是否发生"></a>具体事件是否发生</h2><p>判断事件是否发生的策略：人类会利用目标事件因果层的规律，不断转移事件发生好奇点，直到转移到直接感知可及事件</p>
+<p>如果能够知晓原因事件和导致的结果事件是否发生，我们就能对目标事件 A 的发生与否形成认知</p>
+<h3 id="从事件结果判断"><a href="#从事件结果判断" class="headerlink" title="从事件结果判断"></a>从事件结果判断</h3><p>利用事件结果判断事件是否发生的流程：</p>
+<ol>
+<li>搜索目标事件所在的后延因果链条，也就是考查目标事件如果发生，接下来会发生什么。</li>
+<li>寻找后延因果链条中那些直接感知可及的事件，如果是他人感知可及的，则考虑询问知道的人</li>
+<li>一些转移后的因果链条后延事件是感知可及的，但未必是直接感知可及的，这个时候就会用经验中间接感知的办法去进行判断。</li>
+<li>完成对表象事件是否发生的考察之后，考察这些表象事件是否由其他事件导致。</li>
+<li>如果可能由其他候选事件导致，就回到起始状态，判断这些事件是否发生。</li>
+</ol>
+<h3 id="从事件原因判断"><a href="#从事件原因判断" class="headerlink" title="从事件原因判断"></a>从事件原因判断</h3><h3 id="时点规律和时序规律"><a href="#时点规律和时序规律" class="headerlink" title="时点规律和时序规律"></a>时点规律和时序规律</h3><p>在特定条件下通过时点/时序规律，判断具体事件是否发生</p>
+<blockquote>
+<p>我们可以利用事件间的时长规律排除事件是否发生: 假设目标事件发生，我们可以利用其中一个规律观测到的时点推知另一个事件发生的可能的时间范围。</p>
+</blockquote>
+<h2 id="继承人类已有的知识"><a href="#继承人类已有的知识" class="headerlink" title="继承人类已有的知识"></a>继承人类已有的知识</h2><p>继承知识的方式：</p>
+<ul>
+<li>不带目的的积累</li>
+<li>好奇心为起点的对知识的积累</li>
+</ul>
+<h3 id="询问"><a href="#询问" class="headerlink" title="询问"></a>询问</h3><p>AI 询问的闭环：AI 合理地形成好奇点 -&gt; 找到合适的人进行询问 -&gt; 通过询问获得需要的知识 -&gt; 综合许多人的回答决定采纳哪个版本的答案 -&gt; 通过自发的抽象累积每类人熟悉或是不熟悉什么领域，每个对象是否是严谨的回答者</p>
+<p>为了找到合适的人进行询问，AI 需要累积类似（对象类 =，熟悉信息类 =）这样的信息</p>
+<p>AI 会认为相同回答频次超过阈值的答案是足够可信的，将其作为公共知识</p>
+<h2 id="突破知识的边界——统计认知"><a href="#突破知识的边界——统计认知" class="headerlink" title="突破知识的边界——统计认知"></a>突破知识的边界——统计认知</h2><p>发现新知识的方式：</p>
+<ul>
+<li>从表象事件出发</li>
+<li>从更抽象层的知识出发</li>
+</ul>
+<p>统计认知的标准模式：</p>
+<ol>
+<li>先就 IDA 个别子类的具体事件在时间轴上寻找关注的其他具体事件 IDB’</li>
+<li>通过找到的具体事件找到强度较高的母类 IDB 作为猜想</li>
+<li>猜想形成后就是初步验证</li>
+</ol>
+<blockquote>
+<p>人类自发的抽象创造了一种统计认知，在自发的抽象中，人类生成事件类层面规律的知识，而后续的演绎创造的反哺，能弱化、删除不对的猜想，保留、增强正确的具有解释力的猜想。</p>
+</blockquote>
+<h2 id="突破知识的边界——细化因果链条"><a href="#突破知识的边界——细化因果链条" class="headerlink" title="突破知识的边界——细化因果链条"></a>突破知识的边界——细化因果链条</h2><blockquote>
+<p>如果一个因果链条中很多事件是不可直接感知的，也就是说我们只能直接感知到因果链条中部分的事件节点，就无法直接形成事件背后机制的视觉。此时间接感知不是马上可以用的，因为间接感知是一个证明过程，需要先有事件是否发生，状态是否存在的猜想，再在假设目标事件发生或不发生，状态存在或不存在的情况下，向上或向下考察因果链条，找到因果链条上可直接感知的事件节点来判断目标事件是否发生。</p>
+</blockquote>
+<p>利用已有的知识进行因果链条的桥接，来发现形成事件背后的真实机制</p>
+<p>我们会常识用已有的知识去桥接感知到相关的事件，形成对事件 A 和事件 B 的因果链条的猜想，对于无法直接感知到的事件，就需要去间接感知</p>
+<h2 id="情绪和决策"><a href="#情绪和决策" class="headerlink" title="情绪和决策"></a>情绪和决策</h2><blockquote>
+<p>认知系统在认知层面寻找如何实现一个目标，而情绪系统则利用如何实现目标的知识转移动机</p>
+</blockquote>
+<h3 id="情绪变量"><a href="#情绪变量" class="headerlink" title="情绪变量"></a>情绪变量</h3><p>感受是在意识流中出现的信息，创造情绪变量对应各种感受</p>
+<ul>
+<li>全局情绪</li>
+<li>指向性情绪</li>
+<li>渴望感受</li>
+</ul>
+<h3 id="形成效用的情绪变量"><a href="#形成效用的情绪变量" class="headerlink" title="形成效用的情绪变量"></a>形成效用的情绪变量</h3><p>第一类经验效用：来自个体对全局情绪的倾向（事件的全局情绪改变印象）</p>
+<p>第二类经验效用：来自个体对某种感受的倾向（事件——感受印象）</p>
+<p>指令效用：有自然选择的结果</p>
+<p>衍生效用：来自个体决策后可能导致的结果</p>
+<h2 id="AI-人格的创造"><a href="#AI-人格的创造" class="headerlink" title="AI 人格的创造"></a>AI 人格的创造</h2><h3 id="情绪反应"><a href="#情绪反应" class="headerlink" title="情绪反应"></a>情绪反应</h3><p>构建根据事件效用决定的总情绪能量模型，模拟在效用发生变化时或预期的概率发生变化时人类会有的情绪反应</p>
+<p>可以通过一个参数控制情绪能量转化为情绪感受的能力</p>
+<ul>
+<li>短视和远视人格：时间折现率控制着短视人格和远视人格</li>
+<li>同理心：在认知层面人类情绪模型的建立，以及用此模型推知具体情境具体对象情绪状态的能力</li>
+<li>利他/害他行为的创造：通过一个参数控制利他反应中他人效用到 AI 自身效用转化的比率</li>
+</ul>
+<h2 id="情绪变量的维护"><a href="#情绪变量的维护" class="headerlink" title="情绪变量的维护"></a>情绪变量的维护</h2><p>情绪变量的添加：</p>
+<ol>
+<li>反思需要模型化的但不被现有模型内容解释的情绪反应</li>
+<li>反思创造情绪反应背后的情绪变量是哪种类型</li>
+<li>反思这个情绪变量受什么因素的影响，判断每个影响是外生的还是内生的，也就是被其他情绪系统中的变量所影响。</li>
+</ol>
+<p>全局情绪的改变:</p>
+<ol>
+<li>自身随时间的衰减</li>
+<li>感受到渴望或厌恶的感受而该改变的全局情绪</li>
+<li>预期——回想模型中对因为正面或负面事件形成的对全局情绪的改变</li>
+<li>先天定义的事件和感受创造的对全局情绪的改变</li>
+</ol>
+<h3 id="指向性情绪的形成和继承"><a href="#指向性情绪的形成和继承" class="headerlink" title="指向性情绪的形成和继承"></a>指向性情绪的形成和继承</h3><p>因为指向性情绪来源于特征，自发的抽象会把具体对象的特征，抽象到母类对象，从而形成对母类对象的指向性情绪，因为演绎会让子类对象继承母类的属性，从而继承了对应这些属性的指向性情绪。</p>
+<h3 id="关注度"><a href="#关注度" class="headerlink" title="关注度"></a>关注度</h3><p>关注度时指向性情绪中非常特殊的一类指向性信息</p>
+<p>一个信息的关注度决定了：</p>
+<ol>
+<li>意识流的信息是否被模块或反应模式处理</li>
+<li>是参与决定系统资源分配、运算资源控制的信息</li>
+<li>搜索中决定被搜到的先后顺序</li>
+</ol>
+<p>关注度被以下因素决定：</p>
+<ol>
+<li>对象、属性的指向性情绪决定了关注度</li>
+<li>知识被使用参与演绎的次数</li>
+<li>一个对象或属性参与组织信息的次数</li>
+<li>频次强度</li>
+<li>自发抽象的形成和演绎的继承</li>
+</ol>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="自由联想"><a href="#自由联想" class="headerlink" title="自由联想"></a>自由联想</h3><ul>
+<li>结构信息出现在意识流中，我们会把结构信息中关注度较高的元素和其母类放回意识流中</li>
+<li>概念出现在意识流中，我们会把其子类参与的关注度较高的结构信息放回意识流中</li>
+<li>概念出现在意识流中，我们会把和它具有关系的另外一个关注度高的概念放回意识流中</li>
+</ul>
+<h3 id="数学运算"><a href="#数学运算" class="headerlink" title="数学运算"></a>数学运算</h3><p>从自然语言表达中抽象出数学运算模型，通过演绎生成结论</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%80%9D%E7%BB%B4%E5%B7%A5%E7%A8%8B/">思维工程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%80%9D%E7%BB%B4%E5%B7%A5%E7%A8%8B/">思维工程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/2717466625.html">https://emoryhuang.cn/blog/2717466625.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/3709186536.html">
+                        <span class="hidden-mobile">量化分析经典策略总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='20' width='20'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='20' width='20'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> <span>|</span> <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2021014392号-1</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
