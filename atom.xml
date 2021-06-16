@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-06-13T08:38:59.473Z</updated>
+  <updated>2021-06-16T07:42:59.160Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>量化分析因子研究</title>
+    <link href="https://emoryhuang.cn/blog/2222457050.html"/>
+    <id>https://emoryhuang.cn/blog/2222457050.html</id>
+    <published>2021-06-16T07:02:34.000Z</published>
+    <updated>2021-06-16T07:42:59.160Z</updated>
+    
+    
+    <summary type="html">所谓的因子也就是某个衡量标准，选择不同的因子作为选股的参考，往往会得到不同的结果，本文简单介绍了一些因子以及它所表示的意义。</summary>
+    
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="量化分析" scheme="https://emoryhuang.cn/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/"/>
+    
+    <category term="因子" scheme="https://emoryhuang.cn/tags/%E5%9B%A0%E5%AD%90/"/>
+    
+  </entry>
   
   <entry>
     <title>思维工程学习笔记</title>
@@ -42,7 +63,7 @@
     <link href="https://emoryhuang.cn/blog/3709186536.html"/>
     <id>https://emoryhuang.cn/blog/3709186536.html</id>
     <published>2021-06-10T12:02:34.000Z</published>
-    <updated>2021-06-14T02:33:58.677Z</updated>
+    <updated>2021-06-16T07:02:27.107Z</updated>
     
     
     <summary type="html">量化分析就是将一些不具体，模糊的因素用具体的数据来表示，从而达到分析比较的目的。</summary>
@@ -396,27 +417,6 @@
     
     
     <category term="Git" scheme="https://emoryhuang.cn/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo在Fluid主题中添加tabs标签</title>
-    <link href="https://emoryhuang.cn/blog/3375592349.html"/>
-    <id>https://emoryhuang.cn/blog/3375592349.html</id>
-    <published>2021-05-05T07:10:36.000Z</published>
-    <updated>2021-05-14T11:13:38.900Z</updated>
-    
-    
-    <summary type="html">之前逛主题的时候，发现了next主题有置标签tabs，由于在 Fluid 主题中没有这样的内置标签，但感觉又非常有用，所以就想着实现一个类似的内置标签。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
-    
-    <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
   </entry>
   
