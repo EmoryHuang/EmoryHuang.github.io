@@ -41,13 +41,13 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="所谓的因子也就是某个衡量标准，选择不同的因子作为选股的参考，往往会得到不同的结果，本文简单介绍了一些因子以及它所表示的意义。">
+  <meta name="description" content="卷积神经网络(Convolutional Neural Networks)是一种神经网络模型，是深度学习的代表算法之一。它广泛应用于计算机视觉、语音处理等领域，在图像处理，语音识别方面具有非常强大的性能。">
   <meta name="author" content="EmoryHuang">
   <meta name="keywords" content="">
   
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
   
-  <title>量化分析因子研究 - EmoryHuang</title>
+  <title>卷积神经网络 - EmoryHuang</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -208,12 +208,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623829368342-1623829368338-2222457050.jpg') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624363494587-1624363494583-3329651476.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="量化分析因子研究">
+            <span class="h2" id="subtitle" title="卷积神经网络">
               
             </span>
 
@@ -223,8 +223,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-16 15:02" pubdate>
-        2021年6月16日 下午
+      <time datetime="2021-05-28 21:13" pubdate>
+        2021年5月28日 晚上
       </time>
     </span>
   
@@ -235,7 +235,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.7k 字
+      2.4k 字
     </span>
   
 
@@ -245,7 +245,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28
+      26
        分钟
     </span>
   
@@ -283,116 +283,54 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">量化分析因子研究</h1>
+            <h1 style="display: none">卷积神经网络</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 天前
+                  本文最后更新于：6 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="量化分析因子研究"><a href="#量化分析因子研究" class="headerlink" title="量化分析因子研究"></a>量化分析因子研究</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>所谓的因子也就是某个衡量标准，选择不同的因子作为选股的参考，往往会得到不同的结果，本文简单介绍了一些因子以及它所表示的意义。</p>
-<h2 id="估值和资本结构因子"><a href="#估值和资本结构因子" class="headerlink" title="估值和资本结构因子"></a>估值和资本结构因子</h2><h3 id="账面市值比-BM"><a href="#账面市值比-BM" class="headerlink" title="账面市值比(BM)"></a>账面市值比(BM)</h3><p>账面市值比 = 股东权益 / 公司市值 = 每股净资产 / 每股股价</p>
-<p>BM 因子属于<strong>估值因子</strong>，即通过对于 BM 值的高低可以直观反映出股票估值是否符合公司价值。</p>
-<p>结合 BM 值可以直观表达为：BM 值高于 1，说明股份对应的公司权益的价值高于股价，也就是说股票的价值被低估了</p>
-<p>最大 1 % BM 策略为每次选取可行股票池 BM 值最大 1 % 的股票买入，每月调仓一次。而最小策略选取的 BM 指标刚好相反，最小的 1 %。最大 1 % 因子策略中包含了均值回归的逻辑，即<strong>高 BM 可能表示其被低估</strong>，在后期有上涨反弹的可能。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="盈利收益率-EP"><a href="#盈利收益率-EP" class="headerlink" title="盈利收益率(EP)"></a>盈利收益率(EP)</h3><p>盈利收益率 = 1 / 市盈率</p>
-<p>市盈率 = 股价 / 每股盈利 = 公司市值 / 公司盈利</p>
-<p>EP 因子属于<strong>估值因子</strong></p>
-<div class="note note-info">
-            <p>比如市盈率为 40 的股票，盈利收益率为 2.5 %，也就是买了这只股票每年能为你带来 2.5 % 的收益。</p>
-          </div>
-<p>EP 大说明相对于股票投资成比例回报较高，即单位资金可能回报较高</p>
-<p><strong>一般来说，盈利收益率越高，表明公司盈利能力越强，可能被低估。</strong></p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="市盈增长比率-PEG"><a href="#市盈增长比率-PEG" class="headerlink" title="市盈增长比率(PEG)"></a>市盈增长比率(PEG)</h3><p>市盈增长比率 = 市盈率(PE)/企业年盈利增长率</p>
-<p>PEG 因子属于<strong>估值因子</strong></p>
-<p>一般来说，投资者在选股的时应该选择那些市盈率较低，同时增长速度又是比较高的公司，这些公司有一个典型特点就是 PEG 会非常低。</p>
-<p><strong>PEG 值越低，股价遭低估的可能性越大</strong></p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="股息率-DP"><a href="#股息率-DP" class="headerlink" title="股息率(DP)"></a>股息率(DP)</h3><p>股息率 = 股票分红金额 / 股票价格</p>
-<p>EP 表示公司客观而言盈利的能力，而 DP 则是实际的投资收益比例。</p>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="现金收益率-CFP"><a href="#现金收益率-CFP" class="headerlink" title="现金收益率(CFP)"></a>现金收益率(CFP)</h3><p>现金收益率 = 公司现金及等价物 / 股票市值</p>
-<p>现金收益率表明一家公司产生多少现金流，这个现金流占投资者所购买公司的全部价值（包括债务负担）多大的百分比</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="市销率-PS"><a href="#市销率-PS" class="headerlink" title="市销率(PS)"></a>市销率(PS)</h3><p>市销率 = 股价 / 每股销售收入</p>
-<p>市销率的基本概念，是指投资如果获得公司 1 元的销售收入需要投入多少钱</p>
-<p><strong>市销率越小，通常被认为投资价值越高</strong>，因为这意味着我们赚钱的成本更低，</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="资产负债率-ARL"><a href="#资产负债率-ARL" class="headerlink" title="资产负债率(ARL)"></a>资产负债率(ARL)</h3><p>资产负债率 = 总负债 / 总资产</p>
-<p>资产负债率是衡量企业负债水平及风险程度的标志</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="固定资产比例-FACR"><a href="#固定资产比例-FACR" class="headerlink" title="固定资产比例(FACR)"></a>固定资产比例(FACR)</h3><p>固定资产比例 = 固定资产 / 总资产</p>
-<p>在理论中，较小的 FACR 有利于资金流转盈利</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="流通市值-CMC"><a href="#流通市值-CMC" class="headerlink" title="流通市值(CMC)"></a>流通市值(CMC)</h3><p>流通市值 = 流通股股数 * 当时股价</p>
-<p>一般而言，如果流通股市值较大，那么较小的资金量对其操作带来的反身性就很小，也就是说交易行为和股票价格不会互相产生太大的影响。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h2 id="成长因子"><a href="#成长因子" class="headerlink" title="成长因子"></a>成长因子</h2><h3 id="净资产收益率-ROE"><a href="#净资产收益率-ROE" class="headerlink" title="净资产收益率(ROE)"></a>净资产收益率(ROE)</h3><p>净资产收益率 = 净利润 / 净资产</p>
-<p>ROE 数值大小代表企业盈利能力的大小，指标值越高说明投资带来的收益越高，体现了自有资本获得净收益的能力</p>
-<p>缺点:</p>
-<ul>
-<li>在没有结合债务指标的情况下，它无法反映出股票定价的合理性</li>
-<li>当期如果公司支出过多， ROE 可能表现出较大比例负值</li>
-</ul>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="ROE-变动-ROEC"><a href="#ROE-变动-ROEC" class="headerlink" title="ROE 变动(ROEC)"></a>ROE 变动(ROEC)</h3><p>ROEC = ROE(上一期) − ROE(当期)</p>
-<p>缺点：不能识别“不好变到好”还是“好变到不好”</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="资产报酬率-ROA"><a href="#资产报酬率-ROA" class="headerlink" title="资产报酬率(ROA)"></a>资产报酬率(ROA)</h3><p>总资产报酬率 = 企业息税前利润 / 平均总资产</p>
-<p>资产报酬率是衡量公司是否能够有效利用总资金的指标</p>
-<p>总资产报酬率越高，表明资产利用效率越高，说明企业在增加收入、节约资金使用等方面取得了良好的效果；该指标越低，说明企业资产利用效率低，应分析差异原因，提高销售利润率，加速资金周转，提高企业经营管理水平。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="ROA-变动-ROAC"><a href="#ROA-变动-ROAC" class="headerlink" title="ROA 变动(ROAC)"></a>ROA 变动(ROAC)</h3><p>ROAC = ROA(上一期) − ROA(当期)</p>
-<p>ROA 变动也表示企业盈利能力的变动</p>
-<p>ROAC 指标越大说明企业的运营能力变得越差，而 ROAC 越小表示变得越好。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="主营业务利润占比-OPTP"><a href="#主营业务利润占比-OPTP" class="headerlink" title="主营业务利润占比(OPTP)"></a>主营业务利润占比(OPTP)</h3><p>主营业务利润占比 = 营业利润 / 利润总额</p>
-<p>主营利润占比较高，说明企业主要工作中心在主营业务上，两方面影响</p>
-<ul>
-<li>从好的一面说，主营业务占比较高的企业工作重心集中，在有限的企业资源条件约束下集中，企业应该主要依托主营业务发展；</li>
-<li>不好的一面而言，主营业务依赖度较高，对于行业层面的系统性风险抵抗能力较弱，需要依赖行业良好的发展条件企业自身才有较好的发展空间。</li>
-</ul>
-<p>主营业务利润占比越高，说明企业利润来源越稳定，受偶然某一年的利润突然增大影响较少。进而投资者承担的风险也就越低。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="主营利润占收入比例-OPOR"><a href="#主营利润占收入比例-OPOR" class="headerlink" title="主营利润占收入比例(OPOR)"></a>主营利润占收入比例(OPOR)</h3><p>主营利润占收入比例 = 营业利润 / 营业收入</p>
-<p>反应了企业的盈利水平，利润率越高，这个企业赚钱能力越就越强，越值得我们投资。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="收入净利率-NPOR"><a href="#收入净利率-NPOR" class="headerlink" title="收入净利率(NPOR)"></a>收入净利率(NPOR)</h3><p>收入净利率 = 净利润 / 营业收入</p>
-<p>当 NPOR 较高时企业营收能力较强，因此应该有较高的回报。NPOR 较低时出现相反的情况，对于股价有向下的刺激。</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="收入净利润占比变动-NPORC"><a href="#收入净利润占比变动-NPORC" class="headerlink" title="收入净利润占比变动(NPORC)"></a>收入净利润占比变动(NPORC)</h3><p>NPORC = NPOR(上一期) - NPOR(当期)</p>
-<p>NPORC 越小越好，越小表示 NPOR 上升，越大表示 NPOR 下降。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h2 id="技术因子"><a href="#技术因子" class="headerlink" title="技术因子"></a>技术因子</h2><h3 id="动量"><a href="#动量" class="headerlink" title="动量"></a>动量</h3><p>动量指的是一段时期内证券价格向某一方向持续变动的趋势。以动量因子为主的单因子策略一般被定义为动量策略</p>
-<p>动量策略就是在上一个观测的窗口期计算回报率（一般为观测期最后一天和第一天的收盘价差值再除以前一天的收盘价），然后计算排序，通过排序选择回报率最高的几只股票并持有。</p>
-<p>实际使用的动量指标为收盘价格在窗口期的增长率</p>
-<script type="math/tex; mode=display">MTM = (收盘价_{当期} - 收盘价_{一月前}) / 收盘价_{当期}</script><h3 id="一个月动能-MTM1"><a href="#一个月动能-MTM1" class="headerlink" title="一个月动能(MTM1)"></a>一个月动能(MTM1)</h3><script type="math/tex; mode=display">MTM1 = (收盘价_{当期} - 收盘价_{一月前}) / 收盘价_{一月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="三个月动能-MTM3"><a href="#三个月动能-MTM3" class="headerlink" title="三个月动能(MTM3)"></a>三个月动能(MTM3)</h3><script type="math/tex; mode=display">MTM3 = (收盘价_{当期} - 收盘价_{三月前}) / 收盘价_{三月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="六个月动能-MTM6"><a href="#六个月动能-MTM6" class="headerlink" title="六个月动能(MTM6)"></a>六个月动能(MTM6)</h3><script type="math/tex; mode=display">MTM6 = (收盘价_{当期} - 收盘价_{六月前}) / 收盘价_{六月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="十二个月动能-MTM12"><a href="#十二个月动能-MTM12" class="headerlink" title="十二个月动能(MTM12)"></a>十二个月动能(MTM12)</h3><script type="math/tex; mode=display">MTM12 = (收盘价_{当期} - 收盘价_{十二月前}) / 收盘价_{十二月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="换手率-TR"><a href="#换手率-TR" class="headerlink" title="换手率(TR)"></a>换手率(TR)</h3><p>换手率 = 某一段时期内的成交量 / 发行总股数</p>
-<p>换手率指在一定时间内市场中股票转手买卖的频率，是反映股票流通性强弱的指标之一</p>
-<p>如果一支股票的换手率较高，说明这支股票表现的比较活跃，投资者对它的参与（关注）度的较高。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="换手率变动-TRC"><a href="#换手率变动-TRC" class="headerlink" title="换手率变动(TRC)"></a>换手率变动(TRC)</h3><p>TRC = TR(前一期) - TR(当期)</p>
-<p>如果 TRC 越大表示一个月期间换手率下降越多，相反如果 TRC 越小表明一个月中换手率增长越大。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="波动率-Volatility"><a href="#波动率-Volatility" class="headerlink" title="波动率(Volatility)"></a>波动率(Volatility)</h3><script type="math/tex; mode=display">Volatility = VAR(收盘价_t / 收盘价_{t-1} - 1)</script><p>波动率是过去的一个月中股票的日收益率的方差，期中日收益率为当前收盘价除以上一个交易日收盘价后减 1</p>
-<p>波动越剧烈，资产收益率的不确定性就越强；波动率越低，金融资产价格的波动越平缓，资产收益率的确定性就越强</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="方差变动-VARC"><a href="#方差变动-VARC" class="headerlink" title="方差变动 VARC"></a>方差变动 VARC</h3><p>VARC = VAR(上一期) - VAR(当期)</p>
-<p>方差变动(VARC)这个因子表示股票两期收益率方差的变动，是日收益率方差的变动，表述为价格变动的变动的变动</p>
-<p>VARC 越小说明收益率的方差变大了，可以理解该股风险增大，VARC 越大表明该股收益率波动变小。</p>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="震荡-FLUC"><a href="#震荡-FLUC" class="headerlink" title="震荡(FLUC)"></a>震荡(FLUC)</h3><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/5e51216da634147ae4171c1513fb2c7e?type=1">因子研究系列之一 — 估值和资本结构因子</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/ce242414cc2e8ef7d576857f13ee0f41">因子研究系列之二 — 成长因子</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/3023621df4ecd7f4caf8f4b66a457fa2">因子研究系列之三 — 技术因子</a></li>
-</ul>
+              <h1 id="卷积神经网络"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>卷积神经网络(Convolutional Neural Networks)是一种神经网络模型，是深度学习的代表算法之一。它广泛应用于计算机视觉、语音处理等领域，在图像处理，语音识别方面具有非常强大的性能。针对计算机视觉任务，卷积神经网络能够很好的从大量的数据中做到特征的提取，并且降低网络的复杂度。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>卷积神经网络在各个领域得到广泛的应用，但就其本质来说，卷积神经网络只是一个特征提取器，它通过强大的特征学习能力，进行不断的特征提取，通过不断地卷积、池化等操作，过滤掉无用的信息，最终将一幅图像转化为特征图，通过提取出来的特征进行图像分类，边缘检测等任务，卷积神经网络的应用，都建立在特征图之上。</p>
+<h2 id="卷积神经网络的结构"><a href="#卷积神经网络的结构" class="headerlink" title="卷积神经网络的结构"></a>卷积神经网络的结构</h2><p>卷积神经网络通常包含：输入层、卷积层、池化层、全连接层和输出层，如图 1 所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622207825351-1622207825345-卷积神经网络结构.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 1 卷积神经网络结构"></p>
+<p>下面对各层网络进行简单说明：</p>
+<h3 id="（1）输入层"><a href="#（1）输入层" class="headerlink" title="（1）输入层"></a>（1）输入层</h3><p>作为输入，通常为 RGB 彩色图像，每个像素点的范围为[0,255]。为了方便运算，通常进行归一化操作。</p>
+<h3 id="（2）卷积层"><a href="#（2）卷积层" class="headerlink" title="（2）卷积层"></a>（2）卷积层</h3><p>卷积层作为卷积神经网络最核心的部分，主要负责卷积操作，进行特征提取的任务。从数学上讲，卷积就是一种运算，其连续形式定义为：</p>
+<script type="math/tex; mode=display">
+(f \cdot g)(n) = \int_{-\infty}^{\infty}f(\tau)g(n-\tau) \mathrm{d}\tau</script><p>其离散形式定义为：</p>
+<script type="math/tex; mode=display">
+(f \cdot g)(n) = \sum_{\tau=-\infty}^{\infty}f(\tau)g(n-\tau)</script><p>卷积神经网络属于离散形式的卷积操作，但不同的是卷积神经网络中的卷积，是二维卷积，通过卷积核对原始图像进行卷积操作。对于一幅$m\times n$大小的图像，给定一个$3\times3$大小的卷积核，二维离散形式的卷积公式：</p>
+<script type="math/tex; mode=display">
+f=\left[\begin{matrix}\begin{matrix}a_{0,0}&a_{0,1}\\a_{1,0}&a_{1,1}\\\end{matrix}&\cdots&\begin{matrix}a_{0,n}\\a_{1,n}\\\end{matrix}\\\vdots&\ddots&\vdots\\\begin{matrix}a_{m,0}&a_{m,1}\\\end{matrix}&\cdots&a_{m,n}\\\end{matrix}\right]</script><script type="math/tex; mode=display">
+g=\left[\begin{matrix}b_{0,0}&b_{0,1}&b_{0,2}\\b_{1,0}&b_{1,1}&b_{1,2}\\b_{2,0}&b_{2,1}&b_{2,2}\\\end{matrix}\right]</script><script type="math/tex; mode=display">
+\left(f\cdot g\right)\left(u,v\right)=\sum_{i}\sum_{j}{f\left(i,j\right)g\left(u-i,v-j\right)=}\sum_{i}\sum_{j}{a_{i,j}b_{u-i,v-j}}</script><p>图 2 展示了卷积操作的基本方法。将一个 $3\times3$ 的卷积核不断在原始图像上平移（步幅为 1，填充为 1），将卷积核与被卷积图像的对应位置相乘并相加，最终可以得到卷积之后的特征图。卷积核在这里作为权重表来使用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622208688329-1622208688323-卷积运算基本方法.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 2 卷积运算基本方法"></p>
+<p>彩色图像的每个像素通常是由红（R）、绿（G）、蓝（B）三个分量来表示的，由于每个像素有 R、G、B 三个通道，因此在计算机中，一幅 RGB 图像就是大小为 $m\times n\times3$ 的矩阵。为了处理多个维度的输入图像，就需要对卷积核进行调整，卷积核必须与被卷积图像有相同维度。如图 3 所示。另一方面，可以通过设置多个卷积核，从而获得多个特征图，对于同一幅被卷积图片，获得不同角度的特征，从而加强卷积神经网络的特征提取能力。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622208777502-1622208777496-多通道多卷积核.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 3 多通道多卷积核"></p>
+<h3 id="（3）池化层"><a href="#（3）池化层" class="headerlink" title="（3）池化层"></a>（3）池化层</h3><p>池化层也称为下采样，主要负责数据的降维，常见的有最大池化层与平均池化层。在对图像进行卷积处理之后，虽然通过卷积减少了参数，但仍然面临着庞大的计算量，随着现代传感器的进步，计算机获取的图像尺寸往往非常大，对于这样的大尺寸图像来说，虽然有着丰富的特征，但是不可避免地导致网络训练速度变慢。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622208847780-1622208847776-池化操作.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 4 池化操作"></p>
+<p>池化层在缩小维度的同时，尽可能地保留重要特征，减少运算地数据量。除此之外，池化层也可以在一定程度上降低过拟合的风险，改善网络的性能。图 4 是一个 2×2 的最大池化层，步长为 2。通过在窗口内选取最大值对特征图进行降维，减少数据量。</p>
+<h3 id="（4）全连接层"><a href="#（4）全连接层" class="headerlink" title="（4）全连接层"></a>（4）全连接层</h3><p>全连接层与常规神经网络相同，通过若干次卷积、池化等操作之后，将最终得到的特征图作为输入进行全连接操作，连接所有的神经元，根据特征图进行分类器的工作。</p>
+<h3 id="（5）输出层"><a href="#（5）输出层" class="headerlink" title="（5）输出层"></a>（5）输出层</h3><p>最后的输出层输出所需的图像，其具体输出根据不同的任务也会有所不同。</p>
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p>激活函数的本质就是一个函数，它的目的是将神经网络非线性化，通过加入激活函数，提高神经网络的非线性能力，解决线性模型所不能解决的问题。下面是两种常用的激活函数：</p>
+<h3 id="Sigmoid-函数"><a href="#Sigmoid-函数" class="headerlink" title="Sigmoid 函数"></a>Sigmoid 函数</h3><script type="math/tex; mode=display">
+f(x)=\frac{1}{1+e^{-x}}</script><p>Sigmoid 函数可以将元素的值变换到 0 和 1 之间，早期的神经网络主要采用 Sigmoid 函数作为激活函数，但也随之而来引发了一系列问题，如梯度消失问题，当 Sigmoid 函数趋近于 0 和 1 的时候，其导数也趋近于 0，从而无法很好地进行反向传播。</p>
+<h3 id="ReLU-函数"><a href="#ReLU-函数" class="headerlink" title="ReLU 函数"></a>ReLU 函数</h3><script type="math/tex; mode=display">
+ReLU=\max{(0,x)}</script><p>相较于 Sigmoid 函数，ReLU 函数很好地解决了 Sigmoid 函数引发的梯度消失问题，能够使网络更快地收敛。并且得益于 ReLU 函数简单的表达形式，它的计算效率也很高。因此，现在大多数深度学习模型都放弃了 Sigmoid 函数转而使用 ReLU 函数。</p>
+<h2 id="正向传播与反向传播"><a href="#正向传播与反向传播" class="headerlink" title="正向传播与反向传播"></a>正向传播与反向传播</h2><h3 id="正向传播"><a href="#正向传播" class="headerlink" title="正向传播"></a>正向传播</h3><p>正向传播就是按照从输入层到输出层的顺序，由输入层开始，经过卷积层，池化层等一直到输出层得到结果 $z$ 的过程。如图 5 所示，正向传播使用输入 $x$ 和 $y$ 通过 $f(x,y)$计算 $z$</p>
+<p>在模型训练过程中，需要衡量价格预测值与真实值之间的误差，误差越小代表模型的可靠性越强。在深度学习中，将衡量误差的函数称为损失函数。通过将一次正向传播得到的结果$z$，与真实值$\hat{z}$作差来计算损失，用于反向传播。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622209136958-1622209136957-正向传播和反向传播.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 5 正向传播和反向传播"></p>
+<h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>与正向传播相反，反向传播按照从输出层开始经过隐藏层最后到输入层的顺序，进行反向传播的根本目的是为了减小神经网络的误差，更新参数权值，提高可靠性。在正向传播结束之后，计算当前值与真实值之间的误差，之后通过梯度下降法，以一定的学习率对网络中所有参数权值进行更新。如图 5 所示，反向传播在获得 $dL/dz$ 后，通过链式法则计算 $dL/dx$ 和 $dL/dy$，以此达到修正的目的。</p>
+<script type="math/tex; mode=display">
+\frac{dL}{dx}=\frac{dL}{dz}\cdot\frac{dz}{dx}</script><script type="math/tex; mode=display">
+\frac{dL}{dy}=\frac{dL}{dz}\cdot\frac{dz}{dy}</script><p>就神经网络的整个传播过程概况来说，首先通过输入值进行正向传播获得误差，之后根据获得的误差反向传播更新参数权值，往复循环，对网络进行修正。</p>
+<h2 id="卷积神经网络的优点"><a href="#卷积神经网络的优点" class="headerlink" title="卷积神经网络的优点"></a>卷积神经网络的优点</h2><p>由于卷积神经网络强大的特征学习能力，使用它可以有效减少开销。对于一个图像任务，如果使用神经网络直接进行特征提取，这时的开销往往是巨大的，特别是对于较大的输入图像来说，可能达到亿万个参数，过拟合的风险难以避免，另外巨大的内存需求也难以接受。同时由于图像中可能包含许多无用的信息，检测效果也可能下降。面对这样的问题，卷积神经网络给出了一个较好的解决方案，通过不断地卷积进行特征提取，在抽取图像特征信息的同时，有效减少了训练参数的数量。具体来说：</p>
+<h3 id="参数共享"><a href="#参数共享" class="headerlink" title="参数共享"></a>参数共享</h3><p>对于使用全连接的普通神经网络来说，如图 6 所示特征图上的每个像素与输入图像的每个像素全部相关，对于一幅 $m\times n$ 大小的图像，生成一幅 $p\times q$ 大小的特征图，需要 $m\times n\times p\times q$ 个参数。但对于卷积神经网络来说，由于卷积核的存在，每一次卷积操作只需要卷积核的一组参数即可。参数共享的机制，很好的解决了神经网络参数过多的问题，可以有效避免过拟合。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1622209311842-1622209311840-局部感受野.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="图 6 神经网络与卷积神经网络"></p>
+<h3 id="局部感受野"><a href="#局部感受野" class="headerlink" title="局部感受野"></a>局部感受野</h3><p>正如前面提到的，普通神经网络使用全连接方式，一个神经元与输入图像上的每个像素都相关，而卷积神经网络中，每个神经元只需要对局部图像进行感知，如图 6 所示。这样做同样可以减少参数个数，加快训练的速度。</p>
 
             </div>
             <hr>
@@ -402,7 +340,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                      <a class="hover-with-bg" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
                     
                   </div>
                 
@@ -410,16 +348,16 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                      <a class="hover-with-bg" href="/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">卷积神经网络</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%9B%A0%E5%AD%90/">因子</a>
+                      <a class="hover-with-bg" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
                     
                   </div>
                 
               </div>
 <p class="note note-warning">
 <strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
-<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/2222457050.html">https://emoryhuang.cn/blog/2222457050.html</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/3329651476.html">https://emoryhuang.cn/blog/3329651476.html</a> <br>
 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
    </p>
    
@@ -428,12 +366,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/blog/8853766.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux 速查备忘手册</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/3165266004.html">
-                        <span class="hidden-mobile">HED 和 RCF 图像边缘检测</span>
+                      <a href="/blog/1603169503.html">
+                        <span class="hidden-mobile">算法专题汇总</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

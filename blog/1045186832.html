@@ -41,13 +41,13 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="所谓的因子也就是某个衡量标准，选择不同的因子作为选股的参考，往往会得到不同的结果，本文简单介绍了一些因子以及它所表示的意义。">
+  <meta name="description" content="图像轮廓边缘指的是图像中目标对象和背景之间的区分明显的交界线。对于数字图像来说，图像边缘是数字图像中灰度变化比较大的点，它是物体最基本的特征之一。">
   <meta name="author" content="EmoryHuang">
   <meta name="keywords" content="">
   
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
   
-  <title>量化分析因子研究 - EmoryHuang</title>
+  <title>传统图像边缘检测方法 - EmoryHuang</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -208,12 +208,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623829368342-1623829368338-2222457050.jpg') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624363425506-1624363425502-1045186832.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="量化分析因子研究">
+            <span class="h2" id="subtitle" title="传统图像边缘检测方法">
               
             </span>
 
@@ -223,8 +223,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-06-16 15:02" pubdate>
-        2021年6月16日 下午
+      <time datetime="2021-05-08 15:48" pubdate>
+        2021年5月8日 下午
       </time>
     </span>
   
@@ -235,7 +235,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.7k 字
+      2.1k 字
     </span>
   
 
@@ -245,7 +245,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28
+      22
        分钟
     </span>
   
@@ -283,116 +283,66 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">量化分析因子研究</h1>
+            <h1 style="display: none">传统图像边缘检测方法</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="量化分析因子研究"><a href="#量化分析因子研究" class="headerlink" title="量化分析因子研究"></a>量化分析因子研究</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>所谓的因子也就是某个衡量标准，选择不同的因子作为选股的参考，往往会得到不同的结果，本文简单介绍了一些因子以及它所表示的意义。</p>
-<h2 id="估值和资本结构因子"><a href="#估值和资本结构因子" class="headerlink" title="估值和资本结构因子"></a>估值和资本结构因子</h2><h3 id="账面市值比-BM"><a href="#账面市值比-BM" class="headerlink" title="账面市值比(BM)"></a>账面市值比(BM)</h3><p>账面市值比 = 股东权益 / 公司市值 = 每股净资产 / 每股股价</p>
-<p>BM 因子属于<strong>估值因子</strong>，即通过对于 BM 值的高低可以直观反映出股票估值是否符合公司价值。</p>
-<p>结合 BM 值可以直观表达为：BM 值高于 1，说明股份对应的公司权益的价值高于股价，也就是说股票的价值被低估了</p>
-<p>最大 1 % BM 策略为每次选取可行股票池 BM 值最大 1 % 的股票买入，每月调仓一次。而最小策略选取的 BM 指标刚好相反，最小的 1 %。最大 1 % 因子策略中包含了均值回归的逻辑，即<strong>高 BM 可能表示其被低估</strong>，在后期有上涨反弹的可能。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="盈利收益率-EP"><a href="#盈利收益率-EP" class="headerlink" title="盈利收益率(EP)"></a>盈利收益率(EP)</h3><p>盈利收益率 = 1 / 市盈率</p>
-<p>市盈率 = 股价 / 每股盈利 = 公司市值 / 公司盈利</p>
-<p>EP 因子属于<strong>估值因子</strong></p>
-<div class="note note-info">
-            <p>比如市盈率为 40 的股票，盈利收益率为 2.5 %，也就是买了这只股票每年能为你带来 2.5 % 的收益。</p>
-          </div>
-<p>EP 大说明相对于股票投资成比例回报较高，即单位资金可能回报较高</p>
-<p><strong>一般来说，盈利收益率越高，表明公司盈利能力越强，可能被低估。</strong></p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="市盈增长比率-PEG"><a href="#市盈增长比率-PEG" class="headerlink" title="市盈增长比率(PEG)"></a>市盈增长比率(PEG)</h3><p>市盈增长比率 = 市盈率(PE)/企业年盈利增长率</p>
-<p>PEG 因子属于<strong>估值因子</strong></p>
-<p>一般来说，投资者在选股的时应该选择那些市盈率较低，同时增长速度又是比较高的公司，这些公司有一个典型特点就是 PEG 会非常低。</p>
-<p><strong>PEG 值越低，股价遭低估的可能性越大</strong></p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="股息率-DP"><a href="#股息率-DP" class="headerlink" title="股息率(DP)"></a>股息率(DP)</h3><p>股息率 = 股票分红金额 / 股票价格</p>
-<p>EP 表示公司客观而言盈利的能力，而 DP 则是实际的投资收益比例。</p>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="现金收益率-CFP"><a href="#现金收益率-CFP" class="headerlink" title="现金收益率(CFP)"></a>现金收益率(CFP)</h3><p>现金收益率 = 公司现金及等价物 / 股票市值</p>
-<p>现金收益率表明一家公司产生多少现金流，这个现金流占投资者所购买公司的全部价值（包括债务负担）多大的百分比</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="市销率-PS"><a href="#市销率-PS" class="headerlink" title="市销率(PS)"></a>市销率(PS)</h3><p>市销率 = 股价 / 每股销售收入</p>
-<p>市销率的基本概念，是指投资如果获得公司 1 元的销售收入需要投入多少钱</p>
-<p><strong>市销率越小，通常被认为投资价值越高</strong>，因为这意味着我们赚钱的成本更低，</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="资产负债率-ARL"><a href="#资产负债率-ARL" class="headerlink" title="资产负债率(ARL)"></a>资产负债率(ARL)</h3><p>资产负债率 = 总负债 / 总资产</p>
-<p>资产负债率是衡量企业负债水平及风险程度的标志</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="固定资产比例-FACR"><a href="#固定资产比例-FACR" class="headerlink" title="固定资产比例(FACR)"></a>固定资产比例(FACR)</h3><p>固定资产比例 = 固定资产 / 总资产</p>
-<p>在理论中，较小的 FACR 有利于资金流转盈利</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="流通市值-CMC"><a href="#流通市值-CMC" class="headerlink" title="流通市值(CMC)"></a>流通市值(CMC)</h3><p>流通市值 = 流通股股数 * 当时股价</p>
-<p>一般而言，如果流通股市值较大，那么较小的资金量对其操作带来的反身性就很小，也就是说交易行为和股票价格不会互相产生太大的影响。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h2 id="成长因子"><a href="#成长因子" class="headerlink" title="成长因子"></a>成长因子</h2><h3 id="净资产收益率-ROE"><a href="#净资产收益率-ROE" class="headerlink" title="净资产收益率(ROE)"></a>净资产收益率(ROE)</h3><p>净资产收益率 = 净利润 / 净资产</p>
-<p>ROE 数值大小代表企业盈利能力的大小，指标值越高说明投资带来的收益越高，体现了自有资本获得净收益的能力</p>
-<p>缺点:</p>
-<ul>
-<li>在没有结合债务指标的情况下，它无法反映出股票定价的合理性</li>
-<li>当期如果公司支出过多， ROE 可能表现出较大比例负值</li>
-</ul>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="ROE-变动-ROEC"><a href="#ROE-变动-ROEC" class="headerlink" title="ROE 变动(ROEC)"></a>ROE 变动(ROEC)</h3><p>ROEC = ROE(上一期) − ROE(当期)</p>
-<p>缺点：不能识别“不好变到好”还是“好变到不好”</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="资产报酬率-ROA"><a href="#资产报酬率-ROA" class="headerlink" title="资产报酬率(ROA)"></a>资产报酬率(ROA)</h3><p>总资产报酬率 = 企业息税前利润 / 平均总资产</p>
-<p>资产报酬率是衡量公司是否能够有效利用总资金的指标</p>
-<p>总资产报酬率越高，表明资产利用效率越高，说明企业在增加收入、节约资金使用等方面取得了良好的效果；该指标越低，说明企业资产利用效率低，应分析差异原因，提高销售利润率，加速资金周转，提高企业经营管理水平。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="ROA-变动-ROAC"><a href="#ROA-变动-ROAC" class="headerlink" title="ROA 变动(ROAC)"></a>ROA 变动(ROAC)</h3><p>ROAC = ROA(上一期) − ROA(当期)</p>
-<p>ROA 变动也表示企业盈利能力的变动</p>
-<p>ROAC 指标越大说明企业的运营能力变得越差，而 ROAC 越小表示变得越好。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="主营业务利润占比-OPTP"><a href="#主营业务利润占比-OPTP" class="headerlink" title="主营业务利润占比(OPTP)"></a>主营业务利润占比(OPTP)</h3><p>主营业务利润占比 = 营业利润 / 利润总额</p>
-<p>主营利润占比较高，说明企业主要工作中心在主营业务上，两方面影响</p>
-<ul>
-<li>从好的一面说，主营业务占比较高的企业工作重心集中，在有限的企业资源条件约束下集中，企业应该主要依托主营业务发展；</li>
-<li>不好的一面而言，主营业务依赖度较高，对于行业层面的系统性风险抵抗能力较弱，需要依赖行业良好的发展条件企业自身才有较好的发展空间。</li>
-</ul>
-<p>主营业务利润占比越高，说明企业利润来源越稳定，受偶然某一年的利润突然增大影响较少。进而投资者承担的风险也就越低。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="主营利润占收入比例-OPOR"><a href="#主营利润占收入比例-OPOR" class="headerlink" title="主营利润占收入比例(OPOR)"></a>主营利润占收入比例(OPOR)</h3><p>主营利润占收入比例 = 营业利润 / 营业收入</p>
-<p>反应了企业的盈利水平，利润率越高，这个企业赚钱能力越就越强，越值得我们投资。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="收入净利率-NPOR"><a href="#收入净利率-NPOR" class="headerlink" title="收入净利率(NPOR)"></a>收入净利率(NPOR)</h3><p>收入净利率 = 净利润 / 营业收入</p>
-<p>当 NPOR 较高时企业营收能力较强，因此应该有较高的回报。NPOR 较低时出现相反的情况，对于股价有向下的刺激。</p>
-<p>最大 1% 优于最小 1%，最小 5% 优于最大 5%</p>
-<h3 id="收入净利润占比变动-NPORC"><a href="#收入净利润占比变动-NPORC" class="headerlink" title="收入净利润占比变动(NPORC)"></a>收入净利润占比变动(NPORC)</h3><p>NPORC = NPOR(上一期) - NPOR(当期)</p>
-<p>NPORC 越小越好，越小表示 NPOR 上升，越大表示 NPOR 下降。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h2 id="技术因子"><a href="#技术因子" class="headerlink" title="技术因子"></a>技术因子</h2><h3 id="动量"><a href="#动量" class="headerlink" title="动量"></a>动量</h3><p>动量指的是一段时期内证券价格向某一方向持续变动的趋势。以动量因子为主的单因子策略一般被定义为动量策略</p>
-<p>动量策略就是在上一个观测的窗口期计算回报率（一般为观测期最后一天和第一天的收盘价差值再除以前一天的收盘价），然后计算排序，通过排序选择回报率最高的几只股票并持有。</p>
-<p>实际使用的动量指标为收盘价格在窗口期的增长率</p>
-<script type="math/tex; mode=display">MTM = (收盘价_{当期} - 收盘价_{一月前}) / 收盘价_{当期}</script><h3 id="一个月动能-MTM1"><a href="#一个月动能-MTM1" class="headerlink" title="一个月动能(MTM1)"></a>一个月动能(MTM1)</h3><script type="math/tex; mode=display">MTM1 = (收盘价_{当期} - 收盘价_{一月前}) / 收盘价_{一月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="三个月动能-MTM3"><a href="#三个月动能-MTM3" class="headerlink" title="三个月动能(MTM3)"></a>三个月动能(MTM3)</h3><script type="math/tex; mode=display">MTM3 = (收盘价_{当期} - 收盘价_{三月前}) / 收盘价_{三月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="六个月动能-MTM6"><a href="#六个月动能-MTM6" class="headerlink" title="六个月动能(MTM6)"></a>六个月动能(MTM6)</h3><script type="math/tex; mode=display">MTM6 = (收盘价_{当期} - 收盘价_{六月前}) / 收盘价_{六月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="十二个月动能-MTM12"><a href="#十二个月动能-MTM12" class="headerlink" title="十二个月动能(MTM12)"></a>十二个月动能(MTM12)</h3><script type="math/tex; mode=display">MTM12 = (收盘价_{当期} - 收盘价_{十二月前}) / 收盘价_{十二月前}</script><p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="换手率-TR"><a href="#换手率-TR" class="headerlink" title="换手率(TR)"></a>换手率(TR)</h3><p>换手率 = 某一段时期内的成交量 / 发行总股数</p>
-<p>换手率指在一定时间内市场中股票转手买卖的频率，是反映股票流通性强弱的指标之一</p>
-<p>如果一支股票的换手率较高，说明这支股票表现的比较活跃，投资者对它的参与（关注）度的较高。</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="换手率变动-TRC"><a href="#换手率变动-TRC" class="headerlink" title="换手率变动(TRC)"></a>换手率变动(TRC)</h3><p>TRC = TR(前一期) - TR(当期)</p>
-<p>如果 TRC 越大表示一个月期间换手率下降越多，相反如果 TRC 越小表明一个月中换手率增长越大。</p>
-<p>最大 1% 优于最小 1%，最大 5% 优于最小 5%</p>
-<h3 id="波动率-Volatility"><a href="#波动率-Volatility" class="headerlink" title="波动率(Volatility)"></a>波动率(Volatility)</h3><script type="math/tex; mode=display">Volatility = VAR(收盘价_t / 收盘价_{t-1} - 1)</script><p>波动率是过去的一个月中股票的日收益率的方差，期中日收益率为当前收盘价除以上一个交易日收盘价后减 1</p>
-<p>波动越剧烈，资产收益率的不确定性就越强；波动率越低，金融资产价格的波动越平缓，资产收益率的确定性就越强</p>
-<p>最小 1% 优于最大 1%，最小 5% 优于最大 5%</p>
-<h3 id="方差变动-VARC"><a href="#方差变动-VARC" class="headerlink" title="方差变动 VARC"></a>方差变动 VARC</h3><p>VARC = VAR(上一期) - VAR(当期)</p>
-<p>方差变动(VARC)这个因子表示股票两期收益率方差的变动，是日收益率方差的变动，表述为价格变动的变动的变动</p>
-<p>VARC 越小说明收益率的方差变大了，可以理解该股风险增大，VARC 越大表明该股收益率波动变小。</p>
-<p>最小 1% 优于最大 1%，最大 5% 优于最小 5%</p>
-<h3 id="震荡-FLUC"><a href="#震荡-FLUC" class="headerlink" title="震荡(FLUC)"></a>震荡(FLUC)</h3><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/5e51216da634147ae4171c1513fb2c7e?type=1">因子研究系列之一 — 估值和资本结构因子</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/ce242414cc2e8ef7d576857f13ee0f41">因子研究系列之二 — 成长因子</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.joinquant.com/view/community/detail/3023621df4ecd7f4caf8f4b66a457fa2">因子研究系列之三 — 技术因子</a></li>
-</ul>
+              <h1 id="传统图像边缘检测方法"><a href="#传统图像边缘检测方法" class="headerlink" title="传统图像边缘检测方法"></a>传统图像边缘检测方法</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>图像轮廓边缘指的是图像中目标对象和背景之间的区分明显的交界线。对于数字图像来说，图像边缘是数字图像中灰度变化比较大的点，它是物体最基本的特征之一。基于图像边缘灰度剧烈变化的特征，传统的边缘检测方法往往根据灰度变化的情况进行边缘提取。</p>
+<p>本文主要介绍传统边缘检测方法的基本思路以及实现方法，主要对 Sobel 边缘检测方法，Canny 边缘检测方法进行具体分析，讨论了其优缺点，最后指出了对传统边缘检测方法的一些改进措施。</p>
+<h2 id="传统边缘检测方法的基本思路"><a href="#传统边缘检测方法的基本思路" class="headerlink" title="传统边缘检测方法的基本思路"></a>传统边缘检测方法的基本思路</h2><p>由于物体边缘处的灰度变化剧烈，因此传统的边缘检测方法大多利用这个特点，通过计算像素的梯度判断当前像素点是否为边缘像素点。首先通过滤波器进行平滑处理，以减小噪声对边缘检测产生的影响；其次计算梯度，寻找梯度变化最大的像素点，得到边缘像素点；最后进行阈值处理，通过设定合适的阈值确定真正的边缘，排除非边缘点。Sobel 算子与 Canny 算子边缘检测结果如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623633205338-1623633205329-sobel_canny.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Sobel算子与Canny算子边缘检测结果"></p>
+<h3 id="Sobel-边缘检测算法"><a href="#Sobel-边缘检测算法" class="headerlink" title="Sobel 边缘检测算法"></a>Sobel 边缘检测算法</h3><p>Sobel 算子是由美国计算机科学家 Irwin Sobel 和 Gary Feldman 于 1968 年首次提出的，他充分利用一阶微分进行边缘检测。Sobel 算子通过两个 <code>3×3</code> 的模板 s<sub>x</sub>，s<sub>y</sub> 进行水平和垂直两个方向的检测，它充分考虑了像素的位置特征，将当前像素上下，左右邻域内的像素充分考虑，寻找图像灰度变化最大的像素点。</p>
+<script type="math/tex; mode=display">
+s_x=\left[ \begin{matrix}
+    -1&        0&        1\\
+    -2&        0&        2\\
+    -1&        0&        1\\
+\end{matrix} \right] \text{，}s_y=\left[ \begin{matrix}
+    -1&        -2&        1\\
+    0&        0&        0\\
+    1&        2&        1\\
+\end{matrix} \right]</script><h4 id="Sobel-边缘检测算法的基本步骤"><a href="#Sobel-边缘检测算法的基本步骤" class="headerlink" title="Sobel 边缘检测算法的基本步骤"></a>Sobel 边缘检测算法的基本步骤</h4><p>传统 Sobel 边缘检测方法如下：</p>
+<ol>
+<li><p>计算梯度值</p>
+<p>通过两个 <code>3×3</code> 的模板 s<sub>x</sub>，s<sub>y</sub> 对原始图像 f(x,y) 进行卷积处理，计算出水平和垂直方向的梯度 G<sub>x</sub>，G<sub>y</sub> 之后，再计算每个像素的梯度 G。</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+G_x = f(x, y) \cdot s_x</script><script type="math/tex; mode=display">
+G_y = f(x, y) \cdot s_y</script><script type="math/tex; mode=display">
+G = \sqrt{G_{x}^{2} + G_{y}^{2}}</script><ol>
+<li><p>确定边缘点。</p>
+<p>手动设置一个阈值 T，如果某个像素的梯度 G 大于这个阈值 T，那么就认为这个像素点是边缘像素，否则舍弃。</p>
+</li>
+</ol>
+<h4 id="Sobel-边缘检测算法的优缺点"><a href="#Sobel-边缘检测算法的优缺点" class="headerlink" title="Sobel 边缘检测算法的优缺点"></a>Sobel 边缘检测算法的优缺点</h4><p>Sobel 算子通过两个 <code>3×3</code> 的模板对于每个像素位置的影响做了加权处理，用于进行边缘提取，对噪声具有平滑作用，简单有效。但是由于噪声的影响以及 Sobel 边缘检测方法自身的局限性，往往会检测到非边缘像素点，检测精度不高。</p>
+<h3 id="Canny-边缘检测算法"><a href="#Canny-边缘检测算法" class="headerlink" title="Canny 边缘检测算法"></a>Canny 边缘检测算法</h3><p>Canny 边缘检测算法是由 John F. Canny 于 1986 年发明的边缘检测算法，作为一种广泛使用的边缘检测算法，它对边缘检测领域的发展产生了深远的影响。Canny 边缘检测方法在提取边缘的同时对噪声做到了很好的抑制，在传统边缘检测方法之中，Canny 算子也凭借其良好的检测效果，简单的实现过程，成为最经典的边缘检测算法之一。其基本过程如下图所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623633156503-1623633156502-canny步骤.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Canny算子的一般步骤"></p>
+<h4 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h4><p>传统 Canny 边缘检测方法如下：</p>
+<p>（1）通过高斯滤波函数对图像进行平滑处理</p>
+<p>首先通过对图像进行高斯滤波处理，平滑图像，避免将噪声视为图像边缘，从而可以尽可能地减少噪声对边缘检测产生的影响。它的原理是对整个图像进行加权平均，每个像素的值通过自身和邻域内像素的加权平均获得，高斯滤波函数：</p>
+<script type="math/tex; mode=display">
+G(x,y,\sigma) = \frac{1}{2 \pi \sigma^2} \exp \left( -\frac{x^2+y^2}{2\sigma ^2} \right)</script><p>其中 σ 为高斯滤波参数。</p>
+<p>（2）通过一阶差分算子求滤波后图像的梯度幅值和方向</p>
+<p>传统边缘检测算法通常通过计算梯度信息的变化来预测图像的边缘，因此 Canny 算子通过 2×2 的一阶差分算子计算水平和垂直方向的一阶导数，分别记为 $G_x$ 和 $G_y$，然后通过水平和垂直方向的梯度信息计算每个像素的梯度 G 和梯度方向 θ：</p>
+<script type="math/tex; mode=display">
+G=\sqrt{G_{x}^{2}+G_{y}^{2}}</script><script type="math/tex; mode=display">
+\theta =\arctan \left( \frac{G_y}{G_x} \right)</script><p>（3）对梯度幅值进行非极大值抑制</p>
+<p>在第二步中 Canny 边缘检测算法计算了每个像素的梯度信息，但是算法最后进行边缘检测的时候仅需要一个边缘信息。非极大值抑制通过搜索局部极大值，抑制非极大值元素，其目的是为了保证边缘精细，将非极大值的点置为 0，剔除一大部分非边缘的点，只保留局部梯度最大的点，将其作为边缘确定。</p>
+<p>（4）双阈值法检测边缘</p>
+<p>在对图像进行非极大值抑制之后，可以得到图像的边缘，但这时得到的边缘往往不尽人意，由于噪声和图像色彩变化造成的影响，导致一些边缘像素的产生，但这些边缘像素可能并不是真正的边缘。Canny 边缘检测算法通过设置高阈值 <script type="math/tex">T_{max}</script> 和低阈值 <script type="math/tex">T_{min}</script> 两个阈值进行边缘的检测和连接，具体来说：遍历所有像素，如果像素的梯度值高于高阈值 <script type="math/tex">T_{max}</script>，则保留，将其作为确定的边缘；如果像素的梯度值低于低阈值 <script type="math/tex">T_{min}</script>，则判断其不是边缘像素，舍弃； 如果像素的梯度值介于高低阈值之间，若该像素的邻域中有“确定边缘”（梯度值高于高阈值 <script type="math/tex">T_{max}</script> 的那些像素），则判断该像素也是边缘像素，否则舍弃。</p>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><p>相较于其他边缘检测方法如 Sobel 算子、Roberts 算子等，Canny 算子的边缘检测效果相对较好，在一定程度上减轻了噪声的影响，但也有很多不足之处，比如容易将噪声视为边缘而出错，同时 Canny 算子的检测效果很大程度上取决于高低阈值，而高低阈值通常都是人为设置的经验值，过低或者过高都将直接影响边缘检测的效果，因此该方法的鲁棒性也较弱，容易得到错误的边缘检测结果。</p>
+<h4 id="传统优化过的-Canny-边缘检测算法"><a href="#传统优化过的-Canny-边缘检测算法" class="headerlink" title="传统优化过的 Canny 边缘检测算法"></a>传统优化过的 Canny 边缘检测算法</h4><p>针对传统 Canny 边缘检测方法的不足之处，许多研究者纷纷提出了改进办法，进一步提高 Canny 边缘检测算法的性能。例如，虽然高斯滤波能够很好的平滑图像，尽可能消除噪声的影响，但不可避免地导致图像细节信息的损失，因此提出了用双边滤波替代高斯滤波；另一方面，由于高斯滤波的参数方差 σ 需要手动设定，因此提出了使用自适应平滑滤波替代高斯滤波；针对 Canny 算子高低阈值需要手动设定的问题提出了使用 Otsu 算法，根据图像自身特点选择最合适的阈值。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>CANNY J. A Computational Approach to Edge Detection[J]. IEEE Transactions on Pattern Analysis and Machine Intelligence, 1986, PAMI-8(6): 679–698.</li>
+<li>段红燕, 邵豪, 张淑珍等. 一种基于 Canny 算子的图像边缘检测改进算法[J]. 上海交通大学学报, 2016, 50(12): 1861–1865.</li>
+<li>许宏科, 秦严严, 陈会茹. 一种基于改进 Canny 的边缘检测算法[J]. 红外技术, 2014, 36(3): 210–214.</li>
+</ol>
 
             </div>
             <hr>
@@ -402,7 +352,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>
                     
                   </div>
                 
@@ -410,16 +360,16 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                      <a class="hover-with-bg" href="/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/">边缘检测</a>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%9B%A0%E5%AD%90/">因子</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>
                     
                   </div>
                 
               </div>
 <p class="note note-warning">
 <strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
-<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/2222457050.html">https://emoryhuang.cn/blog/2222457050.html</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/1045186832.html">https://emoryhuang.cn/blog/1045186832.html</a> <br>
 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
    </p>
    
@@ -428,12 +378,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/blog/2220940575.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo 常用插件推荐</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/3165266004.html">
-                        <span class="hidden-mobile">HED 和 RCF 图像边缘检测</span>
+                      <a href="/blog/3910843626.html">
+                        <span class="hidden-mobile">使用 LaTeX 写数学公式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

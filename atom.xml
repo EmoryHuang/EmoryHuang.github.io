@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>HED 和 RCF 图像边缘检测</title>
+    <link href="https://emoryhuang.cn/blog/3165266004.html"/>
+    <id>https://emoryhuang.cn/blog/3165266004.html</id>
+    <published>2021-06-14T02:11:17.000Z</published>
+    <updated>2021-06-22T12:05:55.270Z</updated>
+    
+    
+    <summary type="html">卷积神经网络(Convolutional Neural Networks)是一种神经网络模型，是深度学习的代表算法之一。它广泛应用于计算机视觉、语音处理等领域，在图像处理，语音识别方面具有非常强大的性能。</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="卷积神经网络" scheme="https://emoryhuang.cn/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>思维工程学习笔记</title>
     <link href="https://emoryhuang.cn/blog/2717466625.html"/>
     <id>https://emoryhuang.cn/blog/2717466625.html</id>
@@ -114,6 +135,27 @@
     
     
     <category term="Linux 命令" scheme="https://emoryhuang.cn/tags/Linux-%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卷积神经网络</title>
+    <link href="https://emoryhuang.cn/blog/3329651476.html"/>
+    <id>https://emoryhuang.cn/blog/3329651476.html</id>
+    <published>2021-05-28T13:13:17.000Z</published>
+    <updated>2021-06-22T12:05:05.993Z</updated>
+    
+    
+    <summary type="html">卷积神经网络(Convolutional Neural Networks)是一种神经网络模型，是深度学习的代表算法之一。它广泛应用于计算机视觉、语音处理等领域，在图像处理，语音识别方面具有非常强大的性能。</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="卷积神经网络" scheme="https://emoryhuang.cn/tags/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -316,6 +358,27 @@
   </entry>
   
   <entry>
+    <title>传统图像边缘检测方法</title>
+    <link href="https://emoryhuang.cn/blog/1045186832.html"/>
+    <id>https://emoryhuang.cn/blog/1045186832.html</id>
+    <published>2021-05-08T07:48:05.000Z</published>
+    <updated>2021-06-22T12:10:14.746Z</updated>
+    
+    
+    <summary type="html">图像轮廓边缘指的是图像中目标对象和背景之间的区分明显的交界线。对于数字图像来说，图像边缘是数字图像中灰度变化比较大的点，它是物体最基本的特征之一。</summary>
+    
+    
+    
+    <category term="计算机视觉" scheme="https://emoryhuang.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+    
+    <category term="边缘检测" scheme="https://emoryhuang.cn/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/"/>
+    
+    <category term="计算机视觉" scheme="https://emoryhuang.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用 LaTeX 写数学公式</title>
     <link href="https://emoryhuang.cn/blog/3910843626.html"/>
     <id>https://emoryhuang.cn/blog/3910843626.html</id>
@@ -358,65 +421,6 @@
     <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="快速幂算法" scheme="https://emoryhuang.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建博客图床</title>
-    <link href="https://emoryhuang.cn/blog/242848489.html"/>
-    <id>https://emoryhuang.cn/blog/242848489.html</id>
-    <published>2021-05-07T05:40:36.000Z</published>
-    <updated>2021-05-07T05:51:10.643Z</updated>
-    
-    
-    <summary type="html">随着博客内容的增加，文章图片的数量也不断增长，如何引用存储图片就成了一个问题。本文采用GitHub + JsDelivr + uTools图床插件。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="图床" scheme="https://emoryhuang.cn/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打造精致的 Windows 终端</title>
-    <link href="https://emoryhuang.cn/blog/4206502039.html"/>
-    <id>https://emoryhuang.cn/blog/4206502039.html</id>
-    <published>2021-05-06T08:20:36.000Z</published>
-    <updated>2021-05-08T06:09:33.748Z</updated>
-    
-    
-    <summary type="html">Windows Terminal + Oh my posh 打造精致的 Windows 终端</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Windows Terminal" scheme="https://emoryhuang.cn/tags/Windows-Terminal/"/>
-    
-    <category term="oh my posh" scheme="https://emoryhuang.cn/tags/oh-my-posh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 基本使用</title>
-    <link href="https://emoryhuang.cn/blog/3101066174.html"/>
-    <id>https://emoryhuang.cn/blog/3101066174.html</id>
-    <published>2021-05-06T06:50:36.000Z</published>
-    <updated>2021-05-07T05:51:08.368Z</updated>
-    
-    
-    <summary type="html">Git 是一个免费的开源分布式版本控制系统，旨在快速高效地处理从小型到大型项目的所有内容。易于学习，占用空间小，具有闪电般的快速性能。</summary>
-    
-    
-    
-    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="Git" scheme="https://emoryhuang.cn/tags/Git/"/>
     
   </entry>
   
