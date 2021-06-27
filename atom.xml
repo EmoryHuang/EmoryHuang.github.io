@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-06-18T15:00:02.476Z</updated>
+  <updated>2021-06-27T04:19:04.148Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>支持向量机(SVM)学习笔记</title>
+    <link href="https://emoryhuang.cn/blog/2581338612.html"/>
+    <id>https://emoryhuang.cn/blog/2581338612.html</id>
+    <published>2021-06-27T03:55:34.000Z</published>
+    <updated>2021-06-27T04:19:04.148Z</updated>
+    
+    
+    <summary type="html">在机器学习中，支持向量机（SVM，又名支持向量网络）是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。</summary>
+    
+    
+    
+    <category term="机器学习" scheme="https://emoryhuang.cn/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="SVM" scheme="https://emoryhuang.cn/tags/SVM/"/>
+    
+    <category term="机器学习" scheme="https://emoryhuang.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>量化分析因子研究</title>
@@ -394,33 +415,6 @@
     
     
     <category term="LaTeX" scheme="https://emoryhuang.cn/tags/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速幂算法详解</title>
-    <link href="https://emoryhuang.cn/blog/1504958816.html"/>
-    <id>https://emoryhuang.cn/blog/1504958816.html</id>
-    <published>2021-05-07T06:10:36.000Z</published>
-    <updated>2021-05-18T12:00:03.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;快速幂算法详解&quot;&gt;&lt;a href=&quot;#快速幂算法详解&quot; class=&quot;headerlink&quot; title=&quot;快速幂算法详解&quot;&gt;&lt;/a&gt;快速幂算法详解&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="快速幂算法" scheme="https://emoryhuang.cn/tags/%E5%BF%AB%E9%80%9F%E5%B9%82%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

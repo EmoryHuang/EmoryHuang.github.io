@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="在机器学习中，支持向量机（SVM，又名支持向量网络）是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>支持向量机(SVM)学习笔记 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624766515804-1624766515796-2581338612.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="支持向量机(SVM)学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-27 11:55" pubdate>
+        2021年6月27日 中午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">支持向量机(SVM)学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：几秒前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="支持向量机-SVM-学习笔记"><a href="#支持向量机-SVM-学习笔记" class="headerlink" title="支持向量机(SVM)学习笔记"></a>支持向量机(SVM)学习笔记</h1><h2 id="SVM-简介"><a href="#SVM-简介" class="headerlink" title="SVM 简介"></a>SVM 简介</h2><blockquote>
+<p>在机器学习中，支持向量机（SVM，又名支持向量网络）是在分类与回归分析中分析数据的监督式学习模型与相关的学习算法。给定一组训练实例，每个训练实例被标记为属于两个类别中的一个或另一个，SVM 训练算法创建一个将新的实例分配给两个类别之一的模型，使其成为非概率二元线性分类器。</p>
+</blockquote>
+<p>简单点讲，SVM 就是一种二类分类模型，他的基本模型是的定义在特征空间上的间隔最大的线性分类器，SVM 的学习策略就是间隔最大化。</p>
+<h2 id="SVM-算法原理"><a href="#SVM-算法原理" class="headerlink" title="SVM 算法原理"></a>SVM 算法原理</h2><h3 id="线性可分"><a href="#线性可分" class="headerlink" title="线性可分"></a>线性可分</h3><p>以下图为例，可以发现，图中的实线刚好把两种样本一分为二，此时，我们说这两类样本在其特征空间里<strong>线性可分</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1623917607194-1623917607192-svm_1.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<div class="note note-info">
+            <p>严格的数学定义是</p><p><script type="math/tex">D_0</script> 和 <script type="math/tex">D_1</script> 是 n 维欧氏空间中的两个点集，如果存在 n 维向量 w 和实数 b，使得所有属于 <script type="math/tex">D_0</script> 的点 <script type="math/tex">x_i</script> 都有 <script type="math/tex">wx_i+b>0</script>，而对于所有属于 <script type="math/tex">D_1</script> 的点 <script type="math/tex">x_j</script> 则有 <script type="math/tex">wx_j+b<0</script>，则我们称 <script type="math/tex">D_0</script> 和 <script type="math/tex">D_1</script> 线性可分。</p>
+          </div>
+<p>简单的说就是如果用一个线性函数可以将两类样本完全分开，就称这些样本是 “线性可分” 的。</p>
+<h3 id="最大间隔超平面"><a href="#最大间隔超平面" class="headerlink" title="最大间隔超平面"></a>最大间隔超平面</h3><p>从二维扩展到多维空间中时，将 <script type="math/tex">D_0</script> 和 <script type="math/tex">D_1</script> 完全正确地划分开的 <script type="math/tex">wx+b=0</script> 就成为<strong>超平面</strong>。</p>
+<p>对于线性可分的数据样本来说，我们可以找到<strong>无数</strong>个超平面将数据集一分为二。</p>
+<p>为了使这个超平面更具鲁棒性，我们会去找最佳超平面，以<strong>最大间隔</strong>把两类样本分开的超平面，也称之为最大间隔超平面。</p>
+<p>也就是说，<strong>超平面对每个类别最近的元素距离最远</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624764735779-1624764735777-svm_2.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<div class="note note-info">
+            <p>怎么能找到最大间隔超平面呢？</p><p>我们可以先找到两个平行的，能够分离样本的辅助超平面，然后将它们分别推向样本两侧，使得它们之间的距离尽可能大，一直到有至少一个正样本或者负样本通过对应的辅助超平面为止。</p>
+          </div>
+<h3 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h3><p>如图所示，样本中距离超平面最近的一些点，这些点叫做<strong>支持向量</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624764871336-1624764871334-svm_3.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<div class="note note-info">
+            <p>在决定最佳超平面时只有支持向量起作用，而其他数据点并不起作用</p>
+          </div>
+<h3 id="SVM-最优化问题"><a href="#SVM-最优化问题" class="headerlink" title="SVM 最优化问题"></a>SVM 最优化问题</h3><p>假设给定一个特征空间上的训练数据集</p>
+<script type="math/tex; mode=display">
+T={(x_1,y_1),(x_2,y_2),\cdots ,(x_n,y_n)}</script><p>其中，$x \in R^n, y\in {+1,-1}$</p>
+<p>SVM 希望找到离各类样本点距离最远的超平面，也就是找到最大间隔超平面。任意超平面可以用下面这个线性方程来描述：</p>
+<script type="math/tex; mode=display">
+w^Tx+b=0 \tag{1}</script><p>我们知道在二维空间中，点 (x,y) 到直线 <script type="math/tex">Ax+By+C=0</script> 的距离为</p>
+<script type="math/tex; mode=display">
+\frac{|Ax+By+C|}{\sqrt{A^2+B^2}} \tag{2}</script><p>扩展到 n 维空间后，点 <script type="math/tex">x=(x_1,x_2,\cdots,x_n)</script> 到 <script type="math/tex">w^Tx+b=0</script> 的距离为：</p>
+<script type="math/tex; mode=display">
+\frac{|w^Tx+b|}{\Vert w\Vert} \tag{3}</script><p>其中 <script type="math/tex">\Vert w\Vert = \sqrt{w_1^2+\cdots+w_n^2}</script></p>
+<p>根据支持向量的定义我们知道，支持向量到超平面的距离为 d，其他点到超平面的距离大于 d。</p>
+<p>于是我们可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{|w^Tx+b|}{\Vert w\Vert} \geq d \quad y = 1 \\
+\frac{|w^Tx+b|}{\Vert w\Vert} \leq -d \quad y = -1
+\end{cases} \tag{4}</script><p>方程两边除以 d 可以得到：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+\frac{|w^Tx+b|}{\Vert w\Vert d} \geq 1 \quad y = 1 \\
+\frac{|w^Tx+b|}{\Vert w\Vert d} \leq -1 \quad y = -1
+\end{cases}\tag{5}</script><div class="note note-info">
+            <p>y 取 1 或者-1，分别代表两个不同的类</p>
+          </div>
+<p>由于 <script type="math/tex">\Vert w\Vert d</script> 为正数且都是标量，为了简便计算，我们令 <script type="math/tex">\Vert w\Vert d = 1</script>，这对目标函数的优化没有影响，因此有：</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+w^Tx+b \geq 1 \quad y = 1 \\
+w^Tx+b \leq -1 \quad y = -1
+\end{cases}\tag{6}</script><p>将（6）中的两个方程合并，可以得到：</p>
+<script type="math/tex; mode=display">
+y(w^Tx+b) \geq 1 \tag{7}</script><p>式（7）就是最大间隔超平面的上下两个超平面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624765264688-1624765264685-svm_4.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<p>另一方面，在上述讨论中，我们知道支持向量到超平面的距离：</p>
+<script type="math/tex; mode=display">
+d=\frac{|w^Tx+b|}{\Vert w\Vert} \tag{8}</script><p>根据 <script type="math/tex">y(w^Tx+b) > 1 > 0</script> 我们同样可以得到：</p>
+<script type="math/tex; mode=display">
+y(w^Tx+b) = |w^Tx+b| \tag{9}</script><p>因此根据（8）、（9）两式有：</p>
+<script type="math/tex; mode=display">
+d=\frac{y(w^Tx+b)}{\Vert w\Vert} \tag{10}</script><p>之后我们便可以得到目标函数：</p>
+<script type="math/tex; mode=display">
+\max 2 * \frac{y(w^Tx+b)}{\Vert w\Vert} \tag{11}</script><p>同时，我们知道对于支持向量 x 有 <script type="math/tex">y(w^Tx+b)=1</script> 那么式（11）可以进一步化简为：</p>
+<script type="math/tex; mode=display">
+\max \frac{2}{\Vert w\Vert} \tag{12}</script><p>再进行一个转换，并消除 <script type="math/tex">\Vert w\Vert</script> 的根号，注意两者是等价的问题的实质没有变：</p>
+<script type="math/tex; mode=display">
+\min\frac{1}{2}\Vert w\Vert^2 \tag{13}</script><div class="note note-info">
+            <p>式（13）中的系数 1 / 2 仅仅是为了在下面求导时能够消去系数，没有其他特殊意义</p>
+          </div>
+<p>最后，我们得到了最优化问题的目标函数和优化条件：</p>
+<script type="math/tex; mode=display">
+\min\frac{1}{2}\Vert w\Vert^2 \quad s.t.\quad y_i(w^Tx_i+b) \geq 1 \tag{14}</script><h3 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h3><p>上面我们得到了最优化问题的目标函数和优化条件，那么如何对其进行求解呢？可以应用<strong>拉格朗日乘子法</strong>构造拉格朗日函数，再通过求解其<strong>对偶问题</strong>得到原始问题的最优解。</p>
+<p>对拉格朗日乘子法的具体说明这里不再介绍。</p>
+<div class="note note-info">
+            <p>对偶问题来求解的原因是</p><ul><li>对偶问题更易求解，由下文知对偶问题只需优化一个变量 α 且约束条件更简单；</li><li>能更加自然地引入核函数，进而推广到非线性问题。</li></ul>
+          </div>
+<p>我们对每个约束条件添加拉格朗日乘子 α，可以得到该问题的拉格朗日函数：</p>
+<script type="math/tex; mode=display">
+L(w,b,\alpha) = \frac{1}{2}\Vert w\Vert^2 - \sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1) \tag{15}</script><p>其中 <script type="math/tex">\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n)</script>。</p>
+<p>根据拉格朗日对偶性, 原始问题的对偶问题是</p>
+<script type="math/tex; mode=display">
+\underset{\alpha}{\max}\underset{w,b}{\min}L(w,b,\alpha)</script><p>令 L 对 w 和 b 的偏导为 0 有：</p>
+<script type="math/tex; mode=display">
+\frac{\partial L(w,b,\alpha)}{\partial w} = w - \sum_{i=1}^n \alpha_i y_i x_i = 0 \tag{16}</script><script type="math/tex; mode=display">
+\frac{\partial L(w,b,\alpha)}{\partial b} = - \sum_{i=1}^n \alpha_i y_i = 0 \tag{17}</script><p>由(16)、(17)可以得到：</p>
+<script type="math/tex; mode=display">
+w = \sum_{i=1}^n \alpha_i y_i x_i \tag{18}</script><script type="math/tex; mode=display">
+0 = \sum_{i=1}^n \alpha_i y_i \tag{19}</script><p>将式(18)代入式(15)，即可将 L 中的 w 和 b 消去，再考虑式(19)的约束，就可以得到式(14)的对偶问题：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(w,b,\alpha) & = \frac{1}{2}\Vert w\Vert^2 - \sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1) \\
+& = \frac{1}{2}w^Tw - w^T\sum_{i=1}^n\alpha_iy_ix_i - b\sum_{i=1}^n\alpha_iy_i + \sum_{i=1}^n \alpha_i\\
+& = \frac{1}{2}w^T\sum_{i=1}^n\alpha_iy_ix_i  - w^T\sum_{i=1}^n\alpha_iy_ix_i - b \cdot 0 + \sum_{i=1}^n \alpha_i\\
+& = \sum_{i=1}^n \alpha_i - \frac{1}{2} \left(\sum_{i=1}^n\alpha_iy_ix_i \right)^T \sum_{j=1}^n\alpha_jy_jx_j\\
+& = \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_jx_i^Tx_j
+\end{aligned}</script><p>从上面的式子可以看出 <script type="math/tex">L(w,b,\alpha)</script> 函数只含有一个变量 <script type="math/tex">\alpha_i</script> , 从而得到我们的优化问题：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\underset{\alpha}{\max}  \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_jx_i^Tx_j\\
+&s.t. \quad\sum_{i=1}^n \alpha_i y_i = 0 \quad\alpha_i \geq 0 \quad i = 1,2,\cdots,n
+\end{aligned}\tag{20}</script><div class="note note-info">
+            <p>我们废了那么大的劲推导出这个式子是为了什么呢？</p><p>其实就是为了将最初的原始问题，转换到可以使用 SMO 算法求解的问题</p><p>SMO (Sequential Minimal Optimization)，序列最小优化算法，其核心思想非常简单：每次只优化一个参数，其他参数先固定住，仅求当前这个优化参数的极值。</p>
+          </div>
+<h3 id="SMO-算法"><a href="#SMO-算法" class="headerlink" title="SMO 算法"></a>SMO 算法</h3><p>简单来说，我们需要对 <script type="math/tex">\alpha = (\alpha_1,\alpha_2,\cdots,\alpha_n)</script> 进行优化</p>
+<p>具体来说，在 SMO 算法中我们每次需要选择一对变量 <script type="math/tex">(\alpha_i,\alpha_j)</script> , 因为在 SVM 中，我们的 <script type="math/tex">\alpha</script> 并不是完全独立的，而是具有约束的</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n \alpha_i y_i = 0</script><p>我们没法一次只变动一个参数，所以我们选择了一次选择两个参数。</p>
+<p>选择两个需要更新的参数 <script type="math/tex">(\alpha_1,\alpha_2)</script> ，固定其他参数。于是我们有以下约束</p>
+<script type="math/tex; mode=display">
+\alpha_1y_1 + \alpha_2y_2 = - \sum_{i=3}^n\alpha_iy_i = c \tag{21}</script><p>于是由式（21）我们可以得到</p>
+<script type="math/tex; mode=display">
+\alpha_1 = cy_1 - \alpha_2y_1y_2</script><p>也就是说我们可以用 <script type="math/tex">\alpha_2</script> 的表达式代替 <script type="math/tex">\alpha_1</script> , 这样就相当于把目标问题转化成了仅有一个约束条件的最优化问题</p>
+<p>对于仅有一个约束条件的最优化问题，我们完全可以在 <script type="math/tex">\alpha_2</script> 上对优化目标求偏导，令导数为零，从而求出变量值 <script type="math/tex">\alpha_{2_{new}}</script> ，然后根据 <script type="math/tex">\alpha_{2_{new}}</script> 求出 <script type="math/tex">\alpha_{1_{new}}</script>, 多次迭代直至收敛</p>
+<div class="note note-info">
+            <p>对任意训练样本 <script type="math/tex">(x_i,y_i)</script>，总有 <script type="math/tex">\alpha_i=0</script> 或 <script type="math/tex">y_if(x_i)=1</script>.若 <script type="math/tex">\alpha_i=0</script>，则该样本将不会在模型的求和中出现，也就不会对 f（x）有任何影响；若 <script type="math/tex">\alpha_i>0</script>，则必有 <script type="math/tex">y_if(x_i)=1</script>，所对应的样本点位于最大间隔边界上，是一个支持向量。这显示出支持向量机的一个重要性质：<strong>训练完成后，大部分的训练样本都不需保留，最终模型仅与支持向量有关</strong>。</p>
+          </div>
+<p>解出最优的 α 之后，便可以求出 w 和 b，由之前求偏导时得到的式(18)可求出 w：</p>
+<script type="math/tex; mode=display">
+w = \sum_{i=1}^n \alpha_i y_i x_i \tag{18}</script><p>另一方面，任选一个支持向量代入 <script type="math/tex">y_s(wx_s+b)=1</script>，因此：</p>
+<script type="math/tex; mode=display">
+b  = y_s - wx_s \tag{22}</script><p>w 和 b 都求出来了，之后我们可以得到最大分割超平面 <script type="math/tex">w^Tx+b=0</script></p>
+<p>分类决策函数：<script type="math/tex">f(x) = sign(w^Tx+b)</script></p>
+<h2 id="软间隔"><a href="#软间隔" class="headerlink" title="软间隔"></a>软间隔</h2><h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3><p>在实际应用中，完全线性可分的样本是很少的，我们往往会遇到许多不能够完全线性可分的样本</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624765505110-1624765505107-svm_5.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<p>解决该问题的一个办法是允许 SVM 在少量样本上出错，即将之前的硬间隔最大化条件放宽一点，为此引入“软间隔”的概念。即允许少量样本不满足约束</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624765634893-1624765634890-svm_6.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<script type="math/tex; mode=display">
+y_i(w^Tx_i+b) \geq 1</script><p>为了度量这个间隔软到何种程度，我们为每个样本引入一个<strong>松弛变量</strong> <script type="math/tex">\xi_i</script>，令 <script type="math/tex">\xi_i\geq 0</script>，且</p>
+<script type="math/tex; mode=display">
+y_i(w^Tx_i+b) \geq 1 - \xi_i \tag{23}</script><h3 id="优化目标及求解"><a href="#优化目标及求解" class="headerlink" title="优化目标及求解"></a>优化目标及求解</h3><p>增加软间隔后我们的优化目标变成了：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\min \frac{1}{2}\Vert w\Vert^2 + C\sum_{i=1}^n\xi_i\\
+&s.t.\quad y_i(w^Tx_i+b) \geq 1 - \xi_i , \quad \xi_i\geq 0
+\end{aligned}\tag{24}</script><p>其中 C 是一个大于 0 的常数，可以理解为错误样本的惩罚程度，若 C 为无穷大， <script type="math/tex">\xi_i</script> 必然无穷小，如此一来线性 SVM 就又变成了线性可分 SVM；当 C 为有限值的时候，才会允许部分样本不遵循约束条件。</p>
+<div class="note note-info">
+            <p>C 为惩罚因子表示异常分布的点对目标函数的贡献权重，C 越大表示异常分布的点对目标函数的影响就越大，使得目标函数对异常分布点的惩罚就越大</p>
+          </div>
+<h3 id="对偶问题-1"><a href="#对偶问题-1" class="headerlink" title="对偶问题"></a>对偶问题</h3><p>式（24）表示的软间隔支持向量机依然是一个凸二次规划问题，和我们在上面讨论的支持向量机类似</p>
+<p>式（24）对应的拉格朗日函数为</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+L(w,b,\xi,\alpha,\beta) =& \frac{1}{2}\Vert w\Vert^2 + C\sum_{i=1}^n\xi_i \\&- \sum_{i=1}^n \alpha_i(y_i(w^Tx_i+b)-1+\xi_i) - \sum_{i=1}^n\beta_i\xi_i
+\end{aligned}\tag{25}</script><p>将对偶问题转换为</p>
+<script type="math/tex; mode=display">
+\underset{\alpha,\beta}{\max}\underset{w,b,\xi}{\min}L(w,b,\xi,\alpha,\beta)</script><p>类似的，将 <script type="math/tex">L(w,b,\alpha,\beta)</script> 分别对 w, b, <script type="math/tex">\xi</script> 求偏导并令为 0 可得</p>
+<script type="math/tex; mode=display">
+w = \sum_{i=1}^n \alpha_i y_i x_i \tag{26}</script><script type="math/tex; mode=display">
+\sum_{i=1}^n \alpha_i y_i = 0 \tag{27}</script><script type="math/tex; mode=display">
+C = \alpha_i + \beta_i \tag{28}</script><p>将这些关系带入拉格朗日函数（24）中，得到：</p>
+<script type="math/tex; mode=display">
+\underset{w,b,\xi}{\min}L(w,b,\xi,\alpha,\beta) = \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_jx_i^Tx_j \tag{29}</script><p>注意其中没有 <script type="math/tex">\beta</script>, 所以现在只需要最大化 <script type="math/tex">\alpha</script> 就好</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\underset{\alpha}{\max} \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_jx_i^Tx_j  \\
+&s.t. \quad \sum_{i=1}^n \alpha_i y_i = 0, \quad \alpha_i \geq 0,\quad C = \alpha_i + \beta_i
+\end{aligned}\tag{30}</script><p>然后我们利用 SMO 算法求解得到拉格朗日乘子</p>
+<h2 id="核函数"><a href="#核函数" class="headerlink" title="核函数"></a>核函数</h2><p>我们刚刚讨论的硬间隔和软间隔都是在说样本的完全线性可分或者大部分样本点的线性可分。</p>
+<p>但是我们经常会遇到非线性的问题, 样本点不是线性可分的。此时我们就需要用到核函数将线性支持向量机推广到非线性支持向量机。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624765772478-1624765772475-svm_7.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<div class="note note-info">
+            <p>核函数的定义:</p><p>设 <script type="math/tex">\mathcal{X}</script> 是输入空间 (欧式空间 <script type="math/tex">R^n</script> 的子集或离散集合)，又设<script type="math/tex">\mathcal{H}</script>是特征空间 (希尔伯特空间)，如果存在一个 <script type="math/tex">\mathcal{X}</script> 到 <script type="math/tex">\mathcal{H}</script> 的映射 <script type="math/tex">\phi(x):\mathcal{X}\to\mathcal{H}</script> 使得对所有 <script type="math/tex">x,z\in\mathcal{X}</script> ，函数 <script type="math/tex">K(x,z)</script> 满足条件 <script type="math/tex">K(x,z)=\phi(x)\cdot\phi(z)</script> 则称 <script type="math/tex">K(x,z)</script> 为核函数，<script type="math/tex">\phi(x)</script> 为映射函数，式中 <script type="math/tex">\phi(x)\cdot\phi(z)</script> 为<script type="math/tex">\phi(x)</script>和<script type="math/tex">\phi(z)</script>的內积</p><ul><li>多项式核函数</li></ul><script type="math/tex; mode=display">K(x,z)=(x\cdot z+1)^p</script><ul><li>高斯核函数</li></ul><script type="math/tex; mode=display">K(x,z)=\exp(-\frac{\Vert x-z\Vert^2}{2\sigma^2})</script>
+          </div>
+<p>我们用 x 表示原来的样本点，用 $\phi(x)$ 表示 x 映射到特征新的特征空间后到新向量。那么分割超平面可以表示为：</p>
+<script type="math/tex; mode=display">
+f(x) =w\phi(x) + b\tag{31}</script><p>按照前面的方法，对于非线性 SVM 的对偶问题就变成了</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\underset{\alpha}{\max} \sum_{i=1}^n \alpha_i - \frac{1}{2}\sum_{i,j=1}^n\alpha_i\alpha_jy_iy_j(\phi(x_i)\cdot\phi(x_y))  \\
+s.t. \quad \sum_{i=1}^n \alpha_i y_i = 0, \quad \alpha_i \geq 0,\quad C = \alpha_i + \beta_i
+\end{aligned}\tag{32}</script><p>再利用现成的二次规划问题求解算法或者 SMO 算法求得最优解</p>
+<h2 id="SVM-优缺点"><a href="#SVM-优缺点" class="headerlink" title="SVM 优缺点"></a>SVM 优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>由于 SVM 是一个凸优化问题，所以求得的解一定是全局最优而不是局部最优</li>
+<li>有严格的数学理论支持，可解释性强</li>
+<li>不仅适用于线性线性问题还适用于非线性问题 (用核技巧)</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>不适用于超大数据集</li>
+<li>只适用于二分类问题</li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/49331510">看了这篇文章你还不懂 SVM 你就来打我</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77750026">【机器学习】支持向量机 SVM</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SVM/">SVM</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/2581338612.html">https://emoryhuang.cn/blog/2581338612.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2222457050.html">
+                        <span class="hidden-mobile">量化分析因子研究</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div style="text-align:center"> <img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624699804319-1624699804317-character.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload height=35% width=35%> </div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='17' width='17'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='17' width='17'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
