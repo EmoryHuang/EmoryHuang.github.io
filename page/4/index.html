@@ -926,13 +926,13 @@
       
       $.ajax({
         type: 'GET',
-        url: 'https://api.eatrice.top/',
+        url: 'https://v1.hitokoto.cn/',
         headers: {},
         dataType: 'json',
         success: function (result) {
           var text;
           if (result) {
-            var keys = 'Content'.split('.')
+            var keys = 'hitokoto'.split('.')
             if (result instanceof Array) {
               result = result[0]
             }

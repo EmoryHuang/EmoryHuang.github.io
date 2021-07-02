@@ -1,0 +1,663 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="K-means 算法是最为经典的基于划分的聚簇方法，是经典数据挖掘算法之一。简单的说就是在没有任何监督信号的情况下将数据分为K份的一种方法, 也就是分门别类。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>K-means 学习笔记 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625224373826-1625224373821-3762216339.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="K-means 学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-02 19:05" pubdate>
+        2021年7月2日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">K-means 学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：6 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="K-means-学习笔记"><a href="#K-means-学习笔记" class="headerlink" title="K-means 学习笔记"></a>K-means 学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>K-means 算法是最为经典的基于划分的聚簇方法，是经典数据挖掘算法之一。简单的说就是在没有任何监督信号的情况下将数据分为 K 份的一种方法, 也就是分门别类。</p>
+</blockquote>
+<h2 id="K-means-算法"><a href="#K-means-算法" class="headerlink" title="K-means 算法"></a>K-means 算法</h2><h3 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h3><div class="note note-info">
+            <p>基本思想:</p><p>给定 K 值和 K 个初始类中心点，把每个点分到离其最近的类中心点所代表的类中，所有点分配完毕之后，根据一个类内的所有点重新计算该类的中心点（平均值），然后再迭代的进行分配点和更新类中心点的步骤，直至类中心点的变化很小，或者达到指定的迭代次数。</p>
+          </div>
+<p>对一个样本集 <script type="math/tex">D={x_1,x_2,\cdots,x_n}</script>, 这里每个 x 都有 m 个维度的属性, 我们想要将其划分为 k 个聚类</p>
+<p>首先，我们从样本集 D 中随机获取 k 个样本作为初始类中心点 <script type="math/tex">{c_1,c_2,\cdots,c_k}</script></p>
+<p>然后计算每一个对象到每一个聚类中心的欧式距离:</p>
+<script type="math/tex; mode=display">
+dis(x_i,c_j) =\sqrt{\sum_{t=1}^m(x_{i,t}-c_{j,t})^2}</script><p>其中，m 为样本点的纬度属性</p>
+<p>依次比较每一个对象到每一个聚类中心的距离，将对象分配到距离最近的聚类中心的类簇中，得到 k 个类 <script type="math/tex">{S_1,S_2,\cdots,S_K}</script></p>
+<p>类中心就是类内所有对象在各个维度的均值，其计算公式如下</p>
+<script type="math/tex; mode=display">
+c_{k} = \frac{1}{|S_k|} \sum_{x_i \in S_k}x_i</script><p>其中, <script type="math/tex">c_k</script> 为第 k 个聚类的中心，<script type="math/tex">|S_k|</script> 为第 k 个聚类中元素的个数。</p>
+<p>总的来说，K-means 算法的基本思想还是容易理解的，主要流程可以分为如下几步：</p>
+<ol>
+<li>选择聚类的个数 K</li>
+<li>任意产生 k 个聚类, 然后确定聚类中心（或者直接生成 K 个中心）</li>
+<li>把每个数据点分配到离它<strong>最近的中心点</strong></li>
+<li>再迭代计算新聚类的新中心</li>
+<li>重复以上步骤直到满足收敛要求</li>
+</ol>
+<p>效果展示如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625218052903-1625218052901-Kmeans.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><br><br><span class="hljs-comment"># 加载数据</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">loadDataSet</span>(<span class="hljs-params">file</span>):</span><br>    dataSet = np.loadtxt(file, delimiter=<span class="hljs-string">&#x27;\t&#x27;</span>)<br>    <span class="hljs-keyword">return</span> dataSet<br><br><br><span class="hljs-comment"># 计算欧式距离</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">euclDistance</span>(<span class="hljs-params">x, y</span>):</span><br>    <span class="hljs-keyword">return</span> np.sqrt(np.<span class="hljs-built_in">sum</span>((x - y) ** <span class="hljs-number">2</span>))  <span class="hljs-comment"># 计算欧氏距离</span><br><br><br><span class="hljs-comment"># 初始化 k 个聚类中心</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getCenter</span>(<span class="hljs-params">dataSet, k</span>):</span><br>    <span class="hljs-comment"># 行，列大小</span><br>    m, n = dataSet.shape<br>    <span class="hljs-comment"># 初始化 k 个聚类中心</span><br>    center = np.zeros((k, n))<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k):<br>        <span class="hljs-comment"># 产生 k 个 [0, m) 的数</span><br>        index = <span class="hljs-built_in">int</span>(np.random.uniform(<span class="hljs-number">0</span>, m))<br>        center[i, :] = dataSet[index, :]<br>    <span class="hljs-keyword">return</span> center<br><br><br><span class="hljs-comment"># k均值聚类</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">KMeans</span>(<span class="hljs-params">dataSet, k</span>):</span><br>    m = np.shape(dataSet)[<span class="hljs-number">0</span>]  <span class="hljs-comment"># 行的数目</span><br>    <span class="hljs-comment"># 第一列存样本属于哪一类，初始为 0</span><br>    <span class="hljs-comment"># 第二列存样本的到类的中心点的误差</span><br>    clusterAssment = np.mat(np.zeros((m, <span class="hljs-number">2</span>)))  <span class="hljs-comment"># 创建 m 行 2 列的矩阵</span><br>    clusterChange = <span class="hljs-literal">True</span>  <span class="hljs-comment"># 记录样本的点类是否发生变化</span><br><br>    <span class="hljs-comment"># 第1步 初始化center</span><br>    center = getCenter(dataSet, k)<br>    <span class="hljs-comment"># 如果上一次迭代过程中仍有样本点的类别发生变化，则继续计算</span><br>    <span class="hljs-keyword">while</span> clusterChange:<br>        clusterChange = <span class="hljs-literal">False</span><br><br>        <span class="hljs-comment"># 遍历所有的样本（行数）</span><br>        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>            minDist = np.inf<br>            minIndex = -<span class="hljs-number">1</span><br><br>            <span class="hljs-comment"># 第2步 找出离样本点最近的质心</span><br>            <span class="hljs-comment"># 遍历所有质心</span><br>            <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k):<br>                <span class="hljs-comment"># 计算该样本到质心的欧式距离</span><br>                distance = euclDistance(center[j, :], dataSet[i, :])<br>                <span class="hljs-keyword">if</span> distance &lt; minDist:<br>                    minDist = distance  <span class="hljs-comment"># 更新最短距离</span><br>                    minIndex = j  <span class="hljs-comment"># 更新离该样本最近的中心</span><br><br>            <span class="hljs-comment"># 第 3 步：更新每一行样本所属的类</span><br>            <span class="hljs-comment"># 如果样本类别发生变化</span><br>            <span class="hljs-keyword">if</span> clusterAssment[i, <span class="hljs-number">0</span>] != minIndex:<br>                clusterChange = <span class="hljs-literal">True</span><br>                <span class="hljs-comment"># 更新类别以及误差</span><br>                clusterAssment[i, :] = minIndex, minDist**<span class="hljs-number">2</span><br><br>        <span class="hljs-comment"># 第 4 步：更新质心</span><br>        <span class="hljs-comment"># 遍历每一个类</span><br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k):<br>            <span class="hljs-comment"># .A 将矩阵转化为数组</span><br>            <span class="hljs-comment"># nonzero(a) 返回数组a中非零元素的索引值数组</span><br>            pointsInCluster = dataSet[np.nonzero(<br>                clusterAssment[:, <span class="hljs-number">0</span>].A == j)[<span class="hljs-number">0</span>]]  <span class="hljs-comment"># 获取类所有的点</span><br>            center[j, :] = np.mean(pointsInCluster, axis=<span class="hljs-number">0</span>)   <span class="hljs-comment"># 对矩阵的行求均值</span><br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Congratulations,cluster complete!&quot;</span>)<br>    <span class="hljs-keyword">return</span> center, clusterAssment<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">showCluster</span>(<span class="hljs-params">dataSet, k, center, clusterAssment</span>):</span><br>    m, n = dataSet.shape<br>    <span class="hljs-keyword">if</span> n != <span class="hljs-number">2</span>:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;数据不是二维的&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br><br>    mark = [<span class="hljs-string">&#x27;or&#x27;</span>, <span class="hljs-string">&#x27;ob&#x27;</span>, <span class="hljs-string">&#x27;og&#x27;</span>, <span class="hljs-string">&#x27;ok&#x27;</span>, <span class="hljs-string">&#x27;^r&#x27;</span>, <span class="hljs-string">&#x27;+r&#x27;</span>, <span class="hljs-string">&#x27;sr&#x27;</span>, <span class="hljs-string">&#x27;dr&#x27;</span>, <span class="hljs-string">&#x27;&lt;r&#x27;</span>, <span class="hljs-string">&#x27;pr&#x27;</span>]<br>    <span class="hljs-keyword">if</span> k &gt; <span class="hljs-built_in">len</span>(mark):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;k值太大了&quot;</span>)<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br><br>    <span class="hljs-comment"># 绘制所有的样本</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>        markIndex = <span class="hljs-built_in">int</span>(clusterAssment[i, <span class="hljs-number">0</span>])<br>        plt.plot(dataSet[i, <span class="hljs-number">0</span>], dataSet[i, <span class="hljs-number">1</span>], mark[markIndex])<br><br>    mark = [<span class="hljs-string">&#x27;Dr&#x27;</span>, <span class="hljs-string">&#x27;Db&#x27;</span>, <span class="hljs-string">&#x27;Dg&#x27;</span>, <span class="hljs-string">&#x27;Dk&#x27;</span>, <span class="hljs-string">&#x27;^b&#x27;</span>, <span class="hljs-string">&#x27;+b&#x27;</span>, <span class="hljs-string">&#x27;sb&#x27;</span>, <span class="hljs-string">&#x27;db&#x27;</span>, <span class="hljs-string">&#x27;&lt;b&#x27;</span>, <span class="hljs-string">&#x27;pb&#x27;</span>]<br>    <span class="hljs-comment"># 绘制质心</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(k):<br>        plt.plot(center[i, <span class="hljs-number">0</span>], center[i, <span class="hljs-number">1</span>], mark[i])<br>    plt.show()<br><br><br>dataSet = loadDataSet(<span class="hljs-string">&quot;test.txt&quot;</span>)<br>k = <span class="hljs-number">4</span><br>center, clusterAssment = KMeans(dataSet, k)<br><br>showCluster(dataSet, k, center, clusterAssment)<br><br></code></pre></div></td></tr></table></figure></div>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><ol>
+<li>原理比较简单，实现也是很容易，收敛速度快</li>
+<li>算法的可解释度比较强</li>
+<li>聚类中心的个数 K 需要事先给定，但在实际中 K 值的选定是非常困难的</li>
+<li>k-means 算法需要随机地确定初始聚类中心，<strong>不同的初始聚类中心</strong>可能导致完全不同的聚类结果。</li>
+</ol>
+<h2 id="K-means-算法-1"><a href="#K-means-算法-1" class="headerlink" title="K-means++ 算法"></a>K-means++ 算法</h2><p>上面我们提到 k-means 算法需要随机地确定初始聚类中心，<strong>不同的初始聚类中心</strong>可能导致完全不同的聚类结果。对于这个问题，K-means++ 算法进行了优化。</p>
+<h3 id="算法原理-1"><a href="#算法原理-1" class="headerlink" title="算法原理"></a>算法原理</h3><p>K-means++ 算法初始化聚类中心的策略也非常简单，流程如下：</p>
+<ol>
+<li>从数据集中随机选择一个点作为第一个聚类中心</li>
+<li>计算每个样本与最近一个聚类中心的距离, 距离越大表示被选取作为聚类中心的概率越大</li>
+<li>用轮盘法选出下一个聚类中心</li>
+<li>重复上述过程，直到选择出 k 个聚类中心</li>
+<li>执行标准的 K-means 算法</li>
+</ol>
+<p>效果展示如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625223604332-1625223604329-Kmeansplusplus.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># 样本点到最近的聚类中心的距离</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getClosestDist</span>(<span class="hljs-params">data, center</span>):</span><br>    min_dist = np.inf<br>    m = np.shape(center)[<span class="hljs-number">0</span>]  <span class="hljs-comment"># 当前已经初始化的聚类中心的个数</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>        <span class="hljs-comment"># 计算样本点与每个聚类中心之间的距离</span><br>        d = euclDistance(center[i, :], data)<br>        <span class="hljs-comment"># 选择最短距离</span><br>        <span class="hljs-keyword">if</span> min_dist &gt; d:<br>            min_dist = d<br>    <span class="hljs-keyword">return</span> min_dist<br><br><br><span class="hljs-comment"># 初始化 k 个聚类中心</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getCenterPlusPlus</span>(<span class="hljs-params">dataSet, k</span>):</span><br>    m, n = dataSet.shape<br>    <span class="hljs-comment"># 初始化 k 个聚类中心</span><br>    center = np.zeros((k, n))<br>    <span class="hljs-comment"># 1、随机选择一个样本点为第一个聚类中心</span><br>    index = np.random.randint(<span class="hljs-number">0</span>, m)<br>    center[<span class="hljs-number">0</span>, :] = dataSet[index, :]<br>    <span class="hljs-comment"># 初始化一个距离的序列</span><br>    d = [<span class="hljs-number">0.0</span> <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m)]<br><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, k):<br>        sum_all = <span class="hljs-number">0</span><br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(m):<br>            <span class="hljs-comment"># 2、对每一个样本找到最近的聚类中心点</span><br>            d[j] = getClosestDist(dataSet[j, ], center[<span class="hljs-number">0</span>:i, ])<br>            <span class="hljs-comment"># 将所有的最短距离相加</span><br>            sum_all += d[j]<br>        <span class="hljs-comment"># 3、用轮盘法选出下一个聚类中心</span><br>        <span class="hljs-comment"># 取得sum_all之间的随机值</span><br>        sum_all *= np.random.random()<br>        <span class="hljs-keyword">for</span> j, dis <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(d):<br>            sum_all -= dis<br>            <span class="hljs-keyword">if</span> sum_all &gt; <span class="hljs-number">0</span>:<br>                <span class="hljs-keyword">continue</span><br>            <span class="hljs-comment"># 选择新的聚类中心</span><br>            center[i, :] = dataSet[j, :]<br>            <span class="hljs-keyword">break</span><br>    <span class="hljs-keyword">return</span> center<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32892383/article/details/80107795">Kmeans 聚类算法详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/hanxia159357/article/details/81530361">k-means 聚类算法原理及 python3 实现</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%81%9A%E7%B1%BB/">聚类</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/3762216339.html">https://emoryhuang.cn/blog/3762216339.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2581338612.html">
+                        <span class="hidden-mobile">支持向量机(SVM)学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div style="text-align:center"> <img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624699804319-1624699804317-character.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload height=35% width=35%> </div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='17' width='17'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='17' width='17'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.4/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
