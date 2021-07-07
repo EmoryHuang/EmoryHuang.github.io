@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-07-02T11:20:48.329Z</updated>
+  <updated>2021-07-07T12:56:37.972Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pip &amp; conda 换源</title>
+    <link href="https://emoryhuang.cn/blog/3248879688.html"/>
+    <id>https://emoryhuang.cn/blog/3248879688.html</id>
+    <published>2021-07-07T12:52:36.000Z</published>
+    <updated>2021-07-07T12:56:37.972Z</updated>
+    
+    
+    <summary type="html">在使用pip和conda命令安装包时，由于服务器在国外，往往会出现超时的问题，国内下载速度非常慢，体验并不友好。解决办法就是把源换成国内的，如清华、阿里、豆瓣。</summary>
+    
+    
+    
+    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="pip" scheme="https://emoryhuang.cn/tags/pip/"/>
+    
+    <category term="conda" scheme="https://emoryhuang.cn/tags/conda/"/>
+    
+  </entry>
   
   <entry>
     <title>K-means 学习笔记</title>
@@ -396,27 +417,6 @@
     <category term="Hexo" scheme="https://emoryhuang.cn/tags/Hexo/"/>
     
     <category term="博客搭建" scheme="https://emoryhuang.cn/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>传统图像边缘检测方法</title>
-    <link href="https://emoryhuang.cn/blog/1045186832.html"/>
-    <id>https://emoryhuang.cn/blog/1045186832.html</id>
-    <published>2021-05-08T07:48:05.000Z</published>
-    <updated>2021-06-22T12:10:14.746Z</updated>
-    
-    
-    <summary type="html">图像轮廓边缘指的是图像中目标对象和背景之间的区分明显的交界线。对于数字图像来说，图像边缘是数字图像中灰度变化比较大的点，它是物体最基本的特征之一。</summary>
-    
-    
-    
-    <category term="计算机视觉" scheme="https://emoryhuang.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
-    
-    
-    <category term="边缘检测" scheme="https://emoryhuang.cn/tags/%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B/"/>
-    
-    <category term="计算机视觉" scheme="https://emoryhuang.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
     
   </entry>
   
