@@ -932,13 +932,13 @@
       
       $.ajax({
         type: 'GET',
-        url: 'https://v1.hitokoto.cn/',
+        url: 'https://api.eatrice.top/',
         headers: {},
         dataType: 'json',
         success: function (result) {
           var text;
           if (result) {
-            var keys = 'hitokoto'.split('.')
+            var keys = 'Content'.split('.')
             if (result instanceof Array) {
               result = result[0]
             }

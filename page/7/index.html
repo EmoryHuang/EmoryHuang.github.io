@@ -274,9 +274,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
-            
               <a href="/tags/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/">面试问题</a>
+            
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
             
           </div>
         
@@ -653,13 +653,13 @@ Quick
       
       $.ajax({
         type: 'GET',
-        url: 'https://v1.hitokoto.cn/',
+        url: 'https://api.eatrice.top/',
         headers: {},
         dataType: 'json',
         success: function (result) {
           var text;
           if (result) {
-            var keys = 'hitokoto'.split('.')
+            var keys = 'Content'.split('.')
             if (result instanceof Array) {
               result = result[0]
             }
