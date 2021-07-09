@@ -1,0 +1,666 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="NumPy是Python中科学计算的基础包。它是一个Python库，提供多维数组对象，各种派生对象，以及用于数组快速操作的各种 API。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>Numpy 学习笔记 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625832533662-1625832533658-3795854928.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Numpy 学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-09 18:41" pubdate>
+        2021年7月9日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      29
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Numpy 学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：23 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Numpy-学习笔记"><a href="#Numpy-学习笔记" class="headerlink" title="Numpy 学习笔记"></a>Numpy 学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>NumPy 是 Python 中科学计算的基础包。它是一个 Python 库，提供多维数组对象，各种派生对象（如掩码数组和矩阵），以及用于数组快速操作的各种 API，有包括数学、逻辑、形状操作、排序、选择、输入输出、离散傅立叶变换、基本线性代数，基本统计运算和随机模拟等等。</p>
+</blockquote>
+<p>在学习 numpy 之前，你总得在 python 上装上 numpy 吧，安装命令非常简单：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip install numpy<br></code></pre></div></td></tr></table></figure></div>
+<p>安装完成之后，只需要这样：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> numpy<br></code></pre></div></td></tr></table></figure></div>
+<p>当然更多人的选择是这样，简单一点总是友好的。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="STYLUS"><figure class="iseeu highlight /stylus"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs stylus">&gt;&gt;&gt; import numpy as np<br>&gt;&gt;&gt; <span class="hljs-selector-tag">a</span> = np<span class="hljs-selector-class">.arange</span>(<span class="hljs-number">15</span>)<span class="hljs-selector-class">.reshape</span>(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br>&gt;&gt;&gt; <span class="hljs-selector-tag">a</span><br>array(<span class="hljs-selector-attr">[[ 0,  1,  2,  3,  4]</span>,<br>       <span class="hljs-selector-attr">[ 5,  6,  7,  8,  9]</span>,<br>       <span class="hljs-selector-attr">[10, 11, 12, 13, 14]</span>])<br>&gt;&gt;&gt; <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.shape</span><br>(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)<br>&gt;&gt;&gt; <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.dtype</span><br><span class="hljs-function"><span class="hljs-title">dtype</span><span class="hljs-params">(<span class="hljs-string">&#x27;int32&#x27;</span>)</span></span><br>&gt;&gt;&gt; <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.size</span><br><span class="hljs-number">15</span><br></code></pre></div></td></tr></table></figure></div>
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><blockquote>
+<p>NumPy 最重要的一个特点是其 N 维数组对象 ndarray，它是一系列同类型数据的集合，以 0 下标为开始进行集合中元素的索引。ndarray 对象是用于存放同类型元素的多维数组。ndarray 中的每个元素在内存中都有相同存储大小的区域。</p>
+</blockquote>
+<p>最开始的命令当然是要学习如何创建一个数组，只有创建了一个数组之后，才能愉快的玩耍</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># 1维数组</span><br>a = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])       <span class="hljs-comment"># &gt;&gt;&gt; [1, 2, 3, 4, 5]</span><br>b = np.array((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>))       <span class="hljs-comment"># &gt;&gt;&gt; [1, 2, 3, 4, 5]</span><br>c = np.arange(<span class="hljs-number">1</span>, <span class="hljs-number">6</span>)                 <span class="hljs-comment"># &gt;&gt;&gt; [1, 2, 3, 4, 5]</span><br></code></pre></div></td></tr></table></figure></div>
+<p>上面的代码显示了创建数组的几种不同方法，最基本的方法是将序列传递给 NumPy 的 array()函数。</p>
+<p><strong>注意</strong>，单纯传入一串数字是错误的</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py">a = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])       <span class="hljs-comment"># ✔</span><br>a = np.array(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)         <span class="hljs-comment"># ✖</span><br></code></pre></div></td></tr></table></figure></div>
+<p>类似的，你也可以通过传入多个序列或者嵌套，来构造二维数组以及多维数组</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py">a = np.array([[ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">4</span>],<br>              [ <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>,  <span class="hljs-number">7</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">9</span>],<br>              [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>]])<br>a = np.arange(<span class="hljs-number">15</span>).reshape(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br></code></pre></div></td></tr></table></figure></div>
+<p>很明显，手动输入一个有序的数组无疑是非常麻烦的，因此可以使用 <code>arange()</code> 和 <code>reshape()</code> 更快速的创建矩阵</p>
+<p>另外，你也可以在创建时，指定 <code>dtype</code> 显式指定数组的类型：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py">a = np.array([<span class="hljs-number">1.5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4.5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>], dtype = <span class="hljs-built_in">float</span>)<br></code></pre></div></td></tr></table></figure></div>
+<p>NumPy 提供了几个函数来创建具有初始占位符内容的数组。</p>
+<p>例如 <code>zeros()</code>, <code>ones()</code>, <code>full()</code>, <code>linspace()</code>, <code>eye()</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-comment"># 函数 zeros 创建一个由 0 组成的指定大小的数组, 注意括号</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.zeros([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br>array([[<span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>]])<br><br><span class="hljs-comment"># 函数 ones 创建一个由 1 组成的指定大小的数组, 注意括号</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.ones([<span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br>array([[<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>],<br>       [<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>]])<br><br><span class="hljs-comment"># 函数 full 创建一个全是指定元素的数组</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.full((<span class="hljs-number">2</span>, <span class="hljs-number">3</span>), <span class="hljs-number">7</span>)<br>array([[<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>],<br>       [<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>]])<br><br><span class="hljs-comment"># 使用 linspace 函数来接收我们想要的元素数量的函数</span><br><span class="hljs-comment"># linspace(start, end, num)</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.linspace(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">9</span>)<br>array([<span class="hljs-number">0.</span>  , <span class="hljs-number">0.25</span>, <span class="hljs-number">0.5</span> , <span class="hljs-number">0.75</span>, <span class="hljs-number">1.</span>  , <span class="hljs-number">1.25</span>, <span class="hljs-number">1.5</span> , <span class="hljs-number">1.75</span>, <span class="hljs-number">2.</span>  ])<br><br><span class="hljs-comment"># 使用 eye 创建主对角矩阵</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.eye(<span class="hljs-number">3</span>)<br>array([[<span class="hljs-number">1.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">0.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">1.</span>]])<br><br><span class="hljs-comment"># 使用 random 构建随机数组</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>np.random.random((<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))<br>array([[<span class="hljs-number">0.03258815</span>, <span class="hljs-number">0.15250532</span>, <span class="hljs-number">0.4428446</span> ],<br>       [<span class="hljs-number">0.55359382</span>, <span class="hljs-number">0.3802597</span> , <span class="hljs-number">0.67287016</span>]])<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="数组属性"><a href="#数组属性" class="headerlink" title="数组属性"></a>数组属性</h2><p>在最开始的例子中，我们使用了 <code>shape</code>, <code>size</code>, <code>dtype</code> 等的属性，通过其属性访问数组也显得非常方便快捷，下面是一些示例：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.arange(<span class="hljs-number">15</span>).reshape(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>array([[ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">4</span>],<br>       [ <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>,  <span class="hljs-number">7</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">9</span>],<br>       [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.shape                 <span class="hljs-comment"># 数组的维度</span><br>(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">len</span>(a)                  <span class="hljs-comment"># 数组的长度</span><br><span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.ndim                  <span class="hljs-comment"># 数组维数</span><br><span class="hljs-number">2</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.dtype                 <span class="hljs-comment"># 数组元素的数据类型</span><br>dtype(<span class="hljs-string">&#x27;int32&#x27;</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.size                  <span class="hljs-comment"># 数组中的元素数</span><br><span class="hljs-number">15</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.T                     <span class="hljs-comment"># 数组转置</span><br>array([[ <span class="hljs-number">0</span>,  <span class="hljs-number">5</span>, <span class="hljs-number">10</span>],<br>       [ <span class="hljs-number">1</span>,  <span class="hljs-number">6</span>, <span class="hljs-number">11</span>],<br>       [ <span class="hljs-number">2</span>,  <span class="hljs-number">7</span>, <span class="hljs-number">12</span>],<br>       [ <span class="hljs-number">3</span>,  <span class="hljs-number">8</span>, <span class="hljs-number">13</span>],<br>       [ <span class="hljs-number">4</span>,  <span class="hljs-number">9</span>, <span class="hljs-number">14</span>]])<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="基本操作符"><a href="#基本操作符" class="headerlink" title="基本操作符"></a>基本操作符</h3><p>在创建了数组之后，我们就可以对数组进行操作，加减乘除等，你可以像平常使用 <code>+</code>，<code>-</code>，<code>×</code>，<code>÷</code> 一样来进行数组计算。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>b = np.arange(<span class="hljs-number">10</span>, <span class="hljs-number">15</span>)<br><br><span class="hljs-meta">&gt;&gt;&gt; </span>a + b<br><span class="hljs-meta">&gt;&gt;&gt; </span>a - b<br><span class="hljs-meta">&gt;&gt;&gt; </span>a * b<br><span class="hljs-meta">&gt;&gt;&gt; </span>a / b<br><span class="hljs-meta">&gt;&gt;&gt; </span>a ** <span class="hljs-number">2</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a &gt; b<br></code></pre></div></td></tr></table></figure></div>
+<div class="note note-info">
+            <p>注意，上面的操作符都是对数组进行<strong>逐元素</strong>运算</p><p>如果你需要计算矩阵乘法，请使用 <code>dot()</code> 函数</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a.dot(b)        <span class="hljs-comment"># 矩阵乘法</span><br></code></pre></div></td></tr></table></figure></div>
+          </div>
+<h3 id="特殊运算符"><a href="#特殊运算符" class="headerlink" title="特殊运算符"></a>特殊运算符</h3><p>NumPy 还提供了一些别的用于处理数组的好用的运算符。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.<span class="hljs-built_in">sum</span>()             <span class="hljs-comment"># 返回数组元素的总和</span><br><span class="hljs-number">21</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.<span class="hljs-built_in">sum</span>(<span class="hljs-number">0</span>)            <span class="hljs-comment"># 返回给定轴上的数组元素的总和</span><br>array([<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.<span class="hljs-built_in">min</span>()             <span class="hljs-comment"># 返回最小值</span><br><span class="hljs-number">1</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.argmax()          <span class="hljs-comment"># 返回最大值的索引</span><br><span class="hljs-number">5</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.mean(<span class="hljs-number">1</span>)           <span class="hljs-comment"># 返回给定轴上的数组元素的平均值</span><br>array([<span class="hljs-number">2.</span>, <span class="hljs-number">5.</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.cumsum()          <span class="hljs-comment"># 返回给定轴上元素的累积和</span><br>array([ <span class="hljs-number">1</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">6</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">21</span>], dtype=int32)<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="切片和索引"><a href="#切片和索引" class="headerlink" title="切片和索引"></a>切片和索引</h2><blockquote>
+<p>ndarray 对象的内容可以通过索引或切片来访问和修改，与 Python 中 list 的切片操作一样。ndarray 数组可以基于 0 - n 的下标进行索引，切片对象可以通过内置的 slice 函数，并设置 start, stop 及 step 参数进行，从原数组中切割出一个新数组。</p>
+</blockquote>
+<p>对数组进行<strong>切片</strong>和<strong>索引</strong>就像列表或任何其他 Python 序列一样。如果你熟悉 Python，我想你并不会对他们感到陌生。</p>
+<p>在对多维数组进行索引或切片时，通过对每个以<strong>逗号</strong>分隔的维度执行单独的切片，就像 Matlab 一样</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.arange(<span class="hljs-number">15</span>).reshape(<span class="hljs-number">3</span>,<span class="hljs-number">5</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>array([[ <span class="hljs-number">0</span>,  <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>,  <span class="hljs-number">4</span>],<br>       [ <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>,  <span class="hljs-number">7</span>,  <span class="hljs-number">8</span>,  <span class="hljs-number">9</span>],<br>       [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>]             <span class="hljs-comment"># 第 2 行，第 3 列</span><br><span class="hljs-number">13</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>a[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>:<span class="hljs-number">4</span>]           <span class="hljs-comment"># 第 0 行，第 1 列到第 3 列</span><br>array([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a[:<span class="hljs-number">2</span>, <span class="hljs-number">2</span>:]           <span class="hljs-comment"># 前 2 行，后 3 列</span><br>array([[<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>],<br>       [<span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]])<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="形状操作"><a href="#形状操作" class="headerlink" title="形状操作"></a>形状操作</h2><h3 id="改变数组的形状"><a href="#改变数组的形状" class="headerlink" title="改变数组的形状"></a>改变数组的形状</h3><p>我们可以使用 numpy 提供的各种命令更改数组的形状，其中 <code>reshape</code> 和 <code>resize</code> 较为常用，值得注意的是，<code>reshape</code> 产生一个新的数组，不改变原有数组的形状，而 <code>resize</code> 就地更改数组的形状和大小。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.floor(<span class="hljs-number">10</span>*np.random.random((<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)))<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>array([[<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">4.</span>],<br>       [<span class="hljs-number">4.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">2.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">6.</span>, <span class="hljs-number">2.</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.reshape(<span class="hljs-number">6</span>,<span class="hljs-number">2</span>)<br>array([[<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>],<br>       [<span class="hljs-number">1.</span>, <span class="hljs-number">4.</span>],<br>       [<span class="hljs-number">4.</span>, <span class="hljs-number">5.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">2.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>],<br>       [<span class="hljs-number">6.</span>, <span class="hljs-number">2.</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>a.ravel()<br>array([<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">4.</span>, <span class="hljs-number">4.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">2.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">6.</span>, <span class="hljs-number">2.</span>])<br><br><span class="hljs-meta">&gt;&gt;&gt; </span>a.resize(<span class="hljs-number">2</span>,<span class="hljs-number">6</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>a<br>array([[<span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">1.</span>, <span class="hljs-number">4.</span>, <span class="hljs-number">4.</span>, <span class="hljs-number">5.</span>],<br>       [<span class="hljs-number">0.</span>, <span class="hljs-number">2.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">5.</span>, <span class="hljs-number">6.</span>, <span class="hljs-number">2.</span>]])<br></code></pre></div></td></tr></table></figure></div>
+<p>下面是一些具体的说明</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">reshape()</td>
+<td style="text-align:left">返回包含具有新形状的相同数据的数组</td>
+</tr>
+<tr>
+<td style="text-align:left">resize()</td>
+<td style="text-align:left">就地更改数组的形状和大小</td>
+</tr>
+<tr>
+<td style="text-align:left">ravel()</td>
+<td style="text-align:left">返回一个扁平的数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="将不同数组堆叠在一起"><a href="#将不同数组堆叠在一起" class="headerlink" title="将不同数组堆叠在一起"></a>将不同数组堆叠在一起</h3><p>我们可以使用 <code>vstack</code> 和 <code>hstack</code> 函数将几个数组进行<strong>垂直</strong>或者<strong>水平</strong>方向的拼接</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PY"><figure class="iseeu highlight /py"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = np.array([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>], [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>b = np.arange(<span class="hljs-number">10</span>, <span class="hljs-number">16</span>).reshape(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br><span class="hljs-meta">&gt;&gt;&gt; </span>np.vstack((a,b))<br>array([[ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>],<br>       [ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>],<br>       [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>],<br>       [<span class="hljs-number">13</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>]])<br><span class="hljs-meta">&gt;&gt;&gt; </span>np.hstack((a,b))<br>array([[ <span class="hljs-number">1</span>,  <span class="hljs-number">2</span>,  <span class="hljs-number">3</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>],<br>       [ <span class="hljs-number">4</span>,  <span class="hljs-number">5</span>,  <span class="hljs-number">6</span>, <span class="hljs-number">13</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>]])<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="功能和方法概述"><a href="#功能和方法概述" class="headerlink" title="功能和方法概述"></a>功能和方法概述</h2><p>以下是按类别排序的一些有用的 NumPy 函数和方法名称的列表。有关完整列表，请参阅<a target="_blank" rel="noopener" href="https://www.numpy.org.cn/reference/">参考手册</a>里的<a target="_blank" rel="noopener" href="https://www.numpy.org.cn/reference/routines/">常用 API</a>。</p>
+<ul>
+<li><strong>数组的创建（Array Creation）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange">arange</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array">array</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.copy.html#numpy.copy">copy</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.empty.html#numpy.empty">empty</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.empty_like.html#numpy.empty_like">empty_like</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.eye.html#numpy.eye">eye</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.fromfile.html#numpy.fromfile">fromfile</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.fromfunction.html#numpy.fromfunction">fromfunction</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.identity.html#numpy.identity">identity</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace">linspace</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.logspace.html#numpy.logspace">logspace</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.mgrid.html#numpy.mgrid">mgrid</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ogrid.html#numpy.ogrid">ogrid</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ones.html#numpy.ones">ones</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ones_like.html#numpy.ones_like">ones_like</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.zeros.html#numpy.zeros">zeros</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.zeros_like.html#numpy.zeros_like">zeros_like</a></li>
+<li><strong>转换和变换（Conversions）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype">ndarray.astype</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.atleast_1d.html#numpy.atleast_1d">atleast_1d</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.atleast_2d.html#numpy.atleast_2d">atleast_2d</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.atleast_3d.html#numpy.atleast_3d">atleast_3d</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.mat.html#numpy.mat">mat</a></li>
+<li><strong>操纵术（Manipulations）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.array_split.html#numpy.array_split">array_split</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.column_stack.html#numpy.column_stack">column_stack</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.concatenate.html#numpy.concatenate">concatenate</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.diagonal.html#numpy.diagonal">diagonal</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.dsplit.html#numpy.dsplit">dsplit</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.dstack.html#numpy.dstack">dstack</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.hsplit.html#numpy.hsplit">hsplit</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.hstack.html#numpy.hstack">hstack</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.item.html#numpy.ndarray.item">ndarray.item</a>, <a href="/reference/constants.html#numpy.newaxis">newaxis</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ravel.html#numpy.ravel">ravel</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.repeat.html#numpy.repeat">repeat</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.reshape.html#numpy.reshape">reshape</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.resize.html#numpy.resize">resize</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.squeeze.html#numpy.squeeze">squeeze</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.swapaxes.html#numpy.swapaxes">swapaxes</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.take.html#numpy.take">take</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.transpose.html#numpy.transpose">transpose</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.vsplit.html#numpy.vsplit">vsplit</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.vstack.html#numpy.vstack">vstack</a></li>
+<li><strong>询问（Questions）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.all.html#numpy.all">all</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.any.html#numpy.any">any</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.nonzero.html#numpy.nonzero">nonzero</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.where.html#numpy.where">where</a>,</li>
+<li><strong>顺序（Ordering）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.argmax.html#numpy.argmax">argmax</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.argmin.html#numpy.argmin">argmin</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.argsort.html#numpy.argsort">argsort</a>, <a target="_blank" rel="noopener" href="https://docs.python.org/dev/library/functions.html#max">max</a>, <a target="_blank" rel="noopener" href="https://docs.python.org/dev/library/functions.html#min">min</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ptp.html#numpy.ptp">ptp</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.searchsorted.html#numpy.searchsorted">searchsorted</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.sort.html#numpy.sort">sort</a></li>
+<li><strong>操作（Operations）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.choose.html#numpy.choose">choose</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.compress.html#numpy.compress">compress</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.cumprod.html#numpy.cumprod">cumprod</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.cumsum.html#numpy.cumsum">cumsum</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.inner.html#numpy.inner">inner</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.fill.html#numpy.ndarray.fill">ndarray.fill</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.imag.html#numpy.imag">imag</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.prod.html#numpy.prod">prod</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.put.html#numpy.put">put</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.putmask.html#numpy.putmask">putmask</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.real.html#numpy.real">real</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.sum.html#numpy.sum">sum</a></li>
+<li><strong>基本统计（Basic Statistics）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.cov.html#numpy.cov">cov</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.mean.html#numpy.mean">mean</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.std.html#numpy.std">std</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.var.html#numpy.var">var</a></li>
+<li><strong>基本线性代数（Basic Linear Algebra）</strong> - <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.cross.html#numpy.cross">cross</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.dot.html#numpy.dot">dot</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.outer.html#numpy.outer">outer</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.linalg.svd.html#numpy.linalg.svd">linalg.svd</a>, <a target="_blank" rel="noopener" href="https://numpy.org/devdocs/reference/generated/numpy.vdot.html#numpy.vdot">vdot</a></li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.numpy.org.cn/">NumPy 中文</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/">学习教程</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
+                    
+                      <a class="hover-with-bg" href="/tags/numpy/">numpy</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/3795854928.html">https://emoryhuang.cn/blog/3795854928.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/1516087737.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Python 实用库必备速查表</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/3248879688.html">
+                        <span class="hidden-mobile">pip & conda 换源</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div style="text-align:center"> <img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624699804319-1624699804317-character.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload height=35% width=35%> </div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='17' width='17'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='17' width='17'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

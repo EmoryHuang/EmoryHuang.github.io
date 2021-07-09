@@ -41,13 +41,13 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="在使用pip和conda命令安装包时，由于服务器在国外，往往会出现超时的问题，国内下载速度非常慢，体验并不友好。解决办法就是把源换成国内的，如清华、阿里、豆瓣。">
+  <meta name="description" content="Python 实用库必备速查表">
   <meta name="author" content="EmoryHuang">
   <meta name="keywords" content="">
   
      <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
   
-  <title>pip &amp; conda 换源 - EmoryHuang</title>
+  <title>Python 实用库必备速查表 - EmoryHuang</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -208,12 +208,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625661001316-1625661001311-3248879688.jpg') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1625832506389-1625832506384-1516087737.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pip & conda 换源">
+            <span class="h2" id="subtitle" title="Python 实用库必备速查表">
               
             </span>
 
@@ -223,8 +223,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-07 20:52" pubdate>
-        2021年7月7日 晚上
+      <time datetime="2021-07-09 20:06" pubdate>
+        2021年7月9日 晚上
       </time>
     </span>
   
@@ -235,7 +235,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      402 字
+      531 字
     </span>
   
 
@@ -283,32 +283,54 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pip &amp; conda 换源</h1>
+            <h1 style="display: none">Python 实用库必备速查表</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：23 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="pip-amp-conda-换源"><a href="#pip-amp-conda-换源" class="headerlink" title="pip &amp; conda 换源"></a>pip &amp; conda 换源</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在使用 pip 和 conda 命令安装包时，由于服务器在国外，往往会出现超时的问题，国内下载速度非常慢，体验并不友好。解决办法就是把源换成国内的，如清华、阿里、豆瓣。</p>
-<h2 id="pip-换源"><a href="#pip-换源" class="headerlink" title="pip 换源"></a>pip 换源</h2><h3 id="临时换源"><a href="#临时换源" class="headerlink" title="临时换源"></a>临时换源</h3><p>如果想要临时更换 pip 源，则可以在相应的 pip 命令调用时，在命令的最后加上：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip install xxxx -i https://pypi.tuna.tsinghua.edu.cn/simple<br></code></pre></div></td></tr></table></figure></div>
-<h3 id="永久换源"><a href="#永久换源" class="headerlink" title="永久换源"></a>永久换源</h3><p>Windows 下，直接在 user 目录中创建一个 pip 目录，如：<code>C:\Users\xx\pip</code>，新建文件 <code>pip.ini</code>，内容如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="INI"><figure class="iseeu highlight /ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[global]</span><br><span class="hljs-attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple<br><span class="hljs-section">[install]</span><br><span class="hljs-attr">trusted-host</span>=pypi.tuna.tsinghua.edu.cn<br></code></pre></div></td></tr></table></figure></div>
-<p>linux 下，修改 <code>~/.pip/pip.conf</code> (没有就创建一个)，内容同上。</p>
-<div class="note note-info">
-            <p>国内的其他一些镜像：</p><ul><li>阿里源 <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a></li><li>腾讯源 <a target="_blank" rel="noopener" href="http://mirrors.cloud.tencent.com/pypi/simple">http://mirrors.cloud.tencent.com/pypi/simple</a></li><li>豆瓣源 <a target="_blank" rel="noopener" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a></li><li>中国科技大学源 <a target="_blank" rel="noopener" href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></li><li>清华大学源 <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a></li></ul>
+              <div class="note note-info">
+            <p>图源：<a target="_blank" rel="noopener" href="https://www.datacamp.com/community/data-science-cheatsheets">https://www.datacamp.com/community/data-science-cheatsheets</a></p>
           </div>
-<h2 id="conda-换源"><a href="#conda-换源" class="headerlink" title="conda 换源"></a>conda 换源</h2><p>Windows 下，在命令行输入以下命令</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/<br>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge<br>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/<br><span class="hljs-comment"># 设置搜索时显示通道地址</span><br>conda config --<span class="hljs-built_in">set</span> show_channel_urls yes<br></code></pre></div></td></tr></table></figure></div>
-<p>或者你也可以手动编辑文件 <code>C:\Users\xx\.condarc</code>，内容如下：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="AWK"><figure class="iseeu highlight /awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">channels:<br>  - https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/anaconda/</span>cloud<span class="hljs-regexp">/msys2/</span><br>  - https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/anaconda/</span>cloud/conda-forge<br>  - https:<span class="hljs-regexp">//mi</span>rrors.tuna.tsinghua.edu.cn<span class="hljs-regexp">/anaconda/</span>pkgs<span class="hljs-regexp">/free/</span><br>ssl_verify: true<br>show_channel_urls: true<br></code></pre></div></td></tr></table></figure></div>
-<p>换回默认源：<code>conda config --remove-key channels</code></p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">清华大学开源软件镜像站</a></li>
-</ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>除了<a target="_blank" rel="noopener" href="https://www.datacamp.com/community/data-science-cheatsheets">官网</a>，你也可以 <a target="_blank" rel="noopener" href="https://github.com/EmoryHuang/LearningData/tree/master/Cheat%20Sheets">点击这里</a> 下载全部 PDF 和 JPG 文件</p>
+<h2 id="numpy"><a href="#numpy" class="headerlink" title="numpy"></a>numpy</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://www.numpy.org.cn/">numpy</a> 是使用 Python 进行科学计算的基础软件包。是 Python 语言的一个扩展程序库，支持大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/NumPy%20Cheat%20Sheet%20Data%20Analysis%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="NumPy Cheat Sheet Data Analysis in Python"></p>
+<h2 id="matplotlib"><a href="#matplotlib" class="headerlink" title="matplotlib"></a>matplotlib</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://www.matplotlib.org.cn/">matplotlib</a> 是一个 Python 的 2D 绘图库，它以各种硬拷贝格式和跨平台的交互式环境生成出版质量级别的图形。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Matplotlib%20Cheat%20Sheet%20Plotting%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Matplotlib Cheat Sheet Plotting in Python"></p>
+<h2 id="pandas"><a href="#pandas" class="headerlink" title="pandas"></a>pandas</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://www.pypandas.cn/">pandas</a> 是一个强大的分析结构化数据的工具集；它的使用基础是 Numpy（提供高性能的矩阵运算）；用于数据挖掘和数据分析，同时也提供数据清洗功能。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Pandas%20Cheat%20Sheet%20for%20Data%20Science%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Pandas Cheat Sheet for Data Science in Python"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Pandas%20Cheat%20Sheet%20Data%20Wrangling%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Pandas Cheat Sheet Data Wrangling in Python"></p>
+<h2 id="SciPy"><a href="#SciPy" class="headerlink" title="SciPy"></a>SciPy</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://www.scipy.org/">Scipy</a> 是一个用于数学、科学、工程领域的常用软件包，可以处理插值、积分、优化、图像处理、常微分方程数值解的求解、信号处理等问题。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/SciPy%20Cheat%20Sheet%20Linear%20Algebra%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="SciPy Cheat Sheet Linear Algebra in Python"></p>
+<h2 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://keras.io/">Keras</a>: 基于 Python 的深度学习库</p><p>Keras 是一个用 Python 编写的高级神经网络 API，它能够以 TensorFlow, CNTK, 或者 Theano 作为后端运行。Keras 的开发重点是支持快速的实验。能够以最小的时延把你的想法转换为实验结果，是做好研究的关键。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Keras%20Cheat%20Sheet%20Neural%20Networks%20in%20Python.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Keras Cheat Sheet Neural Networks in Python"></p>
+<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://jupyter.org/">Jupyter Notebook</a> 是一个开源的 Web 应用程序，允许用户创建和共享包含代码、方程式、可视化和文本的文档。它的用途包括：数据清理和转换、数值模拟、统计建模、数据可视化、机器学习等等。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Jupyter%20Notebook%20Cheat%20Sheet.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Jupyter Notebook Cheat Sheet"></p>
+<h2 id="Bokeh"><a href="#Bokeh" class="headerlink" title="Bokeh"></a>Bokeh</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://bokeh.org/">Bokeh</a> 是致力于网页浏览器展示的 Python 交互式图表库。Bokeh 能读取巨大的数据集或者流数据以简单快捷的方式为网页提供优美、简洁、高交互性能的图形。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Python%20Data%20Visualization%20Bokeh%20Cheat%20Sheet.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Python Data Visualization Bokeh Cheat Sheet"></p>
+<h2 id="spaCy"><a href="#spaCy" class="headerlink" title="spaCy"></a>spaCy</h2><div class="note note-info">
+            <p><a target="_blank" rel="noopener" href="https://spacy.io/">spaCy</a> 是世界上最快的工业级自然语言处理工具。支持多种自然语言处理基本功能, 主要功能包括分词、词性标注、词干化、命名实体识别、名词短语提取等等。</p>
+          </div>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/spaCy%20Cheat%20Sheet%20Advanced%20NLP%20in%20Python-1.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="spaCy Cheat Sheet Advanced NLP in Python"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/spaCy%20Cheat%20Sheet%20Advanced%20NLP%20in%20Python-2.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="spaCy Cheat Sheet Advanced NLP in Python"></p>
+<h2 id="Importing-Data"><a href="#Importing-Data" class="headerlink" title="Importing Data"></a>Importing Data</h2><p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/LearningData/Cheat%20Sheets/JPG/Importing%20Data-%20Python%20Cheat%20Sheet.jpg" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt="Importing Data- Python Cheat Sheet"></p>
 
             </div>
             <hr>
@@ -318,7 +340,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/">学习教程</a>
+                      <a class="hover-with-bg" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
                     
                   </div>
                 
@@ -326,16 +348,14 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/pip/">pip</a>
-                    
-                      <a class="hover-with-bg" href="/tags/conda/">conda</a>
+                      <a class="hover-with-bg" href="/tags/python/">python</a>
                     
                   </div>
                 
               </div>
 <p class="note note-warning">
 <strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
-<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/3248879688.html">https://emoryhuang.cn/blog/3248879688.html</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/1516087737.html">https://emoryhuang.cn/blog/1516087737.html</a> <br>
 <strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
    </p>
    
@@ -344,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/3795854928.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Numpy 学习笔记</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/3762216339.html">
-                        <span class="hidden-mobile">K-means 学习笔记</span>
+                      <a href="/blog/3795854928.html">
+                        <span class="hidden-mobile">Numpy 学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
