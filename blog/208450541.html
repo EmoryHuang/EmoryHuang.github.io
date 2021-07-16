@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<!--
+                         _oo0oo_
+                        o8888888o
+                        88" . "88
+                        (| -_- |)
+                        0\  =  /0
+                      ___/`---'\___
+                    .' \\|     |// '.
+                   / \\|||  :  |||// \
+                  / _||||| -:- |||||- \
+                 |   | \\\  - /// |   |
+                 | \_|  ''\---/''  |_/ |
+                 \  .-\__  '-'  ___/-. /
+               ___'. .'  /--.--\  `. .'___
+            ."" '<  `.___\_<|>_/___.' >' "".
+           | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+           \  \ `_.   \_ __\ /__ _/   .-` /  /
+       =====`-.____`.___ \_____/___.-`___.-'=====
+                         `=---='
+  
+  
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+             佛祖保佑       永不宕机     永无BUG
+-->
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465153547-1620465153539-favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="综合交易平台（CTP）是专门为期货公司开发的一套期货经纪业务管理系统，由交易、风险控制和结算三大系统组成。本文主要通过对CTP简单案例的实现，对API使用进行简单的讲解，以及本人学习过程中遇到的一些坑。">
+  <meta name="author" content="EmoryHuang">
+  <meta name="keywords" content="">
+  
+     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"> <meta name="baidu-site-verification" content="code-F76tgYFlqT" /> <!-- echarts --> <script src="https://cdn.jsdelivr.net/npm/echarts@5.1.0/dist/echarts.min.js"></script> <!-- fontawesome --> <script src="https://kit.fontawesome.com/b3b281a97a.js" crossorigin="anonymous"></script> <!-- 一言 --> <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>CTP 学习笔记 - EmoryHuang</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/atom-one-dark.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/shubiao.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/scroll.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/custom.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/codeBlock.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"emoryhuang.cn","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","app_key":"yTSKpRCVBDa8gyFQLEuSp0B2","server_url":"https://bcndultw.lc-cn-n1-shared.com"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>EmoryHuang's Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1626426595394-1626426595389-208450541.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="CTP 学习笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-16 17:08" pubdate>
+        2021年7月16日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-page-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CTP 学习笔记</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：1 分钟前
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="CTP-学习笔记"><a href="#CTP-学习笔记" class="headerlink" title="CTP 学习笔记"></a>CTP 学习笔记</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>综合交易平台（Comprehensive Transaction Platform，CTP）是专门为期货公司开发的一套期货经纪业务管理系统，由交易、风险控制和结算三大系统组成。</p>
+</blockquote>
+<p>前后研究了两个多星期 CTP，各种查资料，感觉总算是基本搞清楚了 CTP 是个什么东西（<del>鬼知道我为什么要搞 CTP</del>），说多了都是泪。本文主要通过对 CTP 简单案例的实现，对 CTP 进行简单的讲解，以及本人学习过程中遇到的一些坑。</p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><p>你可以在 <a target="_blank" rel="noopener" href="http://www.sfit.com.cn/">上期技术官网</a> 里面下载最新的 API 接口以及说明文档，或者也可以在 <a target="_blank" rel="noopener" href="http://www.simnow.com.cn/static/apiDownload.action">simnow 官网</a> 下载，都是一样的，只不过上期技术官网会时不时抽风。</p>
+<p>下载完成之后，我们得到了下面这些文件，以 win64 为例：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="PLAINTEXT"><figure class="iseeu highlight /plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">// 结构类型定义<br>ThostFtdcUserApiStruct.h        // 定义了客户端接口使用的业务数据结构<br>ThostFtdcUserApiDataType.h      // 定义了客户端接口使用的业务数据类型<br><br>// 行情部分<br>ThostFtdcMdApi.h                // 定义了客户端接口<br>thostmduserapi_se.dll           // 行情官方动态库<br>thostmduserapi_se.lib           // 行情官方静态库<br><br>// 交易部分<br>ThostFtdcTraderApi.h            // 定义了客户端接口<br>thosttraderapi_se.dll           // 交易官方动态库<br>thosttraderapi_se.lib           // 交易官方静态库<br><br>// 其他<br>error.dtd                       // 错误信息<br>error.xml                       // 错误信息<br></code></pre></div></td></tr></table></figure></div>
+<h2 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h2><p>总的来说，我们可以将 CTP 分为「行情部分」和「交易部分」</p>
+<ul>
+<li>行情部分：在行情部分中，我们可以实现「订阅行情」，从而获取「深度行情」，也就是最新价、成交量、持仓量等合约的信息，这也被称为 tick 数据。</li>
+<li>交易部分：在交易部分中，我们可以实现查询合约，查询仓位，下单，退单等交易的功能。</li>
+</ul>
+<p>对于 API 的更多信息，你可以在官网上下载的 <strong>API 接口说明</strong> 中找到所有 API 和 SPI 的函数原型信息。</p>
+<div class="note note-info">
+            <p>CTP 的所有接口都分为 Spi 和 Api 两种，这里对其简单说明</p><p>API：Api 类提供了交易/行情的各种功能，但这些需要我们<strong>主动对服务器发出的请求</strong>。</p><p>SPI：Spi 类提供了交易/行情相关的回调接口，我们需要<strong>继承该类并重载</strong>这些接口，以获取响应数据。</p><p>一般来说，API 和 SPI 都是配对出现的。</p><p>举个例子，我们为了实现登录，需要我们主动调用 API 函数 <code>ReqUserLogin</code>，我们暂且忽略参数，就像下面这个样子：</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">m_mdApi-&gt;<span class="hljs-built_in">ReqUserLogin</span>(&amp;t, <span class="hljs-number">1</span>)<br></code></pre></div></td></tr></table></figure></div><p>在执行上面这条命令之后，我们向服务器发送 <strong>登录请求</strong>，服务器收到我们的请求之后，向我们发送 <strong>登录成功消息</strong>；</p><p>之后对应的 SPI 回调函数 <code>OnRspUserLogin</code> 就会被调用。</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MdSpi::OnRspUserLogin</span><span class="hljs-params">(...)</span></span><br><span class="hljs-function"></span>&#123;<br>  cout &lt;&lt; <span class="hljs-string">&quot;账户登录成功&quot;</span> &lt;&lt; endl;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
+          </div>
+<h2 id="「行情部分」实现"><a href="#「行情部分」实现" class="headerlink" title="「行情部分」实现"></a>「行情部分」实现</h2><p>在这里，我们以「行情部分」为例进行实现，「交易部分」的逻辑也是类似的。</p>
+<h3 id="继承-CThostFtdcMdSpi-类"><a href="#继承-CThostFtdcMdSpi-类" class="headerlink" title="继承 CThostFtdcMdSpi 类"></a>继承 CThostFtdcMdSpi 类</h3><p>首先，我们需要自己创建一个类，并继承 <code>CThostFtdcMdSpi</code> 类，同时需要我们自己重载 <code>CThostFtdcMdSpi</code> 中的回调函数，以便实现自己需要的功能。</p>
+<p>我们新建一个名为 <code>CTPDemo</code> 的项目，并创建一个名为 <code>MdSpi</code> 的类，并继承 <code>CThostFtdcMdSpi</code>。</p>
+<div class="note note-info">
+            <p>这里我用的是 Visual Studio 2019</p><p>注意在链接器中引入静态库 <code>thostmduserapi_se.lib</code></p>
+          </div>
+<p>在头文件 <code>MdSpi.h</code> 中，我们写入如下代码：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// MdSpi.h</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;ThostFtdcMdApi.h&quot;</span></span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MdSpi</span> :</span> <span class="hljs-keyword">public</span> CThostFtdcMdSpi<br>&#123;<br><span class="hljs-keyword">public</span>:<br>	<span class="hljs-comment">// 当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。</span><br>	<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OnFrontConnected</span><span class="hljs-params">()</span></span>;<br>&#125;;<br></code></pre></div></td></tr></table></figure></div>
+<p>在源文件 <code>MdSpi.cpp</code> 中，我们对 <code>OnFrontConnected</code> 进行重载：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-comment">// MdSpi.cpp</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;MdSpi.h&quot;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MdSpi::OnFrontConnected</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	cout &lt;&lt; <span class="hljs-string">&quot;建立网络连接成功&quot;</span> &lt;&lt; endl;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
+<p>在上面的过程中，我们做的事情很简单，新建一个名为 <code>MdSpi</code> 的类，并继承 <code>CThostFtdcMdSpi</code>；然后对 <code>OnFrontConnected</code> 方法进行了重载。</p>
+<h3 id="初始化行情接口"><a href="#初始化行情接口" class="headerlink" title="初始化行情接口"></a>初始化行情接口</h3><p>然后，在 <code>CTPDemo.cpp</code> 的 <code>main()</code> 中初始化行情接口</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;MdSpi.h&quot;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> comment (lib, <span class="hljs-meta-string">&quot;thostmduserapi_se.lib&quot;</span>)                              <span class="hljs-comment">// 链接库</span></span><br><br>CThostFtdcMdApi* g_pMdUserApi = <span class="hljs-literal">nullptr</span>;					                <span class="hljs-comment">// 行情指针</span><br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-comment">// 初始化行情线程</span><br>    g_pMdUserApi = CThostFtdcMdApi::<span class="hljs-built_in">CreateFtdcMdApi</span>();		                <span class="hljs-comment">// 创建行情实例</span><br>    CThostFtdcMdSpi* pMdUserSpi = <span class="hljs-keyword">new</span> MdSpi;				                <span class="hljs-comment">// 创建行情回调实例</span><br>    g_pMdUserApi-&gt;<span class="hljs-built_in">RegisterSpi</span>(pMdUserSpi);					                <span class="hljs-comment">// 注册事件类</span><br>    g_pMdUserApi-&gt;<span class="hljs-built_in">RegisterFront</span>((<span class="hljs-keyword">char</span>*)<span class="hljs-string">&quot;tcp://180.168.146.187:10211&quot;</span>);		<span class="hljs-comment">// 设置行情前置地址</span><br>    g_pMdUserApi-&gt;<span class="hljs-built_in">Init</span>();									                <span class="hljs-comment">// 连接运行</span><br>    <span class="hljs-comment">// 等到线程退出</span><br>    g_pMdUserApi-&gt;<span class="hljs-built_in">Join</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></div></td></tr></table></figure></div>
+<p>在写完了上面这些代码之后，让我们回过头来看看上面的这些代码干了些什么事</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;MdSpi.h&quot;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> comment (lib, <span class="hljs-meta-string">&quot;thostmduserapi_se.lib&quot;</span>)              <span class="hljs-comment">// 链接库</span></span><br></code></pre></div></td></tr></table></figure></div>
+<p>第 1 - 4 行，我们导入了头文件 <code>MdSpi.h</code>，并连接了静态库 <code>thostmduserapi_se.lib</code>，做好准备工作。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">CThostFtdcMdApi* g_pMdUserApi = <span class="hljs-literal">nullptr</span>;					<span class="hljs-comment">// 行情指针</span><br>...<br>...<br>    g_pMdUserApi = CThostFtdcMdApi::<span class="hljs-built_in">CreateFtdcMdApi</span>();		<span class="hljs-comment">// 创建行情实例</span><br></code></pre></div></td></tr></table></figure></div>
+<p>第 6 行和第 12 行，我们创建了一个全局变量，名为 <code>g_pMdUserApi</code> 的指针，它的类型为 <code>CThostFtdcMdApi</code>，在 <code>main</code> 通过 <code>CreateFtdcMdApi</code> 创建了 Api 实例，并将其赋值给 <code>g_pMdUserApi</code></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">CThostFtdcMdSpi* pMdUserSpi = <span class="hljs-keyword">new</span> MdSpi;				                <span class="hljs-comment">// 创建行情回调实例</span><br>g_pMdUserApi-&gt;<span class="hljs-built_in">RegisterSpi</span>(pMdUserSpi);					                <span class="hljs-comment">// 注册事件类</span><br>g_pMdUserApi-&gt;<span class="hljs-built_in">RegisterFront</span>((<span class="hljs-keyword">char</span>*)<span class="hljs-string">&quot;tcp://180.168.146.187:10211&quot;</span>);		<span class="hljs-comment">// 设置行情前置地址</span><br></code></pre></div></td></tr></table></figure></div>
+<p>第 13 - 14 行，我们创建了一个 Spi 实例，并通过 <code>RegisterSpi</code> 将 Api 与 Spi 进行绑定；第 15 行，我们注册了前置地址以便与服务器连接。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="false"data-rel="C++"><figure class="iseeu highlight /c++"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c++">g_pMdUserApi-&gt;<span class="hljs-built_in">Init</span>();									        <span class="hljs-comment">// 连接运行</span><br></code></pre></div></td></tr></table></figure></div>
+<p>第 16 行调用 <code>Init()</code> 函数开始正式初始化 api，也就是说前面的工作只是准备工作，到了这里 api 才真正开始工作。此时 api 会向之前注册的地址发起与 CTP 前置的连接。</p>
+<p>接着，生成并执行 <code>CTPDemo.exe</code>，你就会发现黑框中出现「建立网络连接成功」字样，说明我们与行情服务器连接成功！</p>
+<h3 id="行情接口工作原理"><a href="#行情接口工作原理" class="headerlink" title="行情接口工作原理"></a>行情接口工作原理</h3><p>行情接口的具体工作原理可以参考官方说明文档</p>
+<p><img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1626423934159-1626423934156-CTP_md_流程简图.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload alt=""></p>
+<h3 id="实现登录并获取行情信息"><a href="#实现登录并获取行情信息" class="headerlink" title="实现登录并获取行情信息"></a>实现登录并获取行情信息</h3><p>在上面，我们实现了一个最简单的 CTP 使用样例，接下来，我们在此基础上实现登录和获取行情信息</p>
+<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p>在进行登录操作之间，你需要在 <a target="_blank" rel="noopener" href="http://www.simnow.com.cn/">sinmow</a> 中注册一个模拟交易账户</p>
+<blockquote>
+<p>SimNow 是上海期货交易所全资子公司上期技术公司专为投资者打造的期货模拟仿真交易平台，为上海期货交易所投资者教育网认证的期货模拟仿真系统。该产品仿真各交易所的交易及结算规则研发，目前已经支持国内各期货交易所的商品期货业务。</p>
+</blockquote>
+<h4 id="获取行情信息"><a href="#获取行情信息" class="headerlink" title="获取行情信息"></a>获取行情信息</h4><p>待施工……</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li>CTP 客户端开发指南</li>
+<li>API 接口说明</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%87%8F%E5%8C%96%E5%88%86%E6%9E%90/">量化分析</a>
+                    
+                      <a class="hover-with-bg" href="/tags/CTP/">CTP</a>
+                    
+                  </div>
+                
+              </div>
+<p class="note note-warning">
+<strong>本文作者: </strong><a href="/">EmoryHuang</a> <br>
+<strong>本文链接: </strong><a href="https://emoryhuang.cn/blog/208450541.html">https://emoryhuang.cn/blog/208450541.html</a> <br>
+<strong>版权声明: </strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明来自<a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a>！
+   </p>
+   
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/1985276265.html">
+                        <span class="hidden-mobile">定时启动关闭程序以及 C++ 相关时间函数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz","appKey":"yTSKpRCVBDa8gyFQLEuSp0B2","placeholder":"说点什么吧","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://bcndultw.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[],"master":"9f42906f4254fc05f7060b8e05746776","friends":"6f982b3a23f485294b772c12c1d09de2,67e94ddf2e39a96d0cc624d075f16122"},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+           <div style="text-align:center"> <img src="https://cdn.jsdelivr.net/gh/EmoryHuang/imgbed@master/1624699804319-1624699804317-character.png" srcset="https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620465183675-1620465183666-loading.gif" lazyload height=35% width=35%> </div> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124679267-1620124679266-browse.png' height='17' width='17'/> 访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            <img src='https://cdn.jsdelivr.net/gh/emoryhuang/imgbed@master/1620124684488-1620124684487-people.png' height='17' width='17'/> 访客量 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+  <div class="footer-content">
+     <div> <span>Copyright © 2021 </span> <a href="https://emoryhuang.github.io/" target="_blank" rel="nofollow noopener"><span>EmoryHuang</span></a> </div> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> </div> <div> <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> </div> 
+  </div>
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/love.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@master/tabs.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left"},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
