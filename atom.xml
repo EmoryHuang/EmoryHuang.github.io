@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2021-07-16T09:24:37.755Z</updated>
+  <updated>2021-07-19T04:17:05.495Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://emoryhuang.cn/blog/208450541.html"/>
     <id>https://emoryhuang.cn/blog/208450541.html</id>
     <published>2021-07-16T09:08:30.000Z</published>
-    <updated>2021-07-16T09:24:37.755Z</updated>
+    <updated>2021-07-19T04:17:05.495Z</updated>
     
     
     <summary type="html">综合交易平台（CTP）是专门为期货公司开发的一套期货经纪业务管理系统，由交易、风险控制和结算三大系统组成。本文主要通过对CTP简单案例的实现，对API使用进行简单的讲解，以及本人学习过程中遇到的一些坑。</summary>
