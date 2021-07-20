@@ -42,7 +42,7 @@
     <link href="https://emoryhuang.cn/blog/1985276265.html"/>
     <id>https://emoryhuang.cn/blog/1985276265.html</id>
     <published>2021-07-16T06:34:05.000Z</published>
-    <updated>2021-07-16T09:13:10.271Z</updated>
+    <updated>2021-07-20T13:06:16.695Z</updated>
     
     
     <summary type="html">最近在做项目的过程中需要实现定时启动/关闭程序的功能，网上查资料的过程中，发现大多都是通过windows创建计划任务的方式实现程序的定时启动，或者是通过写bat配合sleep关闭程序，感觉都不太行，最后还是采用了通过C++写了一个监控窗口方式实现，在这里简单记录一下爬坑的过程。</summary>
