@@ -29,7 +29,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-47&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;仍然是 POI</summary>
         
       
@@ -56,7 +56,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-5&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -88,7 +88,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-39&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-45&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Next POI</summary>
         
       
@@ -167,7 +167,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-17&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-27&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -196,7 +196,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-36&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-42&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;随着基于位置的社交网络（Location-Based Social</summary>
         
       
@@ -225,7 +225,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS&lt;/h1&gt;
-&lt;h2 id=&quot;前言-35&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-40&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在 BERT</summary>
         
       
@@ -256,7 +256,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention Is All You Need&lt;/h1&gt;
-&lt;h2 id=&quot;前言-34&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Transformer 是谷歌在 2017 年底发表的论文 &lt;a</summary>
         
       
@@ -287,7 +287,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding&lt;/h1&gt;
-&lt;h2 id=&quot;前言-42&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-49&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;BERT 是 Google 于</summary>
         
       
@@ -316,7 +316,7 @@
         
         
     <summary type="html">&lt;h1&gt;从 Embedding 到 Word2Vec&lt;/h1&gt;
-&lt;h2 id=&quot;前言-7&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-6&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Word Embedding&lt;/code&gt;</summary>
         
       
@@ -347,7 +347,7 @@
         
         
     <summary type="html">&lt;h1&gt;使用 Caddy 替代 Nginx&lt;/h1&gt;
-&lt;h2 id=&quot;前言-52&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-35&quot;&gt;前言&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Caddy 2 is a powerful, enterprise-ready, open source web server with</summary>
         
@@ -406,7 +406,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
-&lt;h2 id=&quot;前言-43&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-48&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;a</summary>
         
       
@@ -435,7 +435,7 @@
         
         
     <summary type="html">&lt;h1&gt;Redis 时间序列&lt;/h1&gt;
-&lt;h2 id=&quot;前言-19&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-12&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;REmote DIctionary Server(Redis) 是一个使用 ANSI C</summary>
         
       
@@ -445,9 +445,9 @@
     <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
     
     
-    <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
-    
     <category term="Redis" scheme="https://emoryhuang.cn/tags/Redis/"/>
+    
+    <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
     
   </entry>
   
@@ -464,7 +464,7 @@
         
         
     <summary type="html">&lt;h1&gt;Modeling Extreme Events in Time Series Prediction&lt;/h1&gt;
-&lt;h2 id=&quot;前言-47&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-46&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;a</summary>
         
       
@@ -493,7 +493,7 @@
         
         
     <summary type="html">&lt;h1&gt;树状数组学习笔记&lt;/h1&gt;
-&lt;h2 id=&quot;前言-49&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-54&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;树状数组&lt;/strong&gt;或二叉索引树(Binary Indexed Tree)，又以其发明者命名为 &lt;strong&gt;Fenwick</summary>
         
       
@@ -522,7 +522,7 @@
         
         
     <summary type="html">&lt;h1&gt;Linux 文件权限&lt;/h1&gt;
-&lt;h2 id=&quot;前言-6&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-3&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Linux&lt;/code&gt; 系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。&lt;/p&gt;
 &lt;p&gt;为了保护系统的安全性，&lt;code&gt;Linux&lt;/code&gt;</summary>
         
