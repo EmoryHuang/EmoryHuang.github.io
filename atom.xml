@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EmoryHuang&#39;s Blog</title>
+  
+  
+  <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
+  
+  <link href="https://emoryhuang.cn/"/>
+  <updated>2022-08-19T04:59:02.660Z</updated>
+  <id>https://emoryhuang.cn/</id>
+  
+  <author>
+    <name>EmoryHuang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/2428125584.html"/>
+    <id>https://emoryhuang.cn/blog/2428125584.html</id>
+    <published>2022-08-01T11:10:15.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
+&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;仍然是 POI</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Time2Vec 的理解与简单实现</title>
+    <link href="https://emoryhuang.cn/blog/3056744315.html"/>
+    <id>https://emoryhuang.cn/blog/3056744315.html</id>
+    <published>2022-07-23T03:02:44.000Z</published>
+    <updated>2022-08-19T04:59:02.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
+&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
+&lt;p&gt;2019 年的一篇论文：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/categories/NLP/"/>
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
+    
+    <category term="Embedding" scheme="https://emoryhuang.cn/tags/Embedding/"/>
+    
+    <category term="Time2Vec" scheme="https://emoryhuang.cn/tags/Time2Vec/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/4228286132.html"/>
+    <id>https://emoryhuang.cn/blog/4228286132.html</id>
+    <published>2022-07-20T08:07:20.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation&lt;/h1&gt;
+&lt;h2 id=&quot;前言-39&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Next POI</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聊一聊损失函数</title>
+    <link href="https://emoryhuang.cn/blog/3551198102.html"/>
+    <id>https://emoryhuang.cn/blog/3551198102.html</id>
+    <published>2022-07-18T02:14:25.000Z</published>
+    <updated>2022-08-19T04:59:02.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;聊一聊损失函数&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="损失函数" scheme="https://emoryhuang.cn/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】Geography-Aware Sequential Location Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/1608683519.html"/>
+    <id>https://emoryhuang.cn/blog/1608683519.html</id>
+    <published>2022-07-14T01:55:37.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单理解图神经网络 GNN</title>
+    <link href="https://emoryhuang.cn/blog/656651309.html"/>
+    <id>https://emoryhuang.cn/blog/656651309.html</id>
+    <published>2022-07-02T10:42:20.000Z</published>
+    <updated>2022-08-19T04:59:02.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
+&lt;h2 id=&quot;前言-17&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】DynaPosGNN:Dynamic-Positional GNN for Next POI Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/1152076077.html"/>
+    <id>https://emoryhuang.cn/blog/1152076077.html</id>
+    <published>2022-06-29T07:50:04.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
+&lt;h2 id=&quot;前言-36&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;随着基于位置的社交网络（Location-Based Social</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+    <category term="POI" scheme="https://emoryhuang.cn/tags/POI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】ALBERT:A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</title>
+    <link href="https://emoryhuang.cn/blog/1501084282.html"/>
+    <id>https://emoryhuang.cn/blog/1501084282.html</id>
+    <published>2022-06-20T08:23:50.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS&lt;/h1&gt;
+&lt;h2 id=&quot;前言-35&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在 BERT</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
+    
+    <category term="ALBERT" scheme="https://emoryhuang.cn/tags/ALBERT/"/>
+    
+    <category term="BERT" scheme="https://emoryhuang.cn/tags/BERT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】Attention Is All You Need</title>
+    <link href="https://emoryhuang.cn/blog/2936175392.html"/>
+    <id>https://emoryhuang.cn/blog/2936175392.html</id>
+    <published>2022-06-14T12:16:58.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Attention Is All You Need&lt;/h1&gt;
+&lt;h2 id=&quot;前言-34&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;Transformer 是谷歌在 2017 年底发表的论文 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
+    
+    <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
+    
+    <category term="Transformer" scheme="https://emoryhuang.cn/tags/Transformer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding</title>
+    <link href="https://emoryhuang.cn/blog/2857139179.html"/>
+    <id>https://emoryhuang.cn/blog/2857139179.html</id>
+    <published>2022-06-13T10:43:40.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding&lt;/h1&gt;
+&lt;h2 id=&quot;前言-42&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;BERT 是 Google 于</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
+    
+    <category term="BERT" scheme="https://emoryhuang.cn/tags/BERT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从 Embedding 到 Word2Vec</title>
+    <link href="https://emoryhuang.cn/blog/222002858.html"/>
+    <id>https://emoryhuang.cn/blog/222002858.html</id>
+    <published>2022-06-10T08:00:05.000Z</published>
+    <updated>2022-08-19T04:59:02.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;从 Embedding 到 Word2Vec&lt;/h1&gt;
+&lt;h2 id=&quot;前言-7&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Word Embedding&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/categories/NLP/"/>
+    
+    
+    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
+    
+    <category term="Embedding" scheme="https://emoryhuang.cn/tags/Embedding/"/>
+    
+    <category term="Word2Vec" scheme="https://emoryhuang.cn/tags/Word2Vec/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Caddy 替代 Nginx</title>
+    <link href="https://emoryhuang.cn/blog/2668159633.html"/>
+    <id>https://emoryhuang.cn/blog/2668159633.html</id>
+    <published>2022-05-28T09:30:45.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;使用 Caddy 替代 Nginx&lt;/h1&gt;
+&lt;h2 id=&quot;前言-52&quot;&gt;前言&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Caddy 2 is a powerful, enterprise-ready, open source web server with</summary>
+        
+      
+    
+    
+    
+    <category term="玩转服务器" scheme="https://emoryhuang.cn/categories/%E7%8E%A9%E8%BD%AC%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+    <category term="Caddy" scheme="https://emoryhuang.cn/tags/Caddy/"/>
+    
+    <category term="Nginx" scheme="https://emoryhuang.cn/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线段树模板</title>
+    <link href="https://emoryhuang.cn/blog/3153814731.html"/>
+    <id>https://emoryhuang.cn/blog/3153814731.html</id>
+    <published>2022-05-26T10:50:12.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;线段树模板&lt;/h1&gt;
+&lt;p&gt;线段树是算法竞赛中常用的用来维护 &lt;strong&gt;区间信息&lt;/strong&gt; 的数据结构。&lt;/p&gt;
+&lt;p&gt;线段树可以在&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
+        
+      
+    
+    
+    
+    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="线段树" scheme="https://emoryhuang.cn/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】Time-Series Anomaly Detection Service at Microsoft</title>
+    <link href="https://emoryhuang.cn/blog/4100034120.html"/>
+    <id>https://emoryhuang.cn/blog/4100034120.html</id>
+    <published>2022-05-18T02:32:15.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
+&lt;h2 id=&quot;前言-43&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="异常检测" scheme="https://emoryhuang.cn/tags/%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/"/>
+    
+    <category term="谱分析" scheme="https://emoryhuang.cn/tags/%E8%B0%B1%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis 时间序列</title>
+    <link href="https://emoryhuang.cn/blog/2780569503.html"/>
+    <id>https://emoryhuang.cn/blog/2780569503.html</id>
+    <published>2022-05-12T02:40:58.000Z</published>
+    <updated>2022-08-19T04:59:02.650Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Redis 时间序列&lt;/h1&gt;
+&lt;h2 id=&quot;前言-19&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;REmote DIctionary Server(Redis) 是一个使用 ANSI C</summary>
+        
+      
+    
+    
+    
+    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
+    
+    <category term="Redis" scheme="https://emoryhuang.cn/tags/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】Modeling Extreme Events in Time Series Prediction</title>
+    <link href="https://emoryhuang.cn/blog/1055934772.html"/>
+    <id>https://emoryhuang.cn/blog/1055934772.html</id>
+    <published>2022-04-20T12:55:14.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Modeling Extreme Events in Time Series Prediction&lt;/h1&gt;
+&lt;h2 id=&quot;前言-47&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
+    
+    <category term="极端事件预测" scheme="https://emoryhuang.cn/tags/%E6%9E%81%E7%AB%AF%E4%BA%8B%E4%BB%B6%E9%A2%84%E6%B5%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树状数组学习笔记</title>
+    <link href="https://emoryhuang.cn/blog/483618645.html"/>
+    <id>https://emoryhuang.cn/blog/483618645.html</id>
+    <published>2022-04-04T06:21:41.000Z</published>
+    <updated>2022-08-19T04:59:02.660Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;树状数组学习笔记&lt;/h1&gt;
+&lt;h2 id=&quot;前言-49&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;树状数组&lt;/strong&gt;或二叉索引树(Binary Indexed Tree)，又以其发明者命名为 &lt;strong&gt;Fenwick</summary>
+        
+      
+    
+    
+    
+    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="树状数组" scheme="https://emoryhuang.cn/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="二叉索引树" scheme="https://emoryhuang.cn/tags/%E4%BA%8C%E5%8F%89%E7%B4%A2%E5%BC%95%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux 文件权限</title>
+    <link href="https://emoryhuang.cn/blog/1216628801.html"/>
+    <id>https://emoryhuang.cn/blog/1216628801.html</id>
+    <published>2022-03-26T11:11:05.000Z</published>
+    <updated>2022-08-19T04:59:02.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Linux 文件权限&lt;/h1&gt;
+&lt;h2 id=&quot;前言-6&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Linux&lt;/code&gt; 系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。&lt;/p&gt;
+&lt;p&gt;为了保护系统的安全性，&lt;code&gt;Linux&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://emoryhuang.cn/categories/Linux/"/>
+    
+    
+    <category term="Linux 文件权限" scheme="https://emoryhuang.cn/tags/Linux-%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark 与 DataFrame</title>
+    <link href="https://emoryhuang.cn/blog/2482242799.html"/>
+    <id>https://emoryhuang.cn/blog/2482242799.html</id>
+    <published>2022-03-03T07:53:47.000Z</published>
+    <updated>2022-08-19T04:59:02.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Spark 与 DataFrame&lt;/h1&gt;
+&lt;h2 id=&quot;前言-8&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;在 Spark 中，除了 RDD 这种数据容器外，还有一种更容易操作的一个分布式数据容器</summary>
+        
+      
+    
+    
+    
+    <category term="大数据" scheme="https://emoryhuang.cn/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+    <category term="Spark" scheme="https://emoryhuang.cn/tags/Spark/"/>
+    
+    <category term="大数据" scheme="https://emoryhuang.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Neo4j 之 Cypher 笔记</title>
+    <link href="https://emoryhuang.cn/blog/3065446617.html"/>
+    <id>https://emoryhuang.cn/blog/3065446617.html</id>
+    <published>2022-02-19T01:27:47.000Z</published>
+    <updated>2022-08-19T04:59:02.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;Neo4j 之 Cypher 笔记&lt;/h1&gt;
+&lt;h2 id=&quot;Cypher-简介&quot;&gt;Cypher 简介&lt;/h2&gt;
+&lt;p&gt;Cypher 是 Neo4j 提出的图查询语言，是一种声明式的图数据库查询语言，如同关系数据库中的</summary>
+        
+      
+    
+    
+    
+    <category term="学习教程" scheme="https://emoryhuang.cn/categories/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="Neo4j" scheme="https://emoryhuang.cn/tags/Neo4j/"/>
+    
+    <category term="Cypher" scheme="https://emoryhuang.cn/tags/Cypher/"/>
+    
+  </entry>
+  
+</feed>

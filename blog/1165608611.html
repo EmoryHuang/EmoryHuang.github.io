@@ -1,0 +1,428 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Understanding LSTM Networks | EmoryHuang's Blog</title><meta name="keywords" content="LSTM,RNN"><meta name="author" content="EmoryHuang"><meta name="copyright" content="EmoryHuang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Understanding LSTM Networks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding LSTM Networks">
+<meta property="og:url" content="https://emoryhuang.cn/blog/1165608611.html">
+<meta property="og:site_name" content="EmoryHuang&#39;s Blog">
+<meta property="og:description" content="Understanding LSTM Networks">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.emoryhuang.cn/webp/1165608611-banner.webp">
+<meta property="article:published_time" content="2021-10-16T08:05:43.000Z">
+<meta property="article:modified_time" content="2022-08-19T04:59:02.650Z">
+<meta property="article:author" content="EmoryHuang">
+<meta property="article:tag" content="LSTM">
+<meta property="article:tag" content="RNN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.emoryhuang.cn/webp/1165608611-banner.webp"><link rel="shortcut icon" href="https://static.emoryhuang.cn/img/emoryhuang-favicon.ico"><link rel="canonical" href="https://emoryhuang.cn/blog/1165608611"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G-8PVDZZ1XD2"/><meta name="baidu-site-verification" content="c329cbbc3bebfd543905d12a396ae46f"/><link rel="manifest" href="/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4deb492e49dccb8704491045ae2bfb05";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-8PVDZZ1XD2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8PVDZZ1XD2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"ED239XGK05","apiKey":"b13ba7fa60a0bb24a8c61d428d419da2","indexName":"EmoryHuang","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: EmoryHuang","link":"链接: ","source":"来源: EmoryHuang's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Understanding LSTM Networks',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-19 12:59:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/cursor.css"><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/scroll.css"><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/fix_pjax.js"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">97</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.emoryhuang.cn"><i class="fa-fw fas fa-location-arrow"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/"><i class="fa-fw far fa-bookmark"></i><span> 常用工具</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://latex.emoryhuang.cn"><i class="fa-fw fas fa-square-root-variable"></i><span> LaTeX-Math</span></a></li><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-edit"></i><span> 网站更新</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://status.emoryhuang.cn"><i class="fa-fw fas fa-chart-line"></i><span> 状态监控</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static.emoryhuang.cn/webp/1165608611-banner.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">EmoryHuang's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.emoryhuang.cn"><i class="fa-fw fas fa-location-arrow"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/"><i class="fa-fw far fa-bookmark"></i><span> 常用工具</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://latex.emoryhuang.cn"><i class="fa-fw fas fa-square-root-variable"></i><span> LaTeX-Math</span></a></li><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-edit"></i><span> 网站更新</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://status.emoryhuang.cn"><i class="fa-fw fas fa-chart-line"></i><span> 状态监控</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Understanding LSTM Networks</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-16T08:05:43.000Z" title="发表于 2021-10-16 16:05:43">2021-10-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-19T04:59:02.650Z" title="更新于 2022-08-19 12:59:02">2022-08-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Understanding LSTM Networks"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note info flat"><p>翻译原文: <a target="_blank" rel="noopener" href="https://blog.csdn.net/yujianmin1990/article/details/78826506">https://blog.csdn.net/yujianmin1990/article/details/78826506</a></p>
+<p>英文原文: <a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></p>
+</div>
+<h1>Understanding LSTM Networks</h1>
+<h2 id="Recurrent-Neural-Network">Recurrent Neural Network</h2>
+<p>人们从不会随意地开始自己的思考，当你在读这篇博文的时候，你根据之前所读的文字来理解现在每个词。并且，你也不会将前面的内容都丢掉，然后从新开始理解现在的内容，人的思路是具有延续性的。</p>
+<p>传统的神经网络是没法做到上述事情的，这是一个很大的缺陷。举个栗子，假设你想要对电影里的某个时间点正在发生什么事情做判断。对传统神经网络来说，无法使用之前的发生的事情来推断后续发生的事情。</p>
+<p>循环神经网络则可以解决这类问题，这种网络带有自循环结构，使得信息可以保存延续到下个时刻。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-RNN-rolled.webp" alt="Recurrent Neural Networks have loops"></p>
+<p>在上图中，A + 循环构成一簇网络集合，A 的输入输出分别为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>。其中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">h_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 又作为 A 的输入。该循环允许信息从本网络传递到下一网络。</p>
+<p>这里面的循环，让循环神经网络看起来很难以理解。但是当你想得更深入一些时，你会发现它们与一般的神经网络是一致的。循环神经网络可以看做是相同网络的多次拷贝，每一个网络都将信息传递到下一个网络。我们可以将循环网络的循环展开如下所示：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-RNN-unrolled.webp" alt="An unrolled recurrent neural network"></p>
+<p>这种链式的属性表明循环神经网络与序列和列表是密切相关的，这种结构很自然地适合该类型数据。</p>
+<p>在最近的几年里，RNN 在许多难题上都获得了难以置信的成功，比如语音识别、语言模型、机器翻译、图像捕捉等。Andrej Karpathy 的一篇博客 <a target="_blank" rel="noopener" href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">Unreasonable Effectiveness of Recurrent Neural Networks</a> 里详细介绍了 RNN 的许多优异表现。</p>
+<p>这些成功的关键是“LSTMIS”的使用，这是一种非常特殊的递归神经网络，在许多任务中，其工作性能远远优于标准版本。几乎所有基于递归神经网络的令人兴奋的结果都是通过它们实现的。本文将对 LSTM 进行探讨。</p>
+<h2 id="The-Problem-of-Long-Term-Dependencies">The Problem of Long-Term Dependencies</h2>
+<p>RNN 吸引注意的一个特性是，RNN 可以将之前的信息与当前的任务联系起来。比如，使用之前的视频画面可以帮助理解现在的视频画面。RNN 能做到如此境地么，答案是：可以，但是有依赖条件。</p>
+<p>有时， 我们只需要处理最近的信息来解决当前的问题。比如，当语言模型尝试依赖之前的词来预测下一个词时，预测“the clouds are in the sky”的最后一个词时。我们不需要进一步的上下文，很明显下一个词时“sky”。在这个例子中，相关信息和所需预测位置的距离很近，RNNs 可以学习使用之前的信息。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-RNN-shorttermdepdencies.webp" alt=""></p>
+<p>但是，也存在其他需要更多上下文信息的例子。比如预测“I grew up in France… I speak fluent French”的最后一个词时，根据上下文下一个词应该是一种语言。如果我们想要缩减语言的范围，就需要更靠前的上下文“France”。这个例子中，相关信息和所需预测位置的距离变得很大。</p>
+<p>不幸的是，当这个距离变大时，RNNs 无法学习信息间的关系。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-RNN-longtermdependencies.webp" alt=""></p>
+<p>理论上，RNNs 是完全可以胜任处理这种“long-term dependencies”的，使用者需要小心地选择参数来解决这类问题，但是实际中，RNNs 不能够学习这样的参数。这类问题已经被 <a target="_blank" rel="noopener" href="http://people.idsia.ch/~juergen/SeppHochreiter1991ThesisAdvisorSchmidhuber.pdf">Hochreiter(1991)</a>和 <a target="_blank" rel="noopener" href="http://www-dsi.ing.unifi.it/~paolo/ps/tnn-94-gradient.pdf">Bengio(1994)</a> 等人深入研究过，发现了为什么 RNNs 解决这类问题很困难的基本原因。</p>
+<p>谢天谢地的是，LSTM 完全没有这种困扰。</p>
+<h2 id="LSTM-Networks">LSTM Networks</h2>
+<p>Long Short Term Memory Networks - 通常称之为“LSTMs”，它是一种特殊结构的 RNN，能够学习 long-term dependencies。在 1997 年由 <a target="_blank" rel="noopener" href="http://www.bioinf.jku.at/publications/older/2604.pdf">Hochreiter &amp; Schmidhuber</a> 引入，后续被众多研究者改进和发扬 1。LSTM 结构在大量的复杂问题中，获得了惊人的成功，并被广泛应用。</p>
+<p>LSTMs 设计之初是用来避免 long-term dependency 问题的，记忆长久的信息是该结构的默认行为，并不是要刻意去学习的。</p>
+<p>所有现行的循环神经网络具有神经网络的重复链式结构，标准的 RNNs 结构具有非常简单的结构，比如 tanh 层，如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-SimpleRNN.webp" alt="The repeating module in a standard RNN contains a single layer"></p>
+<p>LSTMs 也有这种链式结构，但是重复单元更复杂。不同于单一的神经层，而是拥有 4 个以特殊形式交互的复杂层。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-chain.webp" alt="The repeating module in an LSTM contains four interacting layers"></p>
+<p>不要担心内部细节问题，稍后很快就要一步一步地讲解 LSTM。现在，先认识下即将使用的一些符号。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM2-notation.webp" alt=""></p>
+<p>在上图中，每条线都代表一个实体向量，从一个节点的输出流向其他节点的输入。粉色的圆圈代表对应位置的计算，比如向量加法。黄色的方盒表示神经网络。线条合流表示串行，线条分支表示数据流复制并流向不同路径。</p>
+<h2 id="The-Core-Idea-Behind-LSTMs">The Core Idea Behind LSTMs</h2>
+<p>LSTMs 的关键是 cell 状态，那条在结构图上侧的水平线。</p>
+<p>cell 状态有点像是传送带，在整个链中从头流到尾，只有很少线性操作插入进来。对信息而言，可以很容易地通过它无损地流通。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-C-line.webp" alt=""></p>
+<p>LSTM 通过称之为门的结构来控制将信息从 cell 状态中加入或者移除。</p>
+<p>门是一种可选择地控制信息流通的方式，它们由 sigmoid 神经层和 pointwise 乘积操作组成。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-gate.webp" alt=""></p>
+<p>sigmoid 神经层输出介于 0 和 1 之间的值，描述了每个元素应该通过的比例。0 意味着拒绝任何信息通过，1 意味着让信息无损通过。一个 LSMT 有三个这种门，来保护和控制 cell 状态。</p>
+<h2 id="Step-by-Step-LSTM-Walk-Through">Step-by-Step LSTM Walk Through</h2>
+<p>LSTM 的第一步是决定什么信息将要从 cell 状态中丢掉。这一决定由 sigmoid 组成的“遗忘门(forget gate)”来搞定，它输入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">h_{t−1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9028em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">x_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，输出与 cell 状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">C_{t−1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8917em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span> 同维度的 0/1 向量。0 意味着拒绝任何信息通过，1 意味着让信息无损通过。</p>
+<p>再回头想下前面的语言模型预测的例子，cell 状态可能包含当前主题的性别，所以当前代称可以正确地判断出来。当看到一个新的主题时，我们想遗忘掉旧主题的性别信息。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-focus-f.webp" alt=""></p>
+<p>下一步是决定哪些新信息要被存储到 cell 状态中。分两部分，第一，由 sigmoid 组成“输入门(input gate)”决定哪些维度将要被更新；第二，由 tanh 生成新的可以被加入到 cell 状态中的候选值向量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><msub><mi>C</mi><mi>t</mi></msub><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde{C_t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0702em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3.6023em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">~</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span>。然后，将这两个向量合并生成对 cell 状态更新的向量。</p>
+<p>在语言模型预测的那个例子中，我们将增加新主题的性别信息到 cell 状态中，以替换掉旧的性别信息（被忘掉的那个）。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-focus-i.webp" alt=""></p>
+<p>现在，将旧的 cell 状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">C_{t−1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8917em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span> 更新为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">C_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，上面几步已经给出了要做的事情。</p>
+<p>首先，将旧 cell 状态乘以 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">f_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，忘掉我们决定要遗忘掉的内容；然后，叠加 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mi>t</mi></msub><mo>∗</mo><mover accent="true"><msub><mi>C</mi><mi>t</mi></msub><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">i_t * \tilde{C_t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8095em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0702em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9202em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3.6023em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">~</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span>，那是我们决定要追加的更新内容。</p>
+<p>在语言预测模型的例子中，上述动作对应实际要丢弃的关于旧主题的性别信息，并增加新的信息。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-focus-C.webp" alt=""></p>
+<p>最后，我们需要决定输出什么，这个输出基于 cell 状态的，但是个过滤后的版本。先用 sigmoid（“输出门(output gate)”）决定 cell 状态的哪些部分是将要输出的，以及对应的输出比例；再用 tanh 将 cell 状态投射到<code>[-1,1]</code>之间；再将两者乘积得到我们想要输出的结果。</p>
+<p>对语言预测例子而言，当 LSTM 刚看到一个主题，它想输出动词相关的信息时，比如，它可能输出单数/复数形式的主题，所以需要知道什么类型的动词的格式应该被对应地加入后续要发生的动作中。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-focus-o.webp" alt=""></p>
+<h2 id="Variants-on-Long-Short-Term-Memory">Variants on Long Short Term Memory</h2>
+<p>到目前为止介绍的都是普通的 LSTM，实际上，并不是所有的 LSTMs 都是上述结构，基本每篇论文涉及到的 LSTMs 都会有轻微地改动。通常改动都很小，但是也有必要提起。</p>
+<p>一个非常流行的 LSTM 版本，是 <a target="_blank" rel="noopener" href="http://http.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf">Gers &amp; Schmidhuber(2000)</a>提出的，加入了“peephole connections”。这意味着我们每个门都能将 cell 状态作为输入。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-var-peepholes.webp" alt=""></p>
+<p>上图结构中，所有的门都加上了“窥视孔(peepholes)”，但在许多论文中有些门加有些门不加的。</p>
+<p>另外一个变种是，使用组合的“forget gate”和“input gate”。不同于单独决定遗忘什么和添加什么，将这两个决策放到一起搞。只有当某维度上有输入时，才忘掉该维度的旧信息；只有某维度忘掉旧信息时，才更新信息到 cell 状态的该维度内。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-var-tied.webp" alt=""></p>
+<p>LSTM 的一个非常赞的版本是 Gated Recurrent Unit or GRU，由 <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1406.1078v3.pdf">Cho(2014)</a> 提出。它将“forget gate”和“input gate”混合成一个“update gate”，并且将 cell 状态和隐状态合并起来，还做了些其他改变。GRU 比 LSTM 在结构上更为简单，并且广受欢迎。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1165608611-LSTM3-var-GRU.webp" alt=""></p>
+<p>上述这些只是一小部分 LSTM 的变种，其他的还有像 <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1508.03790v2.pdf">Depth Gated RNNs(Yao 2015)</a>。还有完全不同的处理“long-term dependencies”的方法，比如 <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1402.3511v1.pdf">Clockwork RNNs by Koutnik(2014)</a>。</p>
+<p>哪种更好呢？这些不同之处有影响么？ <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1503.04069.pdf">Greff, et al(2015)</a> 对流行的变种做了非常好地对比，发现他们都是一致的。 <a target="_blank" rel="noopener" href="http://jmlr.org/proceedings/papers/v37/jozefowicz15.pdf">Jozefowicz, et al(2015)</a> 测试了多大 1 万多种 RNN 结构之后，发现了某些版本在某些任务中，表现比 LSTM 要好点（这篇论文非常值得一看）。</p>
+<h2 id="Conclusion">Conclusion</h2>
+<p>更早些的时候，我提到 RNN 所能达到的一些让人惊艳的结果，本质上都可以用 LSTM 达到同样的效果，实际上对大多数任务来说 LSTM 工作地更好。</p>
+<p>LSTM 的公式看起来很吓人，但是本文一步一步地解析使得它们更方便理解。</p>
+<p>LSTM 是 RNNs 的一个巨大进步，很自然地想知道，是否还存在另外一大步？在研究者总的普遍共识是：Yes，确实有下一步，那就是“attention”模型！其思想是让 RNN 的每一步从更大的采集信息集中筛选信息。比如，使用 RNN 来给图片生成标题，它可能选择部分图片内容来查找输出的每个词。实际上，<a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1502.03044v2.pdf">Xu, et al.(2015)</a> 做了这块内容，如果你想展开探索 attention 的话这是个很好地开端。另外也有不少使用 attention 的很好的工作，但是看起来更像是围绕着比较偏僻的问题。</p>
+<p>Attention 并不是 RNN 研究的唯一分支。比如，<a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1507.01526v1.pdf">Grid LSTM (Kalchbrenner 2015)</a> 看着也很 promising。在生成模型中使用 RNN，比如 <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1502.04623.pdf">Gregor (2015)</a>, <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1506.02216v3.pdf">Chung (2015)</a>, <a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1411.7610v3.pdf">Bayer &amp; Osendorfer(2015)</a> 看着也非常有意思。最近几年将是 RNN 的惊喜之年，会有更多的 promise 出现。</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Understanding LSTM Networks</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a target="_blank" rel="noopener" href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>colah</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2021-10-16</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-08-19</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LSTM/">LSTM</a><a class="post-meta__tags" href="/tags/RNN/">RNN</a></div><div class="post_share"><div class="social-share" data-image="https://static.emoryhuang.cn/webp/1165608611-banner.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://static.emoryhuang.cn/webp/emoryhuang-wechat.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/emoryhuang-wechat.webp" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://static.emoryhuang.cn/webp/emoryhuang-alipay.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/emoryhuang-alipay.webp" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/3121210202.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3121210202-banner.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">摩尔投票法学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/blog/1510678197.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1510678197-banner.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">OCSVM 学习笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">EmoryHuang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">97</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/EmoryHuang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/EmoryHuang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:boyi_huang@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Understanding LSTM Networks</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Recurrent-Neural-Network"><span class="toc-number">1.1.</span> <span class="toc-text">Recurrent Neural Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Problem-of-Long-Term-Dependencies"><span class="toc-number">1.2.</span> <span class="toc-text">The Problem of Long-Term Dependencies</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LSTM-Networks"><span class="toc-number">1.3.</span> <span class="toc-text">LSTM Networks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Core-Idea-Behind-LSTMs"><span class="toc-number">1.4.</span> <span class="toc-text">The Core Idea Behind LSTMs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step-by-Step-LSTM-Walk-Through"><span class="toc-number">1.5.</span> <span class="toc-text">Step-by-Step LSTM Walk Through</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Variants-on-Long-Short-Term-Memory"><span class="toc-number">1.6.</span> <span class="toc-text">Variants on Long Short Term Memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-number">1.7.</span> <span class="toc-text">Conclusion</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2428125584.html" title="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/2428125584-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation"/></a><div class="content"><a class="title" href="/blog/2428125584.html" title="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation">【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation</a><time datetime="2022-08-01T11:10:15.000Z" title="发表于 2022-08-01 19:10:15">2022-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/3056744315.html" title="Time2Vec 的理解与简单实现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3056744315-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Time2Vec 的理解与简单实现"/></a><div class="content"><a class="title" href="/blog/3056744315.html" title="Time2Vec 的理解与简单实现">Time2Vec 的理解与简单实现</a><time datetime="2022-07-23T03:02:44.000Z" title="发表于 2022-07-23 11:02:44">2022-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/4228286132.html" title="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/4228286132-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation"/></a><div class="content"><a class="title" href="/blog/4228286132.html" title="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation">【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</a><time datetime="2022-07-20T08:07:20.000Z" title="发表于 2022-07-20 16:07:20">2022-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/3551198102.html" title="聊一聊损失函数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3551198102-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊一聊损失函数"/></a><div class="content"><a class="title" href="/blog/3551198102.html" title="聊一聊损失函数">聊一聊损失函数</a><time datetime="2022-07-18T02:14:25.000Z" title="发表于 2022-07-18 10:14:25">2022-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/1608683519.html" title="【论文阅读】Geography-Aware Sequential Location Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1608683519-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】Geography-Aware Sequential Location Recommendation"/></a><div class="content"><a class="title" href="/blog/1608683519.html" title="【论文阅读】Geography-Aware Sequential Location Recommendation">【论文阅读】Geography-Aware Sequential Location Recommendation</a><time datetime="2022-07-14T01:55:37.000Z" title="发表于 2022-07-14 09:55:37">2022-07-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://static.emoryhuang.cn/webp/1165608611-banner.webp')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By EmoryHuang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022000821号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000)
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-git-main-emoryhuang.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-git-main-emoryhuang.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz',
+      appKey: 'yTSKpRCVBDa8gyFQLEuSp0B2',
+      avatar: 'monsterid',
+      serverURLs: 'https://bcndultw.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Twikoo' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><script async src="/js/grayscale.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-8PVDZZ1XD2', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://github-calendar-api-emoryhuang.vercel.app/api?emoryhuang";
+            var git_color =['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'];
+            var git_user ="emoryhuang";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

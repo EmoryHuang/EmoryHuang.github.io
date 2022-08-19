@@ -1,0 +1,648 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>杭电OJ2090-2099 | EmoryHuang's Blog</title><meta name="keywords" content="刷题"><meta name="author" content="EmoryHuang"><meta name="copyright" content="EmoryHuang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文记录了刷杭电OJ2000-2099的过程和一些想法，代码仅供参考！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="杭电OJ2090-2099">
+<meta property="og:url" content="https://emoryhuang.cn/blog/447670037.html">
+<meta property="og:site_name" content="EmoryHuang&#39;s Blog">
+<meta property="og:description" content="本文记录了刷杭电OJ2000-2099的过程和一些想法，代码仅供参考！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.emoryhuang.cn/img/emoryhuang-banner.png">
+<meta property="article:published_time" content="2021-03-09T12:31:00.000Z">
+<meta property="article:modified_time" content="2022-08-19T04:59:02.650Z">
+<meta property="article:author" content="EmoryHuang">
+<meta property="article:tag" content="刷题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.emoryhuang.cn/img/emoryhuang-banner.png"><link rel="shortcut icon" href="https://static.emoryhuang.cn/img/emoryhuang-favicon.ico"><link rel="canonical" href="https://emoryhuang.cn/blog/447670037"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="G-8PVDZZ1XD2"/><meta name="baidu-site-verification" content="c329cbbc3bebfd543905d12a396ae46f"/><link rel="manifest" href="/manifest.json"/><link rel="apple-touch-icon" sizes="180x180" href="/img/siteicon/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/siteicon/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/siteicon/favicon-16x16.png"/><link rel="mask-icon" href="/img/siteicon/safari-pinned-tab.svg" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4deb492e49dccb8704491045ae2bfb05";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-8PVDZZ1XD2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-8PVDZZ1XD2');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"ED239XGK05","apiKey":"b13ba7fa60a0bb24a8c61d428d419da2","indexName":"EmoryHuang","hits":{"per_page":6},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: EmoryHuang","link":"链接: ","source":"来源: EmoryHuang's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '杭电OJ2090-2099',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-19 12:59:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/cursor.css"><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/scroll.css"><link rel="stylesheet" href="https://static.emoryhuang.cn/js&css/fix_pjax.js"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://unpkg.zhimg.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="EmoryHuang's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">97</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.emoryhuang.cn"><i class="fa-fw fas fa-location-arrow"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/"><i class="fa-fw far fa-bookmark"></i><span> 常用工具</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://latex.emoryhuang.cn"><i class="fa-fw fas fa-square-root-variable"></i><span> LaTeX-Math</span></a></li><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-edit"></i><span> 网站更新</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://status.emoryhuang.cn"><i class="fa-fw fas fa-chart-line"></i><span> 状态监控</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://static.emoryhuang.cn/img/emoryhuang-banner.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">EmoryHuang's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://home.emoryhuang.cn"><i class="fa-fw fas fa-location-arrow"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 博客</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-book"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/chat/"><i class="fa-fw far fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/"><i class="fa-fw far fa-bookmark"></i><span> 常用工具</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://latex.emoryhuang.cn"><i class="fa-fw fas fa-square-root-variable"></i><span> LaTeX-Math</span></a></li><li><a class="site-page child" href="/update/"><i class="fa-fw fas fa-edit"></i><span> 网站更新</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://status.emoryhuang.cn"><i class="fa-fw fas fa-chart-line"></i><span> 状态监控</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">杭电OJ2090-2099</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-09T12:31:00.000Z" title="发表于 2021-03-09 20:31:00">2021-03-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-19T04:59:02.650Z" title="更新于 2022-08-19 12:59:02">2022-08-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%AD%E7%94%B5OJ/">杭电OJ</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="杭电OJ2090-2099"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>杭电 OJ2090-2099</h1>
+<h2 id="写在前面-20">写在前面</h2>
+<p>本文记录了刷杭电 OJ2090-2099 的过程和一些想法，代码仅供参考！</p>
+<hr>
+<h3 id="2090-算菜价">2090 算菜价</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>妈妈每天都要出去买菜，但是回来后，兜里的钱也懒得数一数，到底花了多少钱真是一笔糊涂帐。现在好了，作为好儿子（女儿）的你可以给她用程序算一下了，呵呵。</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入含有一些数据组，每组数据包括菜种（字串），数量（计量单位不论，一律为 double 型数）和单价（double 型数，表示人民币元数），因此，每组数据的菜价就是数量乘上单价啊。菜种、数量和单价之间都有空格隔开的。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>支付菜价的时候，由于最小支付单位是角，所以总是在支付的时候采用四舍五入的方法把分头去掉。最后，请输出一个精度为角的菜价总量。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>青菜 1 2<br>
+萝卜 2 1.5<br>
+鸡腿 2 4.2</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>13.4</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>四舍五入，直接保留一位输出就可以了</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(void) &#123;</span><br><span class="line">    double sum = 0, d, n;</span><br><span class="line">    string s;</span><br><span class="line">    while (cin &gt;&gt; s) &#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; d;</span><br><span class="line">        sum += n * d;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%.1f\n&quot;, sum);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2091-空心三角形">2091 空心三角形</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>把一个字符三角形掏空，就能节省材料成本，减轻重量，但关键是为了追求另一种视觉效果。在设计的过程中，需要给出各种花纹的材料和大小尺寸的三角形样板，通过电脑临时做出来，以便看看效果。</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>每行包含一个字符和一个整数 n(0&lt;n&lt;41)，不同的字符表示不同的花纹，整数 n 表示等腰三角形的高。显然其底边长为 2n-1。如果遇到@字符，则表示所做出来的样板三角形已经够了。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>每个样板三角形之间应空上一行，三角形的中间为空。显然行末没有多余的空格。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>X 2<br>
+A 7<br>
+@</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> X</span><br><span class="line">XXX</span><br><span class="line"></span><br><span class="line">      A</span><br><span class="line">     A A</span><br><span class="line">    A   A</span><br><span class="line">   A     A</span><br><span class="line">  A       A</span><br><span class="line"> A         A</span><br><span class="line">AAAAAAAAAAAAA</span><br></pre></td></tr></table></figure>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>没什么方法，直接按要求打印就行</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    string s;</span><br><span class="line">    int n, flag = 0;  // flag用来判断是否需要换行，只有第一次输入时不需要换行</span><br><span class="line">    while (cin &gt;&gt; s &gt;&gt; n) &#123;</span><br><span class="line">        if (s == &quot;@&quot;) break;</span><br><span class="line">        if (flag++) cout &lt;&lt; endl;    //除了第一个外，空一行再输出</span><br><span class="line">        for (int i = 1; i &lt; n; i++)  //遍历输出前n-1行</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = i; j &lt; n; j++) &#123;</span><br><span class="line">                cout &lt;&lt; &quot; &quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; s;</span><br><span class="line">            for (int j = 0; j &lt; 2 * i - 3; j++) &#123;</span><br><span class="line">                cout &lt;&lt; &quot; &quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            if (i == 1)</span><br><span class="line">                cout &lt;&lt; endl;</span><br><span class="line">            else</span><br><span class="line">                cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; 2 * n - 1; i++)  //最后一行</span><br><span class="line">            cout &lt;&lt; s;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2092-整数解">2092 整数解</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>有二个整数，它们加起来等于某个整数，乘起来又等于另一个整数，它们到底是真还是假，也就是这种整数到底存不存在，实在有点吃不准，你能快速回答吗？看来只能通过编程。<br>
+例如：x + y = 9，x × y = 15 ? 找不到这样的整数 x 和 y<br>
+1+4=5，1×4=4，所以，加起来等于 5，乘起来等于 4 的二个整数为 1 和 4<br>
+7+(-8)=-1，7×（-8）=-56，所以，加起来等于-1，乘起来等于-56 的二个整数为 7 和-8</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入数据为成对出现的整数 n，m（-10000&lt;n,m&lt;10000），它们分别表示整数的和与积，如果两者都为 0，则输入结束。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>只需要对于每个 n 和 m，输出“Yes”或者“No”，明确有还是没有这种整数就行了。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>9 15<br>
+5 4<br>
+1 -56<br>
+0 0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>No<br>
+Yes<br>
+Yes</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>判断方程:x^2 - nx + m = 0 的 △ 是否为完全平方数</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    while (cin &gt;&gt; n &gt;&gt; m &amp;&amp; (n || m)) &#123;</span><br><span class="line">        double delta = n * n - 4 * m;</span><br><span class="line">        if (delta &gt;= 0 &amp;&amp; delta == (int)sqrt(delta) * (int)sqrt(delta))</span><br><span class="line">            cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;</span><br><span class="line">        else</span><br><span class="line">            cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2093-考试排名">2093 考试排名</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>C++编程考试使用的实时提交系统，具有即时获得成绩排名的特点。它的功能是怎么实现的呢？我们做好了题目的解答，提交之后，要么“AC”，要么错误，不管怎样错法，总是给你记上一笔，表明你曾经有过一次错误提交，因而当你一旦提交该题“AC”后，就要与你算一算帐了，总共该题错误提交了几回。虽然你在题数上，大步地跃上了一个台阶，但是在耗时上要摊上你共花去的时间。特别是，曾经有过的错误提交，每次都要摊上一定的单位时间分。这样一来，你在做出的题数上，可能领先别人很多，但是，在做出同样题数的人群中，你可能会在耗时上处于排名的劣势。<br>
+例如：某次考试一共 8 题（A，B，C，D，E，F，G，H），每个人做的题都在对应的题号下有个数量标记，负数表示该学生在该题上有过的错误提交次数，但到现在还没有 AC，正数表示 AC 所耗的时间，如果正数 a 跟上一对括号，里面有个整数 b，那就表示该学生提交该题 AC 了，耗去了时间 a，同时，曾经错误提交了 b 次，因此对于下述输入数据：若每次错误提交的罚分为 20 分，则其排名从高到低应该是这样的：<br>
+Josephus 5 376<br>
+John 4 284<br>
+Alice 4 352<br>
+Smith 3 167<br>
+Bob 2 325<br>
+Bush 0 0</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入数据的第一行是考试题数 n（1≤n≤12）以及单位罚分数 m（10≤m≤20），每行数据描述一个学生的用户名（不多于 10 个字符的字串）以及对所有 n 道题的答题现状，其描述采用问题描述中的数量标记的格式，见上面的表格，提交次数总是小于 100，AC 所耗时间总是小于 1000。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>将这些学生的考试现状，输出一个实时排名。实时排名显然先按 AC 题数的多少排，多的在前，再按时间分的多少排，少的在前，如果凑巧前两者都相等，则按名字的字典序排，小的在前。每个学生占一行，输出名字（10 个字符宽），做出的题数（2 个字符宽，右对齐）和时间分（4 个字符宽，右对齐）。名字、题数和时间分相互之间有一个空格。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>8 20<br>
+Smith -1 -16 8 0 0 120 39 0<br>
+John 116 -2 11 0 0 82 55(1) 0<br>
+Josephus 72(3) 126 10 -3 0 47 21(2) -2<br>
+Bush 0 -1 -8 0 0 0 0 0<br>
+Alice -2 67(2) 13 -1 0 133 79(1) -1<br>
+Bob 0 0 57(5) 0 0 168 -7 0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>Josephus 5 376<br>
+John 4 284<br>
+Alice 4 352<br>
+Smith 3 167<br>
+Bob 2 325<br>
+Bush 0 0</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>因为表格里的数据格式不统一，有时候有&quot;()&quot;，有时候又没有，可以使用 sscanf()</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct student &#123;</span><br><span class="line">    char name[11];</span><br><span class="line">    int ac, time;</span><br><span class="line">&#125;;</span><br><span class="line">bool cmp(student a, student b) &#123;</span><br><span class="line">    if (a.ac != b.ac)</span><br><span class="line">        return a.ac &gt; b.ac;</span><br><span class="line">    else if (a.time != b.time)</span><br><span class="line">        return a.time &lt; b.time;</span><br><span class="line">    else</span><br><span class="line">        return a.name &lt; b.name;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, m;</span><br><span class="line">    int res, t, f, count = 0;</span><br><span class="line">    char s[10];</span><br><span class="line">    student stu[1000] = &#123;0&#125;;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    for (int i = 0; cin &gt;&gt; stu[i].name; i++) &#123;</span><br><span class="line">        count++;</span><br><span class="line">        for (int j = 0; j &lt; n; j++) &#123;</span><br><span class="line">            cin &gt;&gt; s;</span><br><span class="line">            res = sscanf(s, &quot;%d(%d)&quot;, &amp;t, &amp;f);</span><br><span class="line">            if (res == 2) &#123;</span><br><span class="line">                stu[i].ac++;</span><br><span class="line">                stu[i].time += t + f * m;</span><br><span class="line">            &#125; else if (res == 1 &amp;&amp; t &gt; 0) &#123;</span><br><span class="line">                stu[i].ac++;</span><br><span class="line">                stu[i].time += t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(stu, stu + count, cmp);</span><br><span class="line">    for (int i = 0; i &lt; count; i++) &#123;</span><br><span class="line">        printf(&quot;%-10s %2d %4d\n&quot;, stu[i].name, stu[i].ac, stu[i].time);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2094-产生冠军">2094 产生冠军</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。球赛的规则如下：如果 A 打败了 B，B 又打败了 C，而 A 与 C 之间没有进行过比赛，那么就认定，A 一定能打败 C。如果 A 打败了 B，B 又打败了 C，而且，C 又打败了 A，那么 A、B、C 三者都不可能成为冠军。根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之后，确定是否已经实际上产生了冠军。</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入含有一些选手群，每群选手都以一个整数 n(n&lt;1000)开头，后跟 n 对选手的比赛结果，比赛结果以一对选手名字（中间隔一空格）表示，前者战胜后者。如果 n 为 0，则表示输入结束。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>对于每个选手群，若你判断出产生了冠军，则在一行中输出“Yes”，否则在一行中输出“No”。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>3<br>
+Alice Bob<br>
+Smith John<br>
+Alice Smith<br>
+5<br>
+a c<br>
+c d<br>
+d e<br>
+b e<br>
+a d<br>
+0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>Yes<br>
+No</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>若 a 打败了 b，则将 b 指向 a，若指向空就说明没有人打败他，若这样的人只有一个，则他就是冠军</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    string a, b;</span><br><span class="line">    set&lt;string&gt; st;</span><br><span class="line">    map&lt;string, string&gt; mp;</span><br><span class="line">    while (cin &gt;&gt; n &amp;&amp; n) &#123;</span><br><span class="line">        st.clear();</span><br><span class="line">        mp.clear();</span><br><span class="line">        for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">            cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            st.insert(a);</span><br><span class="line">            st.insert(b);</span><br><span class="line">            mp[b] = a;  // a打败了b</span><br><span class="line">        &#125;</span><br><span class="line">        int flag = 0;</span><br><span class="line">        set&lt;string&gt;::iterator it;</span><br><span class="line">        for (it = st.begin(); it != st.end(); it++) &#123;</span><br><span class="line">            if (!mp[*it].length()) flag++;  //寻找是否有人没被打败</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag == 1)</span><br><span class="line">            cout &lt;&lt; &quot;Yes&quot; &lt;&lt; endl;</span><br><span class="line">        else</span><br><span class="line">            cout &lt;&lt; &quot;No&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2095-find-your-present-2">2095 find your present (2)</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>In the new year party, everybody will get a “special present”.Now it’s your turn to get your special present, a lot of presents now putting on the desk, and only one of them will be yours.Each present has a card number on it, and your present’s card number will be the one that different from all the others, and you can assume that only one number appear odd times.For example, there are 5 present, and their card numbers are 1, 2, 3, 2, <a target="_blank" rel="noopener" href="http://1.so">1.so</a> your present will be the one with the card number of 3, because 3 is the number that different from all the others.</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>The input file will consist of several cases. Each case will be presented by an integer n (1&lt;=n&lt;1000000, and n is odd) at first. Following that, n positive integers will be given in a line, all integers will smaller than 2^31. These numbers indicate the card numbers of the presents.n = 0 ends the input.</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>For each case, output an integer in a line, which is the card number of your present.</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>5<br>
+1 1 3 2 2<br>
+3<br>
+1 2 1<br>
+0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>3<br>
+2</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>题目大意：在新年聚会上，所有人都会收到一份特殊的礼物。选择轮到你领取自己的礼物了。在桌子上有一大堆礼物，其中只有一个是你的。每个礼物上都标有一个号码。而你的礼物的号码是与其他所有礼物都不相同的。你可以假定只有一个数字只出现一次。例如，现在有 5 个礼物，他们分别标号伪 1，2，3，2，1。所以，你的礼物就是标号为 3 的那个。因为 3 只出现了 1 次。</p>
+<p>任何数和 0 异或都等于它本身；两个相同的数异或后的结果是 0</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    while (scanf(&quot;%d&quot;, &amp;n) != EOF &amp;&amp; n) &#123;</span><br><span class="line">        int a, res = 0;</span><br><span class="line">        while (n--) &#123;</span><br><span class="line">            scanf(&quot;%d&quot;, &amp;a);</span><br><span class="line">            res = res ^ a;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;, res);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2096-小明-A-B">2096 小明 A+B</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>小明今年 3 岁了, 现在他已经能够认识 100 以内的非负整数, 并且能够进行 100 以内的非负整数的加法计算.对于大于等于 100 的整数, 小明仅保留该数的最后两位进行计算, 如果计算结果大于等于 100,那么小明也仅保留计算结果的最后两位.例如, 对于小明来说:</p>
+<ol>
+<li>1234 和 34 是相等的</li>
+<li>35+80=15</li>
+</ol>
+<p>给定非负整数 A 和 B, 你的任务是代表小明计算出 A+B 的值.</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入数据的第一行为一个正整数 T, 表示测试数据的组数. 然后是 T 组测试数据.每组测试数据包含两个非负整数 A 和 B(A 和 B 均在 int 型可表示的范围内).</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>对于每组测试数据,输出小明 A+B 的结果.</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>2<br>
+35 80<br>
+15 1152</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>15<br>
+67</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>整除</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int t, a, b;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    while (t--) &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        cout &lt;&lt; (a % 100 + b % 100) % 100 &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2097-Sky-数">2097 Sky 数</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>Sky 从小喜欢奇特的东西，而且天生对数字特别敏感，一次偶然的机会，他发现了一个有趣的四位数 2992，这个数，它的十进制数表示，其四位数字之和为 2+9+9+2=22，它的十六进制数 BB0，其四位数字之和也为 22，同时它的十二进制数表示 1894，其四位数字之和也为 22，啊哈，真是巧啊。Sky 非常喜欢这种四位数，由于他的发现，所以这里我们命名其为 Sky 数。但是要判断这样的数还是有点麻烦啊，那么现在请你帮忙来判断任何一个十进制的四位数，是不是 Sky 数吧。</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入含有一些四位正整数，如果为 0，则输入结束。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>若 n 为 Sky 数，则输出“#n is a Sky Number.”，否则输出“#n is not a SkyNumber.”。<br>
+每个结果占一行。注意：#n 表示所读入的 n 值。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>2992<br>
+1234<br>
+0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>2992 is a Sky Number.<br>
+1234 is not a Sky Number.</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>进制转换</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int sum(int a, int r) &#123;  // r进制数各位之和</span><br><span class="line">    int s = 0;</span><br><span class="line">    while (a) &#123;</span><br><span class="line">        s += a % r;</span><br><span class="line">        a /= r;</span><br><span class="line">    &#125;</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    while (cin &gt;&gt; n &amp;&amp; n) &#123;</span><br><span class="line">        if (sum(n, 10) == sum(n, 16) &amp;&amp; sum(n, 10) == sum(n, 12))</span><br><span class="line">            cout &lt;&lt; n &lt;&lt; &quot; is a Sky Number.&quot; &lt;&lt; endl;</span><br><span class="line">        else</span><br><span class="line">            cout &lt;&lt; n &lt;&lt; &quot; is not a Sky Number.&quot; &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2098-分拆素数和">2098 分拆素数和</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>把一个偶数拆成两个不同素数的和，有几种拆法呢？</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入包含一些正的偶数，其值不会超过 10000，个数不会超过 500，若遇 0，则结束。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>对应每个偶数，输出其拆成不同素数的个数，每个结果占一行。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>30<br>
+26<br>
+0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>3<br>
+2</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>判断素数</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">bool isPrime(int a) &#123;</span><br><span class="line">    if (a == 2 || a == 3) return 1;</span><br><span class="line">    for (int i = 2; i &lt;= sqrt(a); i++) &#123;</span><br><span class="line">        if (a % i == 0) return false;</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int n, count;</span><br><span class="line">    while (cin &gt;&gt; n &amp;&amp; n) &#123;</span><br><span class="line">        count = 0;</span><br><span class="line">        for (int i = 2; i &lt; n / 2; i++) &#123;</span><br><span class="line">            if (isPrime(i) &amp;&amp; isPrime(n - i)) count++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; count &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2099-整除的尾数">2099 整除的尾数</h3>
+<p>Problem Description</p>
+<div class="note info flat"><p>一个整数，只知道前几位，不知道末二位，被另一个整数除尽了，那么该数的末二位该是什么呢？</p>
+</div>
+<p>Input</p>
+<div class="note info flat"><p>输入数据有若干组，每组数据包含二个整数 a，b（0&lt;a&lt;10000, 10&lt;b&lt;100），若遇到 0 0 则处理结束。</p>
+</div>
+<p>Output</p>
+<div class="note info flat"><p>对应每组数据，将满足条件的所有尾数在一行内输出，格式见样本输出。同组数据的输出，其每个尾数之间空一格，行末没有空格。</p>
+</div>
+<p>Sample Input</p>
+<div class="note info flat"><p>200 40<br>
+1992 95<br>
+0 0</p>
+</div>
+<p>Sample Output</p>
+<div class="note info flat"><p>00 40 80<br>
+15</p>
+</div>
+<p>解题思路</p>
+<div class="note success flat"><p>前数*100+尾数</p>
+</div>
+<p>参考源码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int a, b;</span><br><span class="line">    while (cin &gt;&gt; a &gt;&gt; b &amp;&amp; (a || b)) &#123;</span><br><span class="line">        int count = 0;</span><br><span class="line">        for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">            if ((a * 100 + i) % b == 0) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                if (count == 1)</span><br><span class="line">                    printf(&quot;%02d&quot;, i);</span><br><span class="line">                else</span><br><span class="line">                    printf(&quot; %02d&quot;, i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="相关内容-25">相关内容</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3470260376.html">杭电 OJ2040-2049</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1908130413.html">杭电 OJ2050-2059</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/1803455283.html">杭电 OJ2060-2069</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/3557994950.html">杭电 OJ2070-2079</a></li>
+<li><a target="_blank" rel="noopener" href="https://emoryhuang.github.io/blog/2781011424.html">杭电 OJ2080-2089</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>杭电OJ2090-2099</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://emoryhuang.cn/blog/447670037.html">https://emoryhuang.cn/blog/447670037.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>EmoryHuang</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2021-03-09</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2022-08-19</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%88%B7%E9%A2%98/">刷题</a></div><div class="post_share"><div class="social-share" data-image="https://static.emoryhuang.cn/img/emoryhuang-banner.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://static.emoryhuang.cn/webp/emoryhuang-wechat.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/emoryhuang-wechat.webp" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://static.emoryhuang.cn/webp/emoryhuang-alipay.webp" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/emoryhuang-alipay.webp" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/blog/3723806273.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-banner.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">杭电2010年计算机复试真题</div></div></a></div><div class="next-post pull-right"><a href="/blog/2781011424.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/2781011424-banner.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">杭电OJ2080-2089</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog/1593055632.html" title="杭电OJ2000-2009"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1593055632-banner.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-05</div><div class="title">杭电OJ2000-2009</div></div></a></div><div><a href="/blog/1908130413.html" title="杭电OJ2050-2059"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1908130413-banner.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-07</div><div class="title">杭电OJ2050-2059</div></div></a></div><div><a href="/blog/1144082642.html" title="杭电OJ2030-2039"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1144082642-banner.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-06</div><div class="title">杭电OJ2030-2039</div></div></a></div><div><a href="/blog/3470260376.html" title="杭电OJ2040-2049"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3470260376-banner.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-06</div><div class="title">杭电OJ2040-2049</div></div></a></div><div><a href="/blog/4217203237.html" title="杭电OJ2020-2029"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/4217203237-banner.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-05</div><div class="title">杭电OJ2020-2029</div></div></a></div><div><a href="/blog/3557994950.html" title="杭电OJ2070-2079"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-banner.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-03-08</div><div class="title">杭电OJ2070-2079</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/img/emoryhuang-avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">EmoryHuang</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">111</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">97</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">20</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/EmoryHuang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/EmoryHuang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:boyi_huang@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Welcome to my Blog!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">杭电 OJ2090-2099</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2-20"><span class="toc-number">1.1.</span> <span class="toc-text">写在前面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2090-%E7%AE%97%E8%8F%9C%E4%BB%B7"><span class="toc-number">1.1.1.</span> <span class="toc-text">2090 算菜价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2091-%E7%A9%BA%E5%BF%83%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">2091 空心三角形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2092-%E6%95%B4%E6%95%B0%E8%A7%A3"><span class="toc-number">1.1.3.</span> <span class="toc-text">2092 整数解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2093-%E8%80%83%E8%AF%95%E6%8E%92%E5%90%8D"><span class="toc-number">1.1.4.</span> <span class="toc-text">2093 考试排名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2094-%E4%BA%A7%E7%94%9F%E5%86%A0%E5%86%9B"><span class="toc-number">1.1.5.</span> <span class="toc-text">2094 产生冠军</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2095-find-your-present-2"><span class="toc-number">1.1.6.</span> <span class="toc-text">2095 find your present (2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2096-%E5%B0%8F%E6%98%8E-A-B"><span class="toc-number">1.1.7.</span> <span class="toc-text">2096 小明 A+B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2097-Sky-%E6%95%B0"><span class="toc-number">1.1.8.</span> <span class="toc-text">2097 Sky 数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2098-%E5%88%86%E6%8B%86%E7%B4%A0%E6%95%B0%E5%92%8C"><span class="toc-number">1.1.9.</span> <span class="toc-text">2098 分拆素数和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2099-%E6%95%B4%E9%99%A4%E7%9A%84%E5%B0%BE%E6%95%B0"><span class="toc-number">1.1.10.</span> <span class="toc-text">2099 整除的尾数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9-25"><span class="toc-number">1.2.</span> <span class="toc-text">相关内容</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2428125584.html" title="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/2428125584-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation"/></a><div class="content"><a class="title" href="/blog/2428125584.html" title="【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation">【论文阅读】STAN:Spatio-Temporal Attention Network for Next Location Recommendation</a><time datetime="2022-08-01T11:10:15.000Z" title="发表于 2022-08-01 19:10:15">2022-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/3056744315.html" title="Time2Vec 的理解与简单实现"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3056744315-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Time2Vec 的理解与简单实现"/></a><div class="content"><a class="title" href="/blog/3056744315.html" title="Time2Vec 的理解与简单实现">Time2Vec 的理解与简单实现</a><time datetime="2022-07-23T03:02:44.000Z" title="发表于 2022-07-23 11:02:44">2022-07-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/4228286132.html" title="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/4228286132-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation"/></a><div class="content"><a class="title" href="/blog/4228286132.html" title="【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation">【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</a><time datetime="2022-07-20T08:07:20.000Z" title="发表于 2022-07-20 16:07:20">2022-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/3551198102.html" title="聊一聊损失函数"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/3551198102-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="聊一聊损失函数"/></a><div class="content"><a class="title" href="/blog/3551198102.html" title="聊一聊损失函数">聊一聊损失函数</a><time datetime="2022-07-18T02:14:25.000Z" title="发表于 2022-07-18 10:14:25">2022-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/1608683519.html" title="【论文阅读】Geography-Aware Sequential Location Recommendation"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://static.emoryhuang.cn/webp/1608683519-banner.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【论文阅读】Geography-Aware Sequential Location Recommendation"/></a><div class="content"><a class="title" href="/blog/1608683519.html" title="【论文阅读】Geography-Aware Sequential Location Recommendation">【论文阅读】Geography-Aware Sequential Location Recommendation</a><time datetime="2022-07-14T01:55:37.000Z" title="发表于 2022-07-14 09:55:37">2022-07-14</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://static.emoryhuang.cn/img/emoryhuang-banner.png')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By EmoryHuang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20215281" target="_blank"> 20215281号</a> | <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022000821号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000)
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo-git-main-emoryhuang.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo-git-main-emoryhuang.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'bcNDuLTWy0iRRePdlkOpKSve-gzGzoHsz',
+      appKey: 'yTSKpRCVBDa8gyFQLEuSp0B2',
+      avatar: 'monsterid',
+      serverURLs: 'https://bcndultw.lc-cn-n1-shared.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Twikoo' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script><script async src="/js/grayscale.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-8PVDZZ1XD2', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://github-calendar-api-emoryhuang.vercel.app/api?emoryhuang";
+            var git_color =['#ebedf0', '#f0fff4', '#dcffe4', '#bef5cb', '#85e89d', '#34d058', '#28a745', '#22863a', '#176f2c', '#165c26', '#144620'];
+            var git_user ="emoryhuang";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
