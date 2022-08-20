@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2022-08-19T05:28:02.705Z</updated>
+  <updated>2022-08-20T02:18:22.058Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://emoryhuang.cn/blog/2428125584.html"/>
     <id>https://emoryhuang.cn/blog/2428125584.html</id>
     <published>2022-08-01T11:10:15.000Z</published>
-    <updated>2022-08-19T05:28:02.705Z</updated>
+    <updated>2022-08-20T02:18:22.058Z</updated>
     
     
       
@@ -29,8 +29,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-47&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;仍然是 POI</summary>
+&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
         
       
     
@@ -38,6 +38,8 @@
     
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
+    
+    <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
@@ -56,7 +58,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-6&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-8&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -80,7 +82,7 @@
     <link href="https://emoryhuang.cn/blog/4228286132.html"/>
     <id>https://emoryhuang.cn/blog/4228286132.html</id>
     <published>2022-07-20T08:07:20.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T03:11:05.917Z</updated>
     
     
       
@@ -88,8 +90,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-42&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;Next POI</summary>
+&lt;h4</summary>
         
       
     
@@ -99,6 +100,8 @@
     
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="GCN" scheme="https://emoryhuang.cn/tags/GCN/"/>
     
   </entry>
   
@@ -133,7 +136,7 @@
     <link href="https://emoryhuang.cn/blog/1608683519.html"/>
     <id>https://emoryhuang.cn/blog/1608683519.html</id>
     <published>2022-07-14T01:55:37.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T02:33:55.440Z</updated>
     
     
       
@@ -141,7 +144,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
-&lt;h2</summary>
+&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Defu Lian, Yongji Wu, Yong</summary>
         
       
     
@@ -167,7 +171,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-34&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-33&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -188,7 +192,7 @@
     <link href="https://emoryhuang.cn/blog/1152076077.html"/>
     <id>https://emoryhuang.cn/blog/1152076077.html</id>
     <published>2022-06-29T07:50:04.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T03:09:48.158Z</updated>
     
     
       
@@ -196,8 +200,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;随着基于位置的社交网络（Location-Based Social</summary>
+&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Junbeom Kim,</summary>
         
       
     
@@ -208,25 +212,25 @@
     
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
-    <category term="POI" scheme="https://emoryhuang.cn/tags/POI/"/>
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
   <entry>
-    <title>【论文阅读】ALBERT:A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS</title>
+    <title>【论文阅读】ALBERT:A lite BERT for self-supervised learning of language representations</title>
     <link href="https://emoryhuang.cn/blog/1501084282.html"/>
     <id>https://emoryhuang.cn/blog/1501084282.html</id>
     <published>2022-06-20T08:23:50.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T03:10:33.877Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A LITE BERT FOR SELF-SUPERVISED LEARNING OF LANGUAGE REPRESENTATIONS&lt;/h1&gt;
-&lt;h2 id=&quot;前言-37&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;在 BERT</summary>
+    <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A lite BERT for self-supervised learning of language representations&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
         
       
     
@@ -237,27 +241,27 @@
     
     <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
     
-    <category term="ALBERT" scheme="https://emoryhuang.cn/tags/ALBERT/"/>
-    
     <category term="BERT" scheme="https://emoryhuang.cn/tags/BERT/"/>
+    
+    <category term="ALBERT" scheme="https://emoryhuang.cn/tags/ALBERT/"/>
     
   </entry>
   
   <entry>
-    <title>【论文阅读】Attention Is All You Need</title>
+    <title>【论文阅读】Attention is all you need</title>
     <link href="https://emoryhuang.cn/blog/2936175392.html"/>
     <id>https://emoryhuang.cn/blog/2936175392.html</id>
     <published>2022-06-14T12:16:58.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T02:59:43.403Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;【论文阅读】Attention Is All You Need&lt;/h1&gt;
-&lt;h2 id=&quot;前言-40&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;Transformer 是谷歌在 2017 年底发表的论文 &lt;a</summary>
+    <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
     
@@ -275,20 +279,19 @@
   </entry>
   
   <entry>
-    <title>【论文阅读】BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding</title>
+    <title>【论文阅读】BERT:Pre-training of deep bidirectional transformers for language understanding</title>
     <link href="https://emoryhuang.cn/blog/2857139179.html"/>
     <id>https://emoryhuang.cn/blog/2857139179.html</id>
     <published>2022-06-13T10:43:40.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T03:10:39.148Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;【论文阅读】BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding&lt;/h1&gt;
-&lt;h2 id=&quot;前言-38&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;BERT 是 Google 于</summary>
+    <summary type="html">&lt;h1&gt;【论文阅读】BERT: Pre-training of deep bidirectional transformers for language understanding&lt;/h1&gt;
+&lt;h4</summary>
         
       
     
@@ -316,7 +319,7 @@
         
         
     <summary type="html">&lt;h1&gt;从 Embedding 到 Word2Vec&lt;/h1&gt;
-&lt;h2 id=&quot;前言-7&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-9&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Word Embedding&lt;/code&gt;</summary>
         
       
@@ -347,7 +350,7 @@
         
         
     <summary type="html">&lt;h1&gt;使用 Caddy 替代 Nginx&lt;/h1&gt;
-&lt;h2 id=&quot;前言-35&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-42&quot;&gt;前言&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Caddy 2 is a powerful, enterprise-ready, open source web server with</summary>
         
@@ -398,16 +401,16 @@
     <link href="https://emoryhuang.cn/blog/4100034120.html"/>
     <id>https://emoryhuang.cn/blog/4100034120.html</id>
     <published>2022-05-18T02:32:15.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T02:15:27.975Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
-&lt;h2 id=&quot;前言-45&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;h1&gt;【论文阅读】Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Hansheng Ren, Bixiong Xu,</summary>
         
       
     
@@ -435,7 +438,7 @@
         
         
     <summary type="html">&lt;h1&gt;Redis 时间序列&lt;/h1&gt;
-&lt;h2 id=&quot;前言-15&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-13&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;REmote DIctionary Server(Redis) 是一个使用 ANSI C</summary>
         
       
@@ -456,16 +459,16 @@
     <link href="https://emoryhuang.cn/blog/1055934772.html"/>
     <id>https://emoryhuang.cn/blog/1055934772.html</id>
     <published>2022-04-20T12:55:14.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
+    <updated>2022-08-20T02:28:58.243Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;Modeling Extreme Events in Time Series Prediction&lt;/h1&gt;
-&lt;h2 id=&quot;前言-46&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;h1&gt;【论文阅读】Modeling Extreme Events in Time Series Prediction&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-2&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Daizong Ding, Mi Zhang,</summary>
         
       
     
@@ -474,9 +477,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
+    <category term="损失函数" scheme="https://emoryhuang.cn/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
     
-    <category term="极端事件预测" scheme="https://emoryhuang.cn/tags/%E6%9E%81%E7%AB%AF%E4%BA%8B%E4%BB%B6%E9%A2%84%E6%B5%8B/"/>
+    <category term="时间序列预测" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B/"/>
     
   </entry>
   
@@ -493,7 +496,7 @@
         
         
     <summary type="html">&lt;h1&gt;树状数组学习笔记&lt;/h1&gt;
-&lt;h2 id=&quot;前言-54&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-39&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;树状数组&lt;/strong&gt;或二叉索引树(Binary Indexed Tree)，又以其发明者命名为 &lt;strong&gt;Fenwick</summary>
         
       
@@ -550,7 +553,7 @@
         
         
     <summary type="html">&lt;h1&gt;Spark 与 DataFrame&lt;/h1&gt;
-&lt;h2 id=&quot;前言-9&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-10&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;在 Spark 中，除了 RDD 这种数据容器外，还有一种更容易操作的一个分布式数据容器</summary>
         
       
