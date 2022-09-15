@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2022-09-08T07:13:38.000Z</updated>
+  <updated>2022-09-15T07:48:40.000Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】Curriculum Meta-Learning for Next POI Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/2857152510.html"/>
+    <id>https://emoryhuang.cn/blog/2857152510.html</id>
+    <published>2022-09-13T06:02:05.000Z</published>
+    <updated>2022-09-15T07:48:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Curriculum Meta-Learning for Next POI Recommendation&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Yudong Chen, Xin Wang,</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="元学习" scheme="https://emoryhuang.cn/tags/%E5%85%83%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【论文阅读】Location prediction over sparse user mobility traces using RNNs: Flashback in hidden states!</title>
+    <link href="https://emoryhuang.cn/blog/2899228234.html"/>
+    <id>https://emoryhuang.cn/blog/2899228234.html</id>
+    <published>2022-09-13T05:59:32.000Z</published>
+    <updated>2022-09-14T01:26:21.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Location prediction over sparse user mobility traces using RNNs: Flashback in hidden states!&lt;/h1&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="RNN" scheme="https://emoryhuang.cn/tags/RNN/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>【论文阅读】Next Point-of-Interest Recommendation with Inferring Multi-step Future Preferences</title>
@@ -169,7 +226,7 @@
   </entry>
   
   <entry>
-    <title>【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</title>
+    <title>【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</title>
     <link href="https://emoryhuang.cn/blog/4228286132.html"/>
     <id>https://emoryhuang.cn/blog/4228286132.html</id>
     <published>2022-07-20T08:07:20.000Z</published>
@@ -235,7 +292,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Defu Lian, Yongji Wu, Yong</summary>
         
       
@@ -262,7 +319,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-29&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-28&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -320,7 +377,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A lite BERT for self-supervised learning of language representations&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -351,7 +408,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-11&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
@@ -500,7 +557,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Hansheng Ren, Bixiong Xu,</summary>
         
       
@@ -529,7 +586,7 @@
         
         
     <summary type="html">&lt;h1&gt;Redis 时间序列&lt;/h1&gt;
-&lt;h2 id=&quot;前言-13&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-15&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;REmote DIctionary Server(Redis) 是一个使用 ANSI C</summary>
         
       
@@ -542,64 +599,6 @@
     <category term="Redis" scheme="https://emoryhuang.cn/tags/Redis/"/>
     
     <category term="时间序列" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【论文阅读】Modeling Extreme Events in Time Series Prediction</title>
-    <link href="https://emoryhuang.cn/blog/1055934772.html"/>
-    <id>https://emoryhuang.cn/blog/1055934772.html</id>
-    <published>2022-04-20T12:55:14.000Z</published>
-    <updated>2022-09-08T06:58:59.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;【论文阅读】Modeling Extreme Events in Time Series Prediction&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Daizong Ding, Mi Zhang,</summary>
-        
-      
-    
-    
-    
-    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
-    
-    
-    <category term="损失函数" scheme="https://emoryhuang.cn/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
-    
-    <category term="时间序列预测" scheme="https://emoryhuang.cn/tags/%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E9%A2%84%E6%B5%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树状数组学习笔记</title>
-    <link href="https://emoryhuang.cn/blog/483618645.html"/>
-    <id>https://emoryhuang.cn/blog/483618645.html</id>
-    <published>2022-04-04T06:21:41.000Z</published>
-    <updated>2022-08-19T04:59:02.660Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;树状数组学习笔记&lt;/h1&gt;
-&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;树状数组&lt;/strong&gt;或二叉索引树(Binary Indexed Tree)，又以其发明者命名为 &lt;strong&gt;Fenwick</summary>
-        
-      
-    
-    
-    
-    <category term="算法学习" scheme="https://emoryhuang.cn/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="树状数组" scheme="https://emoryhuang.cn/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-    
-    <category term="二叉索引树" scheme="https://emoryhuang.cn/tags/%E4%BA%8C%E5%8F%89%E7%B4%A2%E5%BC%95%E6%A0%91/"/>
     
   </entry>
   
