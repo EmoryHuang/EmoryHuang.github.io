@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2022-09-17T07:15:27.000Z</updated>
+  <updated>2022-09-22T08:23:41.000Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation</title>
+    <link href="https://emoryhuang.cn/blog/362082315.html"/>
+    <id>https://emoryhuang.cn/blog/362082315.html</id>
+    <published>2022-09-18T07:28:00.000Z</published>
+    <updated>2022-09-22T08:23:41.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="GRN" scheme="https://emoryhuang.cn/tags/GRN/"/>
+    
+    <category term="Multi-task" scheme="https://emoryhuang.cn/tags/Multi-task/"/>
+    
+  </entry>
   
   <entry>
     <title>【论文阅读】Learning Graph-based Disentangled Representations for Next POI Recommendation</title>
@@ -146,8 +177,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Xuan Rao, Lisi Chen,</summary>
+&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
     
@@ -207,7 +238,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -236,7 +267,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-15&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -349,7 +380,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-41&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-33&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -378,7 +409,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Junbeom Kim,</summary>
         
       
@@ -438,7 +469,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-11&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
@@ -497,7 +528,7 @@
         
         
     <summary type="html">&lt;h1&gt;从 Embedding 到 Word2Vec&lt;/h1&gt;
-&lt;h2 id=&quot;前言-18&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-6&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Word Embedding&lt;/code&gt;</summary>
         
       
@@ -528,7 +559,7 @@
         
         
     <summary type="html">&lt;h1&gt;使用 Caddy 替代 Nginx&lt;/h1&gt;
-&lt;h2 id=&quot;前言-24&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-35&quot;&gt;前言&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Caddy 2 is a powerful, enterprise-ready, open source web server with</summary>
         
@@ -571,35 +602,6 @@
     <category term="算法学习" scheme="https://emoryhuang.cn/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="线段树" scheme="https://emoryhuang.cn/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【论文阅读】Time-Series Anomaly Detection Service at Microsoft</title>
-    <link href="https://emoryhuang.cn/blog/4100034120.html"/>
-    <id>https://emoryhuang.cn/blog/4100034120.html</id>
-    <published>2022-05-18T02:32:15.000Z</published>
-    <updated>2022-09-08T07:08:35.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;【论文阅读】Time-Series Anomaly Detection Service at Microsoft&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Hansheng Ren, Bixiong Xu,</summary>
-        
-      
-    
-    
-    
-    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
-    
-    
-    <category term="异常检测" scheme="https://emoryhuang.cn/tags/%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/"/>
-    
-    <category term="谱分析" scheme="https://emoryhuang.cn/tags/%E8%B0%B1%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
