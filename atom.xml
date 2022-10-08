@@ -60,7 +60,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Empowering next POI recommendation with multi-relational modeling&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-3&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Zheng</summary>
         
       
@@ -89,7 +89,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-16&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -150,7 +150,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Curriculum Meta-Learning for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-2&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Yudong Chen, Xin Wang,</summary>
         
       
@@ -237,7 +237,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
@@ -247,9 +247,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
-    
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
     <category term="KG" scheme="https://emoryhuang.cn/tags/KG/"/>
     
@@ -298,7 +298,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -327,7 +327,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-7&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -368,9 +368,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
-    
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
   </entry>
   
@@ -440,7 +440,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-27&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-51&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -469,7 +469,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Junbeom Kim,</summary>
         
       
@@ -479,9 +479,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
-    
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
   </entry>
   
@@ -498,7 +498,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A lite BERT for self-supervised learning of language representations&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -529,7 +529,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-17&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
