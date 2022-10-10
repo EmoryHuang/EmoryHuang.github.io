@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2022-10-08T07:25:31.000Z</updated>
+  <updated>2022-10-10T06:06:31.000Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】ST-PIL: Spatial-Temporal Periodic Interest Learning for Next Point-of-Interest Recommendation</title>
+    <link href="https://emoryhuang.cn/blog/1329760803.html"/>
+    <id>https://emoryhuang.cn/blog/1329760803.html</id>
+    <published>2022-10-10T03:16:56.000Z</published>
+    <updated>2022-10-10T06:06:31.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】ST-PIL: Spatial-Temporal Periodic Interest Learning for Next Point-of-Interest Recommendation&lt;/h1&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
+    
+    <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>【论文阅读】Next point-of-interest recommendation with auto-correlation enhanced
@@ -60,7 +90,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Empowering next POI recommendation with multi-relational modeling&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Zheng</summary>
         
       
@@ -89,7 +119,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -237,7 +267,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
@@ -247,9 +277,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
     <category term="KG" scheme="https://emoryhuang.cn/tags/KG/"/>
     
@@ -298,7 +328,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -327,7 +357,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-7&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -368,9 +398,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -413,8 +443,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Defu Lian, Yongji Wu, Yong</summary>
+&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Defu Lian, Yongji Wu,</summary>
         
       
     
@@ -440,7 +470,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-51&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-29&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -469,7 +499,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Junbeom Kim,</summary>
         
       
@@ -479,9 +509,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -498,7 +528,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A lite BERT for self-supervised learning of language representations&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -529,7 +559,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-17&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-14&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
@@ -572,37 +602,6 @@
     <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
     
     <category term="BERT" scheme="https://emoryhuang.cn/tags/BERT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从 Embedding 到 Word2Vec</title>
-    <link href="https://emoryhuang.cn/blog/222002858.html"/>
-    <id>https://emoryhuang.cn/blog/222002858.html</id>
-    <published>2022-06-10T08:00:05.000Z</published>
-    <updated>2022-08-19T04:59:02.640Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;从 Embedding 到 Word2Vec&lt;/h1&gt;
-&lt;h2 id=&quot;前言-5&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Word Embedding&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="NLP" scheme="https://emoryhuang.cn/categories/NLP/"/>
-    
-    
-    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
-    
-    <category term="Embedding" scheme="https://emoryhuang.cn/tags/Embedding/"/>
-    
-    <category term="Word2Vec" scheme="https://emoryhuang.cn/tags/Word2Vec/"/>
     
   </entry>
   
