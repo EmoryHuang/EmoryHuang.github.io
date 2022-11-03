@@ -38,9 +38,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
-    
     <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
+    
+    <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
@@ -119,7 +119,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -267,7 +267,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
@@ -328,7 +328,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-11&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -470,7 +470,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-26&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-29&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -559,7 +559,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Attention is all you need&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-17&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-15&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob</summary>
         
       
