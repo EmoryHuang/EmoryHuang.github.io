@@ -90,7 +90,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Empowering next POI recommendation with multi-relational modeling&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-5&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-6&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Zheng</summary>
         
       
@@ -267,7 +267,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
@@ -357,7 +357,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-5&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -470,7 +470,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-28&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-29&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
