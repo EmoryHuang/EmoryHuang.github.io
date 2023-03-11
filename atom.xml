@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2023-03-02T07:10:26.033Z</updated>
+  <updated>2023-03-11T04:32:49.000Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】DisenPOI Disentangling sequential and geographical influence for point-of-interest recommendation</title>
+    <link href="https://emoryhuang.cn/blog/708003372.html"/>
+    <id>https://emoryhuang.cn/blog/708003372.html</id>
+    <published>2023-03-11T04:32:49.000Z</published>
+    <updated>2023-03-11T04:32:49.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】DisenPOI: Disentangling sequential and geographical influence for point-of-interest recommendation&lt;/h1&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 LaTeX 进行论文写作</title>
@@ -48,7 +76,7 @@
         
         
     <summary type="html">&lt;h1&gt;使用 PyG 进行图神经网络训练&lt;/h1&gt;
-&lt;h2 id=&quot;前言-19&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-17&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;最近一直在想创新点，搭模型，想尝试一下图神经网络，想着自己实现一个，但是之前也没有尝试过写 GNN 模型，对其中的实现细节也没有实际尝试过，最后找到了 PyG</summary>
         
       
@@ -138,7 +166,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Empowering next POI recommendation with multi-relational modeling&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-4&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-2&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Zheng</summary>
         
       
@@ -167,7 +195,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -315,7 +343,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-12&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Xuan Rao, Lisi</summary>
         
       
@@ -376,7 +404,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-11&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -405,7 +433,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-5&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-8&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -491,8 +519,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Defu Lian, Yongji Wu, Yong</summary>
+&lt;h4 id=&quot;Metadata-15&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Defu Lian, Yongji Wu,</summary>
         
       
     
@@ -518,7 +546,7 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-30&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言-27&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
         
       
@@ -547,7 +575,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】DynaPosGNN: Dynamic-Positional GNN for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-7&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Junbeom Kim,</summary>
         
       
@@ -560,37 +588,6 @@
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【论文阅读】ALBERT:A lite BERT for self-supervised learning of language representations</title>
-    <link href="https://emoryhuang.cn/blog/1501084282.html"/>
-    <id>https://emoryhuang.cn/blog/1501084282.html</id>
-    <published>2022-06-20T08:23:50.000Z</published>
-    <updated>2022-09-08T07:06:08.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;【论文阅读】ALBERT: A lite BERT for self-supervised learning of language representations&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors::</summary>
-        
-      
-    
-    
-    
-    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
-    
-    
-    <category term="NLP" scheme="https://emoryhuang.cn/tags/NLP/"/>
-    
-    <category term="BERT" scheme="https://emoryhuang.cn/tags/BERT/"/>
-    
-    <category term="ALBERT" scheme="https://emoryhuang.cn/tags/ALBERT/"/>
     
   </entry>
   
