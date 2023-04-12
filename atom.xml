@@ -29,7 +29,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Temporal knowledge graph reasoning based on evolutional representation learning&lt;/h1&gt;
-&lt;h4</summary>
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
         
       
     
@@ -104,7 +105,7 @@
         
         
     <summary type="html">&lt;h1&gt;使用 PyG 进行图神经网络训练&lt;/h1&gt;
-&lt;h2 id=&quot;前言-23&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;最近一直在想创新点，搭模型，想尝试一下图神经网络，想着自己实现一个，但是之前也没有尝试过写 GNN 模型，对其中的实现细节也没有实际尝试过，最后找到了 PyG</summary>
         
       
@@ -194,8 +195,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Empowering next POI recommendation with multi-relational modeling&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-3&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Zheng</summary>
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Zheng Huang,</summary>
         
       
     
@@ -223,7 +224,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Hierarchical multi-task graph recurrent network for next POI recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-9&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -254,7 +255,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Learning Graph-based Disentangled Representations for Next POI Recommendation&lt;/h1&gt;
-&lt;h4</summary>
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
         
       
     
@@ -284,7 +286,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Curriculum Meta-Learning for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-21&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Yudong Chen, Xin Wang,</summary>
         
       
@@ -371,8 +373,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Graph-Flashback Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-13&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors:: Xuan Rao, Lisi</summary>
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Xuan Rao, Lisi Chen,</summary>
         
       
     
@@ -432,7 +434,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】STAN: Spatio-Temporal Attention Network for Next Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-10&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors::</summary>
         
       
@@ -461,7 +463,7 @@
         
         
     <summary type="html">&lt;h1&gt;Time2Vec 的理解与简单实现&lt;/h1&gt;
-&lt;h2 id=&quot;前言-4&quot;&gt;前言&lt;/h2&gt;
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Time2Vec 从其名字就可以看出其功能，将时间进行 Embedding，并且能够应用于不同的模型。&lt;/p&gt;
 &lt;p&gt;2019 年的一篇论文：&lt;a</summary>
         
@@ -493,7 +495,8 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation&lt;/h1&gt;
-&lt;h4</summary>
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors::</summary>
         
       
     
@@ -547,7 +550,7 @@
         
         
     <summary type="html">&lt;h1&gt;【论文阅读】Geography-Aware Sequential Location Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata-8&quot;&gt;Metadata&lt;/h4&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
 &lt;p&gt;authors:: Defu Lian, Yongji Wu, Yong</summary>
         
       
@@ -574,8 +577,8 @@
         
         
     <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言-28&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a</summary>
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+&lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a href=&quot;https://ieeexplore.ieee.org/document/4700287&quot;&gt;The</summary>
         
       
     
