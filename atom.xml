@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2023-04-04T07:12:33.000Z</updated>
+  <updated>2023-04-13T07:42:50.000Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【论文阅读】HIP network:Historical information passing network for extrapolation reasoning on temporal knowledge graph</title>
+    <link href="https://emoryhuang.cn/blog/1257529973.html"/>
+    <id>https://emoryhuang.cn/blog/1257529973.html</id>
+    <published>2023-04-13T01:47:07.000Z</published>
+    <updated>2023-04-13T07:42:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】HIP network: Historical information passing network for extrapolation reasoning on temporal knowledge graph&lt;/h1&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="KG" scheme="https://emoryhuang.cn/tags/KG/"/>
+    
+    <category term="TKG" scheme="https://emoryhuang.cn/tags/TKG/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【论文阅读】Temporal knowledge graph reasoning based on evolutional representation learning</title>
     <link href="https://emoryhuang.cn/blog/3305569686.html"/>
     <id>https://emoryhuang.cn/blog/3305569686.html</id>
     <published>2023-04-04T07:12:33.000Z</published>
-    <updated>2023-04-04T07:12:33.000Z</updated>
+    <updated>2023-04-13T02:13:47.000Z</updated>
     
     
       
@@ -561,35 +589,6 @@
     
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单理解图神经网络 GNN</title>
-    <link href="https://emoryhuang.cn/blog/656651309.html"/>
-    <id>https://emoryhuang.cn/blog/656651309.html</id>
-    <published>2022-07-02T10:42:20.000Z</published>
-    <updated>2022-08-19T04:59:02.650Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;简单理解图神经网络 GNN&lt;/h1&gt;
-&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
-&lt;p&gt;图神经网络（Graph Neural Networks，GNN）最早由&lt;a href=&quot;https://ieeexplore.ieee.org/document/4700287&quot;&gt;The</summary>
-        
-      
-    
-    
-    
-    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://emoryhuang.cn/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
   </entry>
   
