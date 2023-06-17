@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2023-05-16T07:56:00.000Z</updated>
+  <updated>2023-06-17T08:51:03.557Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个自己写的 PyTorch 简单框架范例</title>
+    <link href="https://emoryhuang.cn/blog/4276851715.html"/>
+    <id>https://emoryhuang.cn/blog/4276851715.html</id>
+    <published>2023-06-17T08:47:07.000Z</published>
+    <updated>2023-06-17T08:51:03.557Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;一个自己写的 PyTorch 简单框架范例&lt;/h1&gt;
+&lt;p&gt;使用 Pytorch</summary>
+        
+      
+    
+    
+    
+    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="PyTorch" scheme="https://emoryhuang.cn/tags/PyTorch/"/>
+    
+  </entry>
   
   <entry>
     <title>【论文阅读】Hierarchical knowledge graph learning enabled socioeconomic indicator prediction in location-based social network</title>
@@ -199,9 +225,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
-    
     <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
+    
+    <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
@@ -564,32 +590,6 @@
     <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊一聊损失函数</title>
-    <link href="https://emoryhuang.cn/blog/3551198102.html"/>
-    <id>https://emoryhuang.cn/blog/3551198102.html</id>
-    <published>2022-07-18T02:14:25.000Z</published>
-    <updated>2022-08-19T04:59:02.650Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;聊一聊损失函数&lt;/h1&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="深度学习" scheme="https://emoryhuang.cn/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="损失函数" scheme="https://emoryhuang.cn/tags/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0/"/>
     
   </entry>
   
