@@ -6,7 +6,7 @@
   <link href="https://emoryhuang.cn/atom.xml" rel="self"/>
   
   <link href="https://emoryhuang.cn/"/>
-  <updated>2023-06-17T08:51:03.557Z</updated>
+  <updated>2023-07-24T08:26:53.221Z</updated>
   <id>https://emoryhuang.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【论文阅读】Spatio-temporal hypergraph learning for next POI recommendation</title>
+    <link href="https://emoryhuang.cn/blog/2954694367.html"/>
+    <id>https://emoryhuang.cn/blog/2954694367.html</id>
+    <published>2023-07-24T07:31:03.000Z</published>
+    <updated>2023-07-24T08:26:53.221Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;【论文阅读】Spatio-Temporal Hypergraph Learning for Next POI Recommendation&lt;/h1&gt;
+&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
+&lt;p&gt;authors:: Xiaodong Yan,</summary>
+        
+      
+    
+    
+    
+    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
+    
+    <category term="超图" scheme="https://emoryhuang.cn/tags/%E8%B6%85%E5%9B%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>一个自己写的 PyTorch 简单框架范例</title>
@@ -225,9 +254,9 @@
     <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
     
-    <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
-    
     <category term="Attention" scheme="https://emoryhuang.cn/tags/Attention/"/>
+    
+    <category term="LSTM" scheme="https://emoryhuang.cn/tags/LSTM/"/>
     
     <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
@@ -561,35 +590,6 @@
     <category term="Embedding" scheme="https://emoryhuang.cn/tags/Embedding/"/>
     
     <category term="Time2Vec" scheme="https://emoryhuang.cn/tags/Time2Vec/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【论文阅读】GETNext:Trajectory Flow Map Enhanced Transformer for Next POI Recommendation</title>
-    <link href="https://emoryhuang.cn/blog/4228286132.html"/>
-    <id>https://emoryhuang.cn/blog/4228286132.html</id>
-    <published>2022-07-20T08:07:20.000Z</published>
-    <updated>2022-09-08T07:12:28.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;【论文阅读】GETNext: Trajectory Flow Map Enhanced Transformer for Next POI Recommendation&lt;/h1&gt;
-&lt;h4 id=&quot;Metadata&quot;&gt;Metadata&lt;/h4&gt;
-&lt;p&gt;authors::</summary>
-        
-      
-    
-    
-    
-    <category term="论文阅读" scheme="https://emoryhuang.cn/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
-    
-    
-    <category term="GNN" scheme="https://emoryhuang.cn/tags/GNN/"/>
-    
-    <category term="POI推荐" scheme="https://emoryhuang.cn/tags/POI%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
